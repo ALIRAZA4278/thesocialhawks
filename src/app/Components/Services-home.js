@@ -356,7 +356,7 @@ const ServicesHome = () => {
 
               {/* Animated Counter */}
               <div className="text-center lg:text-right" ref={projectsRef}>
-                <div className="text-white text-3xl sm:text-4xl lg:text-5xl font-light mb-2">
+                <div className="text-primary text-3xl sm:text-4xl lg:text-5xl font-light mb-2">
                   {projectsCount}+
                 </div>
                 <p className="text-primary text-sm sm:text-base font-medium">
