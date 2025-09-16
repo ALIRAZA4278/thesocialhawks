@@ -1,0 +1,54 @@
+/* THEME COLORS - Change colors here for easy theme management */
+:root {
+  --primary: #7f20c4;      /* Green color for highlights and buttons */
+  --primary-hover: #5a2a7c; /* Darker green for hover states */
+  --text: #374151;         /* Main text color (gray-700) */
+  --text-light: #6B7280;   /* Light text color (gray-500) */
+  --background: #FFFFFF;   /* Background color */
+  --mobile-overlay: #F9FAFB; /* Mobile menu background (gray-50) */
+  --border: #E5E7EB;       /* Border color (gray-200) */
+  --shadow: rgba(0, 0, 0, 0.1); /* Shadow color */
+}
+
+/* Font configuration */
+* {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+/* Custom Tailwind classes using CSS variables */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--primary);
+}
+
+.hover\:text-primary:hover {
+  color: var(--primary);
+}
+
+.hover\:border-primary:hover {
+  border-color: var(--primary);
+}
+
+.bg-primary-hover {
+  background-color: var(--primary-hover);
+}
+
+.hover\:bg-primary-hover:hover {
+  background-color: var(--primary-hover);
+}
+
+.group:hover .group-hover\:bg-primary-hover {
+  background-color: var(--primary-hover);
+}
