@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const About = () => {
   const [imageError, setImageError] = useState(false);
@@ -65,9 +66,11 @@ const About = () => {
           >
             <div className="relative overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl">
               {!imageError ? (
-                <img
+                <Image
                   src="/images/about-team.jpg"
                   alt="Performance-Driven Marketing Team"
+                  width={600}
+                  height={600}
                   className="w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover"
                   onError={() => setImageError(true)}
                 />
@@ -112,8 +115,8 @@ const About = () => {
               </p>
               
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
-                We're a team of data-obsessed marketers who combine creative 
-                thinking with analytical precision to deliver campaigns that don't just 
+                We&apos;re a team of data-obsessed marketers who combine creative 
+                thinking with analytical precision to deliver campaigns that don&apos;t just 
                 look good, but perform exceptionally well.
               </p>
 

@@ -44,10 +44,10 @@ const Contact = () => {
               Ready to Get Started?
             </h2>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-6">
-              We'd Love to Hear From You!
+              We&apos;d Love to Hear From You!
             </h3>
             <p className="text-lg text-gray-300 mb-12">
-              Tell us where you want to go. We'll help you get there smarter, faster, and bolder.
+              Tell us where you want to go. We&apos;ll help you get there smarter, faster, and bolder.
             </p>
 
             {/* Contact Form */}
