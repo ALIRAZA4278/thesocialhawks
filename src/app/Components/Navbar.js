@@ -72,7 +72,7 @@ const Navbar = () => {
       `}</style>
 
       <motion.div 
-        className="navbar-container w-full z-[99999] pt-2"
+        className="navbar-container w-full  pt-2 z-50"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
