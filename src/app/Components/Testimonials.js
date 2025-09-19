@@ -312,7 +312,7 @@ const Testimonials = () => {
         }
 
         .animate-scroll-right {
-          animation: scroll-right 7s linear infinite;
+          animation: scroll-right 6s linear infinite;
         }
 
         .animate-scroll-right:hover {
@@ -337,7 +337,7 @@ const Testimonials = () => {
         }
 
         .animate-scroll-right {
-          animation: scroll-right 10s linear infinite, subtle-glow 8s ease-in-out infinite;
+          animation: scroll-right 6s linear infinite, subtle-glow 8s ease-in-out infinite;
         }
 
         .banner-hover:hover {
