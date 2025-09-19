@@ -49,31 +49,43 @@ const Navbar = () => {
     <>
       {/* Add padding to body to account for fixed navbar */}
       <style jsx global>{`
-        body {
-          padding-top: 100px;
+
+        /* Ensure navbar is always on top */
+        .navbar-container {
+          z-index: 99999 !important;
+
         }
-        @media (min-width: 900px) {
-          body {
-            padding-top: 90px;
-          }
+        
+        /* Override any component z-index that might interfere */
+        .navbar-container * {
+          z-index: inherit !important;
+        }
+        
+        /* Ensure no other component can go above navbar */
+        body * {
+          z-index: auto;
+        }
+        
+        body .navbar-container {
+          z-index: 99999 !important;
         }
       `}</style>
 
       <motion.div 
-        className="fixed top-4 left-4 right-4 z-50"
+        className="navbar-container w-full z-[99999] pt-2"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
       >
         <motion.nav 
           className={`relative bg-gray-100 rounded-md shadow-sm min-[1000px]:px-8 min-[800px]:px-4 px-2 mx-auto w-full transition-all duration-300 ${
-            isMobileMenuOpen ? 'pb-4' : ''
+            isMobileMenuOpen ? 'pb-2 sm:pb-4' : ''
           }`}
           whileHover={{ scale: 1.001 }}
           transition={{ type: "spring", stiffness: 400, damping: 30 }}
         >
           {/* Desktop Navbar */}
-          <div className="flex items-center justify-between h-[60px]">
+          <div className="flex items-center justify-between h-[50px] sm:h-[60px]">
           {/* Logo */}
           <motion.div 
             className="navbar-logo"
@@ -81,9 +93,10 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Link href="/" className="text-4xl font-bold text-gray-800 tracking-tight hover:text-primary transition-colors">
+            <Link href="/" className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800 tracking-tight hover:text-primary transition-colors">
               <motion.span
-                whileHover={{ scale: 1.05 }}
+              className='cursor-pointer'
+                whileHover={{ scale: 1 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
@@ -205,7 +218,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="min-[1000px]:hidden overflow-hidden px-4"
+              className="min-[1000px]:hidden overflow-hidden px-4 relative z-[99999]"
               initial={{ height: 0, opacity: 0, scale: 0.95 }}
               animate={{ height: "auto", opacity: 1, scale: 1 }}
               exit={{ height: 0, opacity: 0, scale: 0.95 }}
@@ -290,4 +303,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;  
