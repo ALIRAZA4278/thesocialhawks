@@ -120,7 +120,7 @@ const Projects = () => {
           </motion.div>
           
           <motion.button 
-            className="mt-6 inline-flex items-center gap-2 bg-primary hover:bg-black text-white px-6 py-3 rounded-full font-medium transition-all duration-300"
+            className="mt-6 inline-flex items-center gap-2 bg-primary hover:bg-black hover:text-white px-6 py-3 rounded-full font-medium transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -139,15 +139,16 @@ const Projects = () => {
             {cards.map((card, index) => (
               <motion.div 
                 key={card.id}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer transform-gpu"
-                style={{ backgroundColor: card.backgroundColor }}
-                initial={{ opacity: 0, y: 60 }}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer transform-gpu bg-[color:var(--card-bg,#f3f4f6)]"
+                initial={{ opacity: 0, y: 60, backgroundColor: card.backgroundColor }}
                 animate={isCardsInView ? { 
                   opacity: 1, 
-                  y: 0
+                  y: 0,
+                  backgroundColor: hoveredCard === card.id ? '#000000' : card.backgroundColor
                 } : { 
                   opacity: 0, 
-                  y: 60
+                  y: 60,
+                  backgroundColor: card.backgroundColor
                 }}
                 transition={{ 
                   delay: index * 0.15, 
@@ -195,31 +196,26 @@ const Projects = () => {
                   {/* Arrow Icon */}
                   <div className="absolute top-6 right-6 z-50">
                     <motion.div 
-                      className="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 shadow-lg"
+                      className="w-10 h-10 bg-white bg-opacity-30 group-hover:bg-primary group-hover:bg-opacity-100 text-gray-700 group-hover:text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg"
                       whileHover={{ 
-                        scale: 1.15, 
+                        scale: 1.12, 
                         rotate: 45,
-                        boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
+                        boxShadow: "0 10px 25px rgba(0,0,0,0.15)"
                       }}
                       animate={{
                         rotate: hoveredCard === card.id ? 45 : 0,
-                        scale: hoveredCard === card.id ? 1.1 : 1,
-                        backgroundColor: hoveredCard === card.id ? "var(--primary, #7f20c4)" : "rgba(255, 255, 255, 0.2)",
+                        scale: hoveredCard === card.id ? 1.06 : 1,
                       }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.25 }}
                     >
-                      <motion.svg 
-                        className="w-5 h-5 transition-colors duration-300" 
+                      <svg 
+                        className="w-5 h-5 transition-colors duration-200 text-current opacity-70 group-hover:opacity-100" 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
-                        animate={{
-                          color: hoveredCard === card.id ? "#ffffff" : "#374151",
-                        }}
-                        transition={{ duration: 0.3 }}
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
-                      </motion.svg>
+                      </svg>
                     </motion.div>
                   </div>
                   
@@ -230,6 +226,7 @@ const Projects = () => {
                       animate={{
                         y: hoveredCard === card.id ? -6 : 0,
                         scale: hoveredCard === card.id ? 1.02 : 1,
+                        opacity: hoveredCard === card.id ? 0.45 : 1
                       }}
                       transition={{ duration: 0.4, delay: 0.1 }}
                     >
@@ -247,67 +244,39 @@ const Projects = () => {
                           style={{ background: card.fallback }}
                         />
                       )}
-                      
-                      {/* Image Overlay with Opacity on Hover */}
-                      <motion.div 
-                        className="absolute inset-0 bg-black transition-opacity duration-500 z-10"
-                        animate={{
-                          opacity: hoveredCard === card.id ? 0.4 : 0,
-                        }}
-                      />
 
-                      {/* View Button - Appears on Hover */}
-                      <motion.div
-                        className="absolute inset-0 flex items-center justify-center z-50"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{
-                          opacity: hoveredCard === card.id ? 1 : 0,
-                          scale: hoveredCard === card.id ? 1 : 0.8,
-                        }}
-                        transition={{ 
-                          duration: 0.3,
-                          ease: "easeOut"
-                        }}
-                      >
-                        <motion.button
-                          className="bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-full font-medium shadow-lg transform transition-all duration-300 backdrop-blur-sm border border-white/20"
-                          whileHover={{ 
-                            scale: 1.1,
-                            boxShadow: "0 10px 25px rgba(127, 32, 196, 0.3)"
-                          }}
-                          whileTap={{ scale: 0.95 }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            // Add your view action here
-                            console.log(`View ${card.title}`);
-                          }}
-                        >
-                          <span className="flex items-center gap-2">
-                            View
-                            <svg 
-                              className="w-4 h-4" 
-                              fill="none" 
-                              stroke="currentColor" 
-                              viewBox="0 0 24 24"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                            </svg>
-                          </span>
-                        </motion.button>
-                      </motion.div>
+                      {/* Reduce image opacity on hover so black card background shows through */}
+                      {/* image container opacity handled by parent motion.div's animate */}
+
+                      {/* View button removed from image container so it won't be dimmed by image opacity */}
                     </motion.div>
                   </div>
-                </div>
 
-                {/* Black Background Overlay on Hover */}
-                <motion.div 
-                  className="absolute inset-0 bg-black rounded-2xl pointer-events-none"
+                {/* View Button - positioned above image so it stays fully opaque on hover */}
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none"
+                  initial={{ opacity: 0, scale: 0.92 }}
                   animate={{
-                    opacity: hoveredCard === card.id ? 0.8 : 0,
+                    opacity: hoveredCard === card.id ? 1 : 0,
+                    scale: hoveredCard === card.id ? 1 : 0.92,
                   }}
-                  transition={{ duration: 0.3 }}
-                />
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                >
+                  <motion.button
+                    className=" bg-primary text-white px-6 py-3 rounded-full font-medium shadow-lg transform transition-all duration-200 pointer-events-auto"
+                    whileHover={{ scale: 1.06, boxShadow: '0 10px 25px rgba(127,32,196,0.25)' }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={(e) => { e.stopPropagation(); console.log(`View ${card.title}`); }}
+                  >
+                    <span className="flex items-center gap-2">
+                      View
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </span>
+                  </motion.button>
+                </motion.div>
 
                 {/* Animated Border */}
                 <motion.div 
@@ -318,11 +287,11 @@ const Projects = () => {
                 />
 
                 {/* Hover Overlay with Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl z-5"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl z-20"></div>
                 
                 {/* Shine Effect */}
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl z-15"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl z-40"
                   animate={{
                     x: hoveredCard === card.id ? ["0%", "100%"] : "0%",
                   }}
@@ -332,16 +301,17 @@ const Projects = () => {
                   }}
                 />
 
-                {/* Shadow Enhancement */}
-                <motion.div 
-                  className="absolute inset-0 rounded-2xl pointer-events-none"
-                  animate={{
-                    boxShadow: hoveredCard === card.id 
-                      ? "0 25px 50px rgba(0,0,0,0.15)" 
-                      : "0 4px 6px rgba(0,0,0,0.05)",
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
+                  {/* Shadow Enhancement */}
+                  <motion.div 
+                    className="absolute inset-0 rounded-2xl pointer-events-none z-0"
+                    animate={{
+                      boxShadow: hoveredCard === card.id 
+                        ? "0 25px 50px rgba(0,0,0,0.15)" 
+                        : "0 4px 6px rgba(0,0,0,0.05)",
+                    }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
               </motion.div>
             ))}
           </div>

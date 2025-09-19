@@ -1,8 +1,7 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { usePathname } from 'next/navigation';
 import '../styles/theme.css';
 
 const Navbar = () => {
@@ -20,30 +19,13 @@ const Navbar = () => {
   // Nav items: Home and anchor sections are on the main page; Projects is a separate page
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '/#about' },
     { name: 'Services', href: '/services' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Projects', href: '/#projects' },
+    
   ];
 
-  // Active link tracking: stores either a pathname (e.g. '/projects' or '/') or an anchor (e.g. '#about')
-  const [active, setActive] = useState('/');
-
-  const pathname = usePathname();
-
-  // Only update active on route change or hash — no scroll-based updates.
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    if (pathname && pathname !== '/') {
-      setActive(pathname);
-      return;
-    }
-
-    // On homepage: prefer current hash if present, otherwise Home
-    const h = window.location.hash;
-    setActive(h && h.length ? h : '/');
-  }, [pathname]);
+  
 
   return (
     <>
@@ -121,17 +103,7 @@ const Navbar = () => {
               >
                 <Link
                   href={item.href}
-                  onClick={() => {
-                    // Immediately set active to provide instant visual feedback.
-                    // For page links this will be the pathname (e.g. '/projects'),
-                    // for anchors it will be the hash (e.g. '#about').
-                    setActive(item.href);
-                  }}
-                  className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white ${
-                    (item.href === '/' && active === '/') || (item.href.startsWith('#') && active === item.href) || (item.href !== '/' && item.href === active)
-                      ? 'bg-primary text-white'
-                      : 'text-gray-800'
-                  }`}
+                  className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white text-gray-800`}
                 >
                   <motion.span
                     whileHover={{ scale: 1.05 }}
@@ -152,24 +124,26 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.button 
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-300 group bg-white"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 8px 20px rgba(0,0,0,0.1)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              Contact Us
-              <motion.span 
-                className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs group-hover:bg-primary-hover transition-colors"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.3 }}
+            <Link href="/#contact" className="group">
+              <motion.a
+                className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-300 bg-white"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.1)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                →
-              </motion.span>
-            </motion.button>
+                Contact Us
+                <motion.span 
+                  className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs group-hover:bg-primary-hover transition-colors"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  →
+                </motion.span>
+              </motion.a>
+            </Link>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -232,12 +206,7 @@ const Navbar = () => {
               >
                 {navItems.map((item, index) => {
                   const base = 'block w-full px-4 py-2 rounded-full text-base font-medium text-center transition-all duration-200';
-                  const isActive = (item.href === '/' && active === '/') || (item.href.startsWith('#') && active === item.href) || (item.href !== '/' && item.href === active);
-                  const classes = isActive
-                    ? `${base} bg-primary text-white`
-                    : item.name === 'Projects'
-                    ? `${base} text-gray-800`
-                    : `${base} text-gray-800 hover:bg-primary hover:text-white`;
+                  const classes = `${base} text-gray-800 hover:bg-primary hover:text-white`;
 
                   return (
                     <motion.div
@@ -249,8 +218,6 @@ const Navbar = () => {
                       <Link
                         href={item.href}
                         onClick={() => {
-                          // Set active immediately on mobile too, then close menu.
-                          setActive(item.href);
                           toggleMobileMenu();
                         }}
                         className={classes}
@@ -274,25 +241,23 @@ const Navbar = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.6 }}
               >
-                <motion.button
-                  className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-200 bg-white"
-                  onClick={toggleMobileMenu}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  Contact Us
-                </motion.button>
-                <motion.button
-                  className="ml-1 w-8 h-8 bg-primary rounded-md flex items-center justify-center text-xs text-white hover:bg-primary-hover transition-colors"
-                  onClick={toggleMobileMenu}
-                  aria-label="Contact arrow"
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  →
-                </motion.button>
+                <Link href="/#contact">
+                  <a
+                    onClick={() => toggleMobileMenu()}
+                    className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-200 bg-white inline-flex items-center justify-center"
+                  >
+                    Contact Us
+                  </a>
+                </Link>
+                <Link href="/#contact">
+                  <a
+                    onClick={() => toggleMobileMenu()}
+                    className="ml-1 w-8 h-8 bg-primary rounded-md flex items-center justify-center text-xs text-white hover:bg-primary-hover transition-colors"
+                    aria-label="Contact arrow"
+                  >
+                    →
+                  </a>
+                </Link>
               </motion.div>
             </motion.div>
           )}
