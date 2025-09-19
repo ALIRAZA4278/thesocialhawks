@@ -25,3 +25,18 @@ body {
   font-family: sans-serif;
   font-weight: 400;
 }
+
+/* Smooth scrolling for anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchors so content doesn't sit beneath the fixed navbar */
+:root {
+  --navbar-offset: 110px; /* adjust if navbar height changes */
+}
+
+/* Apply a top margin offset to any element that will be targeted by an anchor */
+[id] {
+  scroll-margin-top: var(--navbar-offset);
+}

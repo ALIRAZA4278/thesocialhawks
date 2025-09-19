@@ -1,7 +1,8 @@
-'use client';
+"use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import '../styles/theme.css';
 
 const Navbar = () => {
@@ -16,13 +17,33 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Nav items: Home and anchor sections are on the main page; Projects is a separate page
   const navItems = [
-    { name: 'Home', href: '/', active: true },
-    { name: 'About', href: '#about', active: false },
-    { name: 'Services', href: '#services', active: false },
-    { name: 'Projects', href: '#projects', active: false },
-    { name: 'Contact', href: '#contact', active: false },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
   ];
+
+  // Active link tracking: stores either a pathname (e.g. '/projects' or '/') or an anchor (e.g. '#about')
+  const [active, setActive] = useState('/');
+
+  const pathname = usePathname();
+
+  // Only update active on route change or hash — no scroll-based updates.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    if (pathname && pathname !== '/') {
+      setActive(pathname);
+      return;
+    }
+
+    // On homepage: prefer current hash if present, otherwise Home
+    const h = window.location.hash;
+    setActive(h && h.length ? h : '/');
+  }, [pathname]);
 
   return (
     <>
@@ -87,9 +108,15 @@ const Navbar = () => {
               >
                 <Link
                   href={item.href}
+                  onClick={() => {
+                    // Immediately set active to provide instant visual feedback.
+                    // For page links this will be the pathname (e.g. '/projects'),
+                    // for anchors it will be the hash (e.g. '#about').
+                    setActive(item.href);
+                  }}
                   className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white ${
-                    item.active 
-                      ? 'bg-primary text-white' 
+                    (item.href === '/' && active === '/') || (item.href.startsWith('#') && active === item.href) || (item.href !== '/' && item.href === active)
+                      ? 'bg-primary text-white'
                       : 'text-gray-800'
                   }`}
                 >
@@ -192,10 +219,11 @@ const Navbar = () => {
               >
                 {navItems.map((item, index) => {
                   const base = 'block w-full px-4 py-2 rounded-full text-base font-medium text-center transition-all duration-200';
-                  const classes = item.active
+                  const isActive = (item.href === '/' && active === '/') || (item.href.startsWith('#') && active === item.href) || (item.href !== '/' && item.href === active);
+                  const classes = isActive
                     ? `${base} bg-primary text-white`
                     : item.name === 'Projects'
-                    ? `${base}   text-gray-800`
+                    ? `${base} text-gray-800`
                     : `${base} text-gray-800 hover:bg-primary hover:text-white`;
 
                   return (
@@ -207,8 +235,12 @@ const Navbar = () => {
                     >
                       <Link
                         href={item.href}
+                        onClick={() => {
+                          // Set active immediately on mobile too, then close menu.
+                          setActive(item.href);
+                          toggleMobileMenu();
+                        }}
                         className={classes}
-                        onClick={toggleMobileMenu}
                       >
                         <motion.span
                           whileHover={{ scale: 1.05 }}
