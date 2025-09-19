@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Testimonials = () => {
   // Testimonials data
@@ -27,9 +28,17 @@ const Testimonials = () => {
     }
   ];
 
-  
-
   const [imageErrors, setImageErrors] = useState({});
+  const containerRef = useRef(null);
+
+  // Parallax scroll effects
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const firstRowY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const secondRowY = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   // Handle image load errors
   const handleImageError = (imageId) => {
@@ -41,19 +50,82 @@ const Testimonials = () => {
   // Multiple the testimonials array for seamless infinite scroll that extends beyond viewport
   const doubledTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
+  // Animation variants for staggered carousel rows
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const rowVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: -100,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  // Card hover animations
+  const cardVariants = {
+    hover: {
+      scale: 1.05,
+      rotateY: 5,
+      rotateX: 5,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-12 sm:py-16 bg-white">
-      <div className="w-[95%] sm:w-[90%] mx-auto px-3 sm:px-4 lg:px-8">
+    <motion.section 
+      ref={containerRef}
+      className="py-12 sm:py-16 bg-white"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <div className="mx-auto px-3 sm:px-4 lg:px-8">
           {/* Header */}
          
 
           {/* Infinite Scrolling Testimonials */}
-          <div className="relative mb-8 sm:mb-12 overflow-hidden -mx-4">
+          <motion.div 
+            className="relative"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div 
+              className="relative mb-8 sm:mb-12 overflow-hidden -mx-4"
+              variants={rowVariants}
+              style={{ y: firstRowY }}
+            >
             <div className="flex animate-scroll-right space-x-3 sm:space-x-4" style={{width: 'max-content'}}>
               {doubledTestimonials.map((testimonial, index) => (
-                <div
+                <motion.div
                   key={`${testimonial.id}-${index}`}
-                  className="mb-b flex-shrink-0 w-20 sm:w-24 bg-gray-50 rounded-xl sm:rounded-2xl p-2 sm:p-3 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="mb-b flex-shrink-0 w-20 sm:w-24 bg-gray-50 rounded-xl sm:rounded-2xl p-2 sm:p-3 shadow-lg hover:shadow-xl transition-shadow duration-300 logo-card"
+                  variants={cardVariants}
+                  whileHover="hover"
+                  style={{ perspective: '1000px' }}
                 > 
 
                   {/* Author */}
@@ -77,18 +149,25 @@ const Testimonials = () => {
                       )}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Second Carousel with gap */}
-          <div className="relative overflow-hidden mt-8 sm:mt-12 -mx-4">
+          <motion.div 
+            className="relative overflow-hidden mt-8 sm:mt-12 -mx-4"
+            variants={rowVariants}
+            style={{ y: secondRowY }}
+          >
             <div className="flex animate-scroll-right-slow space-x-3 sm:space-x-4" style={{width: 'max-content'}}>
               {doubledTestimonials.map((testimonial, index) => (
-                <div
+                <motion.div
                   key={`${testimonial.id}-${index}`}
-                  className="flex-shrink-0 w-20 sm:w-24 bg-gray-50 rounded-xl sm:rounded-2xl p-2 sm:p-3 shadow-lg hover:shadow-xl transition-shadow duration-500"
+                  className="flex-shrink-0 w-20 sm:w-24 bg-gray-50 rounded-xl sm:rounded-2xl p-2 sm:p-3 shadow-lg hover:shadow-xl transition-shadow duration-500 logo-card"
+                  variants={cardVariants}
+                  whileHover="hover"
+                  style={{ perspective: '1000px' }}
                 > 
 
                   {/* Author */}
@@ -112,10 +191,11 @@ const Testimonials = () => {
                       )}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
+        </motion.div>
 
         
       </div>
@@ -142,6 +222,31 @@ const Testimonials = () => {
         .animate-scroll-right:hover,
         .animate-scroll-right-slow:hover {
           animation-play-state: paused;
+        }
+
+        /* Enhanced hover effects for smooth transitions */
+        .logo-card {
+          transform-style: preserve-3d;
+          transition: all 0.3s ease;
+        }
+
+        .logo-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Subtle glow effect on scroll */
+        @keyframes subtle-glow {
+          0%, 100% { filter: brightness(1); }
+          50% { filter: brightness(1.05); }
+        }
+
+        .animate-scroll-right {
+          animation: scroll-right 6s linear infinite, subtle-glow 4s ease-in-out infinite;
+        }
+
+        .animate-scroll-right-slow {
+          animation: scroll-right 12s linear infinite, subtle-glow 6s ease-in-out infinite;
         }
 
         .banner-hover:hover {
@@ -195,7 +300,7 @@ const Testimonials = () => {
           }
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 };
 

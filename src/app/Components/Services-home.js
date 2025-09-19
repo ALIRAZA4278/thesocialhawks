@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 
 // Custom hook for animated counting (reusing from Hero component)
 const useAnimatedCounter = (end, duration = 2000, start = 0) => {
@@ -59,6 +59,26 @@ const useAnimatedCounter = (end, duration = 2000, start = 0) => {
 };
 
 const ServicesHome = () => {
+  // Refs for scroll animations
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const servicesRef = useRef(null);
+  const bigTextRef = useRef(null);
+  
+  // Check if elements are in view
+  const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
+  const isServicesInView = useInView(servicesRef, { once: true, margin: "-50px" });
+  const isBigTextInView = useInView(bigTextRef, { once: true, margin: "-100px" });
+  
+  // Scroll progress for parallax effects
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  
+  const yParallax = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const rotateParallax = useTransform(scrollYProgress, [0, 1], [0, 360]);
+
   // Animated counter for projects
   const [projectsCount, projectsRef] = useAnimatedCounter(251, 2000);
   
@@ -144,10 +164,26 @@ const ServicesHome = () => {
   };
 
   return (
-    <div className="bg-white" ref={componentRef}>
-      <div className={`w-[95%] sm:w-[90%] mx-auto px-3 sm:px-4 lg:px-8 py-8 sm:py-12 lg:py-16 transition-colors duration-500 rounded-xl sm:rounded-2xl ${isInView ? 'bg-[rgb(12,23,20)]' : 'bg-white'}`}>
+    <motion.div 
+      id="services"
+      className="bg-white" 
+      ref={sectionRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <motion.div 
+        className={`mx-auto px-3 sm:px-4 lg:px-8 py-8 sm:py-12 lg:py-16 transition-colors duration-500 rounded-xl sm:rounded-2xl ${isInView ? 'bg-[rgb(12,23,20)]' : 'bg-white'}`}
+        ref={componentRef}
+      >
         {/* Hero Section */}
-        <div className="mb-8 sm:mb-12 lg:mb-16">
+        <motion.div 
+          ref={headingRef}
+          className="mb-8 sm:mb-12 lg:mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isHeadingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4 lg:gap-8">
             {/* Left side - Main heading */}
             <div className="w-full lg:max-w-2xl">
@@ -169,10 +205,16 @@ const ServicesHome = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="mb-8 sm:mb-12 lg:mb-16">
+        <motion.div 
+          ref={servicesRef}
+          className="mb-8 sm:mb-12 lg:mb-16"
+          initial={{ opacity: 0 }}
+          animate={isServicesInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {services.map((service, index) => (
               <motion.div 
@@ -181,13 +223,30 @@ const ServicesHome = () => {
                 onClick={() => handleCardToggle(service.id)}
                 onKeyDown={(e) => handleCardKeyDown(e, service.id)}
                 className={`service-card group relative bg-gray-900 hover:bg-primary rounded-xl sm:rounded-2xl overflow-hidden h-80 sm:h-96 cursor-pointer border border-gray-800 transition-colors duration-300 ${activeCard === service.id ? 'active' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                initial={{ opacity: 0, y: 60, rotateX: 45 }}
+                animate={isServicesInView ? { 
+                  opacity: 1, 
+                  y: 0, 
+                  rotateX: 0
+                } : { 
+                  opacity: 0, 
+                  y: 60, 
+                  rotateX: 45 
+                }}
+                transition={{ 
+                  delay: index * 0.15, 
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
                 whileHover={{ 
-                  scale: 1.02,
+                  scale: 1.05,
+                  rotateY: 5,
+                  rotateX: 5,
                   transition: { duration: 0.3 }
                 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {/* Content Container */}
                 <div className="relative z-10 p-4 sm:p-6 h-full flex flex-col">
@@ -236,10 +295,16 @@ const ServicesHome = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Large Text Section with Dark Background */}
-        <div className="relative overflow-hidden">
+        <motion.div 
+          ref={bigTextRef}
+          className="relative overflow-hidden"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isBigTextInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8 lg:gap-0">
             {/* Left Side - Large Text with Advanced Blur Effect */}
             <div className="flex-1">
@@ -328,10 +393,23 @@ const ServicesHome = () => {
             {/* Right Side - Badge and Additional Content */}
             <div className="flex flex-col items-center lg:items-end space-y-4 lg:space-y-6 lg:ml-12">
               {/* Circular Badge */}
-              <div className="relative">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-primary flex items-center justify-center relative overflow-hidden group cursor-pointer hover:scale-110 transition-transform duration-300">
+              <motion.div 
+                className="relative"
+                style={{ y: yParallax }}
+                initial={{ scale: 0, rotate: -180 }}
+                animate={isBigTextInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
+                transition={{ duration: 1, type: "spring", stiffness: 100 }}
+              >
+                <motion.div 
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-primary flex items-center justify-center relative overflow-hidden group cursor-pointer hover:scale-110 transition-transform duration-300"
+                  whileHover={{ scale: 1.15, rotate: 10 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   {/* Rotating Border Text */}
-                  <div className="absolute inset-0 animate-spin-slow">
+                  <motion.div 
+                    className="absolute inset-0"
+                    style={{ rotate: rotateParallax }}
+                  >
                     <svg className="w-full h-full" viewBox="0 0 160 160">
                       <defs>
                         <path
@@ -345,24 +423,31 @@ const ServicesHome = () => {
                         </textPath>
                       </text>
                     </svg>
-                  </div>
+                  </motion.div>
                   
                   {/* Center Content */}
                   <div className="relative z-10 text-center">
                     <div className="text-white text-2xl sm:text-3xl font-bold">d</div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Animated Counter */}
-              <div className="text-center lg:text-right" ref={projectsRef}>
+              <motion.div 
+                className="text-center lg:text-right" 
+                ref={projectsRef}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isBigTextInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+              >
                 <div className="text-primary text-3xl sm:text-4xl lg:text-5xl font-light mb-2">
                   {projectsCount}+
                 </div>
                 <p className="text-primary text-sm sm:text-base font-medium">
                   Projects Completed
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
           
@@ -373,8 +458,8 @@ const ServicesHome = () => {
               paved a vital role in achieving their business goals and surpassing expectations.
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Custom CSS for animations */}
       <style jsx>{`
@@ -434,7 +519,7 @@ const ServicesHome = () => {
           color: #fff !important;
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 };
 

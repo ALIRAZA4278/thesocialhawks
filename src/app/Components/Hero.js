@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 
 // Custom hook for animated counting
 const useAnimatedCounter = (end, duration = 2000, start = 0) => {
@@ -59,6 +60,11 @@ const useAnimatedCounter = (end, duration = 2000, start = 0) => {
 };
 
 const Hero = () => {
+  // Scroll animations
+  const { scrollYProgress } = useScroll();
+  const yRange = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const parallaxY = useSpring(yRange, { stiffness: 400, damping: 40 });
+
   // Words that will rotate in the heading
   const changingWords = ['Creativity', 'Innovation', 'Results', 'Growth', 'Success'];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -123,45 +129,89 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative  bg-white ">
+    <motion.section 
+      className="relative bg-white"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       {/* Content */}
-      <div className="w-[95%] sm:w-[90%] mx-auto px-3 sm:px-4 lg:px-8">
+      <div className=" mx-auto px-3 sm:px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center py-6 sm:py-8 lg:py-10">
             {/* Left Content */}
-            <div className="text-left">
+            <motion.div 
+              className="text-left"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
              
 
               {/* Main Heading */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight mb-6 sm:mb-8 lg:mb-15 font-extralight">
+              <motion.h1 
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight mb-6 sm:mb-8 lg:mb-15 font-extralight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
                 The Digital Marketing Agency{' '}
                 <br />
                 Obsessed With{' '}
                 <span className="relative inline-block">
-                  <span 
-                    key={currentWordIndex}
-                    className="animate-fade-in text-gray-900"
-                  >
-                    {changingWords[currentWordIndex]}
-                  </span>
+                  <AnimatePresence mode="wait">
+                    <motion.span 
+                      key={currentWordIndex}
+                      className="text-gray-900"
+                      initial={{ opacity: 0, y: 20, rotateX: -90 }}
+                      animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                      exit={{ opacity: 0, y: -20, rotateX: 90 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {changingWords[currentWordIndex]}
+                    </motion.span>
+                  </AnimatePresence>
                   <span className="text-primary">.</span>
                 </span>
-              </h1>
+              </motion.h1>
 
               {/* Subtitle */}
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 lg:mb-15 max-w-lg">
+              <motion.p 
+                className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 lg:mb-15 max-w-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
                 We turn marketing budgets into predictable revenue streams 
                 for businesses tired of guesswork and empty promises.
-              </p>
+              </motion.p>
 
               {/* Team Avatars and Contact Button */}
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4">
+              <motion.div 
+                className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
                 {/* Circular Team Images */}
                 <div className="flex -space-x-3">
                   {teamMembers.map((member, index) => (
-                    <div
+                    <motion.div
                       key={member.id}
                       className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-3 border-white overflow-hidden shadow-lg hover:scale-110 transition-transform duration-300"
                       style={{ zIndex: teamMembers.length - index }}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        duration: 0.5, 
+                        delay: 1 + (index * 0.1),
+                        type: "spring",
+                        stiffness: 200
+                      }}
+                      whileHover={{ 
+                        scale: 1.2, 
+                        rotate: 10,
+                        transition: { duration: 0.2 }
+                      }}
                     >
                       {!imageErrors[`team-${member.id}`] ? (
                         <Image
@@ -179,77 +229,133 @@ const Hero = () => {
                           {member.name.charAt(0)}
                         </div>
                       )}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
 
                 {/* Contact Button */}
-                <button className="flex items-center justify-center gap-2 px-6 sm:px-8 lg:px-10 py-2 sm:py-3 border border-gray-300 rounded-full text-sm sm:text-base font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-300 group bg-white shadow-md w-full sm:w-auto">
+                <motion.button 
+                  className="flex items-center justify-center gap-2 px-6 sm:px-8 lg:px-10 py-2 sm:py-3 border border-gray-300 rounded-full text-sm sm:text-base font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-300 group bg-white shadow-md w-full sm:w-auto"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
                   Contact us
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
 
               {/* Trust Text */}
-              <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8 lg:mb-12">
+              <motion.p 
+                className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8 lg:mb-12"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
                 Trusted by 80+ Brands Globally
-              </p>
+              </motion.p>
 
               {/* Stats */}
-              <div className="flex flex-row sm:flex-row justify-around gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-10 lg:mt-12 bg-[rgb(245_245_245)] p-4 sm:p-6 rounded-lg">
-                <div ref={revenueRef} className="text-center sm:text-left">
+              <motion.div 
+                className="flex flex-row sm:flex-row justify-around gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-10 lg:mt-12 bg-[rgb(245_245_245)] p-4 sm:p-6 rounded-lg"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.4 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <motion.div 
+                  ref={revenueRef} 
+                  className="text-center sm:text-left"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1">
                     {revenueCount.toLocaleString()}M+
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600">Rev Generated</p>
-                </div>
-                <div ref={adsRef} className="text-center sm:text-left">
+                </motion.div>
+                <motion.div 
+                  ref={adsRef} 
+                  className="text-center sm:text-left"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1">
                     {adsCount.toLocaleString()}+
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600">Ads Created</p>
-                </div>
-                <div ref={brandsRef} className="text-center sm:text-left">
+                </motion.div>
+                <motion.div 
+                  ref={brandsRef} 
+                  className="text-center sm:text-left"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1">
                     {brandsCount}+
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600">Brands</p>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
             {/* Right Content - Image */}
-            <div className="relative order-first lg:order-last">
-              <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[600px] xl:h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
+            <motion.div 
+              className="relative order-first lg:order-last"
+              style={{ y: parallaxY }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <motion.div 
+                className="relative w-full h-[300px] sm:h-[400px] lg:h-[600px] xl:h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl"
+                whileHover={{ 
+                  scale: 1.02,
+                  rotateY: 5,
+                  rotateX: 5,
+                  boxShadow: "0 25px 50px rgba(0,0,0,0.2)"
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              >
                 {/* Background Images with Animation */}
                 <div className="absolute inset-0 z-0">
-                  {backgroundImages.map((bgImage, index) => (
-                    <div
-                      key={index}
-                      className={`absolute inset-0 transition-opacity duration-1000 ${
-                        index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                      }`}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentImageIndex}
+                      className="absolute inset-0"
+                      initial={{ opacity: 0, scale: 1.1 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 1 }}
                     >
-                      {!imageErrors[`bg-${index}`] ? (
+                      {!imageErrors[`bg-${currentImageIndex}`] ? (
                         <Image
-                          src={bgImage.src}
-                          alt={`Background ${index + 1}`}
+                          src={backgroundImages[currentImageIndex].src}
+                          alt={`Background ${currentImageIndex + 1}`}
                           fill
                           className="object-cover"
-                          priority={index === 0}
-                          onError={() => handleImageError(`bg-${index}`)}
+                          priority={currentImageIndex === 0}
+                          onError={() => handleImageError(`bg-${currentImageIndex}`)}
                         />
                       ) : (
                         <div 
                           className="w-full h-full"
-                          style={{ background: bgImage.fallback }}
+                          style={{ background: backgroundImages[currentImageIndex].fallback }}
                         ></div>
                       )}
-                    </div>
-                  ))}
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
 
                 {/* Phone mockup overlay */}
-                <div className="relative z-10 w-full h-full flex items-center justify-center">
+                <motion.div 
+                  className="relative z-10 w-full h-full flex items-center justify-center"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                >
                   {!imageErrors['hero-phone'] ? (
                     <Image
                       src="/images/hero-phone.jpg"
@@ -259,18 +365,27 @@ const Hero = () => {
                       onError={() => handleImageError('hero-phone')}
                     />
                   ) : (
-                    <div className="text-white text-center">
-                      <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
+                    <motion.div 
+                      className="text-white text-center"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.8, delay: 0.7 }}
+                    >
+                      <motion.div 
+                        className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.8 }}
+                      >
                         <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
                         </svg>
-                      </div>
+                      </motion.div>
                       <p className="text-lg font-semibold">Mobile App Design</p>
-                    </div>
+                    </motion.div>
                   )}
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       
@@ -291,7 +406,7 @@ const Hero = () => {
           animation: fade-in 0.5s ease-out forwards;
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 };
 

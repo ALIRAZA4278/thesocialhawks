@@ -10,6 +10,8 @@ const Contact = () => {
     countryCode: '+92',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,25 +21,57 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          countryCode: '+92',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+        console.error('Error:', data.error);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('Network error:', error);
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus(''), 5000);
+    }
   };
 
   return (
     <section className="bg-gray-900 text-white">
       {/* Contact Form Section */}
-      <div className="w-[95%] mx-auto">
-        <div className="relative bg-gray-900" style={{
-          backgroundImage: 'url("/images/contact-bg.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundBlendMode: 'multiply'
-        }}>
-          <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
-          
-          <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div className="relative bg-gray-900" style={{
+        backgroundImage: 'url("/images/contact-bg.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'multiply'
+      }}>
+        <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="max-w-3xl mx-auto text-center">
             {/* Header */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
@@ -109,12 +143,12 @@ const Contact = () => {
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                   Phone Number*
                 </label>
-                <div className="flex">
+                <div className="flex w-full">
                   <select
                     name="countryCode"
                     value={formData.countryCode}
                     onChange={handleInputChange}
-                    className="px-3 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900 bg-gray-50"
+                    className="w-20 sm:w-24 px-2 sm:px-3 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900 bg-gray-50 text-sm flex-shrink-0"
                   >
                     <option value="+92">PK</option>
                     <option value="+1">US</option>
@@ -129,8 +163,8 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="flex-1 px-4 py-3 border border-l-0 border-gray-300 rounded-r-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900 placeholder-gray-500"
-                    placeholder="+92"
+                    className="flex-1 min-w-0 px-4 py-3 border border-l-0 border-gray-300 rounded-r-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900 placeholder-gray-500"
+                    placeholder="Phone number"
                   />
                 </div>
               </div>
@@ -154,19 +188,49 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 transform hover:scale-105"
+                disabled={isSubmitting}
+                className={`w-full font-semibold py-4 px-8 rounded-lg transition-all duration-300 ${
+                  isSubmitting
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-primary hover:bg-primary-dark transform hover:scale-105'
+                } text-white`}
               >
-                Send Message
+                {isSubmitting ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Sending...
+                  </div>
+                ) : (
+                  'Send Message'
+                )}
               </button>
+
+              {/* Status Messages */}
+              {submitStatus && (
+                <div className="mt-6">
+                  {submitStatus === 'success' ? (
+                    <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
+                      <p className="text-primary font-medium">
+                        ✅ Thank you! Your message has been sent successfully. We&apos;ll get back to you soon!
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+                      <p className="text-red-600 font-medium">
+                        ❌ Sorry, there was an error sending your message. Please try again or contact us directly.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
             </form>
           </div>
         </div>
       </div>
-      </div>
 
       {/* Footer Section */}
       <footer className="bg-gray-900 text-white py-12 sm:py-16 w-full">
-        <div className="w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Company Info */}
             <div className="space-y-6 lg:col-span-2">
@@ -249,7 +313,7 @@ const Contact = () => {
               <div className="w-2 h-2 bg-primary rounded-full mx-auto mb-4"></div>
               <h3 className="text-primary font-semibold text-lg">Follow us on:</h3>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
                 {/* Instagram */}
                 <a href="#" className="flex flex-col items-center justify-center bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors group">
                   <div className="w-8 h-8 mb-2">

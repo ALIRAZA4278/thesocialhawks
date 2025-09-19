@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Testimonials = () => {
   // Testimonials data
@@ -67,6 +68,16 @@ const Testimonials = () => {
   ];
 
   const [imageErrors, setImageErrors] = useState({});
+  const containerRef = useRef(null);
+
+  // Parallax scroll effects
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const testimonialsY = useTransform(scrollYProgress, [0, 1], [0, -30]);
+  const bannerY = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
   // Handle image load errors
   const handleImageError = (imageId) => {
@@ -90,30 +101,100 @@ const Testimonials = () => {
   // Double the testimonials array for seamless infinite scroll
   const doubledTestimonials = [...testimonials, ...testimonials];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const sectionVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const cardVariants = {
+    hover: {
+      scale: 1.03,
+      rotateY: 3,
+      rotateX: 3,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-12 sm:py-16 bg-white">
-      <div className="w-[95%] sm:w-[90%] mx-auto px-3 sm:px-4 lg:px-8">
+    <motion.section 
+      ref={containerRef}
+      className="py-12 sm:py-16 bg-white"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <div className=" mx-auto px-3 sm:px-4 lg:px-8">
           {/* Header */}
-          <div className="text-left mb-8 sm:mb-12">
-            <div className="flex items-center gap-2 mb-4 sm:mb-6">
+          <motion.div 
+            className="text-left mb-8 sm:mb-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div 
+              className="flex items-center gap-2 mb-4 sm:mb-6"
+              variants={sectionVariants}
+            >
               <div className="w-2 h-2 bg-primary rounded-full"></div>
               <span className="text-gray-600 text-xs sm:text-sm uppercase tracking-wider">Customer Stories</span>
               <div className="w-2 h-2 bg-primary rounded-full"></div>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight max-w-3xl">
+            </motion.div>
+            <motion.h2 
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight max-w-3xl"
+              variants={sectionVariants}
+            >
               We Have More Success Stories{' '}
               <br className="hidden sm:block" />
               Than Other Agencies Have Clients
-            </h2>
-          </div>
+            </motion.h2>
+          </motion.div>
 
           {/* Infinite Scrolling Testimonials */}
-          <div className="relative mb-12 sm:mb-16 overflow-hidden">
+          <motion.div 
+            className="relative mb-12 sm:mb-16 overflow-hidden"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            style={{ y: testimonialsY }}
+          >
             <div className="flex animate-scroll-right space-x-4 sm:space-x-6">
               {doubledTestimonials.map((testimonial, index) => (
-                <div
+                <motion.div
                   key={`${testimonial.id}-${index}`}
-                  className="flex-shrink-0 w-72 sm:w-80 bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="flex-shrink-0 w-72 sm:w-80 bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 testimonial-card"
+                  variants={cardVariants}
+                  whileHover="hover"
+                  style={{ perspective: '1000px' }}
                 >
                   {/* Star Rating */}
                   <div className="flex items-center gap-1 mb-3 sm:mb-4">
@@ -155,13 +236,21 @@ const Testimonials = () => {
                       <p className="text-gray-500 text-xs">{testimonial.position}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Bottom Green Banner */}
-          <div className="banner-hover bg-primary rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 sm:gap-0 cursor-pointer transition-all duration-300 group">
+          <motion.div 
+            className="banner-hover bg-primary rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 sm:gap-0 cursor-pointer transition-all duration-300 group"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            style={{ y: bannerY }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+          >
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
               {/* Client Avatars */}
               <div className="avatar-container flex -space-x-2 sm:-space-x-3 transition-all duration-300 overflow-x-auto py-1 no-scrollbar">
@@ -208,7 +297,7 @@ const Testimonials = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
-          </div>
+          </motion.div>
       </div>
 
       {/* Custom CSS for infinite scroll animation */}
@@ -223,11 +312,32 @@ const Testimonials = () => {
         }
 
         .animate-scroll-right {
-          animation: scroll-right 10s linear infinite;
+          animation: scroll-right 7s linear infinite;
         }
 
         .animate-scroll-right:hover {
           animation-play-state: paused;
+        }
+
+        /* Enhanced hover effects for testimonial cards */
+        .testimonial-card {
+          transform-style: preserve-3d;
+          transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Subtle glow effect on scroll */
+        @keyframes subtle-glow {
+          0%, 100% { filter: brightness(1); }
+          50% { filter: brightness(1.03); }
+        }
+
+        .animate-scroll-right {
+          animation: scroll-right 10s linear infinite, subtle-glow 8s ease-in-out infinite;
         }
 
         .banner-hover:hover {
@@ -278,7 +388,7 @@ const Testimonials = () => {
           }
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 };
 

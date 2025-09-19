@@ -1,10 +1,16 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import '../styles/theme.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  
+  // Transform scroll progress to background opacity
+  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.1], [0.8, 0.95]);
+  const backdropBlur = useTransform(scrollYProgress, [0, 0.1], [8, 16]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -12,10 +18,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '/', active: true },
-    { name: 'About', href: '#', active: false },
-    { name: 'Services', href: '#', active: false },
-    { name: 'Projects', href: '#', active: false },
-    { name: 'Career', href: '#', active: false },
+    { name: 'About', href: '#about', active: false },
+    { name: 'Services', href: '#services', active: false },
+    { name: 'Projects', href: '#projects', active: false },
+    { name: 'Contact', href: '#contact', active: false },
   ];
 
   return (
@@ -32,107 +38,222 @@ const Navbar = () => {
         }
       `}</style>
 
-      <div className="fixed top-4 left-4 right-4 z-50">
-        <nav className={`relative bg-gray-100 rounded-md shadow-sm px-8 mx-auto w-full transition-all duration-300 ${
-          isMobileMenuOpen ? 'pb-4' : ''
-        }`}>
+      <motion.div 
+        className="fixed top-4 left-4 right-4 z-50"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+      >
+        <motion.nav 
+          className={`relative bg-gray-100 rounded-md shadow-sm min-[1000px]:px-8 min-[800px]:px-4 px-2 mx-auto w-full transition-all duration-300 ${
+            isMobileMenuOpen ? 'pb-4' : ''
+          }`}
+          whileHover={{ scale: 1.001 }}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+        >
           {/* Desktop Navbar */}
           <div className="flex items-center justify-between h-[60px]">
           {/* Logo */}
-          <div className="navbar-logo">
+          <motion.div 
+            className="navbar-logo"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <Link href="/" className="text-4xl font-bold text-gray-800 tracking-tight hover:text-primary transition-colors">
-              Socialhawks
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                Socialhawks
+              </motion.span>
             </Link>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation Items */}
-          <div className="hidden min-[1000px]:flex items-center gap-6">
-            {navItems.map((item) => (
-              <Link
+          <motion.div 
+            className="hidden min-[1000px]:flex items-center gap-6"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {navItems.map((item, index) => (
+              <motion.div
                 key={item.name}
-                href={item.href}
-                className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white ${
-                  item.active 
-                    ? 'bg-primary text-white' 
-                    : 'text-gray-800'
-                }`}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
               >
-                {item.name}
-              </Link>
+                <Link
+                  href={item.href}
+                  className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white ${
+                    item.active 
+                      ? 'bg-primary text-white' 
+                      : 'text-gray-800'
+                  }`}
+                >
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    {item.name}
+                  </motion.span>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Contact Button */}
-          <div className="hidden min-[1000px]:flex">
-            <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-300 group bg-white">
+          <motion.div 
+            className="hidden min-[1000px]:flex"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <motion.button 
+              className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-300 group bg-white"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 8px 20px rgba(0,0,0,0.1)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               Contact Us
-              <span className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs group-hover:bg-primary-hover transition-colors">
+              <motion.span 
+                className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs group-hover:bg-primary-hover transition-colors"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.3 }}
+              >
                 →
-              </span>
-            </button>
-          </div>
+              </motion.span>
+            </motion.button>
+          </motion.div>
 
           {/* Mobile Menu Button */}
-          <div className="min-[1000px]:hidden">
-            <button 
+          <motion.div 
+            className="min-[1000px]:hidden"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <motion.button 
               onClick={toggleMobileMenu}
               className="text-2xl text-gray-800 hover:text-primary transition-colors"
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9, rotate: -5 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              {isMobileMenuOpen ? '✕' : '☰'}
-            </button>
-          </div>
+              <AnimatePresence mode="wait">
+                {isMobileMenuOpen ? (
+                  <motion.span
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    ✕
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    ☰
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </motion.button>
+          </motion.div>
         </div>
 
-        {/* Mobile menu shown inside the navbar (matches navbar width) with smooth transition */}
-        <div
-          className={`min-[1000px]:hidden overflow-hidden transform-gpu transition-all duration-300 origin-top px-4 ${
-            isMobileMenuOpen
-              ? 'max-h-96 opacity-100 scale-100 pointer-events-auto'
-              : 'max-h-0 opacity-0 scale-95 pointer-events-none'
-          }`}
-          aria-hidden={!isMobileMenuOpen}
-        >
-          <div className="flex flex-col gap-3 mb-4 mt-5">
-            {navItems.map((item) => {
-              const base = 'block w-full px-4 py-2 rounded-full text-base font-medium text-center transition-all duration-200';
-              const classes = item.active
-                ? `${base} bg-primary text-white`
-                : item.name === 'Projects'
-                ? `${base}   text-gray-800`
-                : `${base} text-gray-800 hover:bg-primary hover:text-white`;
+        {/* Mobile menu with enhanced animations */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="min-[1000px]:hidden overflow-hidden px-4"
+              initial={{ height: 0, opacity: 0, scale: 0.95 }}
+              animate={{ height: "auto", opacity: 1, scale: 1 }}
+              exit={{ height: 0, opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <motion.div 
+                className="flex flex-col gap-3 mb-4 mt-5"
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                {navItems.map((item, index) => {
+                  const base = 'block w-full px-4 py-2 rounded-full text-base font-medium text-center transition-all duration-200';
+                  const classes = item.active
+                    ? `${base} bg-primary text-white`
+                    : item.name === 'Projects'
+                    ? `${base}   text-gray-800`
+                    : `${base} text-gray-800 hover:bg-primary hover:text-white`;
 
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={classes}
+                  return (
+                    <motion.div
+                      key={item.name}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                      <Link
+                        href={item.href}
+                        className={classes}
+                        onClick={toggleMobileMenu}
+                      >
+                        <motion.span
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                          {item.name}
+                        </motion.span>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+
+              <motion.div 
+                className="flex justify-center gap-3"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
+              >
+                <motion.button
+                  className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-200 bg-white"
                   onClick={toggleMobileMenu}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  {item.name}
-                </Link>
-              );
-            })}
-          </div>
-
-          <div className="flex justify-center gap-3">
-            <button
-              className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-200 bg-white"
-              onClick={toggleMobileMenu}
-            >
-              Contact Us
-            </button>
-            <button
-              className="ml-1 w-8 h-8 bg-primary rounded-md flex items-center justify-center text-xs text-white hover:bg-primary-hover transition-colors"
-              onClick={toggleMobileMenu}
-              aria-label="Contact arrow"
-            >
-              →
-            </button>
-          </div>
-        </div>
-        </nav>
-      </div>
+                  Contact Us
+                </motion.button>
+                <motion.button
+                  className="ml-1 w-8 h-8 bg-primary rounded-md flex items-center justify-center text-xs text-white hover:bg-primary-hover transition-colors"
+                  onClick={toggleMobileMenu}
+                  aria-label="Contact arrow"
+                  whileHover={{ scale: 1.1, rotate: 360 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  →
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        </motion.nav>
+      </motion.div>
     </>
   );
 };

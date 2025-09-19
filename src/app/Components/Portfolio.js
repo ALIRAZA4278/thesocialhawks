@@ -61,8 +61,8 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 xl:py-24 2xl:py-28 bg-white">
-      <div className="w-[95%] sm:w-[90%] mx-auto px-3 sm:px-4 lg:px-8 xl:px-12 2xl:px-16">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 xl:py-24 2xl:py-28 bg-white">
+      <div className=" mx-auto px-3 sm:px-4 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20 2xl:mb-24">
           <div className="flex  items-center justify-center gap-2 mb-4 sm:mb-6 xl:mb-8">
