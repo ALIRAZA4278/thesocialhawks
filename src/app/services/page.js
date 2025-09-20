@@ -167,7 +167,7 @@ const ServicesPage = () => {
             >
               {/* Left side - Main heading */}
               <div className="text-left ">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight text-gray-900">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight text-gray-900">
                   Creative Solutions{' '}
                   <span className="lg:block">That Drive Real Growth</span>
                 </h1>
@@ -196,45 +196,45 @@ const ServicesPage = () => {
           <div className="px-4 mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
               {services.map((service, index) => (
-                <motion.div 
-                  key={service.id}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200"
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={isServicesInView ? { 
-                    opacity: 1, 
-                    y: 0
-                  } : { 
-                    opacity: 0, 
-                    y: 60 
-                  }}
-                  transition={{ 
-                    delay: index * 0.15, 
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 15
-                  }}
-                  whileHover={{ 
-                    y: -2,
-                    transition: { duration: 0.3 }
-                  }}
-                >
+                <Link href={`/services/${service.slug}`} key={service.id} className="block">
+                  <motion.div 
+                    className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-96"
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={isServicesInView ? { 
+                      opacity: 1, 
+                      y: 0
+                    } : { 
+                      opacity: 0, 
+                      y: 60 
+                    }}
+                    transition={{ 
+                      delay: index * 0.15, 
+                      duration: 0.8,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15
+                    }}
+                    whileHover={{ 
+                      y: -2,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
                   {/* Content Layout - Title Left, Image Right */}
                   <div className="flex flex-col lg:flex-row h-full">
                     {/* Left Section - Title and Content */}
-                    <div className="flex-1 p-6 lg:p-8 xl:p-10 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-primary transition-colors duration-300">
+                    <div className="flex-1 p-6 lg:p-8 xl:p-10 flex flex-col justify-between min-h-0">
+                      <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-primary transition-colors duration-300 flex-shrink-0">
                           {service.title}
                         </h3>
                         
-                        <p className="text-gray-600 leading-relaxed text-sm lg:text-base mb-6 lg:mb-8">
+                        <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
                           {service.description}
                         </p>
                       </div>
 
                       {/* Know More Link */}
-                      <div className="flex items-center text-primary group-hover:text-primary-hover transition-colors duration-300 cursor-pointer">
+                      <div className="flex items-center text-primary group-hover:text-primary-hover transition-colors duration-300 cursor-pointer mt-4 flex-shrink-0">
                         <span className="text-sm font-medium">→ Know More</span>
                       </div>
                     </div>
@@ -258,12 +258,64 @@ const ServicesPage = () => {
                     </div>
                   </div>
                 </motion.div>
+                </Link>
               ))}
             </div>
           </div>
         </motion.div>
       </motion.div>
       <Contact />
+      
+      {/* Custom scrollbar styles */}
+      <style jsx global>{`
+        .scrollbar-thin {
+          scrollbar-width: thin;
+          scrollbar-color: #d1d5db #f3f4f6;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar {
+          width: 6px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-track {
+          background: #f3f4f6;
+          border-radius: 3px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+          background: #d1d5db;
+          border-radius: 3px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+          background: #9ca3af;
+        }
+        
+        .scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
+          background: #d1d5db;
+        }
+        
+        .scrollbar-track-gray-100::-webkit-scrollbar-track {
+          background: #f3f4f6;
+        }
+        
+        /* Smooth scrolling */
+        .overflow-y-auto {
+          scroll-behavior: smooth;
+        }
+        
+        /* Hide scrollbar on mobile for cleaner look */
+        @media (max-width: 768px) {
+          .scrollbar-thin {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+          
+          .scrollbar-thin::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      `}</style>
     </div>
   )
 }

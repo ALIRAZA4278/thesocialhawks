@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
 
 const Projects = () => {
   // Refs for scroll animations
@@ -128,7 +129,7 @@ const Projects = () => {
           </motion.div>
           
           <motion.button 
-            className="mt-6 inline-flex items-center gap-2 bg-primary hover:bg-black hover:text-white px-6 py-3 rounded-full font-medium transition-all duration-300"
+            className="mt-6 inline-flex items-center gap-2 bg-primary hover:bg-black text-white px-6 py-3 rounded-full font-medium transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -143,10 +144,12 @@ const Projects = () => {
           animate={isCardsInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <Link href={`/#contact`}> 
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {cards.map((card, index) => (
               <motion.div 
-                key={card.id}
+              key={card.id}
                 className={`group relative rounded-3xl overflow-hidden cursor-pointer transform-gpu shadow-lg hover:shadow-2xl transition-all duration-500 ${hoveredCard === card.id ? 'blur-none z-50' : hoveredCard ? 'blur-sm' : 'blur-none'}`}
                 initial={{ opacity: 0, y: 80, scale: 0.95 }}
                 animate={isCardsInView ? { 
@@ -235,7 +238,7 @@ const Projects = () => {
                         y: hoveredCard === card.id ? -6 : 0,
                       }}
                       transition={{ duration: 0.3, delay: 0.1 }}
-                    >
+                      >
                       {card.title}
                     </motion.h3>
                     
@@ -247,7 +250,7 @@ const Projects = () => {
                         opacity: hoveredCard === card.id ? 1 : 0.8
                       }}
                       transition={{ duration: 0.3, delay: 0.15 }}
-                    >
+                      >
                       {card.description}
                     </motion.p>
 
@@ -290,17 +293,17 @@ const Projects = () => {
                   >
                     {!imageErrors[`card-${card.id}`] ? (
                       <Image
-                        src={card.image}
-                        alt={card.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                        onError={() => handleImageError(`card-${card.id}`)}
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      onError={() => handleImageError(`card-${card.id}`)}
                       />
                     ) : (
                       <div 
-                        className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
                         style={{ background: card.fallback }}
-                      />
+                        />
                     )}
                   </motion.div>
 
@@ -313,7 +316,7 @@ const Projects = () => {
                       scale: hoveredCard === card.id ? 1 : 0.9,
                     }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                  >
+                    >
                     <motion.button
                       className="bg-white text-gray-9 px-4 py-2 rounded-full font-semibold shadow-xl transform transition-all duration-200 pointer-events-auto flex items-center gap-3 opacity-100"
                       whileHover={{ 
@@ -325,7 +328,7 @@ const Projects = () => {
                         e.stopPropagation(); 
                         console.log(`View ${card.title} case study`); 
                       }}
-                    >
+                      >
                       <span>View Case Study</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -340,7 +343,7 @@ const Projects = () => {
                       scale: hoveredCard === card.id ? [1, 1.2, 1] : 1,
                     }}
                     transition={{ duration: 2, repeat: Infinity }}
-                  />
+                    />
                   
                   <motion.div 
                     className="absolute bottom-4 left-4 w-8 h-8 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -357,7 +360,7 @@ const Projects = () => {
                   animate={{
                     borderColor: hoveredCard === card.id ? "rgba(255,255,255,0.4)" : "transparent",
                   }}
-                />
+                  />
 
                 {/* Shine Effect */}
                 <motion.div 
@@ -370,10 +373,11 @@ const Projects = () => {
                     ease: "easeInOut",
                     delay: 0.2
                   }}
-                />
+                  />
               </motion.div>
             ))}
           </div>
+      </Link>
         </motion.div>
       </div>
 
