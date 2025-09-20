@@ -1320,33 +1320,25 @@ const ServiceDetailPage = () => {
               {service.services.map((serviceItem, index) => (
                 <motion.div 
                   key={index}
-                  className="group relative bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-500 overflow-hidden cursor-pointer"
-                  style={{
-                    '&:hover': {
-                      backgroundColor: 'rgb(99 102 241 / 0.05)',
-                      borderColor: 'rgb(99 102 241 / 0.3)',
-                      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
-                    }
-                  }}
+                  className="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-500 overflow-hidden"
                   initial={{ opacity: 0, y: 30 }}
                   animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   whileHover={{ 
                     y: -12, 
                     scale: 1.03,
-                    backgroundColor: "rgba(99, 102, 241, 0.05)",
                     boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
                   }}
                 >
                   {/* Dynamic Background Pattern */}
                   <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute inset-0 transition-opacity duration-500"
                     whileHover={{ scale: 1.1 }}
                   />
                   
                   {/* Decorative Elements */}
                   <motion.div 
-                    className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-full blur-2xl opacity-10 transition-opacity duration-500"
                     animate={{ 
                       rotate: [0, 180, 360],
                       scale: [1, 1.1, 1]
@@ -1362,7 +1354,7 @@ const ServiceDetailPage = () => {
                   <div className="relative z-10">
                     {/* Icon Container */}
                     <motion.div 
-                      className="w-16 h-16 bg-gradient-to-br from-primary/20 to-purple-500/20 group-hover:from-primary/40 group-hover:to-purple-500/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300"
+                      className="w-16 h-16 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300"
                       initial={{ scale: 0, rotate: -180 }}
                       animate={isServicesInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
                       transition={{ duration: 0.6, delay: index * 0.05 + 0.2, type: "spring", stiffness: 200 }}
@@ -1407,19 +1399,18 @@ const ServiceDetailPage = () => {
                       animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.6, delay: index * 0.05 + 0.4 }}
                     >
-                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors duration-500 leading-relaxed mb-3">
+                      <h4 className="text-lg font-bold text-gray-900 transition-colors duration-500 leading-relaxed mb-3">
                         {serviceItem}
                       </h4>
                       
                       {/* Service Number */}
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-gray-500 group-hover:text-primary transition-colors duration-500">
+                        <span className="text-sm font-medium text-gray-500 transition-colors duration-500">
                           Service #{(index + 1).toString().padStart(2, '0')}
                         </span>
                         
                         <motion.div 
-                          className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500"
-                          whileHover={{ scale: 1.2, rotate: 90 }}
+                          className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center transition-all duration-500"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
