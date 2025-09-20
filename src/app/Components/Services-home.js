@@ -222,7 +222,7 @@ const ServicesHome = () => {
                 tabIndex={0}
                 onClick={() => handleCardToggle(service.id)}
                 onKeyDown={(e) => handleCardKeyDown(e, service.id)}
-                className={`service-card group relative bg-gray-900 hover:bg-primary rounded-xl sm:rounded-2xl overflow-hidden h-80 sm:h-96 cursor-pointer border border-gray-800 transition-colors duration-300 ${activeCard === service.id ? 'active' : ''}`}
+                className={`service-card group relative bg-gray-900 hover:bg-primary rounded-xl sm:rounded-2xl overflow-hidden h-72 sm:h-80 cursor-pointer border border-gray-800 transition-colors duration-300 ${activeCard === service.id ? 'active' : ''}`}
                 initial={{ opacity: 0, y: 60, rotateX: 45 }}
                 animate={isServicesInView ? { 
                   opacity: 1, 

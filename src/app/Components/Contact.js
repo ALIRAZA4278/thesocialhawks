@@ -239,15 +239,10 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="text-white font-medium">B92, Block 10 Gulshan-e-Iqbal, Karachi, 75290</p>
+                    <p className="text-white font-medium">Office#405, 4th floor, King's Trade Center, <br />Block 3-A, Gulistan-e-Jauhar, Karachi, sindh, 75290</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <p className="text-white font-medium">124 City Road, London, United Kingdom, EC1V 2NX</p>
-                  </div>
-                </div>
+              
               </div>
 
               {/* Contact Info */}
@@ -258,15 +253,12 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <p className="text-white">+44 20 4621 1746</p>
+                  <p className="text-white">+92 310-4999 701 </p>
                 </div>
+               
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <p className="text-white">info@devnest.co</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <p className="text-white">devnestsolutions@gmail.com</p>
+                  <p className="text-white">info@thesocialhawks.com</p>
                 </div>
               </div>
 
@@ -277,7 +269,7 @@ const Contact = () => {
                   <p className="text-white font-medium">Opening Hours:</p>
                 </div>
                 <div className="ml-5 space-y-1">
-                  <p className="text-gray-300">Mon to Sat: 9:00am - 6:00pm</p>
+                  <p className="text-gray-300">Mon to Sat: 9:00am - 10:00pm</p>
                   <p className="text-gray-300">Sun: Closed</p>
                 </div>
               </div>
@@ -335,7 +327,7 @@ const Contact = () => {
                 </a>
 
                 {/* LinkedIn */}
-                <a href="#" target='_blank' className="flex flex-col items-center justify-center bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors group">
+                <a href="https://www.linkedin.com/company/socialhawks" target='_blank' className="flex flex-col items-center justify-center bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors group">
                   <div className="w-8 h-8 mb-2">
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-gray-400 group-hover:text-primary">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -364,7 +356,7 @@ const Contact = () => {
                 <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
               </p>
               <p className="text-gray-400 text-sm">
-                ©devnest. All Rights Reserved.
+                ©socialhawks. All Rights Reserved.
               </p>
             </div>
           </div>
