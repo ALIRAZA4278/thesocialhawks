@@ -59,13 +59,6 @@ const serviceDetails = {
     ],
     images: [
       "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg", 
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
@@ -281,13 +274,6 @@ const serviceDetails = {
     images: [
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
     ],
     fallback: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
@@ -393,13 +379,6 @@ const serviceDetails = {
     images: [
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
     ],
     fallback: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
@@ -450,13 +429,6 @@ const serviceDetails = {
       }
     ],
     images: [
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg"
-    ],
-    fallback: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-    features: [
-      "Quality Materials",
       "Custom Designs",
       "Bulk Ordering",
       "Brand Guidelines",
@@ -502,13 +474,6 @@ const serviceDetails = {
       }
     ],
     images: [
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
@@ -561,13 +526,6 @@ const serviceDetails = {
       }
     ],
     images: [
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg"
-    ],
-    fallback: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
-    features: [
-      "Cross-Platform Support",
       "Native Performance",
       "Intuitive UX/UI",
       "App Store Ready",
@@ -613,13 +571,6 @@ const serviceDetails = {
       }
     ],
     images: [
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
@@ -674,13 +625,6 @@ const serviceDetails = {
     images: [
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
     ],
     fallback: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)",
@@ -731,13 +675,6 @@ const serviceDetails = {
       }
     ],
     images: [
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
@@ -792,13 +729,6 @@ const serviceDetails = {
     images: [
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
     ],
     fallback: "linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)",
@@ -849,13 +779,6 @@ const serviceDetails = {
       }
     ],
     images: [
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
@@ -910,13 +833,6 @@ const serviceDetails = {
     images: [
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
     ],
     fallback: "linear-gradient(135deg, #ff8a80 0%, #ff5722 100%)",
@@ -969,13 +885,6 @@ const serviceDetails = {
     images: [
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
     ],
     fallback: "linear-gradient(135deg, #b39ddb 0%, #9c27b0 100%)",
@@ -1026,13 +935,6 @@ const serviceDetails = {
       }
     ],
     images: [
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg"
