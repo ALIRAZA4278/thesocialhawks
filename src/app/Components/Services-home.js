@@ -262,7 +262,7 @@ const ServicesHome = () => {
                     </div>
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm border-2 border-primary/50 flex items-center justify-center group-hover:bg-black group-hover:border-black group-hover:shadow-xl transition-all duration-300 relative z-30">
                       <svg 
-                        className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:text-black transform rotate-45 group-hover:rotate-0 transition-all duration-300" 
+                        className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:text-black transform rotate-0 group-hover:rotate-45 transition-all duration-300" 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
