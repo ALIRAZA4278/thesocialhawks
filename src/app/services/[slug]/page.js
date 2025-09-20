@@ -1083,7 +1083,7 @@ const ServiceDetailPage = () => {
         <div className="min-h-screen flex items-center justify-center px-4">
           <div className="text-center max-w-md mx-auto">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</h1>
-            <p className="text-gray-600 mb-8">The service you're looking for doesn't exist.</p>
+            <p className="text-gray-600 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
             <Link href="/services" className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover transition-colors">
               Back to Services
             </Link>
@@ -1683,7 +1683,7 @@ const ServiceDetailPage = () => {
                       animate={isProcessInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
                       transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
                     >
-                      "
+                      &ldquo;
                     </motion.div>
                     
                     <motion.p 
@@ -1692,7 +1692,7 @@ const ServiceDetailPage = () => {
                       animate={isProcessInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.6, delay: 1.2 + index * 0.2 }}
                     >
-                      "{testimonial.text}"
+                      &ldquo;{testimonial.text}&rdquo;
                     </motion.p>
                     
                     <motion.div 
@@ -2090,7 +2090,7 @@ const ServiceDetailPage = () => {
                     <span className="text-3xl">🎯</span>
                   </div>
                   <h4 className="text-xl font-semibold mb-2">100% Satisfaction</h4>
-                  <p className="text-white/80">Unlimited revisions until you're completely satisfied</p>
+                  <p className="text-white/80">Unlimited revisions until you&apos;re completely satisfied</p>
                 </motion.div>
                 
                 <motion.div 
@@ -2133,8 +2133,8 @@ const ServiceDetailPage = () => {
                   <h4 className="text-2xl font-bold">Professional Excellence Guarantee</h4>
                 </div>
                 <p className="text-lg text-white/90 leading-relaxed">
-                  We stand behind every project with our commitment to excellence. If you're not completely satisfied with our work, 
-                  we'll continue refining until it exceeds your expectations – at no additional cost.
+                  We stand behind every project with our commitment to excellence. If you&apos;re not completely satisfied with our work, 
+                  we&apos;ll continue refining until it exceeds your expectations – at no additional cost.
                 </p>
               </motion.div>
             </div>

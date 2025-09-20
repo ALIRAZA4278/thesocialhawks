@@ -239,7 +239,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="text-white font-medium">Office#405, 4th floor, King's Trade Center, <br />Block 3-A, Gulistan-e-Jauhar, Karachi, sindh, 75290</p>
+                    <p className="text-white font-medium">Office#405, 4th floor, King&apos;s Trade Center, <br />Block 3-A, Gulistan-e-Jauhar, Karachi, sindh, 75290</p>
                   </div>
                 </div>
               
