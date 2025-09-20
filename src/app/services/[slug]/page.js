@@ -1222,9 +1222,13 @@ const ServiceDetailPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
+               <Link 
+                href="/#contact">
+
               <button className="inline-flex items-center gap-2 border-2 border-primary text-[#7f20c4] hover:bg-primary hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
                 Learn More
               </button>
+                </Link>
             </motion.div>
           </div>
         </motion.div>
