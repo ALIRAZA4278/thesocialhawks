@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 
 // Custom hook for animated counting (reusing from Hero component)
@@ -108,41 +109,39 @@ const ServicesHome = () => {
   }, []);
   
   // Services data
-  const services = [
-    {
+    const services = [{
       id: 1,
-      title: "web Services",
-      number: "01",
-      description: "Build a Powerful Online Presence with High-Performing Websites.",
+      title: "Brand Identity & Design",
+      slug: "/services/brand-identity-design",
+      description: "Craft distinctive brand identities with logo design, brand guidelines, animated logos, and presentation design that defines your unique market presence.",
       image: "/images/EXAMPLE.jpg",
       fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
     },
     {
       id: 2,
-      title: "Digital Marketing",
-      number: "02", 
-      description: "Data-Driven Strategies for Maximum Impact.",
+      title: "Graphic Design",
+      slug: "/services/graphic-design",
+      description: "Create compelling visual content including social media posts, ad creatives, infographics, and UI/UX design that captivates your audience.",
       image: "/images/EXAMPLE.jpg",
       fallback: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
     },
     {
       id: 3,
-      title: "Creative Content",
-      number: "03",
-      description: "Content That Captivates and Converts.",
-      image: "/images/EXAMPLE.jpg", 
+      title: "Print & Stationery",
+      slug: "/services/print-stationery",
+      description: "Professional print solutions from business cards to brochures, ensuring your brand maintains consistency across all physical touchpoints.",
+      image: "/images/EXAMPLE.jpg",
       fallback: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
     },
-      {
-        id: 4,
-        title: "branding", 
-        number: "04",
-        description: "Build a Powerful Online Presence",
-        image: "/images/EXAMPLE.jpg",
-        fallback: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
-      }
-  ];
-
+    {
+      id: 4,
+      title: "Merchandising",
+      slug: "/services/merchandising",
+      description: "Custom branded merchandise including apparel, corporate uniforms, and promotional items that extend your brand into the physical world.",
+      image: "/images/EXAMPLE.jpg",
+      fallback: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+    }]
+  
   const [imageErrors, setImageErrors] = useState({});
   // Track active (tapped) card on mobile to simulate hover
   const [activeCard, setActiveCard] = useState(null);
@@ -215,56 +214,61 @@ const ServicesHome = () => {
           animate={isServicesInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
             {services.map((service, index) => (
-              <motion.div 
+              <Link 
                 key={service.id}
-                tabIndex={0}
-                onClick={() => handleCardToggle(service.id)}
-                onKeyDown={(e) => handleCardKeyDown(e, service.id)}
-                className={`service-card group relative bg-gray-900 hover:bg-primary rounded-xl sm:rounded-2xl overflow-hidden h-72 sm:h-80 cursor-pointer border border-gray-800 transition-colors duration-300 ${activeCard === service.id ? 'active' : ''}`}
-                initial={{ opacity: 0, y: 60, rotateX: 45 }}
-                animate={isServicesInView ? { 
-                  opacity: 1, 
-                  y: 0, 
-                  rotateX: 0
-                } : { 
-                  opacity: 0, 
-                  y: 60, 
-                  rotateX: 45 
-                }}
-                transition={{ 
-                  delay: index * 0.15, 
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 15
-                }}
-                whileHover={{ 
-                  scale: 1.05,
-                  rotateY: 5,
-                  rotateX: 5,
-                  transition: { duration: 0.3 }
-                }}
-                whileTap={{ scale: 0.95 }}
+                href={service.slug}
+                className="block"
               >
+                <motion.div 
+                  tabIndex={0}
+                  onClick={() => handleCardToggle(service.id)}
+                  onKeyDown={(e) => handleCardKeyDown(e, service.id)}
+                  className={`service-card group relative bg-gray-900 hover:bg-primary rounded-xl sm:rounded-2xl overflow-hidden h-72 sm:h-80 cursor-pointer border border-gray-800 transition-colors duration-300 ${activeCard === service.id ? 'active' : ''}`}
+                  initial={{ opacity: 0, y: 60, rotateX: 45 }}
+                  animate={isServicesInView ? { 
+                    opacity: 1, 
+                    y: 0, 
+                    rotateX: 0
+                  } : { 
+                    opacity: 0, 
+                    y: 60, 
+                    rotateX: 45 
+                  }}
+                  transition={{ 
+                    delay: index * 0.15, 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    rotateY: 5,
+                    rotateX: 5,
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
                 {/* Content Container */}
-                <div className="relative z-10 p-4 sm:p-6 h-full flex flex-col">
+                <div className="relative z-10 p-2 sm:p-4 h-full flex flex-col">
                   {/* Header with Title and Arrow */}
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex justify-between items-start mb-4 relative z-20">
+                    <div className="flex items-center gap-1 sm:gap-2">
                       <h3 className={`text-lg sm:text-xl font-bold transition-colors duration-300 group-hover:!text-white ${activeCard === service.id ? 'text-white' : 'text-primary'}`}>
                         {service.title}
                       </h3>
                     </div>
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary flex items-center justify-center group-hover:bg-primary-hover transition-all duration-300">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm border-2 border-primary/50 flex items-center justify-center group-hover:bg-black group-hover:border-black group-hover:shadow-xl transition-all duration-300 relative z-30">
                       <svg 
-                        className="w-5 h-5 text-white transform rotate-[45deg] group-hover:rotate-0 transition-transform duration-300" 
+                        className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:text-black transform rotate-45 group-hover:rotate-0 transition-all duration-300" 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
+                        strokeWidth={2}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M7 17l9.2-9.2M17 17V7H7" />
                       </svg>
                     </div>
                   </div>
@@ -275,7 +279,7 @@ const ServicesHome = () => {
                   </p>
 
                   {/* Image Section */}
-                  <div className="flex-1 relative rounded-xl overflow-hidden">
+                  <div className="h-32 sm:h-40 lg:h-44 relative rounded-xl overflow-hidden mt-auto">
                     {!imageErrors[`service-${service.id}`] ? (
                       <Image
                         src={service.image}
@@ -293,6 +297,7 @@ const ServicesHome = () => {
                   </div>
                 </div>
               </motion.div>
+              </Link>
             ))}
           </div>
         </motion.div>
