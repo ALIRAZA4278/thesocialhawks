@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 // Custom hook for animated counting
 const useAnimatedCounter = (end, duration = 2000, start = 0) => {
@@ -232,7 +233,7 @@ const Hero = () => {
                     </motion.div>
                   ))}
                 </div>
-
+                  <Link href="/#contact" >
                 {/* Contact Button */}
                 <motion.button 
                   className="flex items-center justify-center gap-2 px-6 sm:px-8 lg:px-10 py-2 sm:py-3 border border-gray-300 rounded-full text-sm sm:text-base font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-300 group bg-white shadow-md w-full sm:w-auto"
@@ -242,9 +243,10 @@ const Hero = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
+                  >
                   Contact us
                 </motion.button>
+                  </Link>
               </motion.div>
 
               {/* Trust Text */}

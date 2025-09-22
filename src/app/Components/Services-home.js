@@ -432,7 +432,7 @@ const ServicesHome = () => {
                   
                   {/* Center Content */}
                   <div className="relative z-10 text-center">
-                    <div className="text-white text-2xl sm:text-3xl font-bold">d</div>
+                    <div className="text-white text-2xl sm:text-3xl font-bold">S</div>
                   </div>
                 </motion.div>
               </motion.div>

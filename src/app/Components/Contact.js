@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -232,8 +233,19 @@ const Contact = () => {
       <footer className="bg-gray-900 text-white py-12 sm:py-16 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {/* Company Info */}
+            {/* Company Info with Logo */}
             <div className="space-y-6 lg:col-span-2">
+              {/* Logo */}
+              <div className="mb-6">
+                <Image
+                  src="/images/logo-white.png"
+                  alt="Socialhawks Logo"
+                  width={200}
+                  height={60}
+                  className="h-25 w-auto object-contain"
+                />
+              </div>
+              
               {/* Addresses */}
               <div className="space-y-4">
                 <div className="flex items-start gap-3">

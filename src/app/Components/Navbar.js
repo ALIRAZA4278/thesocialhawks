@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import '../styles/theme.css';
 
@@ -75,15 +76,22 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Link href="/" className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800 tracking-tight hover:text-primary transition-colors">
-              <motion.span
-              className='cursor-pointer'
-                whileHover={{ scale: 1 }}
+            <Link href="/" className="flex items-center">
+              <motion.div
+                className='cursor-pointer'
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                Socialhawks
-              </motion.span>
+                <Image
+                  src="/images/logo.png"
+                  alt="Socialhawks Logo"
+                  width={150}
+                  height={80}
+                  className="h-15 sm:h-18 lg:h-20 w-auto object-contain"
+                  priority
+                />
+              </motion.div>
             </Link>
           </motion.div>
 

@@ -62,24 +62,14 @@ const serviceDetails = {
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
       "/images/EXAMPLE.jpg",
-      "/images/EXAMPLE.jpg"
+      "/images/EXAMPLE.jpg",
     ],
     fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     benefits: [
       {
         title: "Increased Brand Recognition",
         description: "Strong brand identity increases recognition by up to 80%",
-        icon: "👁️"
-      },
-      {
-        title: "Customer Trust",
-        description: "Professional branding builds customer confidence and loyalty",
-        icon: "🤝"
-      },
-      {
-        title: "Market Differentiation",
-        description: "Stand out from competitors with unique brand positioning",
-        icon: "🎯"
+        icon: "👁️",
       },
       {
         title: "Business Value",
@@ -429,10 +419,18 @@ const serviceDetails = {
       }
     ],
     images: [
-      "Custom Designs",
-      "Bulk Ordering",
-      "Brand Guidelines",
-      "Timely Delivery"
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    features: [
+      "Custom Apparel & Accessories",
+      "Bulk Order Management",
+      "Quality Control & Supplier Vetting",
+      "Branding & Design Adaptation",
+      "Sustainable & Eco-Friendly Options",
+      "Fulfillment & Shipping Coordination"
     ],
     cta: {
       title: "Create Custom Merchandise",
@@ -526,10 +524,18 @@ const serviceDetails = {
       }
     ],
     images: [
-      "Native Performance",
-      "Intuitive UX/UI",
-      "App Store Ready",
-      "Analytics Integration"
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    features: [
+      "Native & Cross-Platform Expertise",
+      "App Store Submission Support",
+      "UX/UI Design & Prototyping",
+      "Performance & Security Optimization",
+      "Analytics & Crash Reporting",
+      "Ongoing Maintenance Plans"
     ],
     cta: {
       title: "Launch Your Mobile App",
@@ -1834,7 +1840,7 @@ const ServiceDetailPage = () => {
             </motion.h3>
             
             <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
-              {service.features.map((feature, index) => (
+              {(service.features || []).map((feature, index) => (
                 <motion.div 
                   key={index}
                   className="text-center group flex-shrink-0 w-32"
