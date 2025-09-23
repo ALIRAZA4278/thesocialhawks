@@ -385,6 +385,93 @@ const serviceDetails = {
       buttonText: "Design Print Materials"
     }
   },
+  'drone-shoot': {
+    id: 15,
+    title: "Drone Shoot",
+    subtitle: "Aerial Cinematography & Photography",
+    description: "Capture breathtaking aerial perspectives with professional drone cinematography and photography for real estate, events, commercials, and cinematic storytelling.",
+    longDescription: "Our drone shoot service combines licensed drone pilots, cinematic camera setups, and experienced directors to deliver smooth, cinematic aerial footage. We handle flight permissions, location scouting, safety briefings, and post-production color grading so you get broadcast-quality results that elevate your visual storytelling.",
+    stats: [
+      { number: "4K", label: "Ultra HD Footage" },
+      { number: "FAA/Local", label: "Certified Pilots" },
+      { number: "24h", label: "Fast Turnaround" },
+      { number: "100+", label: "Successful Flights" }
+    ],
+    services: [
+      "Cinematic Aerial Videography (4K/6K where available)",
+      "High-Resolution Aerial Photography",
+      "Real Estate Aerial Tours & Flythroughs",
+      "Event Coverage & Live Overviews",
+      "Inspection & Survey Footage",
+      "Gimbal-stabilized Shots & Dynamic Moves",
+      "Geofenced/Permission Management & Flight Planning",
+      "Post-production: Color Grading & Stabilization"
+    ],
+    process: [
+      { step: "Pre-Flight Planning", description: "Site survey, permissions, and shot list creation.", icon: "🗺️" },
+      { step: "Licensed Pilots", description: "Experienced, certified pilots operate to the highest safety standards.", icon: "🚁" },
+      { step: "Cinematic Capture", description: "Multi-angle aerial capture using stabilized gimbals and ND filtration.", icon: "🎥" },
+      { step: "Post-Production", description: "Color grading, stabilization, and edit-ready deliverables.", icon: "🎬" }
+    ],
+    images: ["/images/EXAMPLE.jpg"],
+    fallback: "linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%)",
+    benefits: [
+      { title: "Standout Visuals", description: "Aerial footage makes listings and campaigns stand out in a crowded market.", icon: "📸" },
+      { title: "Faster Approvals", description: "Professional planning reduces reshoots and ensures compliance.", icon: "✅" }
+    ],
+    testimonials: [
+      { text: "Their aerial footage transformed our property listings — we saw an immediate increase in inquiries.", author: "Rehan Ali", position: "Real Estate Broker", rating: 5 }
+    ],
+    faq: [
+      { question: "Do you handle flight permissions?", answer: "Yes — we manage local permissions, no-fly checks, and site risk assessments as part of our service." },
+      { question: "What safety measures do you take?", answer: "All flights are planned, risk-assessed, and flown by certified pilots with spotters when required." }
+    ],
+    features: ["Licensed Pilots", "4K/6K Capture", "Flight Permissions", "Full Post-Production"],
+    cta: { title: "Elevate Your Visuals with Aerial Footage", description: "Book a drone shoot to add cinematic production value and unique perspectives to your project.", buttonText: "Book a Drone Shoot" }
+  },
+  'script-writing-storyboarding': {
+    id: 16,
+    title: "Script Writing & Storyboarding",
+    subtitle: "From Idea to Shot-Ready Scripts",
+    description: "We develop compelling scripts and detailed storyboards to ensure efficient, on-brand video production with clear creative direction.",
+    longDescription: "Our pre-production service pairs creative strategists and experienced writers to craft narratives that resonate with your audience. We produce polished scripts, scene-by-scene storyboards, shot lists, and production notes so shoots run on time and creatives deliver the intended impact.",
+    stats: [
+      { number: "500+", label: "Scripts Written" },
+      { number: "95%", label: "Production Ready" },
+      { number: "48h", label: "Draft Turnaround" },
+      { number: "200+", label: "Storyboards Created" }
+    ],
+    services: [
+      "Creative Concept Development",
+      "Scriptwriting (Short & Long Form)",
+      "Scene Breakdown & Shot Lists",
+      "Detailed Storyboards & Animatics",
+      "Dialogue & Voiceover Direction",
+      "Moodboards & Reference Frames",
+      "Production Scheduling Notes"
+    ],
+    process: [
+      { step: "Discovery & Brief", description: "Understand goals, tone, and target audience.", icon: "🧭" },
+      { step: "Concept & Treatment", description: "High-level narrative structure and creative treatment.", icon: "✍️" },
+      { step: "Script Drafting", description: "Iterative drafts with client feedback.", icon: "📄" },
+      { step: "Storyboards & Animatics", description: "Frame-by-frame visualization for efficient shooting.", icon: "🖼️" }
+    ],
+    images: ["/images/EXAMPLE.jpg"],
+    fallback: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+    benefits: [
+      { title: "Clear Creative Direction", description: "Reduces shoot time and creative ambiguity.", icon: "🎯" },
+      { title: "Cost Efficiency", description: "Well-planned productions save on reshoots and personnel time.", icon: "💡" }
+    ],
+    testimonials: [
+      { text: "The storyboard and script made our shoot run smoothly and saved time on set.", author: "Aisha Khan", position: "Producer", rating: 5 }
+    ],
+    faq: [
+      { question: "Can you create animatics?", answer: "Yes, we can produce animatics to preview timing and camera moves before the shoot." },
+      { question: "How many revisions are included?", answer: "We typically include two rounds of revisions with each package; additional rounds are available." }
+    ],
+    features: ["Concept Treatments", "Script Drafts", "Detailed Storyboards", "Animatics"],
+    cta: { title: "Plan Better, Shoot Faster", description: "Get production-ready scripts and storyboards that save time and improve creative outcomes.", buttonText: "Start Pre-Production" }
+  },
   'merchandising': {
     id: 4,
     title: "Merchandising",
@@ -708,8 +795,9 @@ const serviceDetails = {
     services: [
       "Strategic Social Media Management",
       "Paid Social Advertising (Meta, TikTok, LinkedIn)",
-      "SEO & Search Engine Marketing",
-      "Performance Marketing & PPC",
+      "SEO (Search Engine Optimization)",
+      "Search Engine Marketing & PPC",
+      "Performance Marketing",
       "Influencer & Creator Partnerships",
       "Conversion Rate Optimization",
       "Analytics & Performance Reporting"
@@ -1225,19 +1313,22 @@ const ServiceDetailPage = () => {
             </motion.p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {service.services.map((serviceItem, index) => (
-                <motion.div 
-                  key={index}
-                  className="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-500 overflow-hidden"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  whileHover={{ 
-                    y: -12, 
-                    scale: 1.03,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-                  }}
-                >
+              {service.services.map((serviceItem, index) => {
+                const isSEOCard = typeof serviceItem === 'string' && serviceItem.toLowerCase().startsWith('seo');
+                const linkHref = isSEOCard && slug === 'digital-marketing-growth' ? `/services/${slug}/seo` : null;
+
+                const content = (
+                  <motion.div 
+                    className="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-500 overflow-hidden"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{ duration: 0.6, delay: index * 0.05 }}
+                    whileHover={{ 
+                      y: -12, 
+                      scale: 1.03,
+                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                    }}
+                  >
                   {/* Dynamic Background Pattern */}
                   <motion.div 
                     className="absolute inset-0 transition-opacity duration-500"
@@ -1337,8 +1428,24 @@ const ServiceDetailPage = () => {
                       backgroundOrigin: 'padding-box, border-box'
                     }}
                   />
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+
+                // Wrap SEO card with a link to the SEO milestones page when viewing the digital marketing service
+                if (linkHref) {
+                  return (
+                    <Link href={linkHref} key={`service-link-${index}`}>
+                      {content}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <div key={`service-card-${index}`}>
+                    {content}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </motion.div>

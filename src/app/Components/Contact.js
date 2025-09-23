@@ -261,10 +261,6 @@ const Contact = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <p className="text-white">+92 303 333 7939</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <p className="text-white">+92 310-4999 701 </p>
                 </div>
                
