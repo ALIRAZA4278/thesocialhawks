@@ -130,23 +130,6 @@ const ServicesPage = () => {
       image: "/images/EXAMPLE.jpg",
       fallback: "linear-gradient(135deg, #81c784 0%, #4caf50 100%)"
     }
-    ,
-    {
-      id: 15,
-      title: "Drone Shoot",
-      slug: "drone-shoot",
-      description: "Cinematic aerial videography and photography for property showcases, events, commercials and cinematic storytelling using professional drone pilots and stabilized camera systems.",
-      image: "/images/EXAMPLE.jpg",
-      fallback: "linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%)"
-    },
-    {
-      id: 16,
-      title: "Script Writing & Storyboarding",
-      slug: "script-writing-storyboarding",
-      description: "End-to-end pre-production services including concept development, scriptwriting, scene breakdowns and detailed storyboards to ensure efficient shoots and clear creative direction.",
-      image: "/images/EXAMPLE.jpg",
-      fallback: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
-    }
   ];
 
   const [imageErrors, setImageErrors] = useState({});

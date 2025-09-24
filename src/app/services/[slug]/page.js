@@ -747,7 +747,9 @@ const serviceDetails = {
       "Corporate Headshots & Brand Photography",
       "Testimonial & Case Study Videos",
       "Video Editing & Color Grading",
-      "Full-Service Production Management"
+      "Full-Service Production Management",
+      "Drone Shoot",
+      "Script Writing & Storyboarding"
     ],
     process: [
       {
@@ -1312,14 +1314,24 @@ const ServiceDetailPage = () => {
               Comprehensive solutions tailored to elevate your brand and drive measurable results
             </motion.p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto auto-rows-fr items-stretch">
               {service.services.map((serviceItem, index) => {
-                const isSEOCard = typeof serviceItem === 'string' && serviceItem.toLowerCase().startsWith('seo');
-                const linkHref = isSEOCard && slug === 'digital-marketing-growth' ? `/services/${slug}/seo` : null;
+                // Determine if this service item should be clickable
+                let linkHref = null;
+                
+                if (params.slug === 'digital-marketing-growth') {
+                  if (serviceItem.includes('SEO')) {
+                    linkHref = `/services/${params.slug}/seo`;
+                  } else if (serviceItem.includes('Influencer & Creator Partnerships')) {
+                    linkHref = `/services/${params.slug}/influencer-creator-partnerships`;
+                  } else if (serviceItem.includes('Paid Social Advertising')) {
+                    linkHref = `/services/${params.slug}/paid-social-advertising`;
+                  }
+                }
 
                 const content = (
                   <motion.div 
-                    className="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-500 overflow-hidden"
+                    className="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-500 overflow-hidden h-full flex flex-col"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.6, delay: index * 0.05 }}
@@ -1350,7 +1362,7 @@ const ServiceDetailPage = () => {
                   />
                   
                   {/* Card Content */}
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     {/* Icon Container */}
                     <motion.div 
                       className="w-16 h-16 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300"
@@ -1403,7 +1415,7 @@ const ServiceDetailPage = () => {
                       </h4>
                       
                       {/* Service Number */}
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between mt-auto">
                         <span className="text-sm font-medium text-gray-500 transition-colors duration-500">
                           Service #{(index + 1).toString().padStart(2, '0')}
                         </span>
@@ -1450,6 +1462,110 @@ const ServiceDetailPage = () => {
           </div>
         </motion.div>
 
+        {/* Sub-Services Section - Only for Digital Marketing */}
+        {params.slug === 'digital-marketing-growth' && (
+          <motion.div 
+            className="py-16 bg-gradient-to-br from-gray-50 to-primary/5"
+            initial={{ opacity: 0 }}
+            animate={isServicesInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.h3 
+                className="text-3xl lg:text-4xl font-light text-gray-900 text-center mb-4"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                Specialized Services
+              </motion.h3>
+              
+              <motion.p 
+                className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                Dive deeper into our specialized service areas with comprehensive strategies and expert execution
+              </motion.p>
+              
+              <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-8 justify-center items-start">
+                {[
+                  {
+                    title: 'SEO Milestones',
+                    description: 'Comprehensive SEO process with detailed milestones and deliverables',
+                    icon: '🔍',
+                    link: `/services/${params.slug}/seo`,
+                    features: ['Keyword Research', 'Technical Audit', 'Content Optimization', 'Link Building']
+                  },
+                  {
+                    title: 'Influencer Partnerships', 
+                    description: 'Connect with authentic creators and build meaningful brand partnerships',
+                    icon: '🤝',
+                    link: `/services/${params.slug}/influencer-creator-partnerships`,
+                    features: ['Creator Vetting', 'Campaign Strategy', 'Content Management', 'Performance Tracking']
+                  },
+                  {
+                    title: 'Paid Social Advertising',
+                    description: 'High-converting social media campaigns across all major platforms',
+                    icon: '📱',
+                    link: `/services/${params.slug}/paid-social-advertising`,
+                    features: ['Meta & Instagram Ads', 'TikTok Campaigns', 'LinkedIn Advertising', 'Twitter Promotion']
+                  }
+                ].map((subService, index) => (
+                  <div key={index} className="flex justify-center">
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                      whileHover={{ y: -8, scale: 1.02 }}
+                      className="group w-full flex justify-center"
+                    >
+                      <Link href={subService.link} className="w-full max-w-[380px]">
+                        <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 group-hover:border-primary/20 h-full text-center mx-auto flex flex-col">
+                          <div className="text-center">
+                            <motion.div 
+                              className="text-4xl mb-4"
+                              whileHover={{ scale: 1.2, rotate: 10 }}
+                              transition={{ type: "spring", stiffness: 300 }}
+                            >
+                              {subService.icon}
+                            </motion.div>
+                            
+                            <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                              {subService.title}
+                            </h4>
+                            
+                            <p className="text-gray-600 mb-6 leading-relaxed">
+                              {subService.description}
+                            </p>
+                            
+                            <div className="space-y-2 mb-6">
+                              {subService.features.map((feature, featureIndex) => (
+                                <div key={featureIndex} className="flex items-center gap-2 text-sm text-gray-500">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                                  <span>{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                            
+                            <div className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
+                              Explore Details
+                              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {/* Benefits Section */}
         {service.benefits && (
           <motion.div 
@@ -1458,7 +1574,7 @@ const ServiceDetailPage = () => {
             animate={isServicesInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="px-4">
+            <div className="px-4 ">
               <motion.h3 
                 className="text-3xl lg:text-4xl font-light text-gray-900 text-center mb-12"
                 initial={{ opacity: 0, y: 30 }}
@@ -1468,11 +1584,11 @@ const ServiceDetailPage = () => {
                 Key Benefits
               </motion.h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              <div className="flex flex-wrap gap-8 max-w-6xl mx-auto justify-center">
                 {service.benefits.map((benefit, index) => (
                   <motion.div 
                     key={index}
-                    className="text-center group"
+                    className="text-center group w-full md:w-1/2 lg:w-1/4"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
@@ -1511,7 +1627,7 @@ const ServiceDetailPage = () => {
               className="text-3xl lg:text-4xl font-light text-gray-900 text-center mb-12"
               initial={{ opacity: 0, y: 30 }}
               animate={isProcessInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6 }}
+              tr ansition={{ duration: 0.6 }}
             >
               Our Process
             </motion.h3>
