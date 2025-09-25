@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { projectsData } from '../data/projects';
 
 const Projects = () => {
   // Refs for scroll animations
@@ -35,52 +37,22 @@ const Projects = () => {
     }
   };
   
-  // Cards data - Enhanced with better categories and descriptions
-  const cards = [
-    {
-      id: 1,
-      category: "Brand Identity",
-      title: "Men's Health Supplement Brand",
-      description: "Complete brand transformation including logo design, packaging, and digital presence",
-      image: "/images/EXAMPLE.jpg",
-      fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-      backgroundColor: "#f8fafc",
-      stats: { duration: "3 months", revenue: "+250%" }
-    },
-    {
-      id: 2,
-      category: "E-commerce Design", 
-      title: "Healthcare Supplements Platform",
-      description: "Full e-commerce website with custom functionality and seamless user experience",
-      image: "/images/EXAMPLE.jpg",
-      fallback: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-      backgroundColor: "#f8fafc",
-      stats: { duration: "4 months", revenue: "+180%" }
-    },
-    {
-      id: 3,
-      category: "Digital Marketing",
-      title: "Luxury Skincare Campaign",
-      description: "360° marketing campaign with social media, content creation, and performance ads",
-      image: "/images/EXAMPLE.jpg", 
-      fallback: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-      backgroundColor: "#f8fafc",
-      stats: { duration: "6 months", revenue: "+320%" }
-    },
-    {
-      id: 4,
-      category: "Visual Content",
-      title: "Premium Fragrance Brand", 
-      description: "Photography, videography, and complete visual content strategy for luxury positioning",
-      image: "/images/EXAMPLE.jpg",
-      fallback: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-      backgroundColor: "#f8fafc",
-      stats: { duration: "2 months", revenue: "+200%" }
-    }
-  ];
+  // Use real projects data (limit to 4)
+  const cards = projectsData.slice(0, 4).map(p => ({
+    id: p.id,
+    slug: p.slug,
+    category: p.category,
+    title: p.title,
+    description: p.shortDescription,
+    image: p.images && p.images.length ? p.images[0] : '/images/EXAMPLE.jpg',
+    fallback: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    backgroundColor: '#f8fafc',
+    stats: { duration: p.duration || 'TBD', revenue: p.results && p.results[0] ? p.results[0].value : '' },
+  }));
 
   const [imageErrors, setImageErrors] = useState({});
   const [hoveredCard, setHoveredCard] = useState(null);
+  const router = useRouter();
 
   // Handle image load errors
   const handleImageError = (imageId) => {
@@ -91,6 +63,9 @@ const Projects = () => {
     <motion.div 
       id="projects"
       className="bg-white" 
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="0"
       ref={sectionRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -144,13 +119,12 @@ const Projects = () => {
           animate={isCardsInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Link href={`/#contact`}> 
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {cards.map((card, index) => (
+        {cards.map((card, index) => (
               <motion.div 
-              key={card.id}
-                className={`group relative rounded-3xl overflow-hidden cursor-pointer transform-gpu shadow-lg hover:shadow-2xl transition-all duration-500 ${hoveredCard === card.id ? 'blur-none z-50' : hoveredCard ? 'blur-sm' : 'blur-none'}`}
+              key={card.slug || card.id}
+                            className={`group relative rounded-3xl overflow-hidden cursor-pointer transform-gpu shadow-lg hover:shadow-2xl transition-all duration-500 ${hoveredCard === card.id ? 'z-50' : ''}`}
                 initial={{ opacity: 0, y: 80, scale: 0.95 }}
                 animate={isCardsInView ? { 
                   opacity: 1, 
@@ -179,6 +153,14 @@ const Projects = () => {
                 whileTap={{ scale: 0.98 }}
                 onHoverStart={() => setHoveredCard(card.id)}
                 onHoverEnd={() => setHoveredCard(null)}
+                onClick={() => router.push(`/projects/${card.slug}`)}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    router.push(`/projects/${card.slug}`);
+                  }
+                }}
               >
                 {/* Gradient Background Overlay */}
                 <motion.div 
@@ -291,19 +273,19 @@ const Projects = () => {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    {!imageErrors[`card-${card.id}`] ? (
+                    {!imageErrors[`card-${card.slug || card.id}`] ? (
                       <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                      onError={() => handleImageError(`card-${card.id}`)}
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        onError={() => handleImageError(`card-${card.slug || card.id}`)}
                       />
                     ) : (
                       <div 
-                      className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
+                        className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
                         style={{ background: card.fallback }}
-                        />
+                      />
                     )}
                   </motion.div>
 
@@ -318,7 +300,7 @@ const Projects = () => {
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                     >
                     <motion.button
-                      className="bg-white text-gray-9 px-4 py-2 rounded-full font-semibold shadow-xl transform transition-all duration-200 pointer-events-auto flex items-center gap-3 opacity-100"
+                      className="bg-white text-gray-900 px-4 py-2 rounded-full font-semibold shadow-xl transform transition-all duration-200 pointer-events-auto flex items-center gap-3 opacity-100 hover:bg-black hover:text-white"
                       whileHover={{ 
                         scale: 1.05, 
                         boxShadow: '0 20px 40px rgba(0,0,0,0.15)' 
@@ -326,10 +308,10 @@ const Projects = () => {
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => { 
                         e.stopPropagation(); 
-                        console.log(`View ${card.title} case study`); 
+                        router.push(`/projects/${card.slug}`);
                       }}
-                      >
-                      <span>View Case Study</span>
+                    >
+                      <span>View Project</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -377,7 +359,6 @@ const Projects = () => {
               </motion.div>
             ))}
           </div>
-      </Link>
         </motion.div>
       </div>
 

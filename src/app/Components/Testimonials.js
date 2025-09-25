@@ -146,6 +146,9 @@ const Testimonials = () => {
     <motion.section 
       ref={containerRef}
       className="py-12 sm:py-16 bg-white"
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="0"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -227,7 +230,7 @@ const Testimonials = () => {
                           className="w-full h-full flex items-center justify-center text-white font-bold text-sm"
                           style={{ backgroundColor: testimonial.fallback }}
                         >
-                          {testimonial.name.charAt(0)}
+                          {testimonial.name ? testimonial.name.charAt(0) : ''}
                         </div>
                       )}
                     </div>

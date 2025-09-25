@@ -62,7 +62,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-gray-900 text-white rounded-lg mb-10" id='contact'>
+    <section className="bg-gray-900 text-white rounded-lg mb-10" id='contact' data-scroll data-scroll-section data-scroll-speed="-.05">
       {/* Contact Form Section */}
       <div className="relative bg-gray-900" style={{
         backgroundImage: 'url("/images/contact-bg.jpg")',

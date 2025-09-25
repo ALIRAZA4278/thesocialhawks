@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/#about' },
     { name: 'Services', href: '/services' },
-    { name: 'Projects', href: '/#projects' },
+    { name: 'Projects', href: '/projects' },
     
   ];
 
@@ -133,7 +133,7 @@ const Navbar = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Link href="/#contact" className="group">
-              <motion.a
+              <motion.div
                 className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-300 bg-white"
                 whileHover={{ 
                   scale: 1.05,
@@ -150,7 +150,7 @@ const Navbar = () => {
                 >
                   →
                 </motion.span>
-              </motion.a>
+              </motion.div>
             </Link>
           </motion.div>
 
@@ -249,22 +249,11 @@ const Navbar = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.6 }}
               >
-                <Link href="/#contact">
-                  <a
-                    onClick={() => toggleMobileMenu()}
-                    className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-200 bg-white inline-flex items-center justify-center"
-                  >
-                    Contact Us
-                  </a>
+                <Link href="/#contact" onClick={() => toggleMobileMenu()} className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:border-primary hover:text-primary transition-all duration-200 bg-white inline-flex items-center justify-center">
+                  Contact Us
                 </Link>
-                <Link href="/#contact">
-                  <a
-                    onClick={() => toggleMobileMenu()}
-                    className="ml-1 w-8 h-8 bg-primary rounded-md flex items-center justify-center text-xs text-white hover:bg-primary-hover transition-colors"
-                    aria-label="Contact arrow"
-                  >
-                    →
-                  </a>
+                <Link href="/#contact" onClick={() => toggleMobileMenu()} className="ml-1 w-8 h-8 bg-primary rounded-md flex items-center justify-center text-xs text-white hover:bg-primary-hover transition-colors" aria-label="Contact arrow">
+                  →
                 </Link>
               </motion.div>
             </motion.div>

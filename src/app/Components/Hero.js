@@ -132,6 +132,9 @@ const Hero = () => {
   return (
     <motion.section 
       className="relative bg-white"
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

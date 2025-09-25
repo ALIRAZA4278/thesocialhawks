@@ -166,6 +166,9 @@ const ServicesHome = () => {
     <motion.div 
       id="services"
       className="bg-white" 
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="0"
       ref={sectionRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

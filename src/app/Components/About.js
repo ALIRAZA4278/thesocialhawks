@@ -61,6 +61,9 @@ const About = () => {
      <motion.section 
        id="about"
        className="py-12 sm:py-16 bg-white"
+       data-scroll
+       data-scroll-section
+       data-scroll-speed="0"
        ref={sectionRef}
        initial={{ opacity: 0 }}
        animate={{ opacity: 1 }}

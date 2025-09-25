@@ -1818,7 +1818,7 @@ const ServiceDetailPage = () => {
                       animate={isProcessInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.6, delay: 1.2 + index * 0.2 }}
                     >
-                      &ldquo;{testimonial.text}&rdquo;
+                      &ldquo;{testimonial?.text || ''}&rdquo;
                     </motion.p>
                     
                     <motion.div 
