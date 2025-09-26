@@ -131,9 +131,9 @@ export async function POST(request) {
           
           <div style="text-align: center; margin: 30px 0;">
             <p style="color: #374151; margin-bottom: 15px;"><strong>Connect with us:</strong></p>
-            <a href="#" style="display: inline-block; margin: 0 10px; padding: 10px 20px; background-color: #1877f2; color: white; text-decoration: none; border-radius: 5px;">Facebook</a>
-            <a href="#" style="display: inline-block; margin: 0 10px; padding: 10px 20px; background-color: #0077b5; color: white; text-decoration: none; border-radius: 5px;">LinkedIn</a>
-            <a href="#" style="display: inline-block; margin: 0 10px; padding: 10px 20px; background-color: #e4405f; color: white; text-decoration: none; border-radius: 5px;">Instagram</a>
+            <a href="https://www.facebook.com/thesocialhawks" style="display: inline-block; margin: 0 10px; padding: 10px 20px; background-color: #1877f2; color: white; text-decoration: none; border-radius: 5px;">Facebook</a>
+            <a href="https://www.linkedin.com/company/thesocialhawks" style="display: inline-block; margin: 0 10px; padding: 10px 20px; background-color: #0077b5; color: white; text-decoration: none; border-radius: 5px;">LinkedIn</a>
+            <a href="https://www.instagram.com/thesocialhawks" style="display: inline-block; margin: 0 10px; padding: 10px 20px; background-color: #e4405f; color: white; text-decoration: none; border-radius: 5px;">Instagram</a>
           </div>
           
           <p style="font-size: 16px; line-height: 1.6; color: #374151;">
