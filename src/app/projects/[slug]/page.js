@@ -142,7 +142,7 @@ const ProjectDetailPage = ({ params }) => {
               alt={project.client}
               width={60}
               height={60}
-              className="bg-white rounded-full p-2"
+              className="bg- rounded-full"
             />
             <div className="text-left">
               <div className="text-primary font-semibold text-lg">{project.client}</div>

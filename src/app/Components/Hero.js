@@ -78,19 +78,20 @@ const Hero = () => {
   // Background images that will rotate
   const backgroundImages = [
     {
-      src: '/images/hero-bg-1.jpg',
+      src: '/images/EXAMPLE.jpg',
       fallback: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     },
     {
-      src: '/images/hero-bg-2.jpg', 
+      src: '/images/EXAMPLE.jpg', 
       fallback: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
     },
     {
-      src: '/images/hero-bg-3.jpg',
+      src: '/images/EXAMPLE.jpg',
       fallback: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
     },
+
     {
-      src: '/images/hero-bg-4.jpg',
+      src: '/images/EXAMPLE.jpg',
       fallback: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
     }
   ];
@@ -119,7 +120,7 @@ const Hero = () => {
   useEffect(() => {
     const imageInterval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
-    }, 2000);
+    }, 500);
 
     return () => clearInterval(imageInterval);
   }, [backgroundImages.length]);
@@ -153,14 +154,13 @@ const Hero = () => {
 
               {/* Main Heading */}
               <motion.h1 
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight mb-6 sm:mb-8 lg:mb-15 font-extralight"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight mb-2 sm:mb-4 lg:mb-8 font-extralight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                The Digital Marketing Agency{' '}
-                <br />
-                Obsessed With{' '}
+                The Digital Marketing  <br /> 
+                Agency Obsessed With{' '}
                 <span className="relative inline-block">
                   <AnimatePresence mode="wait">
                     <motion.span 
@@ -180,7 +180,7 @@ const Hero = () => {
 
               {/* Subtitle */}
               <motion.p 
-                className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 lg:mb-15 max-w-lg"
+                className="text-sm sm:text-base lg:text-lg text-gray-600 mb-2 sm:mb-4 lg:mb-8 max-w-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -191,7 +191,7 @@ const Hero = () => {
 
               {/* Team Avatars and Contact Button */}
               <motion.div 
-                className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4"
+                className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -254,7 +254,7 @@ const Hero = () => {
 
               {/* Trust Text */}
               <motion.p 
-                className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8 lg:mb-12"
+                className="text-sm sm:text-base text-gray-500 "
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
@@ -264,7 +264,7 @@ const Hero = () => {
 
               {/* Stats */}
               <motion.div 
-                className="flex flex-row sm:flex-row justify-around gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-10 lg:mt-12 bg-[rgb(245_245_245)] p-4 sm:p-6 rounded-lg"
+                className="flex flex-row sm:flex-row justify-around gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-10 lg:mt-12 bg-[rgb(245_245_245)] p-4 sm:p-6 rounded-lg border border-gray-400"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.4 }}
@@ -306,7 +306,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Content - Image */}
+            {/* Right Content - Creative Animation */}
             <motion.div 
               className="relative order-first lg:order-last"
               style={{ y: parallaxY }}
@@ -315,80 +315,194 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <motion.div 
-                className="relative w-full h-[300px] sm:h-[400px] lg:h-[600px] xl:h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl"
+                className="relative w-full h-[300px] sm:h-[400px] lg:h-[600px] xl:h-[600px] flex items-center justify-center"
                 whileHover={{ 
                   scale: 1.02,
-                  rotateY: 5,
-                  rotateX: 5,
-                  boxShadow: "0 25px 50px rgba(0,0,0,0.2)"
+                  transition: { duration: 0.3 }
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {/* Background Images with Animation */}
-                <div className="absolute inset-0 z-0">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentImageIndex}
-                      className="absolute inset-0"
-                      initial={{ opacity: 0, scale: 1.1 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 1 }}
-                    >
-                      {!imageErrors[`bg-${currentImageIndex}`] ? (
-                        <Image
-                          src={backgroundImages[currentImageIndex].src}
-                          alt={`Background ${currentImageIndex + 1}`}
-                          fill
-                          className="object-cover"
-                          priority={currentImageIndex === 0}
-                          onError={() => handleImageError(`bg-${currentImageIndex}`)}
-                        />
-                      ) : (
-                        <div 
-                          className="w-full h-full"
-                          style={{ background: backgroundImages[currentImageIndex].fallback }}
-                        ></div>
-                      )}
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
+                {/* Animated Geometric Shapes */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  
+                  {/* Main Central Circle */}
+                  <motion.div
+                    className="absolute w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-purple-600 opacity-20"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                      rotate: { duration: 20, repeat: Infinity, ease: "linear" }
+                    }}
+                  />
 
-                {/* Phone mockup overlay */}
-                <motion.div 
-                  className="relative z-10 w-full h-full flex items-center justify-center"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                >
-                  {!imageErrors['hero-phone'] ? (
-                    <Image
-                      src="/images/hero-phone.jpg"
-                      alt="Mobile App Design"
-                      fill
-                      className="object-cover"
-                      onError={() => handleImageError('hero-phone')}
-                    />
-                  ) : (
-                    <motion.div 
-                      className="text-white text-center"
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.8, delay: 0.7 }}
+                  {/* Orbiting Elements */}
+                  <motion.div
+                    className="absolute w-4 h-4 bg-primary rounded-full"
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    style={{
+                      transformOrigin: "150px 0px"
+                    }}
+                  />
+
+                  <motion.div
+                    className="absolute w-3 h-3 bg-purple-500 rounded-full"
+                    animate={{
+                      rotate: [0, -360],
+                    }}
+                    transition={{
+                      duration: 12,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    style={{
+                      transformOrigin: "120px 0px"
+                    }}
+                  />
+
+                  <motion.div
+                    className="absolute w-5 h-5 bg-blue-400 rounded-full"
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      duration: 15,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    style={{
+                      transformOrigin: "100px 0px"
+                    }}
+                  />
+
+                  {/* Floating Shapes */}
+                  <motion.div
+                    className="absolute top-10 left-10 w-6 h-6 bg-gradient-to-r from-primary to-purple-500 rounded-lg"
+                    animate={{
+                      y: [0, -20, 0],
+                      rotate: [0, 180, 360],
+                    }}
+                    transition={{
+                      y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                      rotate: { duration: 6, repeat: Infinity, ease: "linear" }
+                    }}
+                  />
+
+                  <motion.div
+                    className="absolute top-20 right-16 w-4 h-8 bg-gradient-to-b from-purple-400 to-blue-500 rounded-full"
+                    animate={{
+                      x: [0, 15, 0],
+                      rotate: [0, -90, 0],
+                    }}
+                    transition={{
+                      x: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                      rotate: { duration: 8, repeat: Infinity, ease: "linear" }
+                    }}
+                  />
+
+                  <motion.div
+                    className="absolute bottom-20 left-16 w-8 h-4 bg-gradient-to-r from-blue-400 to-primary rounded-full"
+                    animate={{
+                      y: [0, 10, 0],
+                      x: [0, -10, 0],
+                    }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+
+                  {/* Central Content */}
+                  <motion.div
+                    className="relative z-10 text-center"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                  >
+                    <motion.div
+                      className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 bg-gradient-to-br from-primary to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl"
+                      whileHover={{ 
+                        scale: 1.1,
+                        rotate: 5,
+                        boxShadow: "0 20px 40px rgba(127, 32, 196, 0.3)"
+                      }}
+                      animate={{
+                        boxShadow: [
+                          "0 10px 20px rgba(127, 32, 196, 0.2)",
+                          "0 20px 40px rgba(127, 32, 196, 0.4)",
+                          "0 10px 20px rgba(127, 32, 196, 0.2)"
+                        ]
+                      }}
+                      transition={{
+                        boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                      }}
                     >
-                      <motion.div 
-                        className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center"
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.8 }}
+                      <motion.svg 
+                        className="w-12 h-12 sm:w-16 sm:h-16 text-white" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                       >
-                        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-                        </svg>
-                      </motion.div>
-                      <p className="text-lg font-semibold">Mobile App Design</p>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </motion.svg>
                     </motion.div>
-                  )}
-                </motion.div>
+                    
+                    <motion.h3 
+                      className="text-lg sm:text-xl font-bold text-gray-800 mb-2"
+                      animate={{
+                        color: ["#1f2937", "#7f20c4", "#1f2937"]
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      Digital Excellence
+                    </motion.h3>
+                    
+                    <motion.p 
+                      className="text-sm text-gray-600"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1 }}
+                    >
+                      Results-Driven Marketing
+                    </motion.p>
+                  </motion.div>
+
+                  {/* Decorative Lines */}
+                  <motion.div
+                    className="absolute inset-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                  >
+                    <svg className="w-full h-full" viewBox="0 0 400 400">
+                      <motion.path
+                        d="M 50,200 Q 200,50 350,200 Q 200,350 50,200"
+                        stroke="rgba(127, 32, 196, 0.2)"
+                        strokeWidth="2"
+                        fill="none"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                    </svg>
+                  </motion.div>
+
+                </div>
               </motion.div>
             </motion.div>
           </div>
