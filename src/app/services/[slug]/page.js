@@ -1314,7 +1314,7 @@ const ServiceDetailPage = () => {
               Comprehensive solutions tailored to elevate your brand and drive measurable results
             </motion.p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto auto-rows-fr items-stretch">
+            <div className="service-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto items-stretch">
               {service.services.map((serviceItem, index) => {
                 // Determine if this service item should be clickable
                 let linkHref = null;
@@ -1331,14 +1331,14 @@ const ServiceDetailPage = () => {
 
                 const content = (
                   <motion.div 
-                    className="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-500 overflow-hidden h-full flex flex-col"
+                    className="service-card relative bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-500 overflow-hidden h-full min-h-[200px] flex flex-col"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.6, delay: index * 0.05 }}
                     whileHover={{ 
-                      y: -12, 
-                      scale: 1.03,
-                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                      y: -8, 
+                      scale: 1.02,
+                      boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.2)"
                     }}
                   >
                   {/* Dynamic Background Pattern */}
@@ -1406,22 +1406,24 @@ const ServiceDetailPage = () => {
                     
                     {/* Service Text */}
                     <motion.div
+                      className="flex-1 flex flex-col"
                       initial={{ opacity: 0, y: 20 }}
                       animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.6, delay: index * 0.05 + 0.4 }}
                     >
-                      <h4 className="text-lg font-bold text-gray-900 transition-colors duration-500 leading-relaxed mb-3">
-                        {serviceItem}
+                      <h4 className="text-base lg:text-lg font-semibold text-gray-900 transition-colors duration-500 leading-snug mb-4 min-h-[4rem] flex items-start">
+                        <span className="line-clamp-3">{serviceItem}</span>
                       </h4>
                       
                       {/* Service Number */}
-                      <div className="flex items-center justify-between mt-auto">
+                      <div className="flex items-center justify-between mt-auto pt-2">
                         <span className="text-sm font-medium text-gray-500 transition-colors duration-500">
                           Service #{(index + 1).toString().padStart(2, '0')}
                         </span>
                         
                         <motion.div 
                           className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center transition-all duration-500"
+                          whileHover={{ scale: 1.1 }}
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -2347,6 +2349,65 @@ const ServiceDetailPage = () => {
       </motion.div>
       
       <Contact />
+      
+      {/* Custom Styles for Better Readability */}
+      <style jsx>{`
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          line-height: 1.4;
+          max-height: calc(1.4em * 3);
+        }
+        
+        /* Ensure proper text rendering */
+        * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Improve hover interactions */
+        .service-card {
+          cursor: pointer;
+        }
+        
+        .service-card:hover h4 {
+          color: #7c3aed;
+        }
+        
+        /* Consistent spacing */
+        @media (min-width: 768px) {
+          .service-grid {
+            grid-auto-rows: 1fr;
+          }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+          .service-card {
+            min-height: 180px;
+            padding: 1.5rem;
+          }
+          
+          .service-card h4 {
+            font-size: 1rem;
+            line-height: 1.3;
+            min-height: 3rem;
+          }
+        }
+        
+        /* Focus states for accessibility */
+        .service-card:focus-visible {
+          outline: 2px solid #7c3aed;
+          outline-offset: 2px;
+        }
+        
+        /* Smooth transitions */
+        .service-card h4 {
+          transition: color 0.3s ease;
+        }
+      `}</style>
     </div>
   );
 };

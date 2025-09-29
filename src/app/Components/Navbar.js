@@ -52,15 +52,6 @@ const Navbar = () => {
         body .navbar-container {
           z-index: 99999 !important;
         }
-        
-        /* Force navbar link text to be white on hover across all themes */
-        .navbar-container .navbar-link:hover,
-        .navbar-container .navbar-link:focus,
-        .navbar-container a.navbar-link:hover,
-        .navbar-container a.navbar-link:focus {
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
-        }
       `}</style>
 
       <motion.div 
@@ -120,7 +111,7 @@ const Navbar = () => {
               >
                 <Link
                   href={item.href}
-                  className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white text-gray-800 navbar-link`}
+                  className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white text-gray-800`}
                 >
                   <motion.span
                     whileHover={{ scale: 1.05 }}
@@ -237,7 +228,7 @@ const Navbar = () => {
                         onClick={() => {
                           toggleMobileMenu();
                         }}
-                        className={`${classes} navbar-link`}
+                        className={classes}
                       >
                         <motion.span
                           whileHover={{ scale: 1.05 }}

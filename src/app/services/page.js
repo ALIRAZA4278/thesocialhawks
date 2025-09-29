@@ -194,11 +194,11 @@ const ServicesPage = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="px-4 mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {services.map((service, index) => (
                 <Link href={`/services/${service.slug}`} key={service.id} className="block">
                   <motion.div 
-                    className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-96"
+                    className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 h-[420px] flex flex-col"
                     initial={{ opacity: 0, y: 60 }}
                     animate={isServicesInView ? { 
                       opacity: 1, 
@@ -215,49 +215,101 @@ const ServicesPage = () => {
                       damping: 15
                     }}
                     whileHover={{ 
-                      y: -2,
-                      transition: { duration: 0.3 }
+                      y: -8,
+                      scale: 1.02,
+                      transition: { duration: 0.3, ease: "easeOut" }
                     }}
                   >
-                  {/* Content Layout - Title Left, Image Right */}
-                  <div className="flex flex-col lg:flex-row h-full">
-                    {/* Left Section - Title and Content */}
-                    <div className="flex-1 p-6 lg:p-8 xl:p-10 flex flex-col justify-between min-h-0">
-                      <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
-                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-primary transition-colors duration-300 flex-shrink-0">
-                          {service.title}
-                        </h3>
-                        
-                        <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
-                          {service.description}
-                        </p>
-                      </div>
-
-                      {/* Know More Link */}
-                      <div className="flex items-center text-primary group-hover:text-primary-hover transition-colors duration-300 cursor-pointer mt-4 flex-shrink-0">
-                        <span className="text-sm font-medium">→ Know More</span>
-                      </div>
-                    </div>
-
-                    {/* Right Section - Image */}
-                    <div className="w-full lg:w-64 xl:w-80 h-48 lg:h-auto relative overflow-hidden lg:rounded-r-2xl">
+                    {/* Image Section - Top */}
+                    <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary/5 to-primary/10">
                       {!imageErrors[`service-${service.id}`] ? (
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
                           onError={() => handleImageError(`service-${service.id}`)}
                         />
                       ) : (
                         <div 
-                          className="w-full h-full group-hover:scale-105 transition-transform duration-700"
+                          className="w-full h-full group-hover:scale-110 transition-transform duration-700"
                           style={{ background: service.fallback }}
                         />
                       )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      {/* Service Badge */}
+                      <motion.div 
+                        className="absolute top-4 left-4"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <span className="bg-white/95 backdrop-blur-sm text-gray-800 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg border border-white/20">
+                          #{(index + 1).toString().padStart(2, '0')}
+                        </span>
+                      </motion.div>
+
+                      {/* Hover Action Icon */}
+                      <motion.div 
+                        className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                        initial={{ scale: 0 }}
+                        whileHover={{ scale: 1.1, rotate: 12 }}
+                      >
+                        <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 shadow-lg">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                          </svg>
+                        </div>
+                      </motion.div>
                     </div>
-                  </div>
-                </motion.div>
+
+                    {/* Content Section - Bottom */}
+                    <div className="p-6 flex-1 flex flex-col">
+                      {/* Category Badge */}
+                      <motion.div 
+                        className="mb-4"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <span className="inline-flex items-center gap-2 text-primary font-semibold text-xs bg-primary/5 px-3 py-1.5 rounded-full border border-primary/10">
+                          <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                          Professional Service
+                        </span>
+                      </motion.div>
+                      
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300 leading-tight line-clamp-2">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 leading-relaxed text-sm flex-1 mb-5 line-clamp-3 min-h-[60px]">
+                        {service.description}
+                      </p>
+
+                      {/* Footer */}
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div className="flex items-center gap-2 text-gray-500 text-xs">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7"></path>
+                          </svg>
+                          <span className="font-medium">Quick Delivery</span>
+                        </div>
+                        <motion.div 
+                          className="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all duration-300"
+                          whileHover={{ x: 2 }}
+                        >
+                          <span>Know More</span>
+                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                          </svg>
+                        </motion.div>
+                      </div>
+                    </div>
+
+                    {/* Hover Shine Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+                    </div>
+                  </motion.div>
                 </Link>
               ))}
             </div>
@@ -314,6 +366,36 @@ const ServicesPage = () => {
           .scrollbar-thin::-webkit-scrollbar {
             display: none;
           }
+        }
+
+        /* Line clamp utility */
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          line-height: 1.4;
+          max-height: calc(1.4em * 2);
+        }
+
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          line-height: 1.4;
+          max-height: calc(1.4em * 3);
+        }
+
+        /* Ensure proper text rendering */
+        * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Enhanced card animations */
+        .group:hover .animate-pulse {
+          animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
       `}</style>
     </div>

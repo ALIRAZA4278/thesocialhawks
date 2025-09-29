@@ -208,7 +208,7 @@ const About = () => {
                 animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <span className="text-primary font-semibold">The Socialhawks</span> was founded with a simple belief: marketing should 
+                <span className="text-primary font-semibold">socialhawks</span> was founded with a simple belief: marketing should 
                 generate real, measurable returns, not just impressions.
               </motion.p>
               
