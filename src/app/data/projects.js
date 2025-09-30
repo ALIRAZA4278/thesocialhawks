@@ -297,7 +297,7 @@ export const projectsData = [
     slug: 'hirm-social-media-seo-campaign',
     title: 'Full Social Media Marketing Campaign & SEO for HIRM',
     client: 'Hayat Institute of Rehabilitation Medicine (HIRM)',
-    clientLogo: '/images/projects/HIRM/HIRM 11.jpg',
+   clientLogo: '/images/logo/11.jpg',
     category: 'Education',
     shortDescription: 'Institute of rehabilitation medicine - strengthening digital footprint, attracting prospective students, and achieving consistent admissions across multiple academic tenures.',
     description: 'Hayat Institute of Rehabilitation Medicine partnered with us to strengthen its digital footprint, attract prospective students, and achieve consistent admissions across multiple academic tenures. The focus was on building a strong online presence, running effective admission campaigns, and providing strategic consultancy for long-term growth. Over a span of 30 months, we executed a full-scale social media marketing strategy combined with SEO optimization. From paid ad campaigns to creative content, our team ensured that HIRM remained visible and engaging across digital platforms. Additionally, we provided consultancy to help the institute better connect with its target audience.',
@@ -359,6 +359,97 @@ export const projectsData = [
         value: 'Consistent',
         metric: 'Student Enrollment',
         description: 'Achieved consistent student enrollment goals across all tenures'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'completed'
+  },
+  {
+    id: 11,
+    slug: 'techsmartone-ecommerce-brand-building',
+    title: 'E-Commerce Brand Building for TechSmartOne',
+    client: 'TechSmartOne',
+    clientLogo: '/images/logo/19.jpg',
+    category: 'Technology',
+    shortDescription: 'Growing e-commerce brand in Karachi - elevating digital presence and driving online sales across diverse range of tech products.',
+    description: 'TechSmartOne, a growing e-commerce brand in Karachi, Pakistan, partnered with us to elevate its digital presence and drive online sales across its diverse range of tech products. Our mission was to strengthen brand visibility, optimize sales funnels, and position TechSmartOne as a trusted name in the tech retail space. Over 12 months, we executed a complete brand-building strategy by integrating creative social media marketing with performance-driven ad campaigns. Alongside Meta Ads for sales growth, we produced high-quality product shoots, videos, and motion graphics to highlight their product range. Additionally, we developed and managed their e-commerce website, optimizing it with SEO for maximum reach.',
+    images: [
+      '/images/projects/Tech SmartOne/Tech SmartOne (1).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (2).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (3).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (4).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (5).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (6).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (7).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (8).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (9).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (10).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (11).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (12).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (13).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (14).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (15).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (16).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (17).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (18).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (19).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (20).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (21).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (22).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (23).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (24).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (25).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (26).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (27).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (28).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (29).jpg',
+      '/images/projects/Tech SmartOne/Tech SmartOne (30).jpg'
+    ],
+    services: [
+      'Paid Meta Ads Campaigns (Sales Focused)',
+      'Ad Creatives & Social Media Post Design',
+      'Full Video Production & Product Photography',
+      'Video Editing & Motion Graphics',
+      'Ads Copywriting & Brand Messaging',
+      'Website Development & Management',
+      'SEO (Search Engine Optimization)',
+      'Social Media Marketing Consultancy'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Adobe Creative Suite',
+      'E-commerce Platforms',
+      'SEO Tools & Software',
+      'Video Production Equipment',
+      'Motion Graphics Software',
+      'Web Development Technologies',
+      'Analytics Tools',
+      'Social Media Platforms'
+    ],
+    duration: '12 Months',
+    year: '2024–2025',
+    location: 'Karachi, Pakistan',
+    results: [
+      {
+        value: '1.58',
+        metric: 'Average ROI on Meta Ads',
+        description: 'Achieved profitable returns delivering consistent growth and sales'
+      },
+      {
+        value: 'Steady',
+        metric: 'E-commerce Growth',
+        description: 'Experienced steady growth in online sales and operations'
+      },
+      {
+        value: 'Optimized',
+        metric: 'Website Performance',
+        description: 'Enhanced website with SEO optimization for maximum reach'
+      },
+      {
+        value: 'Strong',
+        metric: 'Brand Recognition',
+        description: 'Positioned as trusted name in tech retail space'
       }
     ],
     testimonial: null,

@@ -289,33 +289,89 @@ const Projects = () => {
                     )}
                   </motion.div>
 
-                  {/* View Case Study Button */}
+                  {/* View Case Study Button with Backdrop */}
                   <motion.div
-                    className="absolute inset-0 flex items-end justify-center pb-25 z-50 pointer-events-none"
+                    className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{
                       opacity: hoveredCard === card.id ? 1 : 0,
                       scale: hoveredCard === card.id ? 1 : 0.9,
                     }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                    >
-                    <motion.button
-                      className="bg-white text-gray-900 px-4 py-2 rounded-full font-semibold shadow-xl transform transition-all duration-200 pointer-events-auto flex items-center gap-3 opacity-100 hover:bg-black hover:text-white"
-                      whileHover={{ 
-                        scale: 1.05, 
-                        boxShadow: '0 20px 40px rgba(0,0,0,0.15)' 
+                  >
+                    {/* Dark overlay backdrop for better button visibility */}
+                    <motion.div
+                      className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-3xl"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: hoveredCard === card.id ? 1 : 0,
                       }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={(e) => { 
-                        e.stopPropagation(); 
-                        router.push(`/projects/${card.slug}`);
+                      transition={{ duration: 0.3 }}
+                    />
+                    
+                    {/* Button container with better positioning */}
+                    <motion.div
+                      className="relative z-10 flex flex-col items-center gap-4"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{
+                        y: hoveredCard === card.id ? 0 : 20,
+                        opacity: hoveredCard === card.id ? 1 : 0,
                       }}
+                      transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
                     >
-                      <span>View Project</span>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </motion.button>
+                      {/* Project title overlay */}
+                      <motion.h4
+                        className="text-white text-lg font-bold text-center px-4 opacity-90"
+                        initial={{ y: 10, opacity: 0 }}
+                        animate={{
+                          y: hoveredCard === card.id ? 0 : 10,
+                          opacity: hoveredCard === card.id ? 0.9 : 0,
+                        }}
+                        transition={{ duration: 0.4, delay: 0.15 }}
+                      >
+                        {card.title}
+                      </motion.h4>
+                      
+                      {/* Enhanced View Project Button */}
+                      <motion.button
+                        className="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold shadow-2xl transform transition-all duration-300 pointer-events-auto flex items-center gap-3 hover:bg-primary hover:text-white hover:shadow-[0_20px_40px_rgba(127,32,196,0.4)] relative overflow-hidden"
+                        whileHover={{ 
+                          scale: 1.08,
+                          y: -2
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={(e) => { 
+                          e.stopPropagation(); 
+                          router.push(`/projects/${card.slug}`);
+                        }}
+                        initial={{ y: 10, opacity: 0 }}
+                        animate={{
+                          y: hoveredCard === card.id ? 0 : 10,
+                          opacity: hoveredCard === card.id ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                      >
+                        {/* Button shine effect */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                          initial={{ x: '-100%' }}
+                          whileHover={{ x: '100%' }}
+                          transition={{ duration: 0.6, ease: 'easeInOut' }}
+                        />
+                        
+                        <span className="relative z-10">View Project</span>
+                        <motion.svg 
+                          className="w-5 h-5 relative z-10" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                          whileHover={{ x: 3 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </motion.svg>
+                      </motion.button>
+                    </motion.div>
                   </motion.div>
 
                   {/* Decorative Elements */}
