@@ -235,7 +235,7 @@ export const projectsData = [
     slug: 'powerpresent-ai-google-ads-social-media-campaign',
     title: 'Full Social Media & Google Ads Campaign for PowerPresent AI',
     client: 'PowerPresent AI',
-    clientLogo: '/images/projects/PowerPresent Ai/PowerPresent Ai (1).jpg',
+    clientLogo: '/images/logo/23.jpg',
     category: 'SaaS – AI Tool',
     shortDescription: 'Innovative SaaS AI tool - building digital footprint and achieving sales goals through Google Ads and social media presence.',
     description: 'PowerPresent AI, an innovative SaaS tool, partnered with us to build a strong digital footprint and achieve its sales goals. The objective was to generate conversions through Google Ads while simultaneously creating a strong social media presence to establish credibility and brand awareness. Over a 4-month period, we executed a combined strategy of performance-driven Google Ads campaigns and consistent social media management. This dual approach ensured both immediate sales results and long-term brand growth.',
