@@ -18,6 +18,10 @@ const ProjectDetailPage = ({ params }) => {
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Gallery state
+  const [showAllImages, setShowAllImages] = useState(false);
+  const initialImageCount = 6; // Show first 6 images initially
 
   const heroRef = useRef(null);
   const detailsRef = useRef(null);
@@ -268,8 +272,8 @@ const ProjectDetailPage = ({ params }) => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {project.images.map((image, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {(showAllImages ? project.images : project.images.slice(0, initialImageCount)).map((image, index) => (
               <motion.div
                 key={index}
                 className="group relative aspect-square overflow-hidden rounded-2xl shadow-lg cursor-pointer border border-gray-100 hover:border-primary/30 transition-all duration-500"
@@ -338,6 +342,79 @@ const ProjectDetailPage = ({ params }) => {
               </motion.div>
             ))}
           </div>
+
+          {/* View More/Less Button */}
+          {project.images.length > initialImageCount && (
+            <motion.div 
+              className="text-center mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isHeroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <motion.button
+                onClick={() => setShowAllImages(!showAllImages)}
+                className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(127, 32, 196, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {/* Animated background */}
+                <motion.div
+                  className="absolute inset-0 bg-primary-hover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '0%' }}
+                  transition={{ duration: 0.3 }}
+                />
+                
+                <span className="relative z-10 flex items-center gap-3">
+                  {showAllImages ? (
+                    <>
+                      <motion.svg 
+                        className="w-5 h-5" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                        whileHover={{ rotate: 180 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7"></path>
+                      </motion.svg>
+                      Show Less Images
+                    </>
+                  ) : (
+                    <>
+                      <motion.svg 
+                        className="w-5 h-5" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                        whileHover={{ rotate: 180 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                      </motion.svg>
+                      View More Images ({project.images.length - initialImageCount} more)
+                    </>
+                  )}
+                </span>
+
+                {/* Shine effect */}
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500"
+                  style={{
+                    background: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%)'
+                  }}
+                  initial={{ x: '-100%', skewX: -25 }}
+                  whileHover={{ 
+                    x: '100%',
+                    transition: { duration: 0.6, ease: "easeInOut" }
+                  }}
+                />
+              </motion.button>
+            </motion.div>
+          )}
         </div>
       </motion.section>
 
