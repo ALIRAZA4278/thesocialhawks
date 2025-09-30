@@ -96,6 +96,10 @@ const Testimonials = () => {
     {
       id: 23,
       image: "/images/logo/23.jpg",
+    },
+    {
+      id: 24,
+      image: "/images/logo/24.jpg",
     }
   ], []);
 
