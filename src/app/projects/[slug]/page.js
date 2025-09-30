@@ -558,7 +558,7 @@ const ProjectDetailPage = ({ params }) => {
             {resultsToShow.map((result, index) => (
               <motion.div
                 key={index}
-                className="text-center group cursor-pointer"
+                className="text-center group cursor-pointer h-full"
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 animate={isResultsInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
                 transition={{ 
@@ -574,7 +574,7 @@ const ProjectDetailPage = ({ params }) => {
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.div 
-                  className="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 group-hover:shadow-xl transition-all duration-500 border border-primary/10 group-hover:border-primary/20 overflow-hidden"
+                  className="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 group-hover:shadow-xl transition-all duration-500 border border-primary/10 group-hover:border-primary/20 overflow-hidden h-full flex flex-col justify-between"
                   whileHover={{
                     background: "linear-gradient(135deg, rgba(127, 32, 196, 0.08) 0%, rgba(127, 32, 196, 0.15) 100%)"
                   }}
@@ -596,63 +596,69 @@ const ProjectDetailPage = ({ params }) => {
                     }}
                   />
 
-                  {/* Icon based on metric type */}
-                  <motion.div
-                    className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {result.metric.toLowerCase().includes('sales') || result.metric.toLowerCase().includes('revenue') ? (
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                      </svg>
-                    ) : result.metric.toLowerCase().includes('engagement') ? (
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                      </svg>
-                    ) : result.metric.toLowerCase().includes('roas') ? (
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                      </svg>
-                    ) : (
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                      </svg>
-                    )}
-                  </motion.div>
+                  {/* Top section with icon and value */}
+                  <div className="flex-1 flex flex-col justify-center">
+                    {/* Icon based on metric type */}
+                    <motion.div
+                      className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      {result.metric.toLowerCase().includes('sales') || result.metric.toLowerCase().includes('revenue') ? (
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                      ) : result.metric.toLowerCase().includes('engagement') ? (
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                      ) : result.metric.toLowerCase().includes('roas') ? (
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                      ) : (
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                      )}
+                    </motion.div>
 
-                  <motion.div 
-                    className="text-4xl lg:text-5xl font-bold text-primary mb-4 group-hover:text-primary/90 transition-colors duration-300"
-                    initial={{ scale: 0 }}
-                    animate={isResultsInView ? { scale: 1 } : { scale: 0 }}
-                    transition={{ 
-                      duration: 0.6, 
-                      delay: 0.4 + index * 0.1,
-                      type: "spring",
-                      bounce: 0.4
-                    }}
-                  >
-                    {result.value}
-                  </motion.div>
+                    <motion.div 
+                      className="text-4xl lg:text-5xl font-bold text-primary mb-4 group-hover:text-primary/90 transition-colors duration-300"
+                      initial={{ scale: 0 }}
+                      animate={isResultsInView ? { scale: 1 } : { scale: 0 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: 0.4 + index * 0.1,
+                        type: "spring",
+                        bounce: 0.4
+                      }}
+                    >
+                      {result.value}
+                    </motion.div>
+                  </div>
                   
-                  <motion.h3 
-                    className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={isResultsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  >
-                    {result.metric}
-                  </motion.h3>
-                  
-                  <motion.p 
-                    className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={isResultsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                    transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                  >
-                    {result.description}
-                  </motion.p>
+                  {/* Bottom section with title and description */}
+                  <div className="flex-1 flex flex-col justify-end">
+                    <motion.h3 
+                      className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={isResultsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                      transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    >
+                      {result.metric}
+                    </motion.h3>
+                    
+                    <motion.p 
+                      className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={isResultsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                      transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                    >
+                      {result.description}
+                    </motion.p>
+                  </div>
 
                   {/* Hover shine effect */}
                   <motion.div

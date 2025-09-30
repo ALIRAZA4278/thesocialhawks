@@ -5,7 +5,7 @@ export const projectsData = [
     slug: 'mfit-social-media-campaign',
     title: 'Full Social Media Marketing Campaign for MFit',
     client: 'MFit',
-    clientLogo: '/images/logo/24.png',
+    clientLogo: '/images/logo/15.jpg',
     category: 'Gym & Fitness',
     shortDescription: 'Premium gym digital presence and lead generation campaign to attract new members and establish market position.',
     description: 'MFit, a premium gym located in a posh area, partnered with us to launch a strong digital presence and attract new members. Our goal was to create awareness, generate leads, and position MFit as the go-to fitness destination in the community. We delivered a comprehensive 2-month social media marketing and management campaign, combining creative production with strategic paid advertising to maximize results.',
@@ -87,97 +87,282 @@ export const projectsData = [
  
   {
     id: 2,
-    slug: 'kings-fruit',
-    title: 'Kings Fruit & Vegetables',
-    client: "Kings Fruit",
-    clientLogo: '/images/logo.png',
-    category: 'FMCG & Packaging',
-    shortDescription: 'Local selection of high-quality fruits & vegetables — branding and digital marketing.',
-  description: 'Placeholder project description. Replace with real case study content.',
-  images: ['/images/EXAMPLE.jpg'],
-  services: ['Placeholder Service A', 'Placeholder Service B'],
-  technologies: ['Placeholder Tech'],
-  duration: 'TBD',
-  year: '2023',
-  results: [],
-  testimonial: null,
-    featured: false,
-    status: 'completed'
-  },
-  {
-    id: 3,
-    slug: 'doctor-obesity',
-    title: 'Doctor Obesity (Dr. Tanvir Raazi Ahmed)',
-    client: 'Doctor Obesity Clinic',
-    clientLogo: '/images/logo.png',
-    category: 'Healthcare & Medical',
-    shortDescription: 'Specialized clinic for metabolic and bariatric surgery — full digital presence.',
-  description: 'Placeholder project description. Replace with real case study content.',
-  images: ['/images/EXAMPLE.jpg'],
-  services: ['Placeholder Service A', 'Placeholder Service B'],
-  technologies: ['Placeholder Tech'],
-  duration: 'TBD',
-  year: '2024',
-  results: [],
-  testimonial: null,
-    featured: false,
-    status: 'completed'
-  },
-  {
-    id: 4,
-    slug: 'masterclass-pakistan',
-    title: 'MasterClass Pakistan — Hospitality Business School',
-    client: 'MasterClass Pakistan',
-    clientLogo: '/images/logo.png',
-    category: 'Education & Events',
-    shortDescription: 'Hospitality institute — marketing, events, and content.',
-  description: 'Placeholder project description. Replace with real case study content.',
-  images: ['/images/EXAMPLE.jpg'],
-  services: ['Placeholder Service A', 'Placeholder Service B'],
-  technologies: ['Placeholder Tech'],
-  duration: 'TBD',
-  year: '2023',
-  results: [],
-  testimonial: null,
-    featured: false,
-    status: 'completed'
-  },
-  {
-    id: 5,
-    slug: 'xroad-clothing',
-    title: 'XROAD — Clothing Brand',
-    client: 'XROAD',
-    clientLogo: '/images/logo.png',
-    category: 'E-commerce & Branding',
-    shortDescription: 'Sialkot-based brand serving B2B and B2C customers — digital growth & content.',
-  description: 'Placeholder project description. Replace with real case study content.',
-  images: ['/images/EXAMPLE.jpg'],
-  services: ['Placeholder Service A', 'Placeholder Service B'],
-  technologies: ['Placeholder Tech'],
-  duration: 'TBD',
-  year: '2024',
-  results: [],
-  testimonial: null,
-    featured: false,
-    status: 'completed'
-  },
-  {
-    id: 6,
-    slug: 'azure-clothing-brand',
-    title: 'AZURE — Women Clothing Brand',
-    client: 'AZURE',
-    clientLogo: '/images/logo.png',
-    category: 'E-commerce & Creative',
-    shortDescription: "Leading women's clothing brand in Pakistan — full ecommerce and creative support.",
-    description: "AZURE is a leading women's clothing brand in Pakistan. We provided end-to-end social media management, creative graphics, customer service setup, e-commerce management solutions, and video animations to boost brand engagement and online sales.",
-    images: ['/images/EXAMPLE.jpg'],
-    services: ['Placeholder Service A', 'Placeholder Service B'],
-    technologies: ['Placeholder Tech'],
-    duration: 'TBD',
-    year: '2024',
-    results: [],
+    slug: 'bakelicious-social-media-campaign',
+    title: 'Social Media Marketing Campaign for Bakelicious',
+    client: 'Bakelicious',
+    clientLogo: '/images/logo/8.jpg',
+    category: 'Food & Beverages',
+    shortDescription: 'Newly launched bakery in Gulshan Town - building strong online presence and highlighting wide variety of products.',
+    description: 'Bakelicious, a newly launched bakery in Gulshan Town, partnered with us to build a strong online presence and highlight its wide variety of products. Our focus was to create an engaging social media identity, boost awareness, and drive customer footfall through targeted marketing. Over the span of 8 months, we managed Bakelicious\'s complete social media presence. From eye-catching visuals to high-performing ads, we combined creative storytelling with strategic campaigns to attract food lovers and establish Bakelicious as a must-visit destination.',
+    images: [
+      '/images/projects/Bakelicious/Bakelicious (1).jpg',
+      '/images/projects/Bakelicious/Bakelicious (2).jpg',
+      '/images/projects/Bakelicious/Bakelicious (3).jpg',
+      '/images/projects/Bakelicious/Bakelicious (4).jpg',
+      '/images/projects/Bakelicious/Bakelicious (5).jpg',
+      '/images/projects/Bakelicious/Bakelicious (6).jpg',
+      '/images/projects/Bakelicious/Bakelicious (7).jpg',
+      '/images/projects/Bakelicious/Bakelicious (8).jpg',
+      '/images/projects/Bakelicious/Bakelicious (9).jpg',
+      '/images/projects/Bakelicious/Bakelicious (10).jpg',
+      '/images/projects/Bakelicious/Bakelicious (11).jpg',
+      '/images/projects/Bakelicious/Bakelicious (12).jpg',
+      '/images/projects/Bakelicious/Bakelicious (13).jpg',
+      '/images/projects/Bakelicious/Bakelicious (14).jpg'
+    ],
+    services: [
+      'Ad Creatives & Social Media Post Design',
+      'High-quality Video Production',
+      'Creative Onsite Product Photography',
+      'Motion Graphics for Engaging Content',
+      'Paid Meta Ads Campaigns'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Adobe Creative Suite',
+      'Video Production Equipment',
+      'Motion Graphics Software',
+      'Social Media Platforms',
+      'Photography Equipment'
+    ],
+    duration: '8 Months',
+    year: '2024–2025',
+    location: 'Karachi, Pakistan',
+    results: [
+      {
+        value: '100%',
+        metric: 'Brand Visibility Boost',
+        description: 'Successfully built a consistent creative grid for social media accounts'
+      },
+      {
+        value: 'Popular',
+        metric: 'Local Market Position',
+        description: 'Positioned Bakelicious as a popular choice in the local bakery scene'
+      },
+      {
+        value: 'Complete',
+        metric: 'Product Range Showcase',
+        description: 'Showcased wide product range through strategic content creation'
+      },
+      {
+        value: 'Strong',
+        metric: 'Social Media Identity',
+        description: 'Created engaging social media identity that attracts food lovers'
+      }
+    ],
     testimonial: null,
-    featured: false,
+    featured: true,
+    status: 'completed'
+  },
+  {
+    id: 8,
+    slug: 'nhu-drhs-social-media-campaign',
+    title: 'Full Social Media Campaign for DRHS-NHU',
+    client: 'Nazeer Hussain University – Department of Rehabilitation & Health Sciences',
+    clientLogo: '/images/projects/NHU (DRHS)/NHU (DRHS) (1).jpg',
+    category: 'Education',
+    shortDescription: 'University admissions campaign for DPT and ADP-PT Programs - generating quality leads and maximizing reach during admission season.',
+    description: 'Nazeer Hussain University (NHU), through its Department of Rehabilitation & Health Sciences, collaborated with us to strengthen its digital outreach during admission season. The objective was clear: to generate quality leads, maximize reach, and ensure a strong online presence to attract prospective students for DPT and ADP-PT Programs. Over the course of 6 months, we implemented a complete social media marketing and management strategy, combining creative production with lead-focused campaigns to deliver measurable results.',
+    images: [
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (1).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (2).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (3).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (4).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (5).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (6).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (7).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (8).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (9).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (10).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (11).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (12).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (13).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (14).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (15).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (16).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (17).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (18).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (19).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (20).jpg'
+    ],
+    services: [
+      'Ad Creatives & Social Media Post Design',
+      'Video Production & Drone Shoots',
+      'Creative Photography & Motion Graphics',
+      'Script Writing for Campaign Ads',
+      'Paid Meta Ads Campaign (Lead Generation)'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Adobe Creative Suite',
+      'Drone Technology',
+      'Video Production Equipment',
+      'Motion Graphics Software',
+      'Social Media Platforms',
+      'Analytics Tools'
+    ],
+    duration: '6 Months',
+    year: '2024-2025',
+    location: 'Karachi, Pakistan',
+    results: [
+      {
+        value: '100%',
+        metric: 'Lead Target Achievement',
+        description: 'Successfully achieved and fulfilled the targeted number of leads at peak admission campaign'
+      },
+      {
+        value: 'Maximum',
+        metric: 'Digital Visibility',
+        description: 'Ensured strong online presence and maximum visibility across digital platforms'
+      },
+      {
+        value: 'Strong',
+        metric: 'Student Engagement',
+        description: 'Delivered strong student engagement for DPT and ADP-PT Programs'
+      },
+      {
+        value: 'Quality',
+        metric: 'Lead Generation',
+        description: 'Generated quality leads through strategic social media marketing campaigns'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'completed'
+  },
+  {
+    id: 9,
+    slug: 'powerpresent-ai-google-ads-social-media-campaign',
+    title: 'Full Social Media & Google Ads Campaign for PowerPresent AI',
+    client: 'PowerPresent AI',
+    clientLogo: '/images/projects/PowerPresent Ai/PowerPresent Ai (1).jpg',
+    category: 'SaaS – AI Tool',
+    shortDescription: 'Innovative SaaS AI tool - building digital footprint and achieving sales goals through Google Ads and social media presence.',
+    description: 'PowerPresent AI, an innovative SaaS tool, partnered with us to build a strong digital footprint and achieve its sales goals. The objective was to generate conversions through Google Ads while simultaneously creating a strong social media presence to establish credibility and brand awareness. Over a 4-month period, we executed a combined strategy of performance-driven Google Ads campaigns and consistent social media management. This dual approach ensured both immediate sales results and long-term brand growth.',
+    images: [
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (1).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (2).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (3).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (4).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (5).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (6).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (7).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (8).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (9).jpg',
+      '/images/projects/PowerPresent Ai/PowerPresent Ai (10).jpg'
+    ],
+    services: [
+      'Social Media Post Creatives & Content Management',
+      'Strategic Google Ads Campaigns (Sales-Focused)'
+    ],
+    technologies: [
+      'Google Ads Manager',
+      'Google Analytics',
+      'Adobe Creative Suite',
+      'Social Media Platforms',
+      'Conversion Tracking Tools',
+      'A/B Testing Tools'
+    ],
+    duration: '4 Months',
+    year: '2025',
+    location: 'Confidential',
+    results: [
+      {
+        value: '60,000',
+        metric: 'Total Clicks',
+        description: 'Generated high-quality clicks through strategic Google Ads campaigns'
+      },
+      {
+        value: '578,000',
+        metric: 'Total Impressions',
+        description: 'Massive brand visibility and reach across Google network'
+      },
+      {
+        value: '$857',
+        metric: 'Total Ad Spend',
+        description: 'Cost-effective campaign with excellent ROI and conversion rates'
+      },
+      {
+        value: '100%',
+        metric: 'Sales Target Achievement',
+        description: 'Successfully fulfilled the targeted sales goals within planned timeline'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'completed'
+  },
+  {
+    id: 10,
+    slug: 'hirm-social-media-seo-campaign',
+    title: 'Full Social Media Marketing Campaign & SEO for HIRM',
+    client: 'Hayat Institute of Rehabilitation Medicine (HIRM)',
+    clientLogo: '/images/projects/HIRM/HIRM 11.jpg',
+    category: 'Education',
+    shortDescription: 'Institute of rehabilitation medicine - strengthening digital footprint, attracting prospective students, and achieving consistent admissions across multiple academic tenures.',
+    description: 'Hayat Institute of Rehabilitation Medicine partnered with us to strengthen its digital footprint, attract prospective students, and achieve consistent admissions across multiple academic tenures. The focus was on building a strong online presence, running effective admission campaigns, and providing strategic consultancy for long-term growth. Over a span of 30 months, we executed a full-scale social media marketing strategy combined with SEO optimization. From paid ad campaigns to creative content, our team ensured that HIRM remained visible and engaging across digital platforms. Additionally, we provided consultancy to help the institute better connect with its target audience.',
+    images: [
+      '/images/projects/HIRM/HIRM 1.jpg',
+      '/images/projects/HIRM/HIRM 2.jpg',
+      '/images/projects/HIRM/HIRM 3.jpg',
+      '/images/projects/HIRM/HIRM 4.jpg',
+      '/images/projects/HIRM/HIRM 5.jpg',
+      '/images/projects/HIRM/HIRM 6.jpg',
+      '/images/projects/HIRM/HIRM 7.jpg',
+      '/images/projects/HIRM/HIRM 8.jpg',
+      '/images/projects/HIRM/HIRM 9.jpg',
+      '/images/projects/HIRM/HIRM 10.jpg',
+      '/images/projects/HIRM/HIRM 11.jpg',
+      '/images/projects/HIRM/HIRM 12.jpg',
+      '/images/projects/HIRM/HIRM 13.jpg'
+    ],
+    services: [
+      'Ad Creatives & Social Media Post Design',
+      'Video Production & Drone Shoots',
+      'Creative Photography & Motion Graphics',
+      'Script Writing for Campaign Ads',
+      'Paid Meta Ads Campaigns (Lead Generation)',
+      'SEO Optimization & Strategy',
+      'Social Media Marketing Consultancy'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Google Analytics',
+      'SEO Tools & Software',
+      'Adobe Creative Suite',
+      'Drone Technology',
+      'Video Production Equipment',
+      'Motion Graphics Software',
+      'Social Media Platforms',
+      'Analytics Tools'
+    ],
+    duration: '30 Months',
+    year: '2022–2025',
+    location: 'Karachi, Pakistan',
+    results: [
+      {
+        value: '100%',
+        metric: 'Admission Target Achievement',
+        description: 'Successfully met admission targets each tenure consistently'
+      },
+      {
+        value: '30 Months',
+        metric: 'Long-term Partnership',
+        description: 'Sustained successful collaboration across multiple academic years'
+      },
+      {
+        value: 'Strong',
+        metric: 'Brand Recognition',
+        description: 'Maintained strong visibility and brand recognition in education sector'
+      },
+      {
+        value: 'Consistent',
+        metric: 'Student Enrollment',
+        description: 'Achieved consistent student enrollment goals across all tenures'
+      }
+    ],
+    testimonial: null,
+    featured: true,
     status: 'completed'
   },
 ];
