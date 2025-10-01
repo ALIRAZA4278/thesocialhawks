@@ -194,7 +194,7 @@ const Testimonials = () => {
               {doubledTestimonials.map((testimonial, index) => (
                 <motion.div
                   key={`${testimonial.id}-${index}`}
-                  className="flex-shrink-0 w-72 sm:w-80 bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 testimonial-card"
+                  className="flex-shrink-0 w-72 sm:w-80 bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-200 testimonial-card"
                   variants={cardVariants}
                   whileHover="hover"
                   style={{ perspective: '1000px' }}
@@ -246,7 +246,7 @@ const Testimonials = () => {
 
           {/* Bottom Green Banner */}
           <motion.div 
-            className="banner-hover bg-primary rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 sm:gap-0 cursor-pointer transition-all duration-300 group"
+            className="banner-hover bg-primary rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 sm:gap-0 cursor-pointer transition-all duration-200 group"
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
@@ -256,7 +256,7 @@ const Testimonials = () => {
           >
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
               {/* Client Avatars */}
-              <div className="avatar-container flex -space-x-2 sm:-space-x-3 transition-all duration-300 overflow-x-auto py-1 no-scrollbar">
+              <div className="avatar-container flex -space-x-2 sm:-space-x-3 transition-all duration-200 overflow-x-auto py-1 no-scrollbar">
                 {clientAvatars.map((client, index) => (
                   <div
                     key={client.id}
@@ -387,7 +387,7 @@ const Testimonials = () => {
 
         @media (max-width: 640px) {
           .animate-scroll-right {
-            animation-duration: 20s;
+            animation-duration: 10s;
           }
         }
       `}</style>
