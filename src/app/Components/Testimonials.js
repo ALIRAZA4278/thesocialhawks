@@ -385,11 +385,6 @@ const Testimonials = () => {
           }
         }
 
-        @media (max-width: 640px) {
-          .animate-scroll-right {
-            animation-duration: 10s;
-          }
-        }
       `}</style>
     </motion.section>
   );

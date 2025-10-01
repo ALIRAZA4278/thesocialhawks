@@ -5,21 +5,18 @@ import Image from 'next/image';
 const Testimonials = () => {
   // Row 1: Categories (top line)
   const categories = useMemo(() => [
-    { id: 'ai', image: '/images/categories/ai.png' },
-    { id: 'call-center', image: '/images/categories/call cetner.png' },
-    { id: 'clothing', image: '/images/categories/clothing.png' },
-    { id: 'ecommerce', image: '/images/categories/eccommerce.png' },
-    { id: 'food', image: '/images/categories/food.png' },
-    { id: 'furniture', image: '/images/categories/furniture.png' },
-    { id: 'gym', image: '/images/categories/gym.png' },
-    { id: 'health', image: '/images/categories/health.png' },
-    { id: 'hospitality', image: '/images/categories/hospitality.png' },
-    { id: 'it', image: '/images/categories/IT.png' },
-    { id: 'mobile-web', image: '/images/categories/mobile and web.png' },
-    { id: 'ngo', image: '/images/categories/NGO.png' },
-    { id: 'real-estate', image: '/images/categories/real estate.png' },
-    { id: 'school', image: '/images/categories/School.png' },
-    { id: 'travel', image: '/images/categories/travel.png' }
+    { id: 13, image: '/images/logo/13.jpg' },
+    { id: 14, image: '/images/logo/14.jpg' },
+    { id: 15, image: '/images/logo/15.jpg' },
+    { id: 16, image: '/images/logo/16.jpg' },
+    { id: 17, image: '/images/logo/17.jpg' },
+    { id: 19, image: '/images/logo/19.jpg' },
+    { id: 20, image: '/images/logo/20.jpg' },
+    { id: 21, image: '/images/logo/21.jpg' },
+    { id: 22, image: '/images/logo/22.png' },
+    { id: 23, image: '/images/logo/23.jpg' },
+    { id: 24, image: '/images/logo/24.jpg' },
+    { id: 25, image: '/images/logo/25.jpg' },
   ], []);
 
   // Row 2: Client logos (bottom line)
@@ -36,19 +33,7 @@ const Testimonials = () => {
     { id: 10, image: '/images/logo/10.jpg' },
     { id: 11, image: '/images/logo/11.jpg' },
     { id: 12, image: '/images/logo/12.jpg' },
-    { id: 13, image: '/images/logo/13.jpg' },
-    { id: 14, image: '/images/logo/14.jpg' },
-    { id: 15, image: '/images/logo/15.jpg' },
-    { id: 16, image: '/images/logo/16.jpg' },
-    { id: 17, image: '/images/logo/17.jpg' },
-    { id: 18, image: '/images/logo/18.jpg' },
-    { id: 19, image: '/images/logo/19.jpg' },
-    { id: 20, image: '/images/logo/20.jpg' },
-    { id: 21, image: '/images/logo/21.jpg' },
-    { id: 22, image: '/images/logo/22.png' },
-    { id: 23, image: '/images/logo/23.jpg' },
-    { id: 24, image: '/images/logo/24.jpg' },
-    { id: 25, image: '/images/logo/25.jpg' },
+   
   ], []);
 
   const [imageErrors, setImageErrors] = useState({});
@@ -140,7 +125,7 @@ const Testimonials = () => {
                         alt={`Category ${item.id}`}
                         fill
                         className="object-contain"
-                        style={{ filter: 'invert(1)' }}
+                      
                         priority={index < 10}
                         sizes="(max-width: 640px) 96px, 128px"
                         onError={() => handleImageError(`cat-${item.id}-${index}`)}
@@ -202,11 +187,11 @@ const Testimonials = () => {
         }
 
         .animate-scroll-right {
-          animation: scroll-right 70s linear infinite;
+          animation: scroll-right 30s linear infinite;
         }
 
         .animate-scroll-right-slow {
-          animation: scroll-right 90s linear infinite;
+          animation: scroll-right 50s linear infinite;
         }
 
         .animate-scroll-right:hover,
