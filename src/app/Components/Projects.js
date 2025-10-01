@@ -122,46 +122,47 @@ const Projects = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {cards.map((card, index) => (
-              <motion.div 
-              key={card.slug || card.id}
-                            className={`group relative rounded-3xl overflow-hidden cursor-pointer transform-gpu shadow-lg hover:shadow-2xl transition-all duration-500 ${hoveredCard === card.id ? 'z-50' : ''}`}
-                initial={{ opacity: 0, y: 80, scale: 0.95 }}
-                animate={isCardsInView ? { 
-                  opacity: 1, 
-                  y: 0,
-                  scale: 1,
-                  backgroundColor: hoveredCard === card.id ? '#000000' : card.backgroundColor
-                } : { 
-                  opacity: 0, 
-                  y: 80,
-                  scale: 0.95,
-                  backgroundColor: card.backgroundColor
-                }}
-                transition={{ 
-                  delay: index * 0.2, 
-                  duration: 0.8,
-                  ease: [0.25, 0.46, 0.45, 0.94]
-                }}
-                whileHover={{ 
-                  scale: 1.05,
-                  y: -12,
-                  transition: { 
-                    duration: 0.4,
-                    ease: "easeOut"
-                  }
-                }}
-                whileTap={{ scale: 0.98 }}
-                onHoverStart={() => setHoveredCard(card.id)}
-                onHoverEnd={() => setHoveredCard(null)}
-                onClick={() => router.push(`/projects/${card.slug}`)}
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    router.push(`/projects/${card.slug}`);
-                  }
-                }}
-              >
+          <div key={card.slug || card.id} className="block">
+            {/* Desktop/Tablet Card */}
+            <motion.div 
+              className={`hidden sm:block group relative rounded-3xl overflow-hidden cursor-pointer transform-gpu shadow-lg hover:shadow-2xl transition-all duration-500 ${hoveredCard === card.id ? 'z-50' : ''}`}
+              initial={{ opacity: 0, y: 80, scale: 0.95 }}
+              animate={isCardsInView ? { 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                backgroundColor: hoveredCard === card.id ? '#000000' : card.backgroundColor
+              } : { 
+                opacity: 0, 
+                y: 80,
+                scale: 0.95,
+                backgroundColor: card.backgroundColor
+              }}
+              transition={{ 
+                delay: index * 0.2, 
+                duration: 0.8,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              whileHover={{ 
+                scale: 1.05,
+                y: -12,
+                transition: { 
+                  duration: 0.4,
+                  ease: "easeOut"
+                }
+              }}
+              whileTap={{ scale: 0.98 }}
+              onHoverStart={() => setHoveredCard(card.id)}
+              onHoverEnd={() => setHoveredCard(null)}
+              onClick={() => router.push(`/projects/${card.slug}`)}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  router.push(`/projects/${card.slug}`);
+                }
+              }}
+            >
                 {/* Gradient Background Overlay */}
                 <motion.div 
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
@@ -169,7 +170,7 @@ const Projects = () => {
                 />
 
                 {/* Card Content Container */}
-                <div className="relative h-[360px] p-8 flex flex-col transition-all duration-500 z-20 bg-white group-hover:bg-black/90 opacity-100 group-hover:opacity-80">
+                <div className="relative min-h-[280px] sm:h-[360px] lg:h-[420px] p-5 sm:p-8 flex flex-col transition-all duration-500 z-20 bg-white group-hover:bg-black/90 opacity-100 group-hover:opacity-80 overflow-hidden">
                   
                   {/* Header Section */}
                   <div className="flex items-start justify-between mb-6">
@@ -189,7 +190,7 @@ const Projects = () => {
                     
                     {/* Action Icon */}
                     <motion.div 
-                      className="w-12 h-12 bg-gray-100 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300"
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300"
                       whileHover={{ 
                         scale: 1.1, 
                         rotate: 90
@@ -215,7 +216,7 @@ const Projects = () => {
                   <div className="flex-1 flex flex-col">
                     {/* Title */}
                     <motion.h3 
-                      className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-white transition-colors duration-300"
+                      className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight group-hover:text-white transition-colors duration-300"
                       animate={{
                         y: hoveredCard === card.id ? -6 : 0,
                       }}
@@ -226,7 +227,7 @@ const Projects = () => {
                     
                     {/* Description */}
                     <motion.p 
-                      className="text-gray-600 group-hover:text-white/90 transition-colors duration-300 leading-relaxed mb-6"
+                      className="text-gray-600 group-hover:text-white/90 transition-colors duration-300 leading-relaxed mb-4 sm:mb-6 clamp-desc"
                       animate={{
                         y: hoveredCard === card.id ? -4 : 0,
                         opacity: hoveredCard === card.id ? 1 : 0.8
@@ -265,8 +266,9 @@ const Projects = () => {
                   </div>
 
                   {/* Image Preview Section */}
+                  {/* Floating preview image — hide on mobile to prevent overlap */}
                   <motion.div 
-                    className="absolute bottom-8 right-8 w-20 h-20 rounded-2xl overflow-hidden shadow-lg opacity-80 group-hover:opacity-100 transition-all duration-500"
+                    className="hidden sm:block absolute bottom-8 right-8 w-20 h-20 rounded-2xl overflow-hidden shadow-lg opacity-80 group-hover:opacity-100 transition-all duration-500"
                     animate={{
                       scale: hoveredCard === card.id ? 1.1 : 1,
                       y: hoveredCard === card.id ? -4 : 0,
@@ -289,9 +291,9 @@ const Projects = () => {
                     )}
                   </motion.div>
 
-                  {/* View Case Study Button with Backdrop */}
+                  {/* View Case Study Button with Backdrop (desktop only overlay patterns) */}
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none"
+                    className="hidden sm:flex absolute inset-0 items-center justify-center z-50 pointer-events-none"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{
                       opacity: hoveredCard === card.id ? 1 : 0,
@@ -374,9 +376,9 @@ const Projects = () => {
                     </motion.div>
                   </motion.div>
 
-                  {/* Decorative Elements */}
+                  {/* Decorative Elements (hide on mobile) */}
                   <motion.div 
-                    className="absolute top-4 left-4 w-16 h-16 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="hidden sm:block absolute top-4 left-4 w-16 h-16 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     animate={{
                       scale: hoveredCard === card.id ? [1, 1.2, 1] : 1,
                     }}
@@ -384,12 +386,27 @@ const Projects = () => {
                     />
                   
                   <motion.div 
-                    className="absolute bottom-4 left-4 w-8 h-8 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    className="hidden sm:block absolute bottom-4 left-4 w-8 h-8 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                     animate={{
                       scale: hoveredCard === card.id ? [1, 1.3, 1] : 1,
                     }}
                     transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
                   />
+
+                  {/* Mobile-only full-width preview image below content */}
+                  <div className="sm:hidden mt-4 rounded-xl overflow-hidden h-24">
+                    {!imageErrors[`card-${card.slug || card.id}`] ? (
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover"
+                        onError={() => handleImageError(`card-${card.slug || card.id}`)}
+                      />
+                    ) : (
+                      <div className="w-full h-full" style={{ background: card.fallback }} />
+                    )}
+                  </div>
                 </div>
 
                 {/* Border Animation */}
@@ -413,13 +430,97 @@ const Projects = () => {
                   }}
                   />
               </motion.div>
+
+            {/* Mobile Card (full details, stacked layout) */}
+            <motion.div
+              className="sm:hidden block rounded-2xl overflow-hidden bg-white shadow-md transition-all duration-300"
+              initial={{ opacity: 0, y: 40 }}
+              animate={isCardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{ delay: index * 0.15, duration: 0.6, ease: 'easeOut' }}
+            >
+              <Link href={`/projects/${card.slug}`} className="block">
+                {/* Image on top */}
+                <div className="relative h-40 w-full">
+                  {!imageErrors[`card-m-${card.slug || card.id}`] ? (
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      onError={() => handleImageError(`card-m-${card.slug || card.id}`)}
+                    />
+                  ) : (
+                    <div className="w-full h-full" style={{ background: card.fallback }} />
+                  )}
+                </div>
+
+                <div className="p-4">
+                  {/* Category row */}
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-primary rounded-full" />
+                      <span className="text-xs font-medium text-primary uppercase tracking-wider">{card.category}</span>
+                    </div>
+                    <div className="w-9 h-9 bg-gray-100 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-gray-900 leading-snug mb-2">{card.title}</h3>
+
+                  {/* Description (no clamp on mobile to show full details) */}
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{card.description}</p>
+
+                  {/* Stats */}
+                  <div className="flex items-center gap-6 mb-4">
+                    <div>
+                      <div className="text-sm font-semibold text-gray-900">{card.stats.duration}</div>
+                      <div className="text-xs text-gray-500">Duration</div>
+                    </div>
+                    <div className="w-px h-8 bg-gray-200" />
+                    <div>
+                      <div className="text-sm font-semibold text-green-600">{card.stats.revenue}</div>
+                      <div className="text-xs text-gray-500">Revenue Growth</div>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <button className="w-full bg-primary hover:bg-black text-white px-4 py-3 rounded-full font-medium transition-colors">
+                    View Project
+                  </button>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
             ))}
           </div>
         </motion.div>
       </div>
 
-      {/* Enhanced CSS for modern card designs */}
+  {/* Enhanced CSS for modern card designs */}
       <style jsx>{`
+        /* Clamp description lines to avoid overflow on small screens */
+        .clamp-desc {
+          display: -webkit-box;
+          -webkit-line-clamp: 3; /* default for mobile */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        @media (min-width: 640px) { /* sm */
+          .clamp-desc {
+            -webkit-line-clamp: 4;
+          }
+        }
+
+        @media (min-width: 1024px) { /* lg */
+          .clamp-desc {
+            -webkit-line-clamp: 5;
+          }
+        }
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-8px); }

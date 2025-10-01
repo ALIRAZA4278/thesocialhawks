@@ -84,9 +84,72 @@ export const projectsData = [
     featured: true,
     status: 'completed'
   },
- 
   {
     id: 2,
+    slug: 'bricklane-pizza-social-media-branding',
+    title: 'Full Social Media Marketing & Branding for BrickLane Pizza',
+    client: 'BrickLane Pizza',
+     clientLogo: '/images/logo/2.jpg',
+    category: 'Food & Beverages',
+    shortDescription: 'Digital identity, social media management and branding for a popular pizza brand in Karachi.',
+    description: 'BrickLane Pizza partnered with us to build its digital identity, strengthen customer engagement, and expand market reach. Over a 3-year collaboration, we created a consistent brand presence, drove online orders, and established BrickLane as a recognizable name in the competitive food industry.',
+    images: [
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (1).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (2).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (3).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (4).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (5).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (6).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (7).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (8).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (9).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (10).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (11).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (12).jpg',
+      '/images/projects/Bricklane Pizza/Bricklane Pizza (13).jpg'
+    ],
+    services: [
+      'Social Media Management & Creative Strategy',
+      'Motion Graphics & Video Production',
+      'Script Writing for Ad Campaigns',
+      'Paid Meta Ads Campaigns (Sales & Awareness)',
+      'Branding & Logo Design'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Adobe Creative Suite',
+      'Video Production Equipment',
+      'Motion Graphics Software',
+      'Social Media Platforms',
+      'Analytics Tools'
+    ],
+    duration: '37 Months',
+    year: '2020–2023',
+    location: 'Karachi, Pakistan',
+    results: [
+      {
+        value: 'Consistent',
+        metric: 'Online Orders Growth',
+        description: 'Campaigns contributed to steady growth in online orders and visibility.'
+      },
+      {
+        value: 'Strong',
+        metric: 'Brand Identity',
+        description: 'Established BrickLane as a recognizable brand in the local market.'
+      },
+      {
+        value: 'Engaged',
+        metric: 'Customer Engagement',
+        description: 'Boosted social interactions and community engagement across platforms.'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'completed'
+  },
+ 
+  {
+    id: 3,
     slug: 'bakelicious-social-media-campaign',
     title: 'Social Media Marketing Campaign for Bakelicious',
     client: 'Bakelicious',
@@ -155,7 +218,7 @@ export const projectsData = [
     status: 'completed'
   },
   {
-    id: 8,
+    id: 4,
     slug: 'nhu-drhs-social-media-campaign',
     title: 'Full Social Media Campaign for DRHS-NHU',
     client: 'Nazeer Hussain University – Department of Rehabilitation & Health Sciences',
@@ -231,7 +294,7 @@ export const projectsData = [
     status: 'completed'
   },
   {
-    id: 9,
+    id: 5,
     slug: 'powerpresent-ai-google-ads-social-media-campaign',
     title: 'Full Social Media & Google Ads Campaign for PowerPresent AI',
     client: 'PowerPresent AI',
@@ -293,7 +356,7 @@ export const projectsData = [
     status: 'completed'
   },
   {
-    id: 10,
+    id: 6,
     slug: 'hirm-social-media-seo-campaign',
     title: 'Full Social Media Marketing Campaign & SEO for HIRM',
     client: 'Hayat Institute of Rehabilitation Medicine (HIRM)',
@@ -366,7 +429,7 @@ export const projectsData = [
     status: 'completed'
   },
   {
-    id: 11,
+    id: 7,
     slug: 'techsmartone-ecommerce-brand-building',
     title: 'E-Commerce Brand Building for TechSmartOne',
     client: 'TechSmartOne',

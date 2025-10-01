@@ -3,104 +3,52 @@ import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 
 const Testimonials = () => {
-  // Testimonials data
-  const testimonials = useMemo(() => [
-    {
-      id: 1,
-      image: "/images/logo/1.jpg",
-    },
-    {
-      id: 2,
-      image: "/images/logo/2.jpg",
-    },
-    {
-      id: 3,
-      image: "/images/logo/3.jpg",
-    },
-    {
-      id: 4,
-      image: "/images/logo/4.jpg",
-    },
-    {
-      id: 5,
-      image: "/images/logo/5.jpg",
-    },
-    {
-      id: 6,
-      image: "/images/logo/6.jpg",
-    },
-    {
-      id: 7,
-      image: "/images/logo/7.jpg",
-    },
-    {
-      id: 8,
-      image: "/images/logo/8.jpg",
-    },
-    {
-      id: 9,
-      image: "/images/logo/9.jpg",
-    },
-    {
-      id: 10,
-      image: "/images/logo/10.jpg",
-    },
-    {
-      id: 11,
-      image: "/images/logo/11.jpg",
-    },
-    {
-      id: 12,
-      image: "/images/logo/12.jpg",
-    },
-    {
-      id: 13,
-      image: "/images/logo/13.jpg",
-    },
-    {
-      id: 14,
-      image: "/images/logo/14.jpg",
-    },
-    {
-      id: 15,
-      image: "/images/logo/15.jpg",
-    },
-    {
-      id: 16,
-      image: "/images/logo/16.jpg",
-    },
-    {
-      id: 17,
-      image: "/images/logo/17.jpg",
-    },
-    {
-      id: 18,
-      image: "/images/logo/18.jpg",
-    },
-    {
-      id: 19,
-      image: "/images/logo/19.jpg",
-    },
-    {
-      id: 20,
-      image: "/images/logo/20.jpg",
-    },
-    {
-      id: 21,
-      image: "/images/logo/21.jpg",
-    },
-    {
-      id: 22,
-      image: "/images/logo/22.png",
-    },
-    {
-      id: 23,
-      image: "/images/logo/23.jpg",
-    },
-    {
-      id: 24,
-      image: "/images/logo/24.jpg",
-    }
+  // Row 1: Categories (top line)
+  const categories = useMemo(() => [
+    { id: 'ai', image: '/images/categories/ai.png' },
+    { id: 'call-center', image: '/images/categories/call cetner.png' },
+    { id: 'clothing', image: '/images/categories/clothing.png' },
+    { id: 'ecommerce', image: '/images/categories/eccommerce.png' },
+    { id: 'food', image: '/images/categories/food.png' },
+    { id: 'furniture', image: '/images/categories/furniture.png' },
+    { id: 'gym', image: '/images/categories/gym.png' },
+    { id: 'health', image: '/images/categories/health.png' },
+    { id: 'hospitality', image: '/images/categories/hospitality.png' },
+    { id: 'it', image: '/images/categories/IT.png' },
+    { id: 'mobile-web', image: '/images/categories/mobile and web.png' },
+    { id: 'ngo', image: '/images/categories/NGO.png' },
+    { id: 'real-estate', image: '/images/categories/real estate.png' },
+    { id: 'school', image: '/images/categories/School.png' },
+    { id: 'travel', image: '/images/categories/travel.png' }
+  ], []);
+
+  // Row 2: Client logos (bottom line)
+  const logos = useMemo(() => [
+    { id: 1, image: '/images/logo/1.jpg' },
+    { id: 2, image: '/images/logo/2.jpg' },
+    { id: 3, image: '/images/logo/3.jpg' },
+    { id: 4, image: '/images/logo/4.jpg' },
+    { id: 5, image: '/images/logo/5.jpg' },
+    { id: 6, image: '/images/logo/6.jpg' },
+    { id: 7, image: '/images/logo/7.jpg' },
+    { id: 8, image: '/images/logo/8.jpg' },
+    { id: 9, image: '/images/logo/9.jpg' },
+    { id: 10, image: '/images/logo/10.jpg' },
+    { id: 11, image: '/images/logo/11.jpg' },
+    { id: 12, image: '/images/logo/12.jpg' },
+    { id: 13, image: '/images/logo/13.jpg' },
+    { id: 14, image: '/images/logo/14.jpg' },
+    { id: 15, image: '/images/logo/15.jpg' },
+    { id: 16, image: '/images/logo/16.jpg' },
+    { id: 17, image: '/images/logo/17.jpg' },
+    { id: 18, image: '/images/logo/18.jpg' },
+    { id: 19, image: '/images/logo/19.jpg' },
+    { id: 20, image: '/images/logo/20.jpg' },
+    { id: 21, image: '/images/logo/21.jpg' },
+    { id: 22, image: '/images/logo/22.png' },
+    { id: 23, image: '/images/logo/23.jpg' },
+    { id: 24, image: '/images/logo/24.jpg' },
+    { id: 25, image: '/images/logo/25.jpg' },
   ], []);
 
   const [imageErrors, setImageErrors] = useState({});
@@ -112,15 +60,16 @@ const Testimonials = () => {
     setIsMounted(true);
   }, []);
 
-  // Preload all images
+  // Preload all images across both rows
   useEffect(() => {
     const preloadImages = async () => {
-      const imagePromises = testimonials.map((testimonial) => {
+      const all = [...categories, ...logos];
+      const imagePromises = all.map((item) => {
         return new Promise((resolve) => {
           const img = new window.Image();
           img.onload = () => resolve();
           img.onerror = () => resolve(); // Still resolve even if image fails to load
-          img.src = testimonial.image;
+          img.src = item.image;
         });
       });
 
@@ -131,7 +80,7 @@ const Testimonials = () => {
     if (isMounted) {
       preloadImages();
     }
-  }, [testimonials, isMounted]);
+  }, [categories, logos, isMounted]);
 
 
 
@@ -142,8 +91,9 @@ const Testimonials = () => {
 
    
 
-  // Multiple the testimonials array for seamless infinite scroll that extends beyond viewport
-  const doubledTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials];
+  // Duplicate arrays for seamless infinite scroll
+  const rowCategories = [...categories, ...categories, ...categories, ...categories];
+  const rowLogos = [...logos, ...logos, ...logos, ...logos];
 
 
 
@@ -173,29 +123,31 @@ const Testimonials = () => {
           {/* Header */}
          
 
-          {/* Infinite Scrolling Testimonials */}
+          {/* Infinite Scrolling Rows */}
           <div className="relative">
             <div className="relative mb-8 sm:mb-12 overflow-hidden -mx-4">
+            {/* Top row: Categories */}
             <div className="flex animate-scroll-right space-x-4 sm:space-x-6" style={{width: 'max-content'}}>
-              {doubledTestimonials.map((testimonial, index) => (
+              {rowCategories.map((item, index) => (
                 <div
-                  key={`${testimonial.id}-${index}`}
-                  className="flex-shrink-0 w-24 h-16 sm:w-32 sm:h-20 bg-white rounded-lg overflow-hidden"
+                  key={`cat-${item.id}-${index}`}
+                  className="flex-shrink-0 w-24 h-16 sm:w-28 sm:h-20 bg-white rounded-lg overflow-hidden"
                 > 
                   <div className="relative w-full h-full">
-                    {!imageErrors[`testimonial-${testimonial.id}-${index}`] ? (
+                    {!imageErrors[`cat-${item.id}-${index}`] ? (
                       <Image
-                        src={testimonial.image}
-                        alt={`Client logo ${testimonial.id}`}
+                        src={item.image}
+                        alt={`Category ${item.id}`}
                         fill
                         className="object-contain"
+                        style={{ filter: 'invert(1)' }}
                         priority={index < 10}
                         sizes="(max-width: 640px) 96px, 128px"
-                        onError={() => handleImageError(`testimonial-${testimonial.id}-${index}`)}
+                        onError={() => handleImageError(`cat-${item.id}-${index}`)}
                       />
                       ) : (
                       <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 text-xs">
-                        Logo
+                        Category
                       </div>
                     )}
                   </div>
@@ -204,24 +156,24 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Second Carousel with gap */}
+          {/* Second row with gap: Logos */}
           <div className="relative overflow-hidden mt-8 sm:mt-12 -mx-4">
             <div className="flex animate-scroll-right-slow space-x-4 sm:space-x-6" style={{width: 'max-content'}}>
-              {doubledTestimonials.map((testimonial, index) => (
+              {rowLogos.map((item, index) => (
                 <div
-                  key={`${testimonial.id}-${index}`}
+                  key={`logo-${item.id}-${index}`}
                   className="flex-shrink-0 w-24 h-16 sm:w-32 sm:h-20 bg-white rounded-lg overflow-hidden"
                 > 
                   <div className="relative w-full h-full">
-                    {!imageErrors[`testimonial-${testimonial.id}-${index}`] ? (
+                    {!imageErrors[`logo-${item.id}-${index}`] ? (
                       <Image
-                        src={testimonial.image}
-                        alt={`Client logo ${testimonial.id}`}
+                        src={item.image}
+                        alt={`Client logo ${item.id}`}
                         fill
                         className="object-contain"
                         priority={index < 10}
                         sizes="(max-width: 640px) 96px, 128px"
-                        onError={() => handleImageError(`testimonial-${testimonial.id}-${index}`)}
+                        onError={() => handleImageError(`logo-${item.id}-${index}`)}
                       />
                       ) : (
                       <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 text-xs">
@@ -250,11 +202,11 @@ const Testimonials = () => {
         }
 
         .animate-scroll-right {
-          animation: scroll-right 120s linear infinite;
+          animation: scroll-right 70s linear infinite;
         }
 
         .animate-scroll-right-slow {
-          animation: scroll-right 150s linear infinite;
+          animation: scroll-right 90s linear infinite;
         }
 
         .animate-scroll-right:hover,
@@ -264,10 +216,10 @@ const Testimonials = () => {
 
         @media (max-width: 640px) {
           .animate-scroll-right {
-            animation-duration: 70s;
+            animation-duration: 55s;
           }
           .animate-scroll-right-slow {
-            animation-duration: 90s;
+            animation-duration: 70s;
           }
         }
       `}</style>
