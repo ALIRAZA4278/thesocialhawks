@@ -631,11 +631,11 @@ const ProjectDetailPage = ({ params }) => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center items-stretch gap-8">
             {resultsToShow.map((result, index) => (
+              <div key={index} className="w-full sm:w-[calc(50%-16px)] lg:w-[calc(24%-15px)] max-w-md flex">
               <motion.div
-                key={index}
-                className="text-center group cursor-pointer h-full"
+                className="text-center group cursor-pointer h-full w-full"
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 animate={isResultsInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
                 transition={{ 
@@ -644,14 +644,13 @@ const ProjectDetailPage = ({ params }) => {
                   ease: "backOut"
                 }}
                 whileHover={{ 
-                  y: -8, 
-                  scale: 1.05,
-                  transition: { duration: 0.3, ease: "easeOut" }
+                  scale: 1.02,
+                  transition: { duration: 0.25, ease: "easeOut" }
                 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.div 
-                  className="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 group-hover:shadow-xl transition-all duration-500 border border-primary/10 group-hover:border-primary/20 overflow-hidden h-full flex flex-col justify-between"
+                  className="relative  bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 group-hover:shadow-xl transition-all duration-500 border border-primary/10 group-hover:border-primary/20 overflow-hidden h-full flex flex-col items-center justify-center text-center gap-2"
                   whileHover={{
                     background: "linear-gradient(135deg, rgba(127, 32, 196, 0.08) 0%, rgba(127, 32, 196, 0.15) 100%)"
                   }}
@@ -673,8 +672,8 @@ const ProjectDetailPage = ({ params }) => {
                     }}
                   />
 
-                  {/* Top section with icon and value */}
-                  <div className="flex-1 flex flex-col justify-center">
+                  {/* Icon and value */}
+                  <div className="flex flex-col items-center justify-center">
                     {/* Icon based on metric type */}
                     <motion.div
                       className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300"
@@ -702,7 +701,7 @@ const ProjectDetailPage = ({ params }) => {
                     </motion.div>
 
                     <motion.div 
-                      className="text-4xl lg:text-5xl font-bold text-primary mb-4 group-hover:text-primary/90 transition-colors duration-300"
+                      className="text-4xl lg:text-5xl font-bold text-primary mb-2 group-hover:text-primary/90 transition-colors duration-300"
                       initial={{ scale: 0 }}
                       animate={isResultsInView ? { scale: 1 } : { scale: 0 }}
                       transition={{ 
@@ -715,9 +714,8 @@ const ProjectDetailPage = ({ params }) => {
                       {result.value}
                     </motion.div>
                   </div>
-                  
-                  {/* Bottom section with title and description */}
-                  <div className="flex-1 flex flex-col justify-end">
+                  {/* Title and description */}
+                  <div className="flex flex-col items-center justify-center">
                     <motion.h3 
                       className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300"
                       initial={{ opacity: 0, y: 10 }}
@@ -751,6 +749,7 @@ const ProjectDetailPage = ({ params }) => {
                   />
                 </motion.div>
               </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -779,7 +778,7 @@ const ProjectDetailPage = ({ params }) => {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 items-stretch">
               {otherProjects.map((otherProject, index) => (
                 <motion.div
                   key={otherProject.id}
@@ -787,10 +786,10 @@ const ProjectDetailPage = ({ params }) => {
                   animate={isResultsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="group"
+                  className="group h-full"
                 >
                   <Link href={`/projects/${otherProject.slug}`}>
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                       <div className="relative h-48 overflow-hidden">
                         <Image
                           src={otherProject.images[0]}
@@ -799,14 +798,14 @@ const ProjectDetailPage = ({ params }) => {
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <div className="p-6">
+                      <div className="p-6 flex flex-col flex-1">
                         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
                           {otherProject.title}
                         </h3>
                         <p className="text-gray-600 mb-4">
                           {otherProject.shortDescription}
                         </p>
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between mt-auto">
                           <span className="text-primary font-semibold text-sm">{otherProject.client}</span>
                           <span className="text-gray-500 text-sm">{otherProject.year}</span>
                         </div>
