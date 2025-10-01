@@ -23,7 +23,7 @@ const ServicesPage = () => {
       title: "Brand Identity & Design",
       slug: "brand-identity-design",
       description: "Craft distinctive brand identities with logo design, brand guidelines, animated logos, and presentation design that defines your unique market presence.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/1.jpg",
       fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
     },
     {
@@ -31,7 +31,7 @@ const ServicesPage = () => {
       title: "Graphic Design",
       slug: "graphic-design",
       description: "Create compelling visual content including social media posts, ad creatives, infographics, and UI/UX design that captivates your audience.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/2.jpg",
       fallback: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
     },
     {
@@ -39,7 +39,7 @@ const ServicesPage = () => {
       title: "Print & Stationery",
       slug: "print-stationery",
       description: "Professional print solutions from business cards to brochures, ensuring your brand maintains consistency across all physical touchpoints.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/3.jpg",
       fallback: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
     },
     {
@@ -47,7 +47,7 @@ const ServicesPage = () => {
       title: "Merchandising",
       slug: "merchandising",
       description: "Custom branded merchandise including apparel, corporate uniforms, and promotional items that extend your brand into the physical world.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/4.jpg",
       fallback: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
     },
     {
@@ -55,7 +55,7 @@ const ServicesPage = () => {
       title: "Web & Digital Development",
       slug: "web-digital-development",
       description: "Full-stack web development from startup sites to e-commerce platforms, including hosting, domains, and technical infrastructure management.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/5.jpg",
       fallback: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
     },
     {
@@ -63,7 +63,7 @@ const ServicesPage = () => {
       title: "Mobile App Development",
       slug: "mobile-app-development",
       description: "Native and cross-platform mobile applications for iOS, Android, and Windows with modern UI/UX and robust functionality.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/6.jpg",
       fallback: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
     },
     {
@@ -71,7 +71,7 @@ const ServicesPage = () => {
       title: "Content & Writing",
       slug: "content-writing",
       description: "Strategic content creation including copywriting, blog writing, SEO content, eBooks, and technical writing that drives engagement and conversions.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/7.jpg",
       fallback: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
     },
     {
@@ -79,7 +79,7 @@ const ServicesPage = () => {
       title: "Animation Services",
       slug: "animation-services",
       description: "Bring your ideas to life with animated explainer videos, motion graphics, 3D visualization, and character animation with full production services.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/8.jpg",
       fallback: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)"
     },
     {
@@ -87,7 +87,7 @@ const ServicesPage = () => {
       title: "Video & Photography",
       slug: "video-photography",
       description: "Professional videography and photography services including commercial shoots, event coverage, product photography, and post-production excellence.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/9.jpg",
       fallback: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)"
     },
     {
@@ -95,7 +95,7 @@ const ServicesPage = () => {
       title: "Digital Marketing & Growth",
       slug: "digital-marketing-growth",
       description: "Comprehensive digital marketing including social media management, SEO, PPC, influencer partnerships, and performance analytics for measurable growth.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/10.jpg",
       fallback: "linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)"
     },
     {
@@ -103,7 +103,7 @@ const ServicesPage = () => {
       title: "Performance & Maintenance",
       slug: "performance-maintenance",
       description: "Ongoing website maintenance, performance optimization, security updates, and proactive monitoring to keep your digital assets running smoothly.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/11.jpg",
       fallback: "linear-gradient(135deg, #a8caba 0%, #5d4e75 100%)"
     },
     {
@@ -111,7 +111,7 @@ const ServicesPage = () => {
       title: "Cybersecurity & Protection",
       slug: "cybersecurity-protection",
       description: "Comprehensive security solutions including WAF management, malware protection, vulnerability monitoring, and disaster recovery planning.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/12.jpg",
       fallback: "linear-gradient(135deg, #ff8a80 0%, #ff5722 100%)"
     },
     {
@@ -119,7 +119,7 @@ const ServicesPage = () => {
       title: "Strategy & Consulting",
       slug: "strategy-consulting",
       description: "Strategic business consulting including market research, content strategy, digital transformation, and advisory services for sustainable growth.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/13.jpg",
       fallback: "linear-gradient(135deg, #b39ddb 0%, #9c27b0 100%)"
     },
     {
@@ -127,7 +127,7 @@ const ServicesPage = () => {
       title: "Platform Management",
       slug: "platform-management",
       description: "Expert management of digital platforms including social media channels, advertising platforms, and multi-channel campaign optimization.",
-      image: "/images/EXAMPLE.jpg",
+      image: "/images/services/14.jpg",
       fallback: "linear-gradient(135deg, #81c784 0%, #4caf50 100%)"
     }
   ];
