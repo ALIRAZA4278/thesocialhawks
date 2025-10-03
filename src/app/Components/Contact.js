@@ -228,13 +228,12 @@ const Contact = () => {
                 <button
                   type="button"
                   onClick={() => window.open('/social-review', '_blank')}
-                  className="group relative w-full font-semibold py-4 px-6 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden"
+                  className="group relative w-full font-semibold py-4 px-6 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 transform hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative flex items-center justify-center gap-2">
-                    <span className="text-2xl group-hover:animate-bounce">📱</span>
-                    <span>Get Social Media Review</span>
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  <div className="relative flex items-center justify-center gap-2 group-hover:text-white transition-colors duration-300">
+                    <span className="group-hover:text-white transition-colors duration-300">Get Social Media Review</span>
+                    <span className="ml-2 group-hover:translate-x-1 group-hover:text-white transition-all duration-300">→</span>
                   </div>
                 </button>
               </div>
