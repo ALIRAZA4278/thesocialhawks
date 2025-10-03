@@ -33,6 +33,7 @@ const Testimonials = () => {
     { id: 10, image: '/images/logo/10.jpg' },
     { id: 11, image: '/images/logo/11.jpg' },
     { id: 12, image: '/images/logo/12.jpg' },
+    { id: 26, image: '/images/logo/26.jpg' },
    
   ], []);
 

@@ -93,7 +93,7 @@ const ServicesHome = () => {
   const rotateParallax = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
   // Animated counter for projects
-  const [projectsCount, projectsRef] = useAnimatedCounter(251, 2000);
+  const [projectsCount, projectsRef] = useAnimatedCounter(100, 2000);
   
   // Background color state
   const [isInView, setIsInView] = useState(false);

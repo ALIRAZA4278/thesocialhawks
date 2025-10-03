@@ -85,6 +85,80 @@ export const projectsData = [
     status: 'completed'
   },
   {
+    id: 8,
+    slug: 'zaafar-fragrance-brand-digital-growth',
+    title: 'Brand & Digital Growth Campaign for Zaafar Fragrance',
+    client: 'Zaafar Fragrance',
+    clientLogo: '/images/logo/26.jpg',
+    category: 'Luxury Fragrance',
+    shortDescription: 'Premium brand identity and performance marketing campaign to build awareness and drive sales for Zaafar Fragrance.',
+    description: `Zaafar Fragrance partnered with us to build a premium brand identity and expand its presence in the competitive fragrance market. Our goal was to craft a digital strategy that combined strong branding with performance marketing to drive both awareness and sales. Over the course of 6 months we executed a full-spectrum digital and branding campaign, covering creative production, influencer collaborations, paid advertising, and technical website improvements.`,
+    images: [
+      '/images/projects/Zaafar/Zaafar (1).jpg',
+      '/images/projects/Zaafar/Zaafar (2).jpg',
+      '/images/projects/Zaafar/Zaafar (3).jpg',
+      '/images/projects/Zaafar/Zaafar (4).jpg',
+      '/images/projects/Zaafar/Zaafar (5).jpg',
+      '/images/projects/Zaafar/Zaafar (6).jpg',
+      '/images/projects/Zaafar/Zaafar (7).jpg',
+      '/images/projects/Zaafar/Zaafar (8).jpg',
+      '/images/projects/Zaafar/Zaafar (9).jpg',
+      '/images/projects/Zaafar/Zaafar (10).jpg',
+      '/images/projects/Zaafar/Zaafar (11).jpg',
+      '/images/projects/Zaafar/Zaafar (12).jpg',
+      '/images/projects/Zaafar/Zaafar (13).jpg',
+      '/images/projects/Zaafar/Zaafar (14).jpg',
+      '/images/projects/Zaafar/Zaafar (15).jpg',
+      '/images/projects/Zaafar/Zaafar (16).jpg',
+      '/images/projects/Zaafar/Zaafar (17).jpg'
+    ],
+    services: [
+      'Social Media Management & Ad Copywriting',
+      'Video Production & Script Writing',
+      'Product Photography & Creative Direction',
+      'Paid Meta Ads (Awareness & Conversion)',
+      'Branding & Packaging Design',
+      'Influencer Marketing Campaigns',
+      'Website Development & SEO Optimization'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Adobe Creative Suite',
+      'Video Production Equipment',
+      'Photography Equipment',
+      'SEO Tools',
+      'Analytics Tools'
+    ],
+    duration: '6 Months',
+    year: '2024–2025',
+    location: 'Karachi, Pakistan',
+    results: [
+      {
+        value: 'Consistent',
+        metric: 'Luxury Brand Identity',
+        description: 'Established a consistent luxury brand identity across all platforms.'
+      },
+      {
+        value: 'Improved',
+        metric: 'Social Presence & Engagement',
+        description: 'Boosted social media presence and engagement through strategic content & influencer collaborations.'
+      },
+      {
+        value: 'Better',
+        metric: 'SEO Visibility',
+        description: 'Delivered measurable growth in online visibility with improved SEO rankings.'
+      },
+      {
+        value: 'Sustained',
+        metric: 'Leads & Conversions',
+        description: 'Drove consistent leads and conversions via targeted Meta Ads campaigns.'
+      }
+    ],
+    testimonial: null,
+    featured: false,
+    status: 'completed'
+  },
+  {
     id: 2,
     slug: 'bricklane-pizza-social-media-branding',
     title: 'Full Social Media Marketing & Branding for BrickLane Pizza',
