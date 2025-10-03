@@ -310,7 +310,7 @@ const SocialMediaReview = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Additional Information</h2>
               <div>
                 <label htmlFor="additionalInfo" className="block text-sm font-medium text-gray-700 mb-2">
-                  Tell us about your goals and specific areas you'd like us to focus on
+                  Tell us about your goals and specific areas you&apos;d like us to focus on. We&apod like us to focus on
                 </label>
                 <textarea
                   id="additionalInfo"
