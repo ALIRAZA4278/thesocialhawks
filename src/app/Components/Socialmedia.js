@@ -12,7 +12,7 @@ const Socialmedia = () => {
                     className="group inline-flex items-center gap-2 bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 >
                     <span className="text-xl group-hover:animate-pulse">📊</span>
-                    Get Your FREE Review Now
+                Get a free anlysis on your brand Now
                     <span className="group-hover:translate-x-1 transition-transform duration-300">✨</span>
                 </button>
             </div>
