@@ -4,8 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(request) {
   try {
     const { 
-      firstName, 
-      lastName, 
+      fullName,
       email, 
       whatsapp, 
       countryCode, 
@@ -15,13 +14,13 @@ export async function POST(request) {
       additionalInfo 
     } = await request.json();
 
-    // Combine first name and last name
-    const name = `${firstName} ${lastName}`.trim();
+    // Use full name directly
+    const name = fullName?.trim() || '';
 
     // Validate input
-    if (!firstName || !email || !whatsapp) {
+    if (!fullName || !email || !whatsapp) {
       return NextResponse.json(
-        { error: 'First name, email, and WhatsApp number are required' },
+        { error: 'Full name, email, and WhatsApp number are required' },
         { status: 400 }
       );
     }
@@ -234,7 +233,7 @@ export async function POST(request) {
           <!-- Personal Greeting -->
           <div style="padding: 30px; background-color: #ffffff;">
             <p style="font-size: 18px; line-height: 1.6; color: #374151; margin-bottom: 20px;">
-              Hi <strong style="color: #10b981;">${firstName}</strong>! 👋
+              Hi <strong style="color: #10b981;">${name}</strong>! 👋
             </p>
             
             <p style="font-size: 16px; line-height: 1.6; color: #374151; margin-bottom: 20px;">
@@ -271,7 +270,7 @@ export async function POST(request) {
             
             <div style="space-y: 15px;">
               <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="background-color: #10b981; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">1</div>
+                <div style=" color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">1</div>
                 <div>
                   <h3 style="margin: 0 0 5px 0; color: #1f2937; font-size: 16px;">Initial Review (24-48 hours)</h3>
                   <p style="margin: 0; color: #6b7280; font-size: 14px;">Our team will analyze your social media profiles and current strategy</p>
@@ -279,7 +278,7 @@ export async function POST(request) {
               </div>
               
               <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="background-color: #10b981; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">2</div>
+                <div style=" color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">2</div>
                 <div>
                   <h3 style="margin: 0 0 5px 0; color: #1f2937; font-size: 16px;">Detailed Analysis</h3>
                   <p style="margin: 0; color: #6b7280; font-size: 14px;">We'll create a comprehensive report with findings and recommendations</p>
@@ -287,7 +286,7 @@ export async function POST(request) {
               </div>
               
               <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="background-color: #10b981; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">3</div>
+                <div style=" color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">3</div>
                 <div>
                   <h3 style="margin: 0 0 5px 0; color: #1f2937; font-size: 16px;">Personalized Response</h3>
                   <p style="margin: 0; color: #6b7280; font-size: 14px;">You'll receive actionable insights tailored to your specific goals</p>

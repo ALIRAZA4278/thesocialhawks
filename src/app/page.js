@@ -7,6 +7,7 @@ import About from './Components/About'
 import LogoCarousel from './Components/LogoCarousel'
 import Contact from './Components/Contact'
 import Projects from './Components/Projects'
+import Socialmedia from './Components/Socialmedia'
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
       <Navbar />
       <Hero />
       <About />
+      <Socialmedia />
       <ServicesHome />
       <Projects />
       <Testimonials />

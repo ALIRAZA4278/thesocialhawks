@@ -3,15 +3,15 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request) {
   try {
-    const { firstName, lastName, email, phone, countryCode, message } = await request.json();
+    const { fullName, email, phone, countryCode, message } = await request.json();
 
-    // Combine first name and last name
-    const name = `${firstName} ${lastName}`.trim();
+    // Use full name directly
+    const name = fullName?.trim() || '';
 
     // Validate input
-    if (!firstName || !email || !message) {
+    if (!fullName || !email || !message) {
       return NextResponse.json(
-        { error: 'First name, email, and message are required' },
+        { error: 'Full name, email, and message are required' },
         { status: 400 }
       );
     }
@@ -86,7 +86,7 @@ export async function POST(request) {
       from: process.env.NM_EMAIL_USER,
       to: email,
       replyTo: process.env.NM_EMAIL_USER,
-      subject: `Thank you for contacting TheSocialHawks, ${firstName}!`,
+      subject: `Thank you for contacting TheSocialHawks, ${name}!`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #10b981; border-bottom: 2px solid #10b981; padding-bottom: 10px;">
@@ -94,7 +94,7 @@ export async function POST(request) {
           </h2>
           
           <p style="font-size: 16px; line-height: 1.6; color: #374151;">
-            Hi <strong>${firstName}</strong>,
+            Hi <strong>${name}</strong>,
           </p>
           
           <p style="font-size: 16px; line-height: 1.6; color: #374151;">

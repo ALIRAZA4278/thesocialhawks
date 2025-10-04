@@ -4,8 +4,7 @@ import Image from 'next/image';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     phone: '',
     countryCode: '+92',
@@ -41,8 +40,7 @@ const Contact = () => {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({
-          firstName: '',
-          lastName: '',
+          fullName: '',
           email: '',
           phone: '',
           countryCode: '+92',
@@ -90,7 +88,7 @@ const Contact = () => {
               <button
                 type="button"
                 onClick={() => window.open('/social-review', '_blank')}
-                className="group relative bg-gradient-to-r from-primary to-purple-600 text-white font-bold py-4 px-8 rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-110 overflow-hidden"
+                className="group relative bg-purple-600 text-white font-bold py-4 px-8 rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-110 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full"></div>
                 <div className="relative flex items-center justify-center gap-3">
@@ -103,39 +101,21 @@ const Contact = () => {
 
             {/* Contact Form */}
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                {/* First Name */}
-                <div className="text-left">
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name*
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900 placeholder-gray-500"
-                    placeholder="First Name"
-                  />
-                </div>
-
-                {/* Last Name */}
-                <div className="text-left">
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900 placeholder-gray-500"
-                    placeholder="Last Name"
-                  />
-                </div>
+              {/* Full Name */}
+              <div className="text-left mb-6">
+                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+                  Full Name*
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900 placeholder-gray-500"
+                  placeholder="Enter your full name"
+                />
               </div>
 
               {/* Email */}
@@ -339,24 +319,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Social Media Review CTA */}
-          <div className="mt-12 pt-8 border-t border-gray-800">
-            <div className="text-center mb-8">
-              <div className="bg-gradient-to-r from-primary to-purple-600 rounded-2xl p-6 mb-8">
-                <h3 className="text-white font-bold text-xl mb-3">🚀 Want to Boost Your Social Media?</h3>
-                <p className="text-gray-200 mb-4">Get a FREE professional review of all your social media accounts!</p>
-                <button
-                  type="button"
-                  onClick={() => window.open('/social-review', '_blank')}
-                  className="group inline-flex items-center gap-2 bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-                >
-                  <span className="text-xl group-hover:animate-pulse">📊</span>
-                  Get Your FREE Review Now
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">✨</span>
-                </button>
-              </div>
-            </div>
-          </div>
+         
 
           {/* Social Media Section */}
           <div className="mt-8 pt-8 border-t border-gray-800">

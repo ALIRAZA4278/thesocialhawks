@@ -6,8 +6,7 @@ export async function POST(request) {
     const formData = await request.formData();
     
     // Extract form fields
-    const firstName = formData.get('firstName');
-    const lastName = formData.get('lastName');
+    const fullName = formData.get('fullName');
     const email = formData.get('email');
     const phone = formData.get('phone');
     const countryCode = formData.get('countryCode');
@@ -23,11 +22,11 @@ export async function POST(request) {
     const jobSlug = formData.get('jobSlug');
     const jobDepartment = formData.get('jobDepartment');
 
-    // Combine first name and last name
-    const name = `${firstName} ${lastName}`.trim();
+    // Use full name directly
+    const name = fullName?.trim() || '';
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !phone || !experience || !coverLetter || !resume) {
+    if (!fullName || !email || !phone || !experience || !coverLetter || !resume) {
       return NextResponse.json(
         { error: 'All required fields must be filled' },
         { status: 400 }
@@ -173,7 +172,7 @@ export async function POST(request) {
             <h2 style="color: #1f2937; margin-top: 0; margin-bottom: 15px; font-size: 22px;">
               📎 Resume Attached
             </h2>
-            <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; border-left: 4px solid #10b981;">
+            <div className="text-black" style="background-color: #ffffff; padding: 15px; border-radius: 8px; border-left: 4px solid #10b981;">
               <p style="margin: 0; color: #065f46;">
                 <strong>📄 File:</strong> ${resume.name}<br>
                 <strong>📊 Size:</strong> ${(resume.size / 1024 / 1024).toFixed(2)} MB<br>
@@ -231,7 +230,7 @@ export async function POST(request) {
           <!-- Personal Greeting -->
           <div style="padding: 30px; background-color: #ffffff;">
             <p style="font-size: 18px; line-height: 1.6; color: #374151; margin-bottom: 20px;">
-              Hi <strong style="color: #10b981;">${firstName}</strong>! 👋
+              Hi <strong style="color: #10b981;">${name}</strong>! 👋
             </p>
             
             <p style="font-size: 16px; line-height: 1.6; color: #374151; margin-bottom: 20px;">
@@ -264,7 +263,7 @@ export async function POST(request) {
             
             <div style="space-y: 15px;">
               <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="background-color: #10b981; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">1</div>
+                <div style=" color: white;  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">1</div>
                 <div>
                   <h3 style="margin: 0 0 5px 0; color: #1f2937; font-size: 16px;">Application Review (2-3 days)</h3>
                   <p style="margin: 0; color: #6b7280; font-size: 14px;">Our HR team will carefully review your application and resume</p>
@@ -272,7 +271,7 @@ export async function POST(request) {
               </div>
               
               <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="background-color: #10b981; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">2</div>
+                <div style=" color: white;  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">2</div>
                 <div>
                   <h3 style="margin: 0 0 5px 0; color: #1f2937; font-size: 16px;">Initial Screening</h3>
                   <p style="margin: 0; color: #6b7280; font-size: 14px;">If your profile matches our requirements, we'll contact you for a phone/video screening</p>
@@ -280,7 +279,7 @@ export async function POST(request) {
               </div>
               
               <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="background-color: #10b981; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">3</div>
+                <div style=" color: white;  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">3</div>
                 <div>
                   <h3 style="margin: 0 0 5px 0; color: #1f2937; font-size: 16px;">Interview Process</h3>
                   <p style="margin: 0; color: #6b7280; font-size: 14px;">Face-to-face or virtual interviews with our team and department heads</p>
@@ -288,7 +287,7 @@ export async function POST(request) {
               </div>
               
               <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="background-color: #f59e0b; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">4</div>
+                <div style="color: white;  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">4</div>
                 <div>
                   <h3 style="margin: 0 0 5px 0; color: #1f2937; font-size: 16px;">Final Decision</h3>
                   <p style="margin: 0; color: #6b7280; font-size: 14px;">We'll notify you of our decision and discuss next steps if selected</p>
@@ -307,7 +306,7 @@ export async function POST(request) {
             </p>
           </div>
 
-          <!-- Contact Information */}
+          <!-- Contact Information -->
           <div style="padding: 30px; background-color: #f8fafc; text-align: center;">
             <h2 style="color: #1f2937; margin-bottom: 20px;">📞 Questions?</h2>
             <p style="color: #6b7280; margin-bottom: 20px;">If you have any questions about your application or the process, feel free to reach out:</p>
@@ -315,7 +314,8 @@ export async function POST(request) {
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
               <div style="text-align: center; margin: 5px;">
                 <div style="color: #374151; font-weight: bold;">📧 Email</div>
-                <div style="color: #6b7280;">hr@thesocialhawks.com</div>
+                <div style="color: #6b7280;">
+info@thesocialhawks.com</div>
               </div>
               <div style="text-align: center; margin: 5px;">
                 <div style="color: #374151; font-weight: bold;">📱 Phone</div>

@@ -4,8 +4,7 @@ import Image from 'next/image';
 
 const SocialMediaReview = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     whatsapp: '',
     countryCode: '+92',
@@ -63,8 +62,7 @@ const SocialMediaReview = () => {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({
-          firstName: '',
-          lastName: '',
+          fullName: '',
           email: '',
           whatsapp: '',
           countryCode: '+92',
@@ -133,39 +131,25 @@ const SocialMediaReview = () => {
             {/* Personal Information */}
             <div className="border-b pb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Personal Information</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="mb-6">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name*
+                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name*
                   </label>
                   <input
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900"
-                    placeholder="First Name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-900"
-                    placeholder="Last Name"
+                    placeholder="Enter your full name"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address* <span className="text-sm text-gray-500">(Recommended)</span>

@@ -60,7 +60,7 @@ const About = () => {
   return (
      <motion.section 
        id="about"
-       className="py-12 sm:py-16 bg-white"
+       className="py-0 sm:py-0 bg-white"
        data-scroll
        data-scroll-section
        data-scroll-speed="0"
