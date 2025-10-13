@@ -150,7 +150,7 @@ const About = () => {
                   transition={{ duration: 1.2, delay: 0.3 }}
                 >
                   <Image
-                    src="/images/about-team.jpg"
+                    src="/images/about.jpg"
                     alt="Performance-Driven Marketing Team"
                     width={600}
                     height={600}
