@@ -593,6 +593,77 @@ export const projectsData = [
     featured: true,
     status: 'completed'
   },
+  {
+    id: 9,
+    slug: 'leo-associates-real-estate-marketing',
+    title: 'Real Estate Marketing & Media Production for LEO Associates',
+    client: 'LEO Associates',
+    clientLogo: '/images/logo/22.png',
+    category: 'Real Estate',
+    shortDescription: 'Comprehensive video production and influencer marketing campaign for premium real estate brand.',
+    description: 'LEO Associates, a prominent real estate agency, partnered with us to elevate their brand presence and showcase their premium property offerings through high-quality media production and influencer collaborations. Since May 2024, we have been managing end-to-end video production and marketing support, helping LEO Associates stand out in a competitive real estate market with compelling storytelling and cutting-edge visuals.',
+    videos: [
+      
+      '/images/projects/LEO/Video 1.mp4',
+      '/images/projects/LEO/Video 2.mp4',
+      '/images/projects/LEO/Video 3.mp4',
+      '/images/projects/LEO/Video 4.mp4',
+      '/images/projects/LEO/Video 5.MP4',
+      '/images/projects/LEO/Video 6.mp4',
+      '/images/projects/LEO/Video 7.mp4',
+      '/images/projects/LEO/Video 8.mp4',
+      '/images/projects/LEO/Video 9.mp4'
+    ],
+    images: [
+      "/images/projects/LEO/img.jpg",
+    ], // LEO primarily has video content
+    services: [
+      'Professional Video Production & Editing',
+      'Drone Shoots for Property Showcases',
+      'Script Writing & Commercial Video Campaigns',
+      'Influencer Marketing Collaborations',
+      'Brand Strategy & Positioning',
+      'Social Media Content Creation'
+    ],
+    technologies: [
+      'Professional Video Equipment',
+      'Drone Technology',
+      'Adobe Premiere Pro',
+      'Adobe After Effects',
+      'Social Media Platforms',
+      'Influencer Networks'
+    ],
+    duration: 'May 2024 – Present',
+    year: '2024 – Ongoing',
+    budget: 'Premium Package',
+    challenge: 'LEO Associates needed to differentiate themselves in a highly competitive real estate market while showcasing premium properties in a compelling way that would attract high-value clients and build trust through authentic storytelling.',
+    solution: 'We developed a comprehensive video-first marketing strategy combining professional video production with drone footage to showcase properties from unique perspectives, while leveraging influencer partnerships to build credibility and extend reach to target demographics.',
+    results: [
+      {
+        value: 'High-Impact',
+        metric: 'Commercial Property Videos',
+        description: 'Produced compelling video content that enhanced client trust and interest'
+      },
+      {
+        value: 'Enhanced',
+        metric: 'Brand Credibility',
+        description: 'Leveraged influencer marketing to boost brand credibility and social reach'
+      },
+      {
+        value: 'Increased',
+        metric: 'Buyer Inquiries',
+        description: 'High-quality visual campaigns helped drive buyer inquiries and engagement'
+      },
+      {
+        value: 'Ongoing',
+        metric: 'Partnership Success',
+        description: 'Continued collaboration since May 2024 demonstrates campaign effectiveness'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'ongoing'
+  },
 ];
 
 // Helper functions

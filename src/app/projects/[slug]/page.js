@@ -22,6 +22,10 @@ const ProjectDetailPage = ({ params }) => {
   // Gallery state
   const [showAllImages, setShowAllImages] = useState(false);
   const initialImageCount = 6; // Show first 6 images initially
+  
+  // Video showcase ref for intersection observer
+  const videoShowcaseRef = useRef(null);
+  const isVideoShowcaseInView = useInView(videoShowcaseRef, { once: true, threshold: 0.2 });
 
   const heroRef = useRef(null);
   const detailsRef = useRef(null);
@@ -69,13 +73,19 @@ const ProjectDetailPage = ({ params }) => {
     document.body.style.overflow = 'unset';
   };
 
+  // Get all media (images + videos)
+  const allMedia = [
+    ...(project.images || []).map(img => ({ type: 'image', src: img })),
+    ...(project.videos || []).map(vid => ({ type: 'video', src: vid }))
+  ];
+
   const nextImage = React.useCallback(() => {
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
-  }, [project.images.length]);
+    setCurrentImageIndex((prev) => (prev + 1) % allMedia.length);
+  }, [allMedia.length]);
 
   const prevImage = React.useCallback(() => {
-    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
-  }, [project.images.length]);
+    setCurrentImageIndex((prev) => (prev - 1 + allMedia.length) % allMedia.length);
+  }, [allMedia.length]);
 
   // Keyboard navigation
   React.useEffect(() => {
@@ -111,13 +121,24 @@ const ProjectDetailPage = ({ params }) => {
           className="absolute inset-0 opacity-30 cursor-pointer group"
           onClick={() => openLightbox(0)}
         >
-          <Image
-            src={project.images[0]}
-            alt={project.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            priority
-          />
+          {allMedia[0]?.type === 'video' ? (
+            <video
+              src={allMedia[0].src}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ) : (
+            <Image
+              src={allMedia[0]?.src || '/images/projects/default.jpg'}
+              alt={project.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              priority
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80 group-hover:from-black/70 group-hover:via-black/50 group-hover:to-black/70 transition-all duration-300" />
           
           {/* Click hint overlay */}
@@ -250,6 +271,87 @@ const ProjectDetailPage = ({ params }) => {
         </div>
       </motion.section>
 
+      {/* Continuous Video Showcase - Only show for projects with videos */}
+      {project.videos && project.videos.length > 0 && (
+        <motion.section 
+          ref={videoShowcaseRef}
+          className="py-20 bg-gray-900 overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={isVideoShowcaseInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVideoShowcaseInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                See It to Believe It
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                A curated showcase of our most engaging organic video content across Instagram, TikTok, and YouTube.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Continuous Scrolling Video Container */}
+          <div className="relative">
+            {/* Video Carousel */}
+            <div className="flex animate-scroll-rtl">
+              {/* First set of videos */}
+              {project.videos.map((video, index) => (
+                <motion.div
+                  key={`first-${index}`}
+                  className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-72 sm:h-80 md:h-96 mx-2 sm:mx-3 rounded-2xl overflow-hidden shadow-2xl video-showcase-item"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isVideoShowcaseInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                >
+                  <video
+                    src={video}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                </motion.div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {project.videos.map((video, index) => (
+                <motion.div
+                  key={`second-${index}`}
+                  className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-72 sm:h-80 md:h-96 mx-2 sm:mx-3 rounded-2xl overflow-hidden shadow-2xl video-showcase-item"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isVideoShowcaseInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                >
+                  <video
+                    src={video}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Gradient Overlays for seamless edges */}
+            <div className="absolute top-0 left-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute top-0 right-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-gray-900 via-gray-900/80 to-transparent pointer-events-none z-10"></div>
+            
+            {/* Optional overlay for better text readability */}
+            <div className="absolute inset-0 bg-gray-900/10 pointer-events-none"></div>
+          </div>
+        </motion.section>
+      )}
+
       {/* Project Images Gallery */}
       <motion.section 
         className="py-20 bg-white"
@@ -265,15 +367,15 @@ const ProjectDetailPage = ({ params }) => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Project Gallery
+              Project {allMedia.some(m => m.type === 'video') ? 'Media Gallery' : 'Gallery'}
             </h2>
             <p className="text-lg text-gray-600">
-              Click on any image to view in full size
+              Click on any {allMedia.some(m => m.type === 'video') ? 'media' : 'image'} to view in full size
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(showAllImages ? project.images : project.images.slice(0, initialImageCount)).map((image, index) => (
+            {(showAllImages ? allMedia : allMedia.slice(0, initialImageCount)).map((media, index) => (
               <motion.div
                 key={index}
                 className="group relative aspect-square overflow-hidden rounded-2xl shadow-lg cursor-pointer border border-gray-100 hover:border-primary/30 transition-all duration-500"
@@ -290,21 +392,48 @@ const ProjectDetailPage = ({ params }) => {
                 onClick={() => openLightbox(index)}
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                <Image
-                  src={image}
-                  alt={`${project.title} - Image ${index + 1}`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                {media.type === 'video' ? (
+                  <video
+                    src={media.src}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    muted
+                    loop
+                    playsInline
+                    onMouseEnter={(e) => e.target.play()}
+                    onMouseLeave={(e) => e.target.pause()}
+                  />
+                ) : (
+                  <Image
+                    src={media.src}
+                    alt={`${project.title} - Image ${index + 1}`}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
-                {/* Image number badge */}
+                {/* Media type indicator */}
+                {media.type === 'video' && (
+                  <motion.div
+                    className="absolute top-3 right-3 bg-red-500 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md flex items-center gap-1"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.7 + index * 0.1 }}
+                  >
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    VIDEO
+                  </motion.div>
+                )}
+                
+                {/* Media number badge */}
                 <motion.div
                   className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300"
                   initial={{ x: -10 }}
                   whileHover={{ x: 0 }}
                 >
-                  {index + 1} / {project.images.length}
+                  {index + 1} / {allMedia.length}
                 </motion.div>
 
                 {/* Zoom icon overlay */}
@@ -344,7 +473,7 @@ const ProjectDetailPage = ({ params }) => {
           </div>
 
           {/* View More/Less Button */}
-          {project.images.length > initialImageCount && (
+          {allMedia.length > initialImageCount && (
             <motion.div 
               className="text-center mt-12"
               initial={{ opacity: 0, y: 20 }}
@@ -381,7 +510,7 @@ const ProjectDetailPage = ({ params }) => {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7"></path>
                       </motion.svg>
-                      Show Less Images
+                      Show Less Media
                     </>
                   ) : (
                     <>
@@ -395,7 +524,7 @@ const ProjectDetailPage = ({ params }) => {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                       </motion.svg>
-                      View More Images ({project.images.length - initialImageCount} more)
+                      View More Media ({allMedia.length - initialImageCount} more)
                     </>
                   )}
                 </span>
@@ -791,12 +920,28 @@ const ProjectDetailPage = ({ params }) => {
                   <Link href={`/projects/${otherProject.slug}`}>
                     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                       <div className="relative h-48 overflow-hidden">
-                        <Image
-                          src={otherProject.images[0]}
-                          alt={otherProject.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
+                        {otherProject.images && otherProject.images.length > 0 ? (
+                          <Image
+                            src={otherProject.images[0]}
+                            alt={otherProject.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        ) : otherProject.videos && otherProject.videos.length > 0 ? (
+                          <video
+                            src={otherProject.videos[0]}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            muted
+                            loop
+                            playsInline
+                            onMouseEnter={(e) => e.target.play()}
+                            onMouseLeave={(e) => e.target.pause()}
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                            <span className="text-gray-500">No media available</span>
+                          </div>
+                        )}
                       </div>
                       <div className="p-6 flex flex-col flex-1">
                         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
@@ -915,7 +1060,7 @@ const ProjectDetailPage = ({ params }) => {
             </motion.button>
 
             {/* Navigation arrows */}
-            {project.images.length > 1 && (
+            {allMedia.length > 1 && (
               <>
                 <motion.button
                   className="absolute left-6 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-colors duration-200"
@@ -955,7 +1100,7 @@ const ProjectDetailPage = ({ params }) => {
               </>
             )}
 
-            {/* Image container */}
+            {/* Media container */}
             <motion.div
               className="relative max-w-[90vw] max-h-[90vh] mx-auto"
               initial={{ scale: 0.5, opacity: 0 }}
@@ -972,29 +1117,45 @@ const ProjectDetailPage = ({ params }) => {
                 exit={{ x: -100, opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <Image
-                  src={project.images[currentImageIndex]}
-                  alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                  width={1200}
-                  height={800}
-                  className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-                  priority
-                />
+                {allMedia[currentImageIndex]?.type === 'video' ? (
+                  <video
+                    src={allMedia[currentImageIndex].src}
+                    className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                    controls
+                    autoPlay
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <Image
+                    src={allMedia[currentImageIndex]?.src || '/images/projects/default.jpg'}
+                    alt={`${project.title} - Media ${currentImageIndex + 1}`}
+                    width={1200}
+                    height={800}
+                    className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                    priority
+                  />
+                )}
               </motion.div>
 
-              {/* Image counter */}
+              {/* Media counter */}
               <motion.div
-                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium"
+                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
-                {currentImageIndex + 1} / {project.images.length}
+                {allMedia[currentImageIndex]?.type === 'video' && (
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                )}
+                {currentImageIndex + 1} / {allMedia.length}
               </motion.div>
             </motion.div>
 
             {/* Bottom navigation dots */}
-            {project.images.length > 1 && (
+            {allMedia.length > 1 && (
               <motion.div
                 className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3"
                 initial={{ y: 20, opacity: 0 }}
@@ -1002,7 +1163,7 @@ const ProjectDetailPage = ({ params }) => {
                 exit={{ y: 20, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
-                {project.images.map((_, index) => (
+                {allMedia.map((_, index) => (
                   <motion.button
                     key={index}
                     className={`w-3 h-3 rounded-full transition-all duration-200 ${
@@ -1189,6 +1350,53 @@ const ProjectDetailPage = ({ params }) => {
         .gpu-acceleration {
           transform: translateZ(0);
           will-change: transform;
+        }
+        
+        /* Continuous scrolling video carousel */
+        @keyframes scroll-rtl {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        @keyframes scroll-rtl-mobile {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-scroll-rtl {
+          animation: scroll-rtl 40s linear infinite;
+          width: max-content;
+        }
+        
+        @media (max-width: 768px) {
+          .animate-scroll-rtl {
+            animation: scroll-rtl-mobile 25s linear infinite;
+          }
+        }
+        
+        /* Pause animation on hover - desktop only */
+        @media (min-width: 769px) {
+          .animate-scroll-rtl:hover {
+            animation-play-state: paused;
+          }
+        }
+        
+        /* Video container hover effects */
+        .video-showcase-item {
+          transition: all 0.3s ease;
+        }
+        
+        .video-showcase-item:hover {
+          transform: scale(1.05);
+          z-index: 10;
         }
       `}</style>
     </div>
