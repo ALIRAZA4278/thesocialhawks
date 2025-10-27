@@ -8,53 +8,91 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      rating: 3,
-      title: "Results, Right Away",
-      quote: "I didn't talk in circles. They listened our problems, cleaned up our account, and got us conversions within a week one.",
-      name: "Said",
-      position: "Health Supplement Owner",
+      rating: 5,
+      title: "Transformed Our Social Media Presence",
+      quote: "SocialHawks transformed our social media presence and gave our brand a fresh, engaging look. From mouth-watering food photography to consistent online campaigns, they made sure our pizza shop stood out in a crowded market. Their production quality and management have been exceptional.",
+      name: "BrickLane Pizza",
+      position: "Owner of Pizza Shop",
       image: "/images/testimonial-1.jpg",
-      fallback: "#FF6B6B"
+      fallback: "#FF6B6B",
+      projectSlug: "bricklane-pizza-social-media-branding"
     },
     {
       id: 2,
       rating: 5,
-      title: "It Was Strategy All Along",
-      quote: "We thought we had a content issue. Turned out we had a strategy issue. Devnest fixed both.",
-      name: "Yasir",
-      position: "Haircare Brand Owner",
+      title: "Seamless E-commerce Marketing",
+      quote: "Working with SocialHawks has been seamless. They understood our niche market and helped us connect with our target audience. Their campaigns and visuals have directly boosted our sales. Truly a team that knows how to market for e-commerce.",
+      name: "Flex Vape",
+      position: "Owner of Ecommerce Store",
       image: "/images/testimonial-2.jpg",
-      fallback: "#4ECDC4"
+      fallback: "#4ECDC4",
+      projectSlug: null
     },
     {
       id: 3,
       rating: 5,
-      title: "Too Many Orders to Keep Up",
-      quote: "Honestly, we're getting so many orders that we can't handle the inventory. We had to ask them to reduce the campaign budget.",
-      name: "Rana Muddasir",
-      position: "Owner, Furniture Brand",
+      title: "Perfect Blend of Style & Creativity",
+      quote: "SocialHawks helped us showcase our apparel brand with the right blend of style and creativity. Their photography and social media management gave our collections the exposure they deserved, helping us grow a loyal audience.",
+      name: "The Knotty Needles",
+      position: "Owner of Clothing Brand",
       image: "/images/testimonial-3.jpg",
-      fallback: "#45B7D1"
+      fallback: "#45B7D1",
+      projectSlug: null
     },
     {
       id: 4,
       rating: 5,
-      title: "Beyond ROAS: Real Clarity",
-      quote: "We were stuck on 2 ROAS for months. Devnest didn't just fix it, they explained what was broken and why. Finally feels like we have direction.",
-      name: "Naseem",
-      position: "Owner of Fragrance Brand",
+      title: "Luxurious Brand Presence",
+      quote: "SocialHawks crafted a luxurious brand presence for us. Their creative production, photography, and digital campaigns elevated Zaafar Fragrance into a premium name in the market. We couldn't have asked for a better creative partner.",
+      name: "Zaafar Fragrance",
+      position: "Owner of Perfume Brand",
       image: "/images/testimonial-4.jpg",
-      fallback: "#96CEB4"
+      fallback: "#96CEB4",
+      projectSlug: "zaafar-fragrance-brand-digital-growth"
     },
     {
       id: 5,
       rating: 5,
-      title: "Exceeded Expectations",
-      quote: "They understood our problems better than we did. The way they set up our campaigns made people actually buy.",
-      name: "Khawar",
-      position: "Founder of a Weight loss drink",
+      title: "Positioned as Reliable Provider",
+      quote: "Our business relies on digital distribution, and SocialHawks played a major role in positioning us as a reliable online service provider. Their marketing campaigns created awareness and credibility that directly impacted our growth.",
+      name: "ACE",
+      position: "Owner of Digital Products Store",
       image: "/images/testimonial-5.jpg",
-      fallback: "#FFEAA7"
+      fallback: "#FFEAA7",
+      projectSlug: null
+    },
+    {
+      id: 6,
+      rating: 5,
+      title: "High-Quality Gym Marketing",
+      quote: "The SocialHawks team delivered high-quality production and social media strategies that made our gym stand out. Their work helped us attract and retain clients with a stronger online presence.",
+      name: "Emergym",
+      position: "Gym Owner",
+      image: "/images/testimonial-6.jpg",
+      fallback: "#FF8C94",
+      projectSlug: null
+    },
+    {
+      id: 7,
+      rating: 5,
+      title: "Dependable Lead Generation",
+      quote: "SocialHawks handled everything from production to lead generation. Their targeted campaigns made sure we were constantly reaching the right prospects. They are a dependable agency that delivers results.",
+      name: "Cactus",
+      position: "Call Center Owner",
+      image: "/images/testimonial-7.jpg",
+      fallback: "#A8E6CF",
+      projectSlug: null
+    },
+    {
+      id: 8,
+      rating: 5,
+      title: "Excellent Online Grocery Growth",
+      quote: "SocialHawks understood our online grocery service needs and created campaigns that resonated with our customers. Their strategic approach helped us expand our reach and build customer trust.",
+      name: "Ucaaz",
+      position: "Online Grocery Service",
+      image: "/images/testimonial-8.jpg",
+      fallback: "#FFD3B6",
+      projectSlug: null
     }
   ];
 
@@ -194,29 +232,29 @@ const Testimonials = () => {
               {doubledTestimonials.map((testimonial, index) => (
                 <motion.div
                   key={`${testimonial.id}-${index}`}
-                  className="flex-shrink-0 w-72 sm:w-80 bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-200 testimonial-card"
+                  className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 testimonial-card flex flex-col border border-gray-100"
                   variants={cardVariants}
                   whileHover="hover"
-                  style={{ perspective: '1000px' }}
+                  style={{ perspective: '1000px', minHeight: '280px' }}
                 >
                   {/* Star Rating */}
-                  <div className="flex items-center gap-1 mb-3 sm:mb-4">
+                  <div className="flex items-center gap-1 mb-3">
                     {renderStars(testimonial.rating)}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 line-clamp-2">
                     {testimonial.title}
                   </h3>
 
                   {/* Quote */}
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-auto flex-grow">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
 
                   {/* Author */}
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
+                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-gray-200">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                       {!imageErrors[`testimonial-${testimonial.id}-${index}`] ? (
                         <Image
                           src={testimonial.image}
@@ -227,16 +265,16 @@ const Testimonials = () => {
                         />
                       ) : (
                         <div 
-                          className="w-full h-full flex items-center justify-center text-white font-bold text-sm"
+                          className="w-full h-full flex items-center justify-center text-white font-bold text-base"
                           style={{ backgroundColor: testimonial.fallback }}
                         >
                           {testimonial.name ? testimonial.name.charAt(0) : ''}
                         </div>
                       )}
                     </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 text-xs sm:text-sm">{testimonial.name}</p>
-                      <p className="text-gray-500 text-xs">{testimonial.position}</p>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-gray-900 text-sm truncate">{testimonial.name}</p>
+                      <p className="text-gray-500 text-xs truncate">{testimonial.position}</p>
                     </div>
                   </div>
                 </motion.div>
