@@ -272,14 +272,14 @@ const MobileAppDevelopmentPage = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
-                  { name: "React Native", icon: "⚛️" },
-                  { name: "Flutter", icon: "💙" },
-                  { name: "Swift", icon: "🍎" },
-                  { name: "Kotlin", icon: "🤖" },
-                  { name: "Xamarin", icon: "💜" },
-                  { name: "Firebase", icon: "🔥" },
-                  { name: "Node.js", icon: "🟢" },
-                  { name: "MongoDB", icon: "🍃" }
+                  { name: "React Native", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+                  { name: "Flutter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+                  { name: "Swift", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" },
+                  { name: "Kotlin", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+                  { name: "Xamarin", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xamarin/xamarin-original.svg" },
+                  { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+                  { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+                  { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
                 ].map((tech, idx) => (
                   <motion.div
                     key={idx}
@@ -290,7 +290,13 @@ const MobileAppDevelopmentPage = () => {
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-4xl mb-3">{tech.icon}</div>
+                    <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                     <h3 className="font-bold text-gray-900 text-sm">{tech.name}</h3>
                   </motion.div>
                 ))}
