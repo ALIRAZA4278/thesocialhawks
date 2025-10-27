@@ -153,17 +153,17 @@ const Hero = () => {
              
 
               {/* Main Heading */}
-              <motion.h1 
+              <motion.h1
                 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight mb-2 sm:mb-4 lg:mb-8 font-extralight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                The Digital Marketing  <br /> 
-                Agency Obsessed With{' '}
+                The Digital Marketing Agency <br />
+                That Delivers{' '}
                 <span className="relative inline-block">
                   <AnimatePresence mode="wait">
-                    <motion.span 
+                    <motion.span
                       key={currentWordIndex}
                       className="text-gray-900"
                       initial={{ opacity: 0, y: 20, rotateX: -90 }}
@@ -179,14 +179,13 @@ const Hero = () => {
               </motion.h1>
 
               {/* Subtitle */}
-              <motion.p 
+              <motion.p
                 className="text-sm sm:text-base lg:text-lg text-gray-600 mb-2 sm:mb-4 lg:mb-8 max-w-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                We turn marketing budgets into predictable revenue streams 
-                for businesses tired of guesswork and empty promises.
+                At SocialHawks, we are not just a regular marketing agency - we are your growth partners. Our team combines creativity with data-driven strategies to design, build, and market brands that attract attention, and that ultimately succeed.
               </motion.p>
 
               {/* Team Avatars and Contact Button */}

@@ -22,9 +22,10 @@ const ServicesPage = () => {
       id: 1,
       title: "Brand Identity & Design",
       slug: "brand-identity-design",
-      description: "Craft distinctive brand identities with logo design, brand guidelines, animated logos, and presentation design that defines your unique market presence.",
+      description: "Professional logo design and brand development services. Create memorable brand identities with custom logos and strategic brand development that builds recognition and trust.",
       image: "/images/services/1.jpg",
-      fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+      fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      hasSubServices: true
     },
     {
       id: 2,
@@ -54,15 +55,16 @@ const ServicesPage = () => {
       id: 5,
       title: "Web & Digital Development",
       slug: "web-digital-development",
-      description: "Full-stack web development from startup sites to e-commerce platforms, including hosting, domains, and technical infrastructure management.",
+      description: "Professional website development, WordPress solutions, ecommerce platforms, custom web applications, and backend development services. From startup sites to enterprise solutions.",
       image: "/images/services/5.jpg",
-      fallback: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
+      fallback: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+      hasSubServices: true
     },
     {
       id: 6,
       title: "Mobile App Development",
       slug: "mobile-app-development",
-      description: "Native and cross-platform mobile applications for iOS, Android, and Windows with modern UI/UX and robust functionality.",
+      description: "Custom mobile application development for iOS, Android, and cross-platform. Powerful, scalable, and secure mobile apps with modern UI/UX that drive business growth.",
       image: "/images/services/6.jpg",
       fallback: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
     },
@@ -70,7 +72,7 @@ const ServicesPage = () => {
       id: 7,
       title: "Content & Writing",
       slug: "content-writing",
-      description: "Strategic content creation including copywriting, blog writing, SEO content, eBooks, and technical writing that drives engagement and conversions.",
+      description: "Professional web content writing services that combine creativity with strategy. SEO-friendly content that engages audiences, builds trust, and drives conversions.",
       image: "/images/services/7.jpg",
       fallback: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
     },
@@ -94,7 +96,7 @@ const ServicesPage = () => {
       id: 10,
       title: "Digital Marketing & Growth",
       slug: "digital-marketing-growth",
-      description: "Comprehensive digital marketing including social media management, SEO, PPC, influencer partnerships, and performance analytics for measurable growth.",
+      description: "Professional SEO services that improve rankings, drive qualified traffic, and deliver measurable results. From local SEO to enterprise solutions with proven strategies.",
       image: "/images/services/10.jpg",
       fallback: "linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)"
     },
@@ -102,7 +104,7 @@ const ServicesPage = () => {
       id: 11,
       title: "Performance & Maintenance",
       slug: "performance-maintenance",
-      description: "Ongoing website maintenance, performance optimization, security updates, and proactive monitoring to keep your digital assets running smoothly.",
+      description: "Comprehensive website maintenance, performance optimization, speed enhancement, regular updates, and proactive monitoring. Keep your website fast, secure, and running smoothly 24/7.",
       image: "/images/services/11.jpg",
       fallback: "linear-gradient(135deg, #a8caba 0%, #5d4e75 100%)"
     },

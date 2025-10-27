@@ -16,10 +16,10 @@ const serviceDetails = {
     description: "Transform your business vision into a compelling brand identity that resonates with your target audience and drives market recognition.",
     longDescription: "Our brand identity and design services encompass the complete spectrum of visual brand development. From initial concept to final execution, we create cohesive brand ecosystems that tell your unique story and establish meaningful connections with your customers. Our expert team combines strategic thinking with creative excellence to deliver brand solutions that not only look exceptional but also perform effectively in competitive markets.",
     stats: [
-      { number: "500+", label: "Brands Created" },
-      { number: "98%", label: "Client Satisfaction" },
-      { number: "24h", label: "Quick Turnaround" },
-      { number: "15+", label: "Industries Served" }
+      { number: "80+", label: "Trusted Brands" },
+      { number: "564M+", label: "Revenue Generated" },
+      { number: "806+", label: "Ads Created" },
+      { number: "12+", label: "Industries Served" }
     ],
     services: [
       "Logo Design (Iconic, 2D, 3D, Typographic, Symbolic, Illustrative, Mascot)",
@@ -79,15 +79,15 @@ const serviceDetails = {
     ],
     testimonials: [
       {
-        text: "The brand identity they created transformed our business. We saw a 150% increase in customer engagement within 3 months.",
-        author: "Sarah Johnson",
-        position: "CEO, TechStart Inc.",
+        text: "SocialHawks transformed our online presence completely. The brand identity work they delivered helped us stand out in a crowded market and position ourselves as industry leaders.",
+        author: "David Martinez",
+        position: "Founder, TechVenture Solutions",
         rating: 5
       },
       {
-        text: "Professional, creative, and results-driven. They understood our vision perfectly and delivered beyond expectations.",
-        author: "Mike Chen",
-        position: "Founder, GreenLife Co.",
+        text: "Working with SocialHawks was a game-changer for our business. Their creative team is incredibly professional and results-focused. Our brand now truly reflects our values and connects with our audience.",
+        author: "Jennifer Park",
+        position: "Marketing Director, HealthCare Plus",
         rating: 5
       }
     ],
@@ -291,15 +291,15 @@ const serviceDetails = {
     ],
     testimonials: [
       {
-        text: "Their graphic designs completely transformed our social media presence. Engagement increased by 300%!",
-        author: "Lisa Rodriguez",
-        position: "Marketing Director, FashionForward",
+        text: "SocialHawks delivered exceptional designs that elevated our entire brand. Their attention to detail and creative approach made all the difference in our market positioning.",
+        author: "Robert Johnson",
+        position: "CEO, Digital Ventures",
         rating: 5
       },
       {
-        text: "Quick turnaround, creative solutions, and always on-brand. Couldn't ask for better design partners.",
-        author: "David Kim",
-        position: "Brand Manager, TechFlow",
+        text: "The team at SocialHawks is incredibly talented and professional. They consistently deliver high-quality work that drives real results for our business.",
+        author: "Amanda Chen",
+        position: "Marketing Lead, Innovation Hub",
         rating: 5
       }
     ],
@@ -420,7 +420,7 @@ const serviceDetails = {
       { title: "Faster Approvals", description: "Professional planning reduces reshoots and ensures compliance.", icon: "✅" }
     ],
     testimonials: [
-      { text: "Their aerial footage transformed our property listings — we saw an immediate increase in inquiries.", author: "Rehan Ali", position: "Real Estate Broker", rating: 5 }
+      { text: "SocialHawks produced outstanding video content that perfectly captured our brand story. The production quality and creative direction exceeded all our expectations.", author: "Michael Thompson", position: "Director of Marketing, Urban Spaces", rating: 5 }
     ],
     faq: [
       { question: "Do you handle flight permissions?", answer: "Yes — we manage local permissions, no-fly checks, and site risk assessments as part of our service." },
@@ -1684,97 +1684,6 @@ const ServiceDetailPage = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* Image Gallery */}
-        {service.images.length > 1 && (
-          <motion.div 
-            className="py-16 bg-gray-50"
-            initial={{ opacity: 0 }}
-            animate={isProcessInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="px-4">
-              <motion.h3 
-                className="text-3xl lg:text-4xl font-light text-gray-900 text-center mb-12"
-                initial={{ opacity: 0, y: 30 }}
-                animate={isProcessInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                Our Work Gallery
-              </motion.h3>
-              
-              {/* Main Featured Images */}
-              <div className="max-w-6xl mx-auto mb-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                  {service.images.slice(1, 3).map((image, index) => (
-                    <motion.div 
-                      key={index}
-                      className="aspect-video relative overflow-hidden rounded-xl shadow-lg group"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isProcessInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
-                      whileHover={{ scale: 1.05, y: -10 }}
-                    >
-                      {!imageErrors[`featured-${service.id}-${index}`] ? (
-                        <Image
-                          src={image}
-                          alt={`${service.title} featured work ${index + 1}`}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-110"
-                          onError={() => handleImageError(`featured-${service.id}-${index}`)}
-                        />
-                      ) : (
-                        <div 
-                          className="w-full h-full transition-transform duration-700 group-hover:scale-110"
-                          style={{ background: service.fallback }}
-                        />
-                      )}
-                      <motion.div 
-                        className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        whileHover={{ backgroundColor: "rgba(0,0,0,0.3)" }}
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-                
-                {/* Smaller Gallery Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {service.images.slice(3).map((image, index) => (
-                    <motion.div 
-                      key={index}
-                      className="aspect-square relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={isProcessInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                      whileHover={{ scale: 1.1, zIndex: 10 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {!imageErrors[`gallery-${service.id}-${index + 3}`] ? (
-                        <Image
-                          src={image}
-                          alt={`${service.title} work ${index + 4}`}
-                          fill
-                          className="object-cover transition-all duration-500 group-hover:brightness-110"
-                          onError={() => handleImageError(`gallery-${service.id}-${index + 3}`)}
-                        />
-                      ) : (
-                        <div 
-                          className="w-full h-full transition-all duration-500 group-hover:brightness-110"
-                          style={{ background: service.fallback }}
-                        />
-                      )}
-                      <motion.div 
-                        className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
 
         {/* Testimonials Section */}
         {service.testimonials && (

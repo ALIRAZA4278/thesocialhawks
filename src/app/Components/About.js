@@ -98,7 +98,7 @@ const About = () => {
                 transition={{ duration: 0.3, delay: 0.6 }}
               ></motion.div>
             </motion.div>
-            <motion.h2 
+            <motion.h2
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight max-w-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -109,14 +109,7 @@ const About = () => {
                 animate={isHeaderInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                Performance-Driven Marketing
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={isHeaderInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-              >
-                {" "}For Growing Businesses
+                About SocialHawks
               </motion.span>
             </motion.h2>
         
@@ -202,36 +195,31 @@ const About = () => {
               animate={isContentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <motion.p 
+              <motion.p
                 className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed mb-6"
                 initial={{ opacity: 0 }}
                 animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <span className="text-primary font-semibold">The SocialHawks</span> was founded with a simple belief: marketing should 
-                generate real, measurable returns, not just impressions.
+                <span className="text-primary font-semibold">SocialHawks</span> is a digital marketing agency that combines creativity and strategy. Our mission is to enable brands to reach their full potential without borders.
               </motion.p>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6"
                 initial={{ opacity: 0 }}
                 animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                We&apos;re a team of data-obsessed marketers who combine creative 
-                thinking with analytical precision to deliver campaigns that don&apos;t just 
-                look good, but perform exceptionally well.
+                Over 80 brands have put their trust in us as a performance-based digital marketing agency. We gather professionals in branding, design, web development, SEO, content, and marketing in one place to create brands that flourish in the current digital market.
               </motion.p>
 
-              <motion.p 
+              <motion.p
                 className="text-base sm:text-lg text-gray-600 leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
               >
-                Our approach eliminates guesswork from your marketing, replacing 
-                it with strategies backed by data and refined through continuous 
-                testing.
+                Our mission is straightforward: making your marketing investment result in predictable growth.
               </motion.p>
             </motion.div>
 

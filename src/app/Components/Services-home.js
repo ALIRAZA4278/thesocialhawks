@@ -126,7 +126,7 @@ const ServicesHome = () => {
       id: 1,
       title: "Brand Identity & Design",
       slug: "/brand-identity-design",
-      description: "Craft distinctive brand identities with logo design, brand guidelines, animated logos, and presentation design that defines your unique market presence.",
+      description: "Professional logo design and brand development services. Create memorable brand identities with custom logos and strategic brand development that builds recognition and trust.",
       image: "/images/services/1.jpg",
       fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
     },
@@ -158,7 +158,7 @@ const ServicesHome = () => {
       id: 5,
       title: "Web & Digital Development",
       slug: "/web-digital-development",
-      description: "Full-stack web development from startup sites to e-commerce platforms, including hosting, domains, and technical infrastructure management.",
+      description: "Comprehensive web development services from professional websites to e-commerce platforms. Build fast, scalable, and user-friendly websites with WordPress, custom solutions, and robust backend systems.",
       image: "/images/services/5.jpg",
       fallback: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
     },
@@ -166,7 +166,7 @@ const ServicesHome = () => {
       id: 6,
       title: "Mobile App Development",
       slug: "/mobile-app-development",
-      description: "Native and cross-platform mobile applications for iOS, Android, and Windows with modern UI/UX and robust functionality.",
+      description: "Build powerful mobile applications for iOS, Android, and cross-platform solutions. Create seamless user experiences with modern technologies like React Native, Flutter, and Swift.",
       image: "/images/services/6.jpg",
       fallback: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
     },
@@ -174,7 +174,7 @@ const ServicesHome = () => {
       id: 7,
       title: "Content & Writing",
       slug: "/content-writing",
-      description: "Strategic content creation including copywriting, blog writing, SEO content, eBooks, and technical writing that drives engagement and conversions.",
+      description: "Professional web content writing services that convert visitors into customers. SEO-optimized content, engaging copy, and strategic messaging that drives results and builds your brand authority.",
       image: "/images/services/7.jpg",
       fallback: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
     },
@@ -198,7 +198,7 @@ const ServicesHome = () => {
       id: 10,
       title: "Digital Marketing & Growth",
       slug: "/digital-marketing-growth",
-      description: "Comprehensive digital marketing including social media management, SEO, PPC, influencer partnerships, and performance analytics for measurable growth.",
+      description: "Expert SEO services that get you found online. Comprehensive search engine optimization, on-page and off-page strategies, technical SEO, and performance tracking to increase visibility and drive organic growth.",
       image: "/images/services/10.jpg",
       fallback: "linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)"
     },
@@ -423,7 +423,7 @@ const ServicesHome = () => {
               onMouseLeave={() => setIsAutoPaused(false)}
             >
               {/* We duplicate the services array to create a seamless loop */}
-              <div ref={innerRef} className="flex gap-5 pb-4 px-2 will-change-transform">
+              <div ref={innerRef} className="flex gap-5 py-6 px-2 will-change-transform">
                 {[...services, ...services].map((service, idx) => (
                   <Link
                     key={`srv-${idx}-${service.id}`}
@@ -457,8 +457,9 @@ const ServicesHome = () => {
                         damping: 14
                       }}
                       whileHover={{
-                        scale: 1.03,
-                        rotateY: 3,
+                        scale: 1.02,
+                        rotateY: 2,
+                        y: -5,
                         transition: { duration: 0.25 }
                       }}
                       whileTap={{ scale: 0.95 }}
