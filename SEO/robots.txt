@@ -1,0 +1,32 @@
+# robots.txt for The Social Hawks – https://thesocialhawks.com/
+# Allow major search engines and AI services to crawl public content and helpful resources
+
+User-agent: *
+# Allow the entire site by default
+Allow: /
+
+# Disallow unnecessary or sensitive areas
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /*?replytocom
+Disallow: /*/print/
+Disallow: /?s=*
+Disallow: /search/
+Disallow: /?utm_*
+
+# Sitemap location(s)
+Sitemap: https://thesocialhawks.com/sitemap.xml
+
+# Crawl-delay directive (optional, for less aggressive bots)
+Crawl-delay: 10
+
+# Specific bots / AI services (optional)
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# End of file
