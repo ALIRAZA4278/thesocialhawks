@@ -136,8 +136,8 @@ const Testimonials = () => {
     ));
   };
 
-  // Double the testimonials array for seamless infinite scroll
-  const doubledTestimonials = [...testimonials, ...testimonials];
+  // Quadruple the testimonials array for seamless infinite scroll
+  const doubledTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
   // Animation variants
   const containerVariants = {
@@ -220,7 +220,7 @@ const Testimonials = () => {
           </motion.div>
 
           {/* Infinite Scrolling Testimonials */}
-          <motion.div 
+          <motion.div
             className="relative mb-12 sm:mb-16 overflow-hidden"
             variants={sectionVariants}
             initial="hidden"
@@ -228,7 +228,7 @@ const Testimonials = () => {
             viewport={{ once: true, amount: 0.3 }}
             style={{ y: testimonialsY }}
           >
-            <div className="flex animate-scroll-right space-x-4 sm:space-x-6">
+            <div className="flex animate-scroll-right space-x-4 sm:space-x-6" style={{ width: 'max-content' }}>
               {doubledTestimonials.map((testimonial, index) => (
                 <motion.div
                   key={`${testimonial.id}-${index}`}
@@ -348,12 +348,12 @@ const Testimonials = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-25%);
           }
         }
 
         .animate-scroll-right {
-          animation: scroll-right 6s linear infinite;
+          animation: scroll-right 50s linear infinite;
         }
 
         .animate-scroll-right:hover {
@@ -378,7 +378,7 @@ const Testimonials = () => {
         }
 
         .animate-scroll-right {
-          animation: scroll-right 6s linear infinite, subtle-glow 8s ease-in-out infinite;
+          animation: scroll-right 50s linear infinite, subtle-glow 8s ease-in-out infinite;
         }
 
         .banner-hover:hover {

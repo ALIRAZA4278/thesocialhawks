@@ -10,6 +10,7 @@ const Testimonials = () => {
     { id: 15, image: '/images/logo/15.jpg' },
     { id: 16, image: '/images/logo/16.jpg' },
     { id: 17, image: '/images/logo/17.jpg' },
+    { id: 18, image: '/images/logo/18.jpg' },
     { id: 19, image: '/images/logo/19.jpg' },
     { id: 20, image: '/images/logo/20.jpg' },
     { id: 21, image: '/images/logo/21.jpg' },
@@ -36,7 +37,11 @@ const Testimonials = () => {
     { id: 12, image: '/images/logo/12.jpg' },
     { id: 26, image: '/images/logo/26.jpg' },
     { id: 28, image: '/images/logo/28.png' },
-   
+    { id: 29, image: '/images/logo/29.jpg' },
+    { id: 30, image: '/images/logo/30.png' },
+    { id: 31, image: '/images/logo/31.png' },
+    { id: 32, image: '/images/logo/32.png' },
+    { id: 33, image: '/images/logo/251111.png' },
   ], []);
 
   const [imageErrors, setImageErrors] = useState({});
@@ -185,7 +190,7 @@ const Testimonials = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-20%);
+            transform: translateX(-25%);
           }
         }
 

@@ -424,7 +424,7 @@ const ServicesHome = () => {
             >
               {/* We duplicate the services array to create a seamless loop */}
               <div ref={innerRef} className="flex gap-5 py-6 px-2 will-change-transform">
-                {[...services, ...services].map((service, idx) => (
+                {[...services, ...services, ...services].map((service, idx) => (
                   <Link
                     key={`srv-${idx}-${service.id}`}
                     href={`/services/${service.slug}`}

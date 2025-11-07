@@ -5,11 +5,37 @@ import { motion, useInView } from 'framer-motion';
 import Navbar from '../../Components/Navbar';
 import Contact from '../../Components/Contact';
 
-const SEOServicesPage = () => {
+const DigitalMarketingGrowthPage = () => {
   const heroRef = useRef(null);
   const contentRef = useRef(null);
+  const subServicesRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true, margin: "-100px" });
   const isContentInView = useInView(contentRef, { once: true, margin: "-50px" });
+  const isSubServicesInView = useInView(subServicesRef, { once: true, margin: "-50px" });
+
+  const subServices = [
+    {
+      title: "Search Engine Optimization (SEO)",
+      description: "Climb to the top of search results and get found by customers actively looking for what you offer. Our proven SEO strategies deliver sustainable organic growth.",
+      icon: "🔍",
+      link: "/services/digital-marketing-growth/seo",
+      gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "Paid Social Advertising",
+      description: "Reach your ideal customers on Facebook, Instagram, TikTok, and LinkedIn with highly targeted ad campaigns that maximize ROI and drive real business results.",
+      icon: "📱",
+      link: "/services/digital-marketing-growth/paid-social-advertising",
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Influencer & Creator Partnerships",
+      description: "Connect with audiences through authentic creator collaborations that build trust, expand reach, and drive engagement across social platforms.",
+      icon: "🤝",
+      link: "/services/digital-marketing-growth/influencer-creator-partnerships",
+      gradient: "from-orange-500 to-red-500"
+    }
+  ];
 
   return (
     <div className="w-[95%] sm:w-[90%] mx-auto">
@@ -47,10 +73,10 @@ const SEOServicesPage = () => {
             >
               <div className="text-left flex-1">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 mb-6">
-                  Search Engine Optimization Services
+                  Digital Marketing & Growth Services That Drive Real Results
                 </h1>
                 <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                  It&apos;s not optional to be found online, it&apos;s mandatory. SocialHawks provides professional search engine optimization (SEO) services that actually improve rankings, capabilities to generate visibility, and drive the right traffic to your site. Whether you are a small business or a big brand, our strategies are geared towards producing the meaningful results for you.
+                  Stop throwing money at marketing that doesn&apos;t work. SocialHawks delivers data-driven digital marketing strategies that attract qualified leads, increase conversions, and fuel sustainable business growth. Whether you need to dominate search rankings, run high-performing ad campaigns, or leverage influencer partnerships, we&apos;ve got you covered.
                 </p>
 
                 {/* CTA Button */}
@@ -62,7 +88,7 @@ const SEOServicesPage = () => {
                     href="#contact"
                     className="inline-block bg-primary text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Boost My Rankings
+                    Grow My Business
                   </Link>
                 </motion.div>
               </div>
@@ -80,7 +106,7 @@ const SEOServicesPage = () => {
         >
           <div className="px-4 mx-auto max-w-6xl">
 
-            {/* Why SEO Matters */}
+            {/* Why Digital Marketing Matters */}
             <section className="mb-16">
               <motion.h2
                 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
@@ -88,16 +114,17 @@ const SEOServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Why SEO Matters for Your Business
+                Why Digital Marketing is Essential for Growth
               </motion.h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 {[
-                  { icon: "📈", title: "Higher Rankings", desc: "Be at the top of results pages based on the key terms you are targeting." },
-                  { icon: "👥", title: "Qualified Traffic", desc: "Pull in the right group of people who are interested in your services." },
-                  { icon: "💰", title: "Cost Effective", desc: "Grow slow and sustainable over time instead of by ads." },
-                  { icon: "🔑", title: "Brand Authority", desc: "Hitting the first page means that you are being trusted at first glance by your customers." },
-                  { icon: "🌍", title: "Local & Global Reach", desc: "Optimize for local searches as well as world searches." }
+                  { icon: "🎯", title: "Reach Your Ideal Customers", desc: "Target the exact people who need your products or services, not just anyone with a pulse." },
+                  { icon: "📊", title: "Measurable Results", desc: "See exactly what's working with real data, not gut feelings or guesswork." },
+                  { icon: "💰", title: "Better ROI Than Traditional Marketing", desc: "Get more bang for your buck compared to billboards, print ads, or cold calling." },
+                  { icon: "⚡", title: "Faster Results", desc: "Launch campaigns today and start seeing traffic, leads, and sales within days." },
+                  { icon: "🌐", title: "24/7 Marketing Machine", desc: "Your digital presence works around the clock, even while you sleep." },
+                  { icon: "🔄", title: "Continuous Optimization", desc: "We constantly refine and improve your campaigns based on performance data." }
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
@@ -117,7 +144,72 @@ const SEOServicesPage = () => {
               </div>
             </section>
 
-            {/* Our SEO Services */}
+            {/* Our Specialized Services */}
+            <section ref={subServicesRef} className="mb-16">
+              <motion.h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                Our Digital Marketing Services
+              </motion.h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {subServices.map((service, idx) => (
+                  <Link key={idx} href={service.link}>
+                    <motion.div
+                      className="group relative bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-primary hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden h-full"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.15 }}
+                      whileHover={{ y: -8, scale: 1.02 }}
+                    >
+                      {/* Gradient Background on Hover */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+
+                      {/* Icon */}
+                      <motion.div
+                        className="text-6xl mb-6 relative z-10"
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {service.icon}
+                      </motion.div>
+
+                      {/* Title */}
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300 relative z-10">
+                        {service.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-gray-600 leading-relaxed mb-6 relative z-10">
+                        {service.description}
+                      </p>
+
+                      {/* Arrow Icon */}
+                      <motion.div
+                        className="flex items-center text-primary font-semibold group-hover:gap-3 gap-2 transition-all duration-300 relative z-10"
+                        whileHover={{ x: 5 }}
+                      >
+                        <span>Learn More</span>
+                        <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </motion.div>
+
+                      {/* Shine Effect */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+                      </div>
+                    </motion.div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* What We Do */}
             <section className="mb-16 bg-gray-900 text-white rounded-3xl p-8 sm:p-12">
               <motion.h2
                 className="text-3xl sm:text-4xl font-bold mb-8"
@@ -125,32 +217,28 @@ const SEOServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Our SEO Services
+                How We Drive Growth for Your Business
               </motion.h2>
 
-              <div className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   {
-                    title: "Local Search Engine Optimization Services",
-                    description: "Enhance visibility in \"near me\" searches and gain the competitive edge in your local market with enhanced Google Business Profiles and targeting by location."
+                    title: "Strategic Planning",
+                    description: "We don't guess. We analyze your market, competitors, and target audience to build a data-backed strategy that actually works."
                   },
                   {
-                    title: "Professional SEO Services",
-                    description: "Stand out with our professional services, which include technical SEO, content optimization, building backlinks, and targeting the best keywords for the ultimate visibility."
+                    title: "Multi-Channel Approach",
+                    description: "From search engines to social media, we meet your customers wherever they are with consistent, compelling messaging."
                   },
                   {
-                    title: "Best Search Engine Optimization Services",
-                    description: "From start-ups to enterprise companies we offer the top SEO services to address specific industry requirements and competitive landscape."
+                    title: "Performance Tracking",
+                    description: "Track every dollar spent and every lead generated with transparent reporting and real-time dashboards."
                   },
                   {
-                    title: "Small Business SEO Services",
-                    description: "Affordable SEO solutions, designed to help your small business compete with bigger brands and foster continued growth."
-                  },
-                  {
-                    title: "SEO Packages & Campaign Management",
-                    description: "Transparent, SEO Packages that are results-driven with tangible deliverables, reporting, and performance tracking will give you peace of mind."
+                    title: "Continuous Optimization",
+                    description: "We constantly test, refine, and improve your campaigns to maximize ROI and stay ahead of the competition."
                   }
-                ].map((service, idx) => (
+                ].map((item, idx) => (
                   <motion.div
                     key={idx}
                     className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20"
@@ -159,8 +247,8 @@ const SEOServicesPage = () => {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
                   >
-                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{item.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -174,16 +262,17 @@ const SEOServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Why Choose SocialHawks as Your SEO Company?
+                Why Choose SocialHawks for Digital Marketing?
               </motion.h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { icon: "✅", title: "Keyword Research Experts", desc: "Identify the phrases your customers are searching for." },
-                  { icon: "✅", title: "Technical SEO Audits", desc: "Identify and resolve errors, speed issues, and indexing issues." },
-                  { icon: "✅", title: "Content Optimization", desc: "Blogs, Landing Pages, and Service Pages that are built for ranking." },
-                  { icon: "✅", title: "White Hat Link Building", desc: "Authority backlinks to increase domain authority." },
-                  { icon: "✅", title: "Data Driven Reporting", desc: "Monthly report on performance and actions you can take to enhance performance." }
+                  { icon: "🎯", title: "Results-Driven Approach", desc: "We focus on metrics that matter: leads, sales, and revenue growth." },
+                  { icon: "👥", title: "Experienced Team", desc: "Our specialists have years of experience across industries and platforms." },
+                  { icon: "📈", title: "Proven Track Record", desc: "We've helped 100+ businesses achieve measurable growth." },
+                  { icon: "🔧", title: "Custom Solutions", desc: "No cookie-cutter strategies. Every plan is tailored to your business goals." },
+                  { icon: "💬", title: "Transparent Communication", desc: "Regular updates, clear reporting, and always available to answer questions." },
+                  { icon: "⚡", title: "Fast Implementation", desc: "We move quickly to get your campaigns live and generating results." }
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
@@ -205,7 +294,7 @@ const SEOServicesPage = () => {
               </div>
             </section>
 
-            {/* Our SEO Process */}
+            {/* Our Process */}
             <section className="mb-16 bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 sm:p-12">
               <motion.h2
                 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8"
@@ -213,40 +302,35 @@ const SEOServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Our SEO Process
+                Our Digital Marketing Process
               </motion.h2>
 
               <div className="space-y-6">
                 {[
                   {
                     step: "01",
-                    title: "SEO Audit & Research",
-                    description: "Technical issues and keyword targeting opportunities are uncovered by us."
+                    title: "Discovery & Strategy",
+                    description: "We dive deep into your business, goals, and target audience to craft a winning strategy."
                   },
                   {
                     step: "02",
-                    title: "On-Page Optimization",
-                    description: "We enhance your SEO titles, headings, content, and internal linking structure."
+                    title: "Campaign Development",
+                    description: "Our team creates compelling campaigns designed to capture attention and drive action."
                   },
                   {
                     step: "03",
-                    title: "Technical SEO",
-                    description: "We optimize your site's loading speed, mobile functionality, and ability to be crawled."
+                    title: "Launch & Monitor",
+                    description: "We launch your campaigns and closely monitor performance from day one."
                   },
                   {
                     step: "04",
-                    title: "Content Strategy",
-                    description: "User-centered content is created by us and keywords are included."
+                    title: "Optimize & Scale",
+                    description: "Based on data insights, we continuously optimize and scale what's working best."
                   },
                   {
                     step: "05",
-                    title: "Link Building",
-                    description: "Backlinks are created by us to establish authority in your niche."
-                  },
-                  {
-                    step: "06",
-                    title: "Tracking & Reporting",
-                    description: "Tracking rankings, traffic and conversions."
+                    title: "Report & Refine",
+                    description: "Regular reporting keeps you informed, and we refine strategies based on results."
                   }
                 ].map((process, idx) => (
                   <motion.div
@@ -267,46 +351,6 @@ const SEOServicesPage = () => {
               </div>
             </section>
 
-            {/* SEO Service Features */}
-            <section className="mb-16">
-              <motion.h2
-                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                What&apos;s Included in Our SEO Services
-              </motion.h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  { icon: "🔍", title: "Keyword Research", desc: "In-depth analysis of search terms" },
-                  { icon: "📊", title: "Competitor Analysis", desc: "Understanding your competition" },
-                  { icon: "⚙️", title: "Technical SEO", desc: "Site speed, mobile, indexing fixes" },
-                  { icon: "📝", title: "On-Page SEO", desc: "Meta tags, headers, content optimization" },
-                  { icon: "🔗", title: "Link Building", desc: "Quality backlinks from authority sites" },
-                  { icon: "📍", title: "Local SEO", desc: "Google Business Profile optimization" },
-                  { icon: "📱", title: "Mobile Optimization", desc: "Mobile-first indexing ready" },
-                  { icon: "📈", title: "Analytics Setup", desc: "Google Analytics & Search Console" },
-                  { icon: "📄", title: "Monthly Reports", desc: "Detailed performance tracking" }
-                ].map((feature, idx) => (
-                  <motion.div
-                    key={idx}
-                    className="bg-white border-2 border-gray-200 p-6 rounded-xl hover:border-primary hover:shadow-lg transition-all duration-300"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="text-4xl mb-3">{feature.icon}</div>
-                    <h3 className="font-bold text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-gray-600 text-sm">{feature.desc}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </section>
-
             {/* Industries We Serve */}
             <section className="mb-16 bg-gray-900 text-white rounded-3xl p-8 sm:p-12">
               <motion.h2
@@ -315,17 +359,19 @@ const SEOServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Industries We Serve with SEO
+                Industries We Serve
               </motion.h2>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {[
-                  { icon: "🛒", name: "E-commerce & Retail" },
-                  { icon: "🏢", name: "Corporate Businesses" },
-                  { icon: "🏥", name: "Healthcare & Wellness" },
-                  { icon: "🎓", name: "Education & E-learning" },
-                  { icon: "🍔", name: "Food & Hospitality" },
-                  { icon: "🚀", name: "Startups & SMEs" }
+                  { icon: "🛒", name: "E-commerce" },
+                  { icon: "💼", name: "B2B Services" },
+                  { icon: "🏥", name: "Healthcare" },
+                  { icon: "🍔", name: "Food & Beverage" },
+                  { icon: "🏋️", name: "Fitness & Wellness" },
+                  { icon: "🏡", name: "Real Estate" },
+                  { icon: "🎓", name: "Education" },
+                  { icon: "🚀", name: "Tech & SaaS" }
                 ].map((industry, idx) => (
                   <motion.div
                     key={idx}
@@ -343,7 +389,7 @@ const SEOServicesPage = () => {
               </div>
             </section>
 
-            {/* SEO Results & Benefits */}
+            {/* Results You Can Expect */}
             <section className="mb-16">
               <motion.h2
                 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8"
@@ -351,30 +397,30 @@ const SEOServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Results You Can Expect
+                The Results You Can Expect
               </motion.h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                  { icon: "📊", title: "Increased Organic Traffic", desc: "More visitors from Google search results" },
-                  { icon: "🎯", title: "Better Keyword Rankings", desc: "Top positions for your target keywords" },
-                  { icon: "💼", title: "More Qualified Leads", desc: "Attract customers ready to buy" },
-                  { icon: "💰", title: "Higher Conversion Rates", desc: "Turn more visitors into customers" },
-                  { icon: "📈", title: "Improved Brand Visibility", desc: "Dominate search results in your industry" },
-                  { icon: "⏱️", title: "Long-term Growth", desc: "Sustainable results that compound over time" }
+                  { icon: "📈", title: "Increased Traffic", desc: "More qualified visitors to your website" },
+                  { icon: "💼", title: "More Leads", desc: "Higher volume of sales-ready prospects" },
+                  { icon: "💰", title: "Better Conversions", desc: "Turn more visitors into paying customers" },
+                  { icon: "🎯", title: "Lower Customer Acquisition Cost", desc: "Get customers for less money" },
+                  { icon: "🌟", title: "Enhanced Brand Awareness", desc: "Build recognition in your market" },
+                  { icon: "📊", title: "Measurable ROI", desc: "Clear visibility into your marketing investment" }
                 ].map((result, idx) => (
                   <motion.div
                     key={idx}
                     className="flex items-start gap-4 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
+                    transition={{ delay: idx * 0.05 }}
                   >
                     <div className="text-4xl flex-shrink-0">{result.icon}</div>
                     <div>
-                      <h3 className="font-bold text-gray-900 mb-2 text-lg">{result.title}</h3>
-                      <p className="text-gray-700">{result.desc}</p>
+                      <h3 className="font-bold text-gray-900 mb-2">{result.title}</h3>
+                      <p className="text-gray-600 text-sm">{result.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -389,13 +435,13 @@ const SEOServicesPage = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                  Ready to Rank Higher on Google?
+                  Ready to Scale Your Business?
                 </h2>
                 <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-                  Don&apos;t get left behind a competitor – everyone else is investing in search engine optimization! By using Social Hawks&apos; SEO services, you get to work with a partner that defines a strategy that results in real measurable results.
+                  Stop wasting time and money on marketing that doesn&apos;t work. Partner with SocialHawks and start seeing real, measurable growth.
                 </p>
                 <p className="text-lg text-gray-600 mb-8">
-                  Contact us today to formulate your traffic, lead and revenue driving SEO strategy.
+                  Let&apos;s build a digital marketing strategy that drives results for your business.
                 </p>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -405,7 +451,7 @@ const SEOServicesPage = () => {
                     href="#contact"
                     className="inline-block bg-primary text-white px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Boost My Rankings
+                    Let&apos;s Get Started
                   </Link>
                 </motion.div>
               </motion.div>
@@ -420,4 +466,4 @@ const SEOServicesPage = () => {
   );
 };
 
-export default SEOServicesPage;
+export default DigitalMarketingGrowthPage;

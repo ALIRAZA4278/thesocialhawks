@@ -199,51 +199,13 @@ const ProjectDetailPage = ({ params }) => {
             animate={isHeroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <motion.div 
-              className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer group"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-white font-semibold flex items-center gap-2">
-                <motion.svg 
-                  className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </motion.svg>
-                Duration: {project.duration}
-              </span>
-            </motion.div>
-            <motion.div 
-              className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer group"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-white font-semibold flex items-center gap-2">
-                <motion.svg 
-                  className="w-4 h-4" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  whileHover={{ rotate: [0, -10, 10, 0] }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-8 4h12v9a2 2 0 01-2 2H10a2 2 0 01-2-2v-9z"></path>
-                </motion.svg>
-                Year: {project.year}
-              </span>
-            </motion.div>
-            <motion.div 
+            <motion.div
               className="bg-primary/20 backdrop-blur-sm rounded-full px-6 py-3 border border-primary/30 hover:bg-primary/30 hover:border-primary/50 transition-all duration-300 cursor-pointer group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="text-primary font-semibold flex items-center gap-2">
-                <motion.div 
+                <motion.div
                   className="w-2 h-2 bg-primary rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -299,46 +261,30 @@ const ProjectDetailPage = ({ params }) => {
           {/* Continuous Scrolling Video Container */}
           <div className="relative">
             {/* Video Carousel */}
-            <div className="flex animate-scroll-rtl">
-              {/* First set of videos */}
-              {project.videos.map((video, index) => (
-                <motion.div
-                  key={`first-${index}`}
-                  className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-72 sm:h-80 md:h-96 mx-2 sm:mx-3 rounded-2xl overflow-hidden shadow-2xl video-showcase-item"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isVideoShowcaseInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                >
-                  <video
-                    src={video}
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                  />
-                </motion.div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {project.videos.map((video, index) => (
-                <motion.div
-                  key={`second-${index}`}
-                  className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-72 sm:h-80 md:h-96 mx-2 sm:mx-3 rounded-2xl overflow-hidden shadow-2xl video-showcase-item"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isVideoShowcaseInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                >
-                  <video
-                    src={video}
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                  />
-                </motion.div>
+            <div className="flex animate-scroll-rtl" style={{ width: 'max-content' }}>
+              {/* Quadruple set for seamless loop */}
+              {[...Array(4)].map((_, setIndex) => (
+                <React.Fragment key={`set-${setIndex}`}>
+                  {project.videos.map((video, index) => (
+                    <motion.div
+                      key={`${setIndex}-${index}`}
+                      className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-72 sm:h-80 md:h-96 mx-2 sm:mx-3 rounded-2xl overflow-hidden shadow-2xl video-showcase-item"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isVideoShowcaseInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                      transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                    >
+                      <video
+                        src={video}
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                      />
+                    </motion.div>
+                  ))}
+                </React.Fragment>
               ))}
             </div>
 
@@ -707,8 +653,6 @@ const ProjectDetailPage = ({ params }) => {
                 <ul className="text-sm text-gray-700 space-y-3">
                   <li><span className="font-medium">Client:</span> {project.client}</li>
                   <li><span className="font-medium">Category:</span> {project.category}</li>
-                  <li><span className="font-medium">Year:</span> {project.year}</li>
-                  <li><span className="font-medium">Duration:</span> {project.duration}</li>
                   <li><span className="font-medium">Status:</span> {project.status ? (project.status.charAt(0).toUpperCase() + project.status.slice(1)) : ''}</li>
                 </ul>
 
@@ -952,7 +896,6 @@ const ProjectDetailPage = ({ params }) => {
                         </p>
                         <div className="flex items-center justify-between mt-auto">
                           <span className="text-primary font-semibold text-sm">{otherProject.client}</span>
-                          <span className="text-gray-500 text-sm">{otherProject.year}</span>
                         </div>
                       </div>
                     </div>
@@ -1358,27 +1301,27 @@ const ProjectDetailPage = ({ params }) => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-25%);
           }
         }
-        
+
         @keyframes scroll-rtl-mobile {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-25%);
           }
         }
-        
+
         .animate-scroll-rtl {
-          animation: scroll-rtl 40s linear infinite;
+          animation: scroll-rtl 50s linear infinite;
           width: max-content;
         }
-        
+
         @media (max-width: 768px) {
           .animate-scroll-rtl {
-            animation: scroll-rtl-mobile 25s linear infinite;
+            animation: scroll-rtl-mobile 35s linear infinite;
           }
         }
         
