@@ -10,10 +10,10 @@ export const projectsData = [
     shortDescription: 'Premium gym digital presence and lead generation campaign to attract new members and establish market position.',
     description: 'MFit, a premium gym located in a posh area, partnered with us to launch a strong digital presence and attract new members. Our goal was to create awareness, generate leads, and position MFit as the go-to fitness destination in the community. We delivered a comprehensive 2-month social media marketing and management campaign, combining creative production with strategic paid advertising to maximize results.',
     images: [
-      '/images/projects/MFIT/MFIT (4).jpg',
       '/images/projects/MFIT/MFIT (1).jpg',
       '/images/projects/MFIT/MFIT (2).jpg',
       '/images/projects/MFIT/MFIT (3).jpg',
+      '/images/projects/MFIT/MFIT (4).jpg',
       '/images/projects/MFIT/MFIT (5).jpg',
       '/images/projects/MFIT/MFIT (6).jpg',
       '/images/projects/MFIT/MFIT (7).jpg',
