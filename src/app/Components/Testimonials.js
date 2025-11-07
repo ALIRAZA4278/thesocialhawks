@@ -93,6 +93,17 @@ const Testimonials = () => {
       image: "/images/testimonial-8.jpg",
       fallback: "#FFD3B6",
       projectSlug: null
+    },
+    {
+      id: 9,
+      rating: 5,
+      title: "Outstanding Website & Campaign Results",
+      quote: "SocialHawks not only developed our website but also created campaigns that helped our herbal products reach a wider audience. Their content was creative yet professional, and we saw clear improvements in sales and brand visibility.",
+      name: "Dr. Herbs",
+      position: "CEO of Dr. Herbs",
+      image: "/images/testimonial-9.jpg",
+      fallback: "#C7EFCF",
+      projectSlug: null
     }
   ];
 
