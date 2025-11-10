@@ -18,7 +18,6 @@ const Testimonials = () => {
     { id: 24, image: '/images/logo/24.jpg' },
     { id: 25, image: '/images/logo/25.jpg' },
     { id: 27, image: '/images/logo/27.jpg' },
-    { id: 27, image: '/images/logo/34.jpg' },
   ], []);
 
   // Row 2: Client logos (bottom line)
@@ -41,6 +40,7 @@ const Testimonials = () => {
     { id: 31, image: '/images/logo/31.png' },
     { id: 32, image: '/images/logo/32.png' },
     { id: 32, image: '/images/logo/33.png' },
+    { id: 32, image: '/images/logo/35.jpg' },
     { id: 33, image: '/images/logo/251111.png' },
   ], []);
 
