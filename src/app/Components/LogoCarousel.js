@@ -41,6 +41,7 @@ const Testimonials = () => {
     { id: 30, image: '/images/logo/30.png' },
     { id: 31, image: '/images/logo/31.png' },
     { id: 32, image: '/images/logo/32.png' },
+    { id: 32, image: '/images/logo/33.png' },
     { id: 33, image: '/images/logo/251111.png' },
   ], []);
 
