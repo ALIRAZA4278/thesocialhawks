@@ -531,6 +531,12 @@ const serviceDetails = {
     subtitle: "Complete Digital Solutions",
     description: "Full-stack web development services from startup sites to enterprise e-commerce platforms, including hosting, domains, and comprehensive technical infrastructure.",
     longDescription: "Our web and digital development services provide end-to-end solutions for your online presence. From initial planning and development to ongoing maintenance and optimization, we create digital experiences that drive business growth. Our technical expertise spans modern frameworks, security implementations, and performance optimization, ensuring your digital platforms are robust, scalable, and user-friendly.",
+    stats: [
+      { number: "150+", label: "Websites Built" },
+      { number: "99.9%", label: "Uptime Average" },
+      { number: "24/7", label: "Support Available" },
+      { number: "15+", label: "Technologies Mastered" }
+    ],
     services: [
       "Website Development (Startup, Business, E-commerce)",
       "E-learning Platforms & Marketplaces",
@@ -543,19 +549,23 @@ const serviceDetails = {
     process: [
       {
         step: "Planning & Architecture",
-        description: "Defining project scope, technical requirements, and development roadmap."
+        description: "Defining project scope, technical requirements, and development roadmap.",
+        icon: "📋"
       },
       {
         step: "Development & Testing",
-        description: "Building your platform with modern technologies and rigorous testing protocols."
+        description: "Building your platform with modern technologies and rigorous testing protocols.",
+        icon: "💻"
       },
       {
         step: "Deployment & Launch",
-        description: "Deploying to production servers with proper security and performance configurations."
+        description: "Deploying to production servers with proper security and performance configurations.",
+        icon: "🚀"
       },
       {
         step: "Maintenance & Support",
-        description: "Ongoing maintenance, updates, and technical support for optimal performance."
+        description: "Ongoing maintenance, updates, and technical support for optimal performance.",
+        icon: "🔧"
       }
     ],
     images: [
@@ -564,12 +574,147 @@ const serviceDetails = {
       "/images/EXAMPLE.jpg"
     ],
     fallback: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+    benefits: [
+      {
+        title: "Faster Time to Market",
+        description: "Launch your digital platform 40% faster with our streamlined development process",
+        icon: "⚡",
+      },
+      {
+        title: "Increased Conversions",
+        description: "Well-designed websites convert 200% more visitors into customers",
+        icon: "📈"
+      }
+    ],
+    testimonials: [
+      {
+        text: "SocialHawks delivered an exceptional e-commerce platform that exceeded our expectations. The site is fast, secure, and our sales have increased by 300% since launch.",
+        author: "Sarah Johnson",
+        position: "CEO, ShopTrend Online",
+        rating: 5
+      },
+      {
+        text: "Professional, responsive, and technically excellent. They built our web application on time and within budget. Highly recommended!",
+        author: "Michael Chen",
+        position: "CTO, DataFlow Systems",
+        rating: 5
+      }
+    ],
+    pricing: [
+      {
+        package: "Starter Website Package",
+        price: "$1,999",
+        duration: "2-3 weeks",
+        features: [
+          "5-Page Professional Website",
+          "Responsive Mobile Design",
+          "Basic SEO Setup",
+          "Contact Form Integration",
+          "1-Year Domain & Hosting",
+          "SSL Certificate",
+          "2 Rounds of Revisions"
+        ],
+        popular: false
+      },
+      {
+        package: "Business Website Package",
+        price: "$4,999",
+        duration: "4-6 weeks",
+        features: [
+          "10-15 Page Custom Website",
+          "Advanced Responsive Design",
+          "SEO Optimization",
+          "CMS Integration (WordPress/Custom)",
+          "Blog & News Section",
+          "Advanced Forms & Integrations",
+          "Analytics Setup",
+          "1-Year Hosting & Support",
+          "Unlimited Revisions"
+        ],
+        popular: true
+      },
+      {
+        package: "E-commerce Platform",
+        price: "$9,999",
+        duration: "6-8 weeks",
+        features: [
+          "Custom E-commerce Platform",
+          "Product Management System",
+          "Secure Payment Gateway Integration",
+          "Inventory Management",
+          "Order Tracking System",
+          "Customer Account Dashboard",
+          "Advanced SEO & Marketing Tools",
+          "Mobile App Integration Ready",
+          "Priority Support & Maintenance",
+          "All Source Files Included"
+        ],
+        popular: false
+      }
+    ],
+    industries: [
+      {
+        name: "E-commerce & Retail",
+        description: "Powerful online stores that drive sales and customer loyalty",
+        icon: "🛒"
+      },
+      {
+        name: "Technology & SaaS",
+        description: "Scalable platforms for tech companies and software services",
+        icon: "💻"
+      },
+      {
+        name: "Healthcare & Medical",
+        description: "Secure, HIPAA-compliant websites for healthcare providers",
+        icon: "🏥"
+      },
+      {
+        name: "Education & E-learning",
+        description: "Interactive learning platforms and educational websites",
+        icon: "🎓"
+      }
+    ],
+    caseStudies: [
+      {
+        title: "ShopTrend E-commerce Platform",
+        industry: "E-commerce",
+        challenge: "Needed scalable platform to handle 10,000+ products and high traffic",
+        solution: "Custom-built platform with advanced search, filters, and payment integration",
+        results: "300% increase in online sales, 50% faster page load times",
+        image: "/images/EXAMPLE.jpg"
+      },
+      {
+        title: "EduLearn Learning Platform",
+        industry: "Education",
+        challenge: "Required interactive platform for online courses and student management",
+        solution: "Full-featured LMS with video hosting, progress tracking, and certificates",
+        results: "5,000+ students enrolled in first 3 months, 95% satisfaction rate",
+        image: "/images/EXAMPLE.jpg"
+      }
+    ],
+    faq: [
+      {
+        question: "How long does website development take?",
+        answer: "Typically 2-8 weeks depending on complexity. Simple websites take 2-3 weeks, while complex e-commerce platforms may take 6-8 weeks."
+      },
+      {
+        question: "Do you provide hosting and domain services?",
+        answer: "Yes, we offer comprehensive hosting solutions and can register your domain or transfer existing domains."
+      },
+      {
+        question: "Can you redesign my existing website?",
+        answer: "Absolutely! We specialize in website redesigns and modernization while preserving your existing content and SEO rankings."
+      }
+    ],
     features: [
       "Modern Frameworks",
       "Responsive Design",
       "SEO Optimized",
       "Security First",
-      "Scalable Solutions"
+      "Scalable Solutions",
+      "Fast Performance",
+      "Cloud Hosting",
+      "24/7 Support"
     ],
     cta: {
       title: "Build Your Digital Presence",
@@ -794,6 +939,12 @@ const serviceDetails = {
     subtitle: "Comprehensive Growth Strategies",
     description: "Full-spectrum digital marketing including social media management, SEO, PPC, influencer partnerships, and performance analytics for measurable business growth.",
     longDescription: "Digital marketing success requires a strategic, multi-channel approach backed by data and continuous optimization. Our digital marketing and growth services encompass the complete spectrum of online marketing, from social media management to performance advertising. We focus on driving measurable results that contribute directly to your business growth and revenue objectives.",
+    stats: [
+      { number: "250+", label: "Campaigns Launched" },
+      { number: "€10M+", label: "Ad Spend Managed" },
+      { number: "5.2x", label: "Average ROI" },
+      { number: "100+", label: "Brands Grown" }
+    ],
     services: [
       "Strategic Social Media Management",
       "Paid Social Advertising (Meta, TikTok, LinkedIn)",
@@ -807,19 +958,23 @@ const serviceDetails = {
     process: [
       {
         step: "Strategy Development",
-        description: "Creating comprehensive digital marketing strategies based on business objectives and market analysis."
+        description: "Creating comprehensive digital marketing strategies based on business objectives and market analysis.",
+        icon: "🎯"
       },
       {
         step: "Campaign Implementation",
-        description: "Executing multi-channel campaigns with precision targeting and optimization."
+        description: "Executing multi-channel campaigns with precision targeting and optimization.",
+        icon: "🚀"
       },
       {
         step: "Performance Monitoring",
-        description: "Continuous monitoring and real-time optimization based on performance data."
+        description: "Continuous monitoring and real-time optimization based on performance data.",
+        icon: "📊"
       },
       {
         step: "Reporting & Scaling",
-        description: "Detailed reporting and strategic scaling of successful campaigns for maximum ROI."
+        description: "Detailed reporting and strategic scaling of successful campaigns for maximum ROI.",
+        icon: "📈"
       }
     ],
     images: [
@@ -828,12 +983,147 @@ const serviceDetails = {
       "/images/EXAMPLE.jpg"
     ],
     fallback: "linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)",
+    benefits: [
+      {
+        title: "Explosive Growth",
+        description: "Our clients experience 300% average increase in qualified leads within 6 months",
+        icon: "🚀",
+      },
+      {
+        title: "Proven ROI",
+        description: "Average 5.2x return on ad spend across all campaigns",
+        icon: "💰"
+      }
+    ],
+    testimonials: [
+      {
+        text: "SocialHawks transformed our digital marketing completely. Within 3 months, our online sales tripled and our cost per acquisition dropped by 40%. Best investment we've made.",
+        author: "Robert Anderson",
+        position: "CMO, FitLife Supplements",
+        rating: 5
+      },
+      {
+        text: "Their strategic approach to social media and paid advertising delivered outstanding results. We've seen consistent growth month over month. Highly professional team!",
+        author: "Lisa Thompson",
+        position: "Marketing Director, Urban Fashion Co.",
+        rating: 5
+      }
+    ],
+    pricing: [
+      {
+        package: "Starter Growth Package",
+        price: "$2,499/mo",
+        duration: "3-month minimum",
+        features: [
+          "Social Media Management (2 platforms)",
+          "Content Creation (12 posts/month)",
+          "Basic Ad Campaign Management",
+          "Monthly Analytics Report",
+          "Email Marketing Setup",
+          "€2,000 Ad Spend Management",
+          "Dedicated Account Manager"
+        ],
+        popular: false
+      },
+      {
+        package: "Business Growth Package",
+        price: "$4,999/mo",
+        duration: "3-month minimum",
+        features: [
+          "Multi-Platform Social Management",
+          "Content Creation (24 posts/month)",
+          "Advanced Ad Campaigns (Meta, Google)",
+          "SEO Optimization & Link Building",
+          "Landing Page Optimization",
+          "Weekly Performance Reports",
+          "€5,000+ Ad Spend Management",
+          "Strategy Consultation",
+          "Priority Support"
+        ],
+        popular: true
+      },
+      {
+        package: "Enterprise Growth Package",
+        price: "$9,999/mo",
+        duration: "6-month minimum",
+        features: [
+          "Full-Spectrum Digital Marketing",
+          "Premium Content Production",
+          "Multi-Channel Ad Campaigns",
+          "Advanced SEO & Technical Optimization",
+          "Conversion Rate Optimization",
+          "Influencer Partnership Management",
+          "Custom Dashboard & Reporting",
+          "€15,000+ Ad Spend Management",
+          "Dedicated Growth Team",
+          "24/7 Priority Support"
+        ],
+        popular: false
+      }
+    ],
+    industries: [
+      {
+        name: "E-commerce & Retail",
+        description: "Drive online sales and customer acquisition with targeted campaigns",
+        icon: "🛒"
+      },
+      {
+        name: "Health & Wellness",
+        description: "Build trust and grow your audience in competitive wellness markets",
+        icon: "🏋️"
+      },
+      {
+        name: "B2B Services",
+        description: "Generate qualified leads and establish thought leadership",
+        icon: "💼"
+      },
+      {
+        name: "Technology & SaaS",
+        description: "Scale user acquisition and optimize conversion funnels",
+        icon: "💻"
+      }
+    ],
+    caseStudies: [
+      {
+        title: "FitLife 300% Sales Growth",
+        industry: "Health & Wellness",
+        challenge: "Struggling to break through in competitive supplement market",
+        solution: "Multi-channel strategy combining influencer partnerships, paid ads, and content marketing",
+        results: "300% increase in online sales, 5.8x ROAS, 50,000+ new customers",
+        image: "/images/EXAMPLE.jpg"
+      },
+      {
+        title: "Urban Fashion Market Expansion",
+        industry: "E-commerce",
+        challenge: "Needed to expand into new markets and demographics",
+        solution: "Targeted social campaigns with UGC content and strategic influencer collaborations",
+        results: "Expanded to 3 new markets, 250% increase in brand awareness, 4.2x ROI",
+        image: "/images/EXAMPLE.jpg"
+      }
+    ],
+    faq: [
+      {
+        question: "How quickly can I expect to see results?",
+        answer: "Most clients see initial improvements within 30-45 days, with significant growth typically evident by month 3. Digital marketing is an ongoing process that compounds over time."
+      },
+      {
+        question: "What's included in the ad spend management?",
+        answer: "We handle complete campaign setup, audience targeting, creative testing, budget allocation, and continuous optimization to maximize your return on ad spend."
+      },
+      {
+        question: "Can you work with my existing marketing team?",
+        answer: "Absolutely! We collaborate seamlessly with in-house teams, complementing your existing efforts and filling capability gaps as needed."
+      }
+    ],
     features: [
       "Multi-Channel Approach",
       "Data-Driven Decisions",
       "ROI Focused",
       "Real-Time Optimization",
-      "Transparent Reporting"
+      "Transparent Reporting",
+      "Expert Team",
+      "Proven Strategies",
+      "Scalable Growth"
     ],
     cta: {
       title: "Accelerate Your Growth",

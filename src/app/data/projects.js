@@ -660,6 +660,88 @@ export const projectsData = [
     featured: true,
     status: 'ongoing'
   },
+  {
+    id: 10,
+    slug: 'dr-herbs-ecommerce-digital-marketing',
+    title: 'Full E-Commerce Digital Marketing Campaign for Dr Herbs',
+    client: 'Dr Herbs',
+    clientLogo: '/images/logo/dr-herbs.jpg',
+    category: 'Herbal & Natural Products | E-Commerce',
+    shortDescription: 'Long-term digital marketing partnership to position Dr Herbs as a household name for authentic herbal remedies across Pakistan.',
+    description: 'Dr Herbs, a trusted herbal and wellness brand, partnered with SocialHawks to strengthen its online presence and increase product sales across Pakistan. As a long-term collaboration starting in December 2022, our mission has been to position Dr Herbs as a household name for safe, authentic, and effective herbal remedies through a consistent digital strategy and premium creative execution. We executed a complete, multi-channel digital marketing ecosystem built for growth — from brand storytelling to performance marketing. Our team managed every aspect of their digital presence, from website design and SEO to influencer collaborations, ensuring continuous brand visibility and sales momentum.',
+    images: [
+      '/images/projects/DR HERBS/DR HERBS (1).jpg',
+      '/images/projects/DR HERBS/DR HERBS (2).jpg',
+      '/images/projects/DR HERBS/DR HERBS (3).jpg',
+      '/images/projects/DR HERBS/DR HERBS (4).jpg',
+      '/images/projects/DR HERBS/DR HERBS (5).jpg',
+      '/images/projects/DR HERBS/DR HERBS (6).jpg',
+      '/images/projects/DR HERBS/DR HERBS (7).jpg',
+      '/images/projects/DR HERBS/DR HERBS (8).jpg',
+      '/images/projects/DR HERBS/DR HERBS (9).jpg',
+      '/images/projects/DR HERBS/DR HERBS (10).jpg',
+      '/images/projects/DR HERBS/DR HERBS (11).jpg',
+      '/images/projects/DR HERBS/DR HERBS (12).jpg',
+      '/images/projects/DR HERBS/DR HERBS (13).jpg',
+      '/images/projects/DR HERBS/DR HERBS (14).jpg',
+      '/images/projects/DR HERBS/DR HERBS (15).jpg'
+    ],
+    services: [
+      'Social Media Marketing & Management',
+      'Graphic Design (Ad Creatives & Social Media Posts)',
+      'PR & Influencer Marketing Campaigns',
+      'Product Photography & Videography',
+      'Website Design & Development (E-Commerce Platform)',
+      'SEO (Optimization & Content Strategy)',
+      'Meta Ads Campaign — Sales & Retargeting Campaigns',
+      'Blog Writing & SEO-Optimized Content'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'E-Commerce Platforms',
+      'SEO Tools & Software',
+      'Adobe Creative Suite',
+      'Video Production Equipment',
+      'Photography Equipment',
+      'Web Development Technologies',
+      'Analytics Tools',
+      'Social Media Platforms',
+      'Influencer Networks'
+    ],
+    duration: 'December 2022 – Present',
+    year: '2022 – 2025',
+    location: 'Pakistan',
+    results: [
+      {
+        value: 'Consistent',
+        metric: 'Month-on-Month Sales Growth',
+        description: 'Achieved steady and consistent sales growth through strategic digital campaigns'
+      },
+      {
+        value: 'Measurable',
+        metric: 'ROI on Ad Campaigns',
+        description: 'High-performing ad campaigns delivering measurable return on investment'
+      },
+      {
+        value: 'Strong',
+        metric: 'Digital Footprint',
+        description: 'Established strong digital presence in Pakistan\'s herbal product market'
+      },
+      {
+        value: 'Loyal',
+        metric: 'Customer Community',
+        description: 'Built engaged and loyal customer community through consistent brand presence'
+      },
+      {
+        value: 'Optimized',
+        metric: 'E-Commerce Store Performance',
+        description: 'Optimized online store generating steady revenue and improved engagement'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'ongoing'
+  },
 ];
 
 // Helper functions
