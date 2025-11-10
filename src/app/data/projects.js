@@ -744,6 +744,80 @@ export const projectsData = [
   },
   {
     id: 11,
+    slug: 'the-cactus-bpo-digital-marketing',
+    title: 'Full Digital Marketing & Creative Campaign for The Cactus',
+    client: 'The Cactus',
+    clientLogo: '/images/logo/28.png',
+    category: 'BPO | Call Center',
+    shortDescription: 'Comprehensive employer branding and recruitment campaign to position The Cactus as a top BPO destination for international sales professionals.',
+    description: 'The Cactus, a dynamic and fast-expanding BPO company, partnered with SocialHawks to strengthen its online presence and position itself as a top recruitment destination for international sales professionals in Pakistan. Our mission was to create a strong employer brand, generate high-quality leads, and visually represent the company\'s energetic workplace culture. We developed a complete digital marketing and creative campaign that captured the spirit of The Cactus — modern, ambitious, and opportunity-driven. From on-site video shoots and photography to targeted Meta Ads, our team managed every element of their online strategy to drive awareness, attract applicants, and build brand credibility within the BPO industry.',
+    images: [
+      '/images/projects/Cactus Creatives/Cactus Creatives (1).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (2).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (3).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (4).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (5).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (6).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (7).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (8).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (9).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (10).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (11).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (13).jpeg'
+    ],
+    services: [
+      'Social Media Marketing & Management',
+      'Photography (Office Environment & Employee Shoots)',
+      'Videography (Workplace Culture, Interviews, & Ad Videos)',
+      'Video Editing & Motion Graphics',
+      'Meta Ads Campaigns (Lead Generation for Recruitment)'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Adobe Creative Suite',
+      'Video Production Equipment',
+      'Photography Equipment',
+      'Adobe Premiere Pro',
+      'Adobe After Effects',
+      'Social Media Platforms',
+      'Analytics Tools'
+    ],
+    duration: 'September 2023 – Present',
+    year: '2023 – 2025',
+    location: 'Karachi, Pakistan',
+    results: [
+      {
+        value: 'Leading',
+        metric: 'BPO Brand Recognition',
+        description: 'Established The Cactus as one of the most recognized names in Karachi\'s BPO sector'
+      },
+      {
+        value: 'Qualified',
+        metric: 'Applicant Quality',
+        description: 'Meta Ads lead campaigns consistently delivered qualified applicants'
+      },
+      {
+        value: 'Significant',
+        metric: 'Job Inquiries Growth',
+        description: 'Achieved significant growth in job inquiries through engaging visuals and storytelling'
+      },
+      {
+        value: 'Strong',
+        metric: 'Employer Brand Identity',
+        description: 'Created strong employer brand representing modern, ambitious, and opportunity-driven culture'
+      },
+      {
+        value: 'Enhanced',
+        metric: 'Digital Visibility',
+        description: 'Boosted overall digital visibility and social engagement through consistent management'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'ongoing'
+  },
+  {
+    id: 12,
     slug: 'flexvapes-ecommerce-digital-marketing',
     title: 'Full E-Commerce Digital Marketing & Creative Campaign for FlexVapes',
     client: 'FlexVapes',
