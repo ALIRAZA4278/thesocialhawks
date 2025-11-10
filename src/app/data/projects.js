@@ -665,7 +665,7 @@ export const projectsData = [
     slug: 'dr-herbs-ecommerce-digital-marketing',
     title: 'Full E-Commerce Digital Marketing Campaign for Dr Herbs',
     client: 'Dr Herbs',
-    clientLogo: '/images/logo/dr-herbs.jpg',
+    clientLogo: '/images/logo/35.jpg',
     category: 'Herbal & Natural Products | E-Commerce',
     shortDescription: 'Long-term digital marketing partnership to position Dr Herbs as a household name for authentic herbal remedies across Pakistan.',
     description: 'Dr Herbs, a trusted herbal and wellness brand, partnered with SocialHawks to strengthen its online presence and increase product sales across Pakistan. As a long-term collaboration starting in December 2022, our mission has been to position Dr Herbs as a household name for safe, authentic, and effective herbal remedies through a consistent digital strategy and premium creative execution. We executed a complete, multi-channel digital marketing ecosystem built for growth — from brand storytelling to performance marketing. Our team managed every aspect of their digital presence, from website design and SEO to influencer collaborations, ensuring continuous brand visibility and sales momentum.',
@@ -741,6 +741,82 @@ export const projectsData = [
     testimonial: null,
     featured: true,
     status: 'ongoing'
+  },
+  {
+    id: 11,
+    slug: 'flexvapes-ecommerce-digital-marketing',
+    title: 'Full E-Commerce Digital Marketing & Creative Campaign for FlexVapes',
+    client: 'FlexVapes',
+    clientLogo: '/images/logo/24.jpg',
+    category: 'E-Commerce',
+    shortDescription: 'Fast-growing vape and e-cigarette brand - building strong digital foundation and establishing market leadership in Pakistan\'s e-commerce vape market.',
+    description: 'FlexVapes, a fast-growing vape and e-cigarette brand, partnered with SocialHawks to build a strong digital foundation and establish itself as a leader in Pakistan\'s e-commerce vape market. The goal was to create a premium online presence, expand brand awareness, and drive consistent online sales through a powerful blend of creativity, storytelling, and strategy. We crafted a complete digital ecosystem for FlexVapes, combining website development, content creation, and high-performance marketing campaigns. From sleek visuals to compelling brand messaging, our team designed and executed a strategy that elevated the brand\'s image and maximized its market potential.',
+    images: [
+      '/images/projects/Flex Vapes/Flex Vapes (1).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (2).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (3).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (4).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (5).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (6).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (7).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (8).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (9).jpg',
+      '/images/projects/Flex Vapes/Flex Vapes (10).jpg',
+    ],
+    services: [
+      'Website Design & Development (E-Commerce Platform)',
+      'Social Media Marketing & Management',
+      'Graphic Design & Ad Creatives',
+      'Video Production & Motion Graphics',
+      'Product Photography',
+      'SEO (Optimization & Keyword Strategy)',
+      'Content Writing (Blogs, Web Content, Product Descriptions)',
+      'Copywriting for Ads & Campaigns'
+    ],
+    technologies: [
+      'E-Commerce Platforms',
+      'SEO Tools & Software',
+      'Adobe Creative Suite',
+      'Video Production Equipment',
+      'Photography Equipment',
+      'Web Development Technologies',
+      'Social Media Platforms',
+      'Analytics Tools',
+      'Content Management Systems'
+    ],
+    duration: '26 Months',
+    year: '2021–2023',
+    location: 'Pakistan',
+    results: [
+      {
+        value: 'Significant',
+        metric: 'Online Visibility Increase',
+        description: 'Major boost in online visibility and customer engagement'
+      },
+      {
+        value: 'Seamless',
+        metric: 'Shopping Experience',
+        description: 'New website delivered seamless shopping experience with optimized UX'
+      },
+      {
+        value: 'Top-Ranking',
+        metric: 'SEO Performance',
+        description: 'Achieved top-ranking search visibility through targeted SEO and content marketing'
+      },
+      {
+        value: 'Higher',
+        metric: 'Organic Traffic & Conversions',
+        description: 'Improved conversions with higher organic traffic and strong retention'
+      },
+      {
+        value: 'Strong',
+        metric: 'Market Position',
+        description: 'Established as leader in competitive e-commerce vape niche'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'completed'
   },
 ];
 

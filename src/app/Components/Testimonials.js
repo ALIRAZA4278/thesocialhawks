@@ -138,7 +138,7 @@ const Testimonials = () => {
     return [...Array(5)].map((_, index) => (
       <svg
         key={index}
-        className={`w-4 h-4 ${index < rating ? 'text-primary' : 'text-gray-300'}`}
+        className={`w-3 h-3 sm:w-4 sm:h-4 ${index < rating ? 'text-primary' : 'text-gray-300'}`}
         fill="currentColor"
         viewBox="0 0 20 20"
       >
@@ -232,40 +232,40 @@ const Testimonials = () => {
 
           {/* Infinite Scrolling Testimonials */}
           <motion.div
-            className="relative mb-12 sm:mb-16 overflow-x-hidden overflow-y-visible py-4"
+            className="relative mb-8 sm:mb-12 md:mb-16 overflow-x-hidden overflow-y-visible py-2 sm:py-3 md:py-4"
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             style={{ y: testimonialsY }}
           >
-            <div className="flex animate-scroll-right space-x-4 sm:space-x-6" style={{ width: 'max-content' }}>
+            <div className="flex animate-scroll-right space-x-3 sm:space-x-4 md:space-x-6" style={{ width: 'max-content' }}>
               {doubledTestimonials.map((testimonial, index) => (
                 <motion.div
                   key={`${testimonial.id}-${index}`}
-                  className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 testimonial-card flex flex-col border border-gray-100"
+                  className="flex-shrink-0 w-64 xs:w-72 sm:w-80 md:w-[22rem] lg:w-96 bg-white rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 testimonial-card flex flex-col border border-gray-100"
                   variants={cardVariants}
                   whileHover="hover"
-                  style={{ perspective: '1000px', minHeight: '280px' }}
+                  style={{ perspective: '1000px', minHeight: '260px' }}
                 >
                   {/* Star Rating */}
-                  <div className="flex items-center gap-1 mb-3">
+                  <div className="flex items-center gap-0.5 sm:gap-1 mb-2 sm:mb-3">
                     {renderStars(testimonial.rating)}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 line-clamp-2">
+                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 line-clamp-2">
                     {testimonial.title}
                   </h3>
 
                   {/* Quote */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-auto flex-grow">
+                  <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed mb-auto flex-grow">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
 
                   {/* Author */}
-                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-gray-200">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0">
                       {!imageErrors[`testimonial-${testimonial.id}-${index}`] ? (
                         <Image
                           src={testimonial.image}
@@ -275,8 +275,8 @@ const Testimonials = () => {
                           onError={() => handleImageError(`testimonial-${testimonial.id}-${index}`)}
                         />
                       ) : (
-                        <div 
-                          className="w-full h-full flex items-center justify-center text-white font-bold text-base"
+                        <div
+                          className="w-full h-full flex items-center justify-center text-white font-bold text-sm sm:text-base"
                           style={{ backgroundColor: testimonial.fallback }}
                         >
                           {testimonial.name ? testimonial.name.charAt(0) : ''}
@@ -284,8 +284,8 @@ const Testimonials = () => {
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-gray-900 text-sm truncate">{testimonial.name}</p>
-                      <p className="text-gray-500 text-xs truncate">{testimonial.position}</p>
+                      <p className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base truncate">{testimonial.name}</p>
+                      <p className="text-gray-500 text-[10px] sm:text-xs md:text-sm truncate">{testimonial.position}</p>
                     </div>
                   </div>
                 </motion.div>

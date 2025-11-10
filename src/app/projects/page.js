@@ -291,10 +291,10 @@ const ProjectsPage = () => {
                 className="group"
               >
                 <Link href={`/projects/${project.slug}`}>
-                  <motion.div 
-                    className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full"
-                    whileHover={{ 
-                      y: -8, 
+                  <motion.div
+                    className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full flex flex-col"
+                    whileHover={{
+                      y: -8,
                       scale: 1.02,
                       transition: { duration: 0.3, ease: "easeOut" }
                     }}
@@ -310,13 +310,13 @@ const ProjectsPage = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       
                       {/* Year Badge */}
-                      <motion.div 
+                      <motion.div
                         className="absolute top-4 left-4"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: index * 0.1 }}
                       >
-                        <span className="bg-white/95 backdrop-blur-sm text-gray-800 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg border border-white/20">
+                        <span className="bg-white text-gray-900 px-4 py-1.5 rounded-full text-xs font-semibold shadow-md">
                           {project.year}
                         </span>
                       </motion.div>
@@ -356,9 +356,9 @@ const ProjectsPage = () => {
                     </div>
 
                     {/* Project Content */}
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-grow">
                       {/* Category Badge */}
-                      <motion.div 
+                      <motion.div
                         className="mb-4"
                         whileHover={{ scale: 1.05 }}
                       >
@@ -367,19 +367,19 @@ const ProjectsPage = () => {
                           {project.category}
                         </span>
                       </motion.div>
-                      
+
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300 leading-tight line-clamp-2">
                         {project.title}
                       </h3>
-                      
-                      <p className="text-gray-600 leading-relaxed text-sm mb-5 line-clamp-3 min-h-[60px]">
+
+                      <p className="text-gray-600 leading-relaxed text-sm mb-5 line-clamp-3">
                         {project.shortDescription}
                       </p>
 
                       {/* Services Grid */}
                       <div className="grid grid-cols-2 gap-2 mb-5">
                         {project.services.slice(0, 4).map((service, serviceIndex) => (
-                          <div 
+                          <div
                             key={serviceIndex}
                             className="bg-gray-50 text-gray-600 px-2 py-1.5 rounded-lg text-xs font-medium border border-gray-100 hover:bg-gray-100 transition-colors text-center"
                           >
@@ -389,10 +389,19 @@ const ProjectsPage = () => {
                       </div>
 
                       {/* Footer */}
-                      <div className="flex items-center justify-end pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
+                        {/* Duration in Years */}
+                        <div className="inline-flex items-center gap-2 text-gray-500 text-sm">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          </svg>
+                          <span className="font-medium">{project.year}</span>
+                        </div>
+
+                        {/* View Project Button */}
                         <motion.div
-                          className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-4 py-2.5 rounded-full font-bold text-sm group-hover:gap-3 transition-all duration-300 shadow-md group-hover:shadow-lg"
-                          whileHover={{ x: 2, scale: 1.05 }}
+                          className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          whileHover={{ x: 2 }}
                         >
                           <span>View Project</span>
                           <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
