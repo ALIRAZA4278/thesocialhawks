@@ -232,7 +232,7 @@ const Testimonials = () => {
 
           {/* Infinite Scrolling Testimonials */}
           <motion.div
-            className="relative mb-12 sm:mb-16 overflow-hidden"
+            className="relative mb-12 sm:mb-16 overflow-x-hidden overflow-y-visible py-4"
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
