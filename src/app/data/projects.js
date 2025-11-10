@@ -611,7 +611,7 @@ export const projectsData = [
       '/images/projects/LEO/Video 9.mp4'
     ],
     images: [
-      "/images/projects/LEO/img.jpg",
+      "/images/projects/LEO/1.jpg",
     ], // LEO primarily has video content
     services: [
       'Professional Video Production & Editing',

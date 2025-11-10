@@ -389,16 +389,10 @@ const ProjectsPage = () => {
                       </div>
 
                       {/* Footer */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <div className="flex items-center gap-2 text-gray-500 text-xs">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                          </svg>
-                          <span className="font-medium">{project.duration}</span>
-                        </div>
-                        <motion.div 
-                          className="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all duration-300"
-                          whileHover={{ x: 2 }}
+                      <div className="flex items-center justify-end pt-4 border-t border-gray-100">
+                        <motion.div
+                          className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-4 py-2.5 rounded-full font-bold text-sm group-hover:gap-3 transition-all duration-300 shadow-md group-hover:shadow-lg"
+                          whileHover={{ x: 2, scale: 1.05 }}
                         >
                           <span>View Project</span>
                           <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
