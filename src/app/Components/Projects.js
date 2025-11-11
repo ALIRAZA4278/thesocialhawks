@@ -37,18 +37,27 @@ const Projects = () => {
     }
   };
   
-  // Use real projects data (limit to 4)
-  const cards = projectsData.slice(0, 4).map(p => ({
-    id: p.id,
-    slug: p.slug,
-    category: p.category,
-    title: p.title,
-    description: p.shortDescription,
-    image: p.images && p.images.length ? p.images[0] : '/images/EXAMPLE.jpg',
-    fallback: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    backgroundColor: '#f8fafc',
-    stats: { revenue: p.results && p.results[0] ? p.results[0].value : '' },
-  }));
+  // Use specific projects
+  const selectedSlugs = [
+    'dr-herbs-ecommerce-digital-marketing',
+    'hirm-social-media-seo-campaign',
+    'bricklane-pizza-social-media-branding',
+    'the-cactus-bpo-digital-marketing'
+  ];
+  
+  const cards = projectsData
+    .filter(p => selectedSlugs.includes(p.slug))
+    .map(p => ({
+      id: p.id,
+      slug: p.slug,
+      category: p.category,
+      title: p.title,
+      description: p.shortDescription,
+      image: p.images && p.images.length ? p.images[0] : '/images/EXAMPLE.jpg',
+      fallback: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      backgroundColor: '#f8fafc',
+      stats: { revenue: p.results && p.results[0] ? p.results[0].value : '' },
+    }));
 
   const [imageErrors, setImageErrors] = useState({});
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -120,39 +129,35 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
         >
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
         {cards.map((card, index) => (
           <div key={card.slug || card.id} className="block">
-            {/* Desktop/Tablet Card */}
+            {/* Desktop/Tablet Card - Matching Image Design */}
             <motion.div
-              className={`hidden sm:block group relative rounded-3xl overflow-hidden cursor-pointer transform-gpu transition-all duration-500 bg-gradient-to-br from-white via-gray-50/30 to-white ${hoveredCard === card.id ? 'z-50 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)]' : 'shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgb(0,0,0,0.16)]'}`}
+              className={`hidden sm:block group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 bg-white ${hoveredCard === card.id ? 'shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)]' : 'shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]'}`}
               style={{
-                border: '1px solid rgba(127,32,196,0.15)'
+                border: '1px solid #e5e7eb'
               }}
-              initial={{ opacity: 0, y: 60, scale: 0.95 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={isCardsInView ? {
                 opacity: 1,
                 y: 0,
-                scale: 1,
               } : {
                 opacity: 0,
-                y: 60,
-                scale: 0.95,
+                y: 40,
               }}
               transition={{
-                delay: index * 0.15,
-                duration: 0.8,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                delay: index * 0.1,
+                duration: 0.6,
+                ease: "easeOut"
               }}
               whileHover={{
-                scale: 1.03,
-                y: -10,
+                y: -8,
                 transition: {
-                  duration: 0.4,
+                  duration: 0.3,
                   ease: "easeOut"
                 }
               }}
-              whileTap={{ scale: 0.98 }}
               onHoverStart={() => setHoveredCard(card.id)}
               onHoverEnd={() => setHoveredCard(null)}
               onClick={() => router.push(`/projects/${card.slug}`)}
@@ -164,292 +169,218 @@ const Projects = () => {
                 }
               }}
             >
-                {/* Shimmer effect on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none overflow-hidden">
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-                    animate={{
-                      x: hoveredCard === card.id ? ['-100%', '200%'] : '-100%',
-                    }}
-                    transition={{
-                      duration: 1.5,
-                      ease: "easeInOut",
-                      repeat: hoveredCard === card.id ? Infinity : 0,
-                      repeatDelay: 0.5
-                    }}
-                    style={{ width: '50%' }}
-                  />
-                </div>
-
-                {/* Background Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-primary/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Animated Border Glow */}
-                <motion.div
-                  className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(127,32,196,0.3), rgba(127,32,196,0.1), rgba(127,32,196,0.3))',
-                    backgroundSize: '200% 200%',
-                    padding: '1px',
-                    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                    WebkitMaskComposite: 'xor',
-                    maskComposite: 'exclude'
-                  }}
-                  animate={{
-                    backgroundPosition: hoveredCard === card.id ? ['0% 50%', '100% 50%', '0% 50%'] : '0% 50%',
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
-
-                {/* Animated Corner Accent with Particles */}
-                <motion.div
-                  className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'radial-gradient(circle at top right, rgba(127,32,196,0.15), transparent 70%)'
-                  }}
-                  animate={{
-                    scale: hoveredCard === card.id ? [1, 1.2, 1] : 1,
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  {/* Floating particles */}
-                  {[...Array(3)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-1 h-1 bg-primary/40 rounded-full"
-                      style={{
-                        top: `${20 + i * 15}%`,
-                        right: `${15 + i * 10}%`,
-                      }}
-                      animate={{
-                        y: hoveredCard === card.id ? [-5, 5, -5] : 0,
-                        opacity: hoveredCard === card.id ? [0.3, 0.8, 0.3] : 0,
-                      }}
-                      transition={{
-                        duration: 2 + i * 0.3,
-                        repeat: Infinity,
-                        delay: i * 0.2
-                      }}
-                    />
-                  ))}
-                </motion.div>
-
-                {/* Card Content Container */}
-                <div className="relative min-h-[280px] sm:h-[360px] lg:h-[420px] p-7 sm:p-9 flex flex-col transition-all duration-300 z-20 overflow-hidden">
-
-                  {/* Header Section */}
-                  <div className="flex items-start justify-between mb-7">
-                    {/* Category Badge */}
-                    <motion.div
-                      className="flex items-center gap-2 bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 rounded-full border border-primary/20 shadow-sm"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <motion.div
-                        className="w-2 h-2 bg-primary rounded-full"
-                        animate={{
-                          scale: [1, 1.2, 1],
-                        }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      />
-                      <span className="text-xs font-bold text-primary uppercase tracking-wider">
+                {/* Card Content Container - Clean Design */}
+                <div className="relative p-8 sm:p-10 flex flex-col h-full min-h-[320px]">
+                  
+                  {/* Top Section: Category & Arrow */}
+                  <div className="flex items-start justify-between mb-6">
+                    {/* Category Badge - Purple dot with text */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="text-xs font-semibold text-primary uppercase tracking-widest">
                         {card.category}
                       </span>
-                    </motion.div>
+                    </div>
 
-                    {/* Action Icon */}
+                    {/* Arrow Icon */}
                     <motion.div
-                      className="w-11 h-11 bg-gradient-to-br from-gray-50 to-gray-100 group-hover:from-primary group-hover:to-primary/90 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-sm group-hover:shadow-md border border-gray-200 group-hover:border-primary"
-                      whileHover={{
-                        scale: 1.15,
-                        rotate: 45
+                      className="w-9 h-9 flex items-center justify-center transition-transform duration-300"
+                      animate={{
+                        x: hoveredCard === card.id ? 4 : 0,
+                        y: hoveredCard === card.id ? -4 : 0,
                       }}
-                      transition={{ duration: 0.3 }}
                     >
                       <svg
-                        className="w-5 h-5 text-gray-700 group-hover:text-white transition-colors duration-300"
+                        className="w-5 h-5 text-gray-400 group-hover:text-gray-700 transition-colors"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </motion.div>
                   </div>
 
-                  {/* Content Section */}
-                  <div className="flex-1 flex flex-col relative">
+                  {/* Title */}
+                  <h3 className="text-2xl sm:text-3xl font-normal text-gray-900 mb-4 leading-snug">
+                    {card.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed mb-auto">
+                    {card.description}
+                  </p>
+
+                  {/* Bottom Section: Duration/Stats & Thumbnail */}
+                  <div className="flex items-end justify-between mt-8 pt-6 border-t border-gray-100">
+                    {/* Stats/Duration */}
+                    <div className="flex gap-8">
+                      <div>
+                        <div className="text-lg sm:text-xl font-medium text-gray-900">
+                          {card.stats.revenue || '2 Months'}
+                        </div>
+                        <div className="text-xs text-gray-500 uppercase tracking-wide mt-1">
+                          {card.stats.revenue ? 'Revenue Growth' : 'Duration'}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Thumbnail Image */}
+                    <motion.div
+                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.parentElement.style.background = card.fallback;
+                        }}
+                      />
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* Hover Overlay - Dark background with centered content */}
+                <motion.div
+                  className="absolute inset-0 flex flex-col items-center justify-center p-8 rounded-2xl overflow-hidden"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: hoveredCard === card.id ? 1 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ 
+                    pointerEvents: hoveredCard === card.id ? 'auto' : 'none',
+                    backgroundColor: 'rgba(31, 34, 53, 0.92)'
+                  }}
+                >
+                  {/* Decorative blur circles - visible and glowing */}
+                  <div 
+                    className="absolute -top-8 -left-8 w-64 h-64 rounded-full"
+                    style={{ 
+                      background: 'radial-gradient(circle, rgba(139, 146, 195, 0.5) 0%, rgba(139, 146, 195, 0.2) 40%, transparent 70%)',
+                      filter: 'blur(50px)'
+                    }}
+                  ></div>
+                  <div 
+                    className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full"
+                    style={{ 
+                      background: 'radial-gradient(circle, rgba(100, 110, 160, 0.45) 0%, rgba(100, 110, 160, 0.15) 40%, transparent 70%)',
+                      filter: 'blur(45px)'
+                    }}
+                  ></div>
+                  <div 
+                    className="absolute top-1/4 -right-16 w-72 h-72 rounded-full"
+                    style={{ 
+                      background: 'radial-gradient(circle, rgba(120, 130, 180, 0.4) 0%, rgba(120, 130, 180, 0.15) 40%, transparent 70%)',
+                      filter: 'blur(55px)'
+                    }}
+                  ></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 text-center max-w-md">
+                    {/* Category with decorative circles */}
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                      <span className="text-xs font-semibold text-white/80 uppercase tracking-widest">
+                        {card.category}
+                      </span>
+                      <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                    </div>
+
                     {/* Title */}
-                    <motion.h3
-                      className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-primary transition-colors duration-300 relative"
-                      whileHover={{ x: 2 }}
+                    <motion.h3 
+                      className="text-2xl sm:text-3xl lg:text-4xl font-normal text-white mb-6 leading-tight px-4"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ 
+                        y: hoveredCard === card.id ? 0 : 20,
+                        opacity: hoveredCard === card.id ? 1 : 0 
+                      }}
+                      transition={{ delay: 0.1, duration: 0.3 }}
                     >
                       {card.title}
-                      {/* Underline accent */}
-                      <motion.div
-                        className="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-full"
-                        initial={{ width: 0 }}
-                        whileHover={{ width: '60%' }}
-                        transition={{ duration: 0.3 }}
-                      />
                     </motion.h3>
 
-                    {/* Description with fade-in effect */}
-                    <motion.p
-                      className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8 clamp-desc relative"
-                      initial={{ opacity: 0.8 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
+                    {/* View Project Button */}
+                    <motion.button
+                      className="inline-flex items-center gap-2 bg-white/95 hover:bg-white text-gray-900 px-8 py-3.5 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ 
+                        y: hoveredCard === card.id ? 0 : 20,
+                        opacity: hoveredCard === card.id ? 1 : 0 
+                      }}
+                      transition={{ delay: 0.2, duration: 0.3 }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      {/* Gradient text overlay on hover */}
-                      <span className="relative z-10">{card.description}</span>
-                      <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary/50 via-primary/30 to-transparent rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: hoveredCard === card.id ? '100%' : 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                      />
-                    </motion.p>
+                      <span>View Project</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </motion.button>
+                  </div>
+                </motion.div>
+              </motion.div>
 
-                    {/* Stats Section */}
-                    {card.stats.revenue && (
-                      <motion.div
-                        className="flex items-center gap-3 mt-auto bg-gradient-to-r from-green-50 via-emerald-50/50 to-green-50 px-5 py-3.5 rounded-2xl border border-green-200 shadow-sm group-hover:shadow-md transition-all duration-300"
-                        whileHover={{ scale: 1.02, y: -2 }}
-                      >
-                        <motion.div
-                          className="flex items-center justify-center w-10 h-10 bg-green-100 rounded-xl"
-                          animate={{
-                            y: [0, -3, 0],
-                          }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                        >
-                          <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                          </svg>
-                        </motion.div>
-                        <div className="flex-1">
-                          <div className="text-lg font-bold text-green-700">
-                            {card.stats.revenue}
-                          </div>
-                          <div className="text-xs text-gray-600 font-semibold uppercase tracking-wide">
-                            Revenue Growth
-                          </div>
-                        </div>
-                        <motion.div
-                          className="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                          whileHover={{ rotate: 90 }}
-                        >
-                          <svg className="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </motion.div>
-                      </motion.div>
-                    )}
+            {/* Mobile Card - Clean Design */}
+            <motion.div
+              className="sm:hidden block rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200"
+              initial={{ opacity: 0, y: 40 }}
+              animate={isCardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
+            >
+              <Link href={`/projects/${card.slug}`} className="block p-6">
+                {/* Category & Arrow */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full" />
+                    <span className="text-xs font-semibold text-primary uppercase tracking-widest">
+                      {card.category}
+                    </span>
+                  </div>
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-normal text-gray-900 leading-snug mb-3">
+                  {card.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm text-gray-500 leading-relaxed mb-6">
+                  {card.description}
+                </p>
+
+                {/* Bottom: Stats & Thumbnail */}
+                <div className="flex items-end justify-between pt-4 border-t border-gray-100">
+                  <div>
+                    <div className="text-lg font-medium text-gray-900">
+                      {card.stats.revenue || '2 Months'}
+                    </div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wide mt-1">
+                      {card.stats.revenue ? 'Revenue Growth' : 'Duration'}
+                    </div>
                   </div>
 
-                  {/* Image Preview Section with Enhanced Effects */}
-                  <motion.div
-                    className="absolute bottom-6 right-6 rounded-xl overflow-hidden border-2 border-white shadow-lg"
-                    initial={{ width: 80, height: 80 }}
-                    animate={{
-                      width: hoveredCard === card.id ? 96 : 80,
-                      height: hoveredCard === card.id ? 96 : 80,
-                      rotate: hoveredCard === card.id ? [0, -2, 2, 0] : 0,
-                    }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {/* Decorative corner frame */}
-                    <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                    <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
-                    {/* Image with zoom effect */}
-                    <motion.img
+                  {/* Thumbnail */}
+                  <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                    <Image
                       src={card.image}
                       alt={card.title}
+                      width={64}
+                      height={64}
                       className="w-full h-full object-cover"
-                      animate={{
-                        scale: hoveredCard === card.id ? 1.1 : 1,
-                      }}
-                      transition={{ duration: 0.4 }}
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.parentElement.style.background = card.fallback;
                       }}
                     />
-
-                    {/* Overlay gradient on hover */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hoveredCard === card.id ? 1 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </motion.div>
-                </div>
-              </motion.div>
-
-            {/* Mobile Card (full details, stacked layout) */}
-            <motion.div
-              className="sm:hidden block rounded-xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200"
-              initial={{ opacity: 0, y: 40 }}
-              animate={isCardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ delay: index * 0.15, duration: 0.6, ease: 'easeOut' }}
-            >
-              <Link href={`/projects/${card.slug}`} className="block">
-                {/* Image on top */}
-                <div className="relative h-40 w-full">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.style.background = card.fallback;
-                    }}
-                  />
-                </div>
-
-                <div className="p-4">
-                  {/* Category row */}
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
-                      <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-xs font-semibold text-primary uppercase tracking-wide">{card.category}</span>
-                    </div>
-                    <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </div>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 leading-snug mb-2">{card.title}</h3>
-
-                  {/* Description (no clamp on mobile to show full details) */}
-                  <p className="text-sm text-gray-600 leading-relaxed mb-3">{card.description}</p>
-
-                  {/* Stats */}
-                  {card.stats.revenue && (
-                    <div className="flex items-center gap-2 mb-3 bg-green-50 px-3 py-2 rounded-lg border border-green-100">
-                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
-                      <div>
-                        <div className="text-sm font-bold text-green-600">{card.stats.revenue}</div>
-                        <div className="text-xs text-gray-600 font-medium">Revenue Growth</div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* CTA */}
-                  <button className="w-full bg-primary hover:bg-primary/90 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2">
-                    <span>View Project</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </button>
                 </div>
               </Link>
             </motion.div>
