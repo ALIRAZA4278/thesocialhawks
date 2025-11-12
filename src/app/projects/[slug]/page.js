@@ -261,7 +261,7 @@ const ProjectDetailPage = ({ params }) => {
           {/* Continuous Scrolling Video Container */}
           <div className="relative">
             {/* Video Carousel */}
-            <div className="flex animate-scroll-rtl" style={{ width: 'max-content' }}>
+            <div className="flex animate-scroll-left" style={{ width: 'max-content' }}>
               {/* Quadruple set for seamless loop */}
               {[...Array(4)].map((_, setIndex) => (
                 <React.Fragment key={`set-${setIndex}`}>
@@ -689,7 +689,7 @@ const ProjectDetailPage = ({ params }) => {
         animate={isResultsInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -704,10 +704,10 @@ const ProjectDetailPage = ({ params }) => {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center items-stretch gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {resultsToShow.map((result, index) => (
-              <div key={index} className="w-full sm:w-[calc(50%-16px)] lg:w-[calc(24%-15px)] max-w-md flex">
               <motion.div
+                key={index}
                 className="text-center group cursor-pointer h-full w-full"
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 animate={isResultsInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
@@ -723,7 +723,7 @@ const ProjectDetailPage = ({ params }) => {
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.div 
-                  className="relative  bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 group-hover:shadow-xl transition-all duration-500 border border-primary/10 group-hover:border-primary/20 overflow-hidden h-full flex flex-col items-center justify-center text-center gap-2"
+                  className="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-4 group-hover:shadow-xl transition-all duration-500 border border-primary/10 group-hover:border-primary/20 overflow-hidden h-full flex flex-col items-center justify-center text-center gap-1"
                   whileHover={{
                     background: "linear-gradient(135deg, rgba(127, 32, 196, 0.08) 0%, rgba(127, 32, 196, 0.15) 100%)"
                   }}
@@ -746,27 +746,27 @@ const ProjectDetailPage = ({ params }) => {
                   />
 
                   {/* Icon and value */}
-                  <div className="flex flex-col items-center justify-center">
+                  <div className="flex flex-col items-center justify-center min-h-[120px] py-2">
                     {/* Icon based on metric type */}
                     <motion.div
-                      className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300"
+                      className="w-10 h-10 mx-auto mb-2 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300"
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
                       {result.metric.toLowerCase().includes('sales') || result.metric.toLowerCase().includes('revenue') ? (
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                         </svg>
                       ) : result.metric.toLowerCase().includes('engagement') ? (
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                       ) : result.metric.toLowerCase().includes('roas') ? (
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                         </svg>
                       ) : (
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                         </svg>
@@ -774,7 +774,7 @@ const ProjectDetailPage = ({ params }) => {
                     </motion.div>
 
                     <motion.div 
-                      className="text-4xl lg:text-5xl font-bold text-primary mb-2 group-hover:text-primary/90 transition-colors duration-300"
+                      className="text-3xl lg:text-4xl font-bold text-primary mb-1 group-hover:text-primary/90 transition-colors duration-300 min-h-[60px] flex items-center justify-center py-1"
                       initial={{ scale: 0 }}
                       animate={isResultsInView ? { scale: 1 } : { scale: 0 }}
                       transition={{ 
@@ -788,9 +788,9 @@ const ProjectDetailPage = ({ params }) => {
                     </motion.div>
                   </div>
                   {/* Title and description */}
-                  <div className="flex flex-col items-center justify-center">
+                  <div className="flex flex-col items-center justify-start min-h-[120px]">
                     <motion.h3 
-                      className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300"
+                      className="text-base font-semibold text-gray-900 mb-2 group-hover:text-gray-800 transition-colors duration-300 h-[60px] flex items-center justify-center text-center leading-snug px-2"
                       initial={{ opacity: 0, y: 10 }}
                       animate={isResultsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                       transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
@@ -799,7 +799,7 @@ const ProjectDetailPage = ({ params }) => {
                     </motion.h3>
                     
                     <motion.p 
-                      className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300"
+                      className="text-gray-600 text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-center px-2"
                       initial={{ opacity: 0, y: 10 }}
                       animate={isResultsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                       transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
@@ -822,7 +822,6 @@ const ProjectDetailPage = ({ params }) => {
                   />
                 </motion.div>
               </motion.div>
-              </div>
             ))}
           </div>
         </div>
@@ -1296,7 +1295,7 @@ const ProjectDetailPage = ({ params }) => {
         }
         
         /* Continuous scrolling video carousel */
-        @keyframes scroll-rtl {
+        @keyframes scroll-left {
           0% {
             transform: translateX(0);
           }
@@ -1305,7 +1304,7 @@ const ProjectDetailPage = ({ params }) => {
           }
         }
 
-        @keyframes scroll-rtl-mobile {
+        @keyframes scroll-left-mobile {
           0% {
             transform: translateX(0);
           }
@@ -1314,20 +1313,20 @@ const ProjectDetailPage = ({ params }) => {
           }
         }
 
-        .animate-scroll-rtl {
-          animation: scroll-rtl 50s linear infinite;
+        .animate-scroll-left {
+          animation: scroll-left 50s linear infinite;
           width: max-content;
         }
 
         @media (max-width: 768px) {
-          .animate-scroll-rtl {
-            animation: scroll-rtl-mobile 35s linear infinite;
+          .animate-scroll-left {
+            animation: scroll-left-mobile 35s linear infinite;
           }
         }
-        
+
         /* Pause animation on hover - desktop only */
         @media (min-width: 769px) {
-          .animate-scroll-rtl:hover {
+          .animate-scroll-left:hover {
             animation-play-state: paused;
           }
         }

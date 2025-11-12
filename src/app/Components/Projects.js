@@ -56,7 +56,7 @@ const Projects = () => {
       image: p.images && p.images.length ? p.images[0] : '/images/EXAMPLE.jpg',
       fallback: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       backgroundColor: '#f8fafc',
-      stats: { revenue: p.results && p.results[0] ? p.results[0].value : '' },
+  stats: { revenue: p.results && p.results[0] ? p.results[0].value : '' },
     }));
 
   const [imageErrors, setImageErrors] = useState({});
@@ -129,7 +129,7 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
         >
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div className={`grid gap-6 lg:gap-8 ${cards.length === 1 ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-2'}`}>
         {cards.map((card, index) => (
           <div key={card.slug || card.id} className="block">
             {/* Desktop/Tablet Card - Matching Image Design */}
@@ -170,7 +170,7 @@ const Projects = () => {
               }}
             >
                 {/* Card Content Container - Clean Design */}
-                <div className="relative p-8 sm:p-10 flex flex-col h-full min-h-[320px]">
+                <div className="relative p-8 sm:p-10 flex flex-col h-full min-h-[400px] sm:min-h-[450px]">
                   
                   {/* Top Section: Category & Arrow */}
                   <div className="flex items-start justify-between mb-6">
@@ -202,12 +202,12 @@ const Projects = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl sm:text-3xl font-normal text-gray-900 mb-4 leading-snug">
+                  <h3 className="text-2xl sm:text-3xl font-normal text-gray-900 mb-4 leading-snug line-clamp-2 min-h-[64px] sm:min-h-[72px]">
                     {card.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed mb-auto">
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed mb-auto line-clamp-3 min-h-[72px]">
                     {card.description}
                   </p>
 
@@ -327,12 +327,12 @@ const Projects = () => {
 
             {/* Mobile Card - Clean Design */}
             <motion.div
-              className="sm:hidden block rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200"
+              className="sm:hidden block rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 min-h-[380px]"
               initial={{ opacity: 0, y: 40 }}
               animate={isCardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
             >
-              <Link href={`/projects/${card.slug}`} className="block p-6">
+              <Link href={`/projects/${card.slug}`} className="flex flex-col h-full p-6">
                 {/* Category & Arrow */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-2">
@@ -347,12 +347,12 @@ const Projects = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-normal text-gray-900 leading-snug mb-3">
+                <h3 className="text-xl font-normal text-gray-900 leading-snug mb-3 line-clamp-2 min-h-[56px]">
                   {card.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-500 leading-relaxed mb-6">
+                <p className="text-sm text-gray-500 leading-relaxed mb-6 line-clamp-3 min-h-[63px] flex-grow">
                   {card.description}
                 </p>
 

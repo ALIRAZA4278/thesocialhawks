@@ -676,15 +676,6 @@ export const projectsData = [
       '/images/projects/DR HERBS/DR HERBS (4).jpg',
       '/images/projects/DR HERBS/DR HERBS (5).jpg',
       '/images/projects/DR HERBS/DR HERBS (6).jpg',
-      '/images/projects/DR HERBS/DR HERBS (7).jpg',
-      '/images/projects/DR HERBS/DR HERBS (8).jpg',
-      '/images/projects/DR HERBS/DR HERBS (9).jpg',
-      '/images/projects/DR HERBS/DR HERBS (10).jpg',
-      '/images/projects/DR HERBS/DR HERBS (11).jpg',
-      '/images/projects/DR HERBS/DR HERBS (12).jpg',
-      '/images/projects/DR HERBS/DR HERBS (13).jpg',
-      '/images/projects/DR HERBS/DR HERBS (14).jpg',
-      '/images/projects/DR HERBS/DR HERBS (15).jpg'
     ],
     services: [
       'Social Media Marketing & Management',
