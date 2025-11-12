@@ -778,7 +778,7 @@ export const projectsData = [
     location: 'Karachi, Pakistan',
     results: [
       {
-        value: 'Leading',
+        value: 'Leads Campaing',
         metric: 'BPO Brand Recognition',
         description: 'Established The Cactus as one of the most recognized names in Karachi\'s BPO sector'
       },
