@@ -111,14 +111,15 @@ const Projects = () => {
               Experience Matters
             </motion.h2>
           </motion.div>
-          
+          <Link href="/social-review">
           <motion.button 
             className="mt-6 inline-flex items-center gap-2 bg-primary hover:bg-black text-white px-6 py-3 rounded-full font-medium transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-          >
+            >
             Book a free consultation
           </motion.button>
+            </Link>
         </motion.div>
 
         {/* Cards Grid - Enhanced design */}
