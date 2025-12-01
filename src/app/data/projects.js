@@ -143,7 +143,6 @@ export const projectsData = [
     shortDescription: 'Digital identity, social media management and branding for a popular pizza brand in Karachi.',
     description: 'BrickLane Pizza partnered with us to build its digital identity, strengthen customer engagement, and expand market reach. Over a 3-year collaboration, we created a consistent brand presence, drove online orders, and established BrickLane as a recognizable name in the competitive food industry.',
     images: [
-      '/images/projects/Bricklane Pizza/Bricklane Pizza (1).jpg',
       '/images/projects/Bricklane Pizza/Bricklane Pizza (4).jpg',
       '/images/projects/Bricklane Pizza/Bricklane Pizza (5).jpg',
       '/images/projects/Bricklane Pizza/Bricklane Pizza (6).jpg',
