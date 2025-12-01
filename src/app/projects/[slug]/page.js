@@ -1065,6 +1065,9 @@ const ProjectDetailPage = ({ params }) => {
                     src={allMedia[currentImageIndex].src}
                     className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
                     controls
+                    // For LEO Associates project, disable the browser download control and right-click
+                    controlsList={project.slug === 'leo-associates-real-estate-marketing' ? 'nodownload' : undefined}
+                    onContextMenu={project.slug === 'leo-associates-real-estate-marketing' ? (e) => e.preventDefault() : undefined}
                     autoPlay
                     muted
                     playsInline
