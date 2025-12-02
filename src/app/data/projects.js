@@ -265,6 +265,7 @@ export const projectsData = [
     description: 'Nazeer Hussain University (NHU), through its Department of Rehabilitation & Health Sciences, collaborated with us to strengthen its digital outreach during admission season. The objective was clear: to generate quality leads, maximize reach, and ensure a strong online presence to attract prospective students for DPT and ADP-PT Programs. Over the course of 6 months, we implemented a complete social media marketing and management strategy, combining creative production with lead-focused campaigns to deliver measurable results.',
     images: [
       '/images/projects/NHU (DRHS)/NHU (DRHS) (1).jpg',
+      '/images/projects/NHU (DRHS)/NHU (DRHS) (2).jpeg',
       '/images/projects/NHU (DRHS)/NHU (DRHS) (7).jpg',
       '/images/projects/NHU (DRHS)/NHU (DRHS) (8).jpg',
       '/images/projects/NHU (DRHS)/NHU (DRHS) (10).jpg',
@@ -455,12 +456,8 @@ export const projectsData = [
       '/images/projects/Tech SmartOne/Tech SmartOne (1).jpg',
       '/images/projects/Tech SmartOne/Tech SmartOne (2).jpg',
       '/images/projects/Tech SmartOne/Tech SmartOne (5).jpg',
-      '/images/projects/Tech SmartOne/Tech SmartOne (9).jpg',
       '/images/projects/Tech SmartOne/Tech SmartOne (11).jpg',
       '/images/projects/Tech SmartOne/Tech SmartOne (12).jpg',
-      '/images/projects/Tech SmartOne/Tech SmartOne (18).jpg',
-      '/images/projects/Tech SmartOne/Tech SmartOne (20).jpg',
-      '/images/projects/Tech SmartOne/Tech SmartOne (23).jpg',
       '/images/projects/Tech SmartOne/Tech SmartOne (30).jpg'
     ],
     services: [
@@ -667,12 +664,12 @@ export const projectsData = [
     shortDescription: 'Comprehensive employer branding and recruitment campaign to position The Cactus as a top BPO destination for international sales professionals.',
     description: 'The Cactus, a dynamic and fast-expanding BPO company, partnered with SocialHawks to strengthen its online presence and position itself as a top recruitment destination for international sales professionals in Pakistan. Our mission was to create a strong employer brand, generate high-quality leads, and visually represent the company\'s energetic workplace culture. We developed a complete digital marketing and creative campaign that captured the spirit of The Cactus — modern, ambitious, and opportunity-driven. From on-site video shoots and photography to targeted Meta Ads, our team managed every element of their online strategy to drive awareness, attract applicants, and build brand credibility within the BPO industry.',
     images: [
-      '/images/projects/Cactus Creatives/Cactus Creatives (5).jpeg',
-      '/images/projects/Cactus Creatives/Cactus Creatives (6).jpeg',
-      '/images/projects/Cactus Creatives/Cactus Creatives (8).jpeg',
-      '/images/projects/Cactus Creatives/Cactus Creatives (9).jpeg',
-      '/images/projects/Cactus Creatives/Cactus Creatives (10).jpeg',
-      '/images/projects/Cactus Creatives/Cactus Creatives (11).jpeg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (1).jpg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (2).jpg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (3).jpg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (4).jpg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (5).jpg',
+      '/images/projects/Cactus Creatives/Cactus Creatives (6).jpg',
     ],
     services: [
       'Social Media Marketing & Management',
