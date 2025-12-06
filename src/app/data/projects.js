@@ -798,6 +798,70 @@ export const projectsData = [
     featured: true,
     status: 'completed'
   },
+  {
+    id: 11,
+    slug: 'kacheri-social-media-marketing-legal-services',
+    title: 'Social Media Marketing & Lead Generation for Legal Services – Kacheri',
+    client: 'Kacheri',
+    clientLogo: '/images/logo/27.jpg',
+    category: 'Legal Services & Corporate Law Solutions',
+    shortDescription: 'Delivered strategic social media marketing, management, and lead generation services to help Kacheri attract clients for company registrations, legal advisory, and corporate compliance services.',
+    description: 'Kacheri approached us with a clear objective — to strengthen their online presence and convert legal inquiries into high-value paying clients. Operating in a sensitive and highly competitive legal industry, establishing trust and delivering accurate messaging was crucial. Through a carefully structured content strategy and targeted campaigns, we positioned Kacheri as a reliable and accessible legal solution provider for individuals, startups, and established businesses. We crafted a complete digital ecosystem tailored for the legal market. Our team developed educational, trust-building, and conversion-driven content to help Kacheri reach clients seeking services like company registration, legal drafting, and compliance support. A robust lead generation system ensured a steady flow of qualified prospects.',
+    images: [
+      '/images/projects/Kacheri/Kacheri (1).jpg',
+      '/images/projects/Kacheri/Kacheri (2).jpg',
+      '/images/projects/Kacheri/Kacheri (3).jpg',
+      '/images/projects/Kacheri/Kacheri (4).jpg',
+      '/images/projects/Kacheri/Kacheri (5).jpg',
+      '/images/projects/Kacheri/Kacheri (6).jpg',
+    ],
+    services: [
+      'Social Media Marketing & Management',
+      'Lead Generation Campaigns',
+      'Ad Creatives & Paid Meta Ads',
+      'Social Media Post Creatives',
+      'Motion Graphics',
+      'Content Writing & Ad Copywriting',
+      'Strategy Development for Legal Service Promotion'
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Social Media Platforms',
+      'Adobe Creative Suite',
+      'Motion Graphics Software',
+      'Analytics Tools',
+      'CRM & Lead Management Systems',
+      'Email Marketing Tools'
+    ],
+    duration: 'Confidential',
+    year: '2024–2025',
+    location: 'Pakistan',
+    results: [
+      {
+        value: 'Qualified',
+        metric: 'Legal Leads Pipeline',
+        description: 'Generated a continuous pipeline of qualified legal leads including company registrations and consultancy requests'
+      },
+      {
+        value: 'Measurable',
+        metric: 'Audience Engagement',
+        description: 'Significant improvements in audience engagement and brand trust across social platforms'
+      },
+      {
+        value: 'Increased',
+        metric: 'Conversion Rates',
+        description: 'Optimized ad campaigns delivered higher conversion rates for legal services'
+      },
+      {
+        value: 'Expanded',
+        metric: 'Client Base',
+        description: 'Successfully expanded Kacheri\'s client base through targeted social media campaigns'
+      }
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'ongoing'
+  },
 ];
 
 // Helper functions

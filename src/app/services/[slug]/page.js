@@ -894,7 +894,8 @@ const serviceDetails = {
       "Video Editing & Color Grading",
       "Full-Service Production Management",
       "Drone Shoot",
-      "Script Writing & Storyboarding"
+      "Script Writing & Storyboarding",
+      "YouTube Automation & Channel Optimization"
     ],
     process: [
       {
