@@ -1609,7 +1609,8 @@ const ServiceDetailPage = () => {
               {service.services.map((serviceItem, index) => {
                 // Determine if this service item should be clickable
                 let linkHref = null;
-                
+
+                // Digital Marketing & Growth inner pages
                 if (params.slug === 'digital-marketing-growth') {
                   if (serviceItem.includes('SEO')) {
                     linkHref = `/services/${params.slug}/seo`;
@@ -1617,6 +1618,35 @@ const ServiceDetailPage = () => {
                     linkHref = `/services/${params.slug}/influencer-creator-partnerships`;
                   } else if (serviceItem.includes('Paid Social Advertising')) {
                     linkHref = `/services/${params.slug}/paid-social-advertising`;
+                  } else if (serviceItem.includes('Social Media Management')) {
+                    linkHref = `/services/${params.slug}/social-media-management`;
+                  } else if (serviceItem.includes('Search Engine Marketing') || serviceItem.includes('PPC')) {
+                    linkHref = `/services/${params.slug}/search-engine-marketing`;
+                  } else if (serviceItem.includes('Performance Marketing')) {
+                    linkHref = `/services/${params.slug}/performance-marketing`;
+                  } else if (serviceItem.includes('Conversion Rate Optimization')) {
+                    linkHref = `/services/${params.slug}/conversion-rate-optimization`;
+                  } else if (serviceItem.includes('Analytics') || serviceItem.includes('Reporting')) {
+                    linkHref = `/services/${params.slug}/analytics-reporting`;
+                  }
+                }
+
+                // Web & Digital Development inner pages
+                if (params.slug === 'web-digital-development') {
+                  if (serviceItem.includes('Website Development')) {
+                    linkHref = `/services/${params.slug}/professional-website-development`;
+                  } else if (serviceItem.includes('E-learning') || serviceItem.includes('Marketplaces')) {
+                    linkHref = `/services/${params.slug}/e-learning-platforms`;
+                  } else if (serviceItem.includes('Domain Registration')) {
+                    linkHref = `/services/${params.slug}/domain-registration`;
+                  } else if (serviceItem.includes('Web Hosting')) {
+                    linkHref = `/services/${params.slug}/web-hosting`;
+                  } else if (serviceItem.includes('DNS Management')) {
+                    linkHref = `/services/${params.slug}/dns-management`;
+                  } else if (serviceItem.includes('Business Email')) {
+                    linkHref = `/services/${params.slug}/business-email-setup`;
+                  } else if (serviceItem.includes('SSL') || serviceItem.includes('TLS')) {
+                    linkHref = `/services/${params.slug}/ssl-certificate`;
                   }
                 }
 
@@ -1755,16 +1785,16 @@ const ServiceDetailPage = () => {
           </div>
         </motion.div>
 
-        {/* Sub-Services Section - Only for Digital Marketing */}
-        {params.slug === 'digital-marketing-growth' && (
-          <motion.div 
+        {/* Sub-Services Section - For Digital Marketing and Web Development */}
+        {(params.slug === 'digital-marketing-growth' || params.slug === 'web-digital-development') && (
+          <motion.div
             className="py-16 bg-gradient-to-br from-gray-50 to-primary/5"
             initial={{ opacity: 0 }}
             animate={isServicesInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.h3 
+              <motion.h3
                 className="text-3xl lg:text-4xl font-light text-gray-900 text-center mb-4"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -1772,8 +1802,8 @@ const ServiceDetailPage = () => {
               >
                 Specialized Services
               </motion.h3>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -1781,9 +1811,9 @@ const ServiceDetailPage = () => {
               >
                 Dive deeper into our specialized service areas with comprehensive strategies and expert execution
               </motion.p>
-              
-              <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-8 justify-center items-start">
-                {[
+
+              <div className={`max-w-6xl mx-auto px-4 grid gap-6 justify-center items-stretch ${params.slug === 'web-digital-development' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-3'}`}>
+                {(params.slug === 'digital-marketing-growth' ? [
                   {
                     title: 'SEO Milestones',
                     description: 'Comprehensive SEO process with detailed milestones and deliverables',
@@ -1792,7 +1822,7 @@ const ServiceDetailPage = () => {
                     features: ['Keyword Research', 'Technical Audit', 'Content Optimization', 'Link Building']
                   },
                   {
-                    title: 'Influencer Partnerships', 
+                    title: 'Influencer Partnerships',
                     description: 'Connect with authentic creators and build meaningful brand partnerships',
                     icon: '🤝',
                     link: `/services/${params.slug}/influencer-creator-partnerships`,
@@ -1805,7 +1835,43 @@ const ServiceDetailPage = () => {
                     link: `/services/${params.slug}/paid-social-advertising`,
                     features: ['Meta & Instagram Ads', 'TikTok Campaigns', 'LinkedIn Advertising', 'Twitter Promotion']
                   }
-                ].map((subService, index) => (
+                ] : [
+                  {
+                    title: 'Professional Website Development',
+                    description: 'Custom-built websites designed to reflect your brand identity and engage your audience',
+                    icon: '🌐',
+                    link: `/services/${params.slug}/professional-website-development`,
+                    features: ['Custom Design', 'Responsive Layout', 'SEO Optimized', 'Fast Performance']
+                  },
+                  {
+                    title: 'E-commerce Web Development',
+                    description: 'Powerful online stores with secure payments and optimized checkout experiences',
+                    icon: '🛒',
+                    link: `/services/${params.slug}/ecommerce-web-development`,
+                    features: ['Payment Integration', 'Inventory Management', 'Shopping Cart', 'Order Tracking']
+                  },
+                  {
+                    title: 'Web Application Development',
+                    description: 'Scalable web applications built with modern technologies for your business',
+                    icon: '⚡',
+                    link: `/services/${params.slug}/web-application-development`,
+                    features: ['Custom Features', 'API Integration', 'Cloud Ready', 'Scalable Architecture']
+                  },
+                  {
+                    title: 'Backend Development',
+                    description: 'Robust server-side solutions and APIs that power your digital products',
+                    icon: '🔧',
+                    link: `/services/${params.slug}/backend-development`,
+                    features: ['API Development', 'Database Design', 'Server Setup', 'Security Implementation']
+                  },
+                  {
+                    title: 'WordPress Development',
+                    description: 'Custom WordPress solutions with tailored themes and plugins',
+                    icon: '📝',
+                    link: `/services/${params.slug}/wordpress-website-development`,
+                    features: ['Custom Themes', 'Plugin Development', 'Easy CMS', 'Performance Tuning']
+                  }
+                ]).map((subService, index) => (
                   <div key={index} className="flex justify-center">
                     <motion.div
                       initial={{ opacity: 0, y: 30 }}
@@ -1814,35 +1880,35 @@ const ServiceDetailPage = () => {
                       whileHover={{ y: -8, scale: 1.02 }}
                       className="group w-full flex justify-center"
                     >
-                      <Link href={subService.link} className="w-full max-w-[380px]">
-                        <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 group-hover:border-primary/20 h-full text-center mx-auto flex flex-col">
-                          <div className="text-center">
-                            <motion.div 
+                      <Link href={subService.link} className="w-full">
+                        <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 group-hover:border-primary/20 h-full text-center mx-auto flex flex-col">
+                          <div className="text-center flex-1 flex flex-col">
+                            <motion.div
                               className="text-4xl mb-4"
                               whileHover={{ scale: 1.2, rotate: 10 }}
                               transition={{ type: "spring", stiffness: 300 }}
                             >
                               {subService.icon}
                             </motion.div>
-                            
-                            <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+
+                            <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                               {subService.title}
                             </h4>
-                            
-                            <p className="text-gray-600 mb-6 leading-relaxed">
+
+                            <p className="text-gray-600 mb-4 leading-relaxed text-sm flex-1">
                               {subService.description}
                             </p>
-                            
-                            <div className="space-y-2 mb-6">
+
+                            <div className="space-y-2 mb-4">
                               {subService.features.map((feature, featureIndex) => (
-                                <div key={featureIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                                <div key={featureIndex} className="flex items-center gap-2 text-xs text-gray-500">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
                                   <span>{feature}</span>
                                 </div>
                               ))}
                             </div>
-                            
-                            <div className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
+
+                            <div className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300 text-sm mt-auto">
                               Explore Details
                               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
