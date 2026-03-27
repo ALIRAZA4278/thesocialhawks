@@ -1342,9 +1342,11 @@ const serviceDetails = {
   }
 };
 
-const ServiceDetailPage = () => {
+export { serviceDetails };
+
+const ServiceDetailPage = ({ slugOverride } = {}) => {
   const params = useParams();
-  const slug = params.slug;
+  const slug = slugOverride || params.slug;
   const service = serviceDetails[slug];
 
   const heroRef = useRef(null);
@@ -1611,42 +1613,71 @@ const ServiceDetailPage = () => {
                 let linkHref = null;
 
                 // Digital Marketing & Growth inner pages
-                if (params.slug === 'digital-marketing-growth') {
+                if (slug === 'digital-marketing-growth') {
                   if (serviceItem.includes('SEO')) {
-                    linkHref = `/services/${params.slug}/seo`;
+                    linkHref = `/services/${slug}/seo`;
                   } else if (serviceItem.includes('Influencer & Creator Partnerships')) {
-                    linkHref = `/services/${params.slug}/influencer-creator-partnerships`;
+                    linkHref = `/services/${slug}/influencer-creator-partnerships`;
                   } else if (serviceItem.includes('Paid Social Advertising')) {
-                    linkHref = `/services/${params.slug}/paid-social-advertising`;
+                    linkHref = `/services/${slug}/paid-social-advertising`;
                   } else if (serviceItem.includes('Social Media Management')) {
-                    linkHref = `/services/${params.slug}/social-media-management`;
+                    linkHref = `/services/${slug}/social-media-management`;
                   } else if (serviceItem.includes('Search Engine Marketing') || serviceItem.includes('PPC')) {
-                    linkHref = `/services/${params.slug}/search-engine-marketing`;
+                    linkHref = `/services/${slug}/search-engine-marketing`;
                   } else if (serviceItem.includes('Performance Marketing')) {
-                    linkHref = `/services/${params.slug}/performance-marketing`;
+                    linkHref = `/services/${slug}/performance-marketing`;
                   } else if (serviceItem.includes('Conversion Rate Optimization')) {
-                    linkHref = `/services/${params.slug}/conversion-rate-optimization`;
+                    linkHref = `/services/${slug}/conversion-rate-optimization`;
                   } else if (serviceItem.includes('Analytics') || serviceItem.includes('Reporting')) {
-                    linkHref = `/services/${params.slug}/analytics-reporting`;
+                    linkHref = `/services/${slug}/analytics-reporting`;
                   }
                 }
 
                 // Web & Digital Development inner pages
-                if (params.slug === 'web-digital-development') {
+                if (slug === 'web-digital-development') {
                   if (serviceItem.includes('Website Development')) {
-                    linkHref = `/services/${params.slug}/professional-website-development`;
+                    linkHref = `/services/${slug}/professional-website-development`;
                   } else if (serviceItem.includes('E-learning') || serviceItem.includes('Marketplaces')) {
-                    linkHref = `/services/${params.slug}/e-learning-platforms`;
+                    linkHref = `/services/${slug}/e-learning-platforms`;
                   } else if (serviceItem.includes('Domain Registration')) {
-                    linkHref = `/services/${params.slug}/domain-registration`;
+                    linkHref = `/services/${slug}/domain-registration`;
                   } else if (serviceItem.includes('Web Hosting')) {
-                    linkHref = `/services/${params.slug}/web-hosting`;
+                    linkHref = `/services/${slug}/web-hosting`;
                   } else if (serviceItem.includes('DNS Management')) {
-                    linkHref = `/services/${params.slug}/dns-management`;
+                    linkHref = `/services/${slug}/dns-management`;
                   } else if (serviceItem.includes('Business Email')) {
-                    linkHref = `/services/${params.slug}/business-email-setup`;
+                    linkHref = `/services/${slug}/business-email-setup`;
                   } else if (serviceItem.includes('SSL') || serviceItem.includes('TLS')) {
-                    linkHref = `/services/${params.slug}/ssl-certificate`;
+                    linkHref = `/services/${slug}/ssl-certificate`;
+                  }
+                }
+
+                // Graphic Design inner pages
+                if (slug === 'graphic-design') {
+                  if (serviceItem.includes('Social Media Creative Posts')) {
+                    linkHref = `/services/${slug}/social-media-creative-posts`;
+                  } else if (serviceItem.includes('Ad Creatives')) {
+                    linkHref = `/services/${slug}/ad-creatives`;
+                  } else if (serviceItem.includes('Website Banners')) {
+                    linkHref = `/services/${slug}/website-banners-headers`;
+                  } else if (serviceItem.includes('Infographics')) {
+                    linkHref = `/services/${slug}/infographics-data-visualization`;
+                  } else if (serviceItem.includes('Social Media Story')) {
+                    linkHref = `/services/${slug}/social-media-story-templates`;
+                  } else if (serviceItem.includes('UI Design')) {
+                    linkHref = `/services/${slug}/web-ui-design`;
+                  } else if (serviceItem.includes('Digital Marketing Materials')) {
+                    linkHref = `/services/${slug}/digital-marketing-materials`;
+                  } else if (serviceItem.includes('Email Newsletter')) {
+                    linkHref = `/services/${slug}/email-newsletter-design`;
+                  } else if (serviceItem.includes('Presentation')) {
+                    linkHref = `/services/${slug}/presentation-slide-decks`;
+                  } else if (serviceItem.includes('E-book') || serviceItem.includes('Whitepaper')) {
+                    linkHref = `/services/${slug}/ebook-whitepaper-design`;
+                  } else if (serviceItem.includes('Icon') || serviceItem.includes('Illustration')) {
+                    linkHref = `/services/${slug}/icon-illustration-design`;
+                  } else if (serviceItem.includes('Packaging')) {
+                    linkHref = `/services/${slug}/packaging-design`;
                   }
                 }
 
@@ -1786,7 +1817,7 @@ const ServiceDetailPage = () => {
         </motion.div>
 
         {/* Sub-Services Section - For Digital Marketing and Web Development */}
-        {(params.slug === 'digital-marketing-growth' || params.slug === 'web-digital-development') && (
+        {(slug === 'digital-marketing-growth' || slug === 'web-digital-development') && (
           <motion.div
             className="py-16 bg-gradient-to-br from-gray-50 to-primary/5"
             initial={{ opacity: 0 }}
@@ -1812,27 +1843,27 @@ const ServiceDetailPage = () => {
                 Dive deeper into our specialized service areas with comprehensive strategies and expert execution
               </motion.p>
 
-              <div className={`max-w-6xl mx-auto px-4 grid gap-6 justify-center items-stretch ${params.slug === 'web-digital-development' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-3'}`}>
-                {(params.slug === 'digital-marketing-growth' ? [
+              <div className={`max-w-6xl mx-auto px-4 grid gap-6 justify-center items-stretch ${slug === 'web-digital-development' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-3'}`}>
+                {(slug === 'digital-marketing-growth' ? [
                   {
                     title: 'SEO Milestones',
                     description: 'Comprehensive SEO process with detailed milestones and deliverables',
                     icon: '🔍',
-                    link: `/services/${params.slug}/seo`,
+                    link: `/services/${slug}/seo`,
                     features: ['Keyword Research', 'Technical Audit', 'Content Optimization', 'Link Building']
                   },
                   {
                     title: 'Influencer Partnerships',
                     description: 'Connect with authentic creators and build meaningful brand partnerships',
                     icon: '🤝',
-                    link: `/services/${params.slug}/influencer-creator-partnerships`,
+                    link: `/services/${slug}/influencer-creator-partnerships`,
                     features: ['Creator Vetting', 'Campaign Strategy', 'Content Management', 'Performance Tracking']
                   },
                   {
                     title: 'Paid Social Advertising',
                     description: 'High-converting social media campaigns across all major platforms',
                     icon: '📱',
-                    link: `/services/${params.slug}/paid-social-advertising`,
+                    link: `/services/${slug}/paid-social-advertising`,
                     features: ['Meta & Instagram Ads', 'TikTok Campaigns', 'LinkedIn Advertising', 'Twitter Promotion']
                   }
                 ] : [
@@ -1840,35 +1871,35 @@ const ServiceDetailPage = () => {
                     title: 'Professional Website Development',
                     description: 'Custom-built websites designed to reflect your brand identity and engage your audience',
                     icon: '🌐',
-                    link: `/services/${params.slug}/professional-website-development`,
+                    link: `/services/${slug}/professional-website-development`,
                     features: ['Custom Design', 'Responsive Layout', 'SEO Optimized', 'Fast Performance']
                   },
                   {
                     title: 'E-commerce Web Development',
                     description: 'Powerful online stores with secure payments and optimized checkout experiences',
                     icon: '🛒',
-                    link: `/services/${params.slug}/ecommerce-web-development`,
+                    link: `/services/${slug}/ecommerce-web-development`,
                     features: ['Payment Integration', 'Inventory Management', 'Shopping Cart', 'Order Tracking']
                   },
                   {
                     title: 'Web Application Development',
                     description: 'Scalable web applications built with modern technologies for your business',
                     icon: '⚡',
-                    link: `/services/${params.slug}/web-application-development`,
+                    link: `/services/${slug}/web-application-development`,
                     features: ['Custom Features', 'API Integration', 'Cloud Ready', 'Scalable Architecture']
                   },
                   {
                     title: 'Backend Development',
                     description: 'Robust server-side solutions and APIs that power your digital products',
                     icon: '🔧',
-                    link: `/services/${params.slug}/backend-development`,
+                    link: `/services/${slug}/backend-development`,
                     features: ['API Development', 'Database Design', 'Server Setup', 'Security Implementation']
                   },
                   {
                     title: 'WordPress Development',
                     description: 'Custom WordPress solutions with tailored themes and plugins',
                     icon: '📝',
-                    link: `/services/${params.slug}/wordpress-website-development`,
+                    link: `/services/${slug}/wordpress-website-development`,
                     features: ['Custom Themes', 'Plugin Development', 'Easy CMS', 'Performance Tuning']
                   }
                 ]).map((subService, index) => (
