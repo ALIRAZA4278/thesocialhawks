@@ -544,7 +544,8 @@ const serviceDetails = {
       "Web Hosting (Shared to Dedicated)",
       "DNS Management & Configuration",
       "Professional Business Email Setup",
-      "SSL/TLS Certificate Installation"
+      "SSL/TLS Certificate Installation",
+      "Shopify Website Development"
     ],
     process: [
       {
@@ -1649,6 +1650,8 @@ const ServiceDetailPage = ({ slugOverride } = {}) => {
                     linkHref = `/services/${slug}/business-email-setup`;
                   } else if (serviceItem.includes('SSL') || serviceItem.includes('TLS')) {
                     linkHref = `/services/${slug}/ssl-certificate`;
+                  } else if (serviceItem.includes('Shopify')) {
+                    linkHref = `/services/${slug}/shopify-website-development`;
                   }
                 }
 
@@ -1843,7 +1846,7 @@ const ServiceDetailPage = ({ slugOverride } = {}) => {
                 Dive deeper into our specialized service areas with comprehensive strategies and expert execution
               </motion.p>
 
-              <div className={`max-w-6xl mx-auto px-4 grid gap-6 justify-center items-stretch ${slug === 'web-digital-development' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-3'}`}>
+              <div className={`max-w-6xl mx-auto px-4 grid gap-6 justify-center items-stretch ${slug === 'web-digital-development' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-3'}`}>
                 {(slug === 'digital-marketing-growth' ? [
                   {
                     title: 'SEO Milestones',
@@ -1901,6 +1904,13 @@ const ServiceDetailPage = ({ slugOverride } = {}) => {
                     icon: '📝',
                     link: `/services/${slug}/wordpress-website-development`,
                     features: ['Custom Themes', 'Plugin Development', 'Easy CMS', 'Performance Tuning']
+                  },
+                  {
+                    title: 'Shopify Website Development',
+                    description: 'Professional Shopify stores with custom themes, apps, and optimized checkout flows',
+                    icon: '🛍️',
+                    link: `/services/${slug}/shopify-website-development`,
+                    features: ['Custom Themes', 'App Integration', 'Payment Setup', 'Store Optimization']
                   }
                 ]).map((subService, index) => (
                   <div key={index} className="flex justify-center">
