@@ -2,8 +2,8 @@ import Script from 'next/script';
 import "./globals.css";
 
 export const metadata = {
-  title: "The Social Hawks - Digital Marketing Agency",
-  description: "Professional social media management, content creation, and digital marketing solutions that help your brand soar.",
+  title: "The Social Hawks | Digital Marketing Agency for Brands",
+  description: "We are focused on strategy and creativity. As a digital marketing agency we offer web development, SEO, branding, and social media services to grow businesses.",
   keywords: "digital marketing, social media management, content creation, branding, web development, SEO, graphic design",
   authors: [{ name: "The Social Hawks" }],
   creator: "The Social Hawks",
@@ -13,8 +13,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "The Social Hawks - Digital Marketing Agency",
-    description: "Professional social media management, content creation, and digital marketing solutions that help your brand soar.",
+    title: "The Social Hawks | Digital Marketing Agency for Brands",
+    description: "We are focused on strategy and creativity. As a digital marketing agency we offer web development, SEO, branding, and social media services to grow businesses.",
     url: 'https://thesocialhawks.com',
     siteName: 'The Social Hawks',
     locale: 'en_US',
@@ -22,8 +22,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "The Social Hawks - Digital Marketing Agency",
-    description: "Professional social media management, content creation, and digital marketing solutions that help your brand soar.",
+    title: "The Social Hawks | Digital Marketing Agency for Brands",
+    description: "We are focused on strategy and creativity. As a digital marketing agency we offer web development, SEO, branding, and social media services to grow businesses.",
   },
   robots: {
     index: true,
