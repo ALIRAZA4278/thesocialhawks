@@ -1,11 +1,6 @@
-'use client';
-import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import Navbar from '../Components/Navbar';
-import Contact from '../Components/Contact';
+import ServicesPage from './ServicesClient';
 
+<<<<<<< HEAD
 const ServicesPage = () => {
   // Refs for scroll animations
   const sectionRef = useRef(null);
@@ -416,6 +411,17 @@ const ServicesPage = () => {
       `}</style>
     </div>
   )
-}
+=======
+export const metadata = {
+  title: 'Our Services | Branding, Web & Digital Marketing Experts',
+  description: 'Our team provides services like branding, web development, digital marketing, and content creation that grows your brand.',
+  openGraph: {
+    title: 'Our Services | Branding, Web & Digital Marketing Experts',
+    description: 'Our team provides services like branding, web development, digital marketing, and content creation that grows your brand.',
+  },
+};
 
-export default ServicesPage
+export default function Page() {
+  return <ServicesPage />;
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
+}

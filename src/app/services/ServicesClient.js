@@ -24,7 +24,10 @@ const ServicesPage = () => {
       slug: "brand-identity-design",
       description: "Professional logo design and brand development services. Create memorable brand identities with custom logos and strategic brand development that builds recognition and trust.",
       image: "/images/services/1.jpg",
+<<<<<<< HEAD
       alt: "Hand sketching a leaf logo design with pencil on white paper",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       hasSubServices: true
     },
@@ -34,7 +37,10 @@ const ServicesPage = () => {
       slug: "graphic-design",
       description: "Create compelling visual content including social media posts, ad creatives, infographics, and UI/UX design that captivates your audience.",
       image: "/images/services/2.jpg",
+<<<<<<< HEAD
       alt: "Graphic designer working on triangle logo in design software with color wheel and sketches on desk",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
     },
     {
@@ -43,7 +49,10 @@ const ServicesPage = () => {
       slug: "print-stationery",
       description: "Professional print solutions from business cards to brochures, ensuring your brand maintains consistency across all physical touchpoints.",
       image: "/images/services/3.jpg",
+<<<<<<< HEAD
       alt: "Purple branded stationery mockup with business cards, letterhead, envelope and binder clips on dark surface",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
     },
     {
@@ -52,7 +61,10 @@ const ServicesPage = () => {
       slug: "merchandising",
       description: "Custom branded merchandise including apparel, corporate uniforms, and promotional items that extend your brand into the physical world.",
       image: "/images/services/4.jpg",
+<<<<<<< HEAD
       alt: "Branded merchandise set including black t-shirt, tote bag, coffee mug and water bottle with company logo",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
     },
     {
@@ -61,7 +73,10 @@ const ServicesPage = () => {
       slug: "web-digital-development",
       description: "Professional website development, WordPress solutions, ecommerce platforms, custom web applications, and backend development services. From startup sites to enterprise solutions.",
       image: "/images/services/5.jpg",
+<<<<<<< HEAD
       alt: "Person typing on laptop displaying web design and development interface with content management labels",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
       hasSubServices: true
     },
@@ -71,7 +86,10 @@ const ServicesPage = () => {
       slug: "mobile-app-development",
       description: "Custom mobile application development for iOS, Android, and cross-platform. Powerful, scalable, and secure mobile apps with modern UI/UX that drive business growth.",
       image: "/images/services/6.jpg",
+<<<<<<< HEAD
       alt: "Two purple mobile app UI mockups showing login screen and e-commerce product page on dark background",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
     },
     {
@@ -80,7 +98,10 @@ const ServicesPage = () => {
       slug: "content-writing",
       description: "Professional web content writing services that combine creativity with strategy. SEO-friendly content that engages audiences, builds trust, and drives conversions.",
       image: "/images/services/7.jpg",
+<<<<<<< HEAD
       alt: "Top view of hands typing on laptop while writing notes in notebook with succulent plant on dark desk",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
     },
     {
@@ -89,7 +110,10 @@ const ServicesPage = () => {
       slug: "animation-services",
       description: "Bring your ideas to life with animated explainer videos, motion graphics, 3D visualization, and character animation with full production services.",
       image: "/images/services/8.jpg",
+<<<<<<< HEAD
       alt: "3D animated astronaut character surrounded by colorful neon light trails",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)"
     },
     {
@@ -98,7 +122,10 @@ const ServicesPage = () => {
       slug: "video-photography",
       description: "Professional videography and photography services including commercial shoots, event coverage, product photography, and post-production excellence.",
       image: "/images/services/9.jpg",
+<<<<<<< HEAD
       alt: "Professional DSLR camera on tripod recording a woman in a studio setting",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)"
     },
     {
@@ -107,7 +134,10 @@ const ServicesPage = () => {
       slug: "digital-marketing-growth",
       description: "Professional SEO services that improve rankings, drive qualified traffic, and deliver measurable results. From local SEO to enterprise solutions with proven strategies.",
       image: "/images/services/10.jpg",
+<<<<<<< HEAD
       alt: "Person interacting with holographic digital marketing icons showing SEO, SEM, keywords and analytics",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)"
     },
     {
@@ -116,7 +146,10 @@ const ServicesPage = () => {
       slug: "performance-maintenance",
       description: "Comprehensive website maintenance, performance optimization, speed enhancement, regular updates, and proactive monitoring. Keep your website fast, secure, and running smoothly 24/7.",
       image: "/images/services/11.jpg",
+<<<<<<< HEAD
       alt: "Hands using laptop with holographic refresh, security lock, gears and device maintenance icons",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #a8caba 0%, #5d4e75 100%)"
     },
     {
@@ -125,7 +158,10 @@ const ServicesPage = () => {
       slug: "cybersecurity-protection",
       description: "Comprehensive security solutions including WAF management, malware protection, vulnerability monitoring, and disaster recovery planning.",
       image: "/images/services/12.jpg",
+<<<<<<< HEAD
       alt: "Purple padlock icon on circuit board pattern representing digital cybersecurity",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #ff8a80 0%, #ff5722 100%)"
     },
     {
@@ -134,7 +170,10 @@ const ServicesPage = () => {
       slug: "strategy-consulting",
       description: "Strategic business consulting including market research, content strategy, digital transformation, and advisory services for sustainable growth.",
       image: "/images/services/13.jpg",
+<<<<<<< HEAD
       alt: "Overhead view of business team meeting at wooden table with laptops, charts and documents",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #b39ddb 0%, #9c27b0 100%)"
     },
     {
@@ -143,7 +182,10 @@ const ServicesPage = () => {
       slug: "platform-management",
       description: "Expert management of digital platforms including social media channels, advertising platforms, and multi-channel campaign optimization.",
       image: "/images/services/14.jpg",
+<<<<<<< HEAD
       alt: "Person typing on laptop with holographic document management, cloud upload and folder icons",
+=======
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
       fallback: "linear-gradient(135deg, #81c784 0%, #4caf50 100%)"
     }
   ];
@@ -241,7 +283,11 @@ const ServicesPage = () => {
                       {!imageErrors[`service-${service.id}`] ? (
                         <Image
                           src={service.image}
+<<<<<<< HEAD
                           alt={service.alt}
+=======
+                          alt={service.title}
+>>>>>>> 7551464fc1eadcf2872b12c273010a594a881492
                           fill
                           className="object-cover group-hover:scale-110 transition-transform duration-700"
                           onError={() => handleImageError(`service-${service.id}`)}
