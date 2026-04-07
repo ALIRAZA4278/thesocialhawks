@@ -6,22 +6,20 @@ const Testimonials = () => {
   // Row 1: Categories (top line)
   const categories = useMemo(
     () => [
-      { id: 32, image: "/images/logo/35.jpg" },
-      { id: 6, image: "/images/logo/6.jpg" },
-      { id: 16, image: "/images/logo/16.jpg" },
-      { id: 20, image: "/images/logo/20.jpg" },
-      { id: 25, image: "/images/logo/25.jpg" },
-      { id: 9, image: "/images/logo/9.jpg" },
-      { id: 11, image: "/images/logo/11.jpg" },
-      { id: 28, image: "/images/logo/28.png" },
-      { id: 29, image: "/images/logo/29.jpg" },
-      { id: 31, image: "/images/logo/31.png" },
-      { id: 3, image: "/images/logo/3.jpg" },
-      { id: 7, image: "/images/logo/7.jpg" },
-      { id: 5, image: "/images/logo/5.jpg" },
-      { id: 12, image: "/images/logo/12.jpg" },
-
-
+      { id: 32, image: "/images/logo/35.jpg", name: "Dr. Herbs" },
+      { id: 6, image: "/images/logo/6.jpg", name: "BoviChic" },
+      { id: 16, image: "/images/logo/16.jpg", name: "Selangar" },
+      { id: 20, image: "/images/logo/20.jpg", name: "Ronin" },
+      { id: 25, image: "/images/logo/25.jpg", name: "Nimco Corner" },
+      { id: 9, image: "/images/logo/9.jpg", name: "KIET" },
+      { id: 11, image: "/images/logo/11.jpg", name: "HIRM" },
+      { id: 28, image: "/images/logo/28.png", name: "The Cactus" },
+      { id: 29, image: "/images/logo/29.jpg", name: "Fareeha by Tassels" },
+      { id: 31, image: "/images/logo/31.png", name: "Almas by Istiaque Ahmed" },
+      { id: 3, image: "/images/logo/3.jpg", name: "Azure" },
+      { id: 7, image: "/images/logo/7.jpg", name: "Arena Hotel DHA Multan" },
+      { id: 5, image: "/images/logo/5.jpg", name: "Hospitality Services" },
+      { id: 12, image: "/images/logo/12.jpg", name: "Dow University of Health Sciences" },
     ],
     []
   );
@@ -29,27 +27,25 @@ const Testimonials = () => {
   // Row 2: Client logos (bottom line)
   const logos = useMemo(
     () => [
-      { id: 1, image: "/images/logo/1.jpg" },
-      { id: 2, image: "/images/logo/2.jpg" },
-      { id: 4, image: "/images/logo/4.jpg" },
-      { id: 8, image: "/images/logo/8.jpg" },
-      { id: 26, image: "/images/logo/26.jpg" },
-      { id: 30, image: "/images/logo/30.png" },
-      { id: 32, image: "/images/logo/32.png" },
-      { id: 33, image: "/images/logo/33.png" },
-      { id: 34, image: "/images/logo/251111.png" },
-      { id: 19, image: "/images/logo/19.jpg" },
-      { id: 21, image: "/images/logo/21.jpg" },
-      { id: 22, image: "/images/logo/22.png" },
-      { id: 23, image: "/images/logo/23.jpg" },
-      { id: 24, image: "/images/logo/24.jpg" },
-      { id: 27, image: "/images/logo/27.jpg" },
-      { id: 17, image: "/images/logo/17.jpg" },
-      { id: 15, image: "/images/logo/15.jpg" },
-      { id: 14, image: "/images/logo/14.jpg" },
-
-      { id: 13, image: "/images/logo/13.jpg" },
-
+      { id: 1, image: "/images/logo/1.jpg", name: "Baithak School Network" },
+      { id: 2, image: "/images/logo/2.jpg", name: "BrickLane Pizza" },
+      { id: 4, image: "/images/logo/4.jpg", name: "Doctor Obesity Clinic" },
+      { id: 8, image: "/images/logo/8.jpg", name: "Bakelicious" },
+      { id: 26, image: "/images/logo/26.jpg", name: "Zaafar Fragrance" },
+      { id: 30, image: "/images/logo/30.png", name: "Sceven The Scent Heaven" },
+      { id: 32, image: "/images/logo/32.png", name: "Lucky Foods" },
+      { id: 33, image: "/images/logo/33.png", name: "Paraiso" },
+      { id: 34, image: "/images/logo/251111.png", name: "Ucaaz" },
+      { id: 19, image: "/images/logo/19.jpg", name: "TechSmartOne" },
+      { id: 21, image: "/images/logo/21.jpg", name: "Jekas" },
+      { id: 22, image: "/images/logo/22.png", name: "LEO Associates" },
+      { id: 23, image: "/images/logo/23.jpg", name: "PowerPresent AI" },
+      { id: 24, image: "/images/logo/24.jpg", name: "FlexVapes" },
+      { id: 27, image: "/images/logo/27.jpg", name: "Kacheri" },
+      { id: 17, image: "/images/logo/17.jpg", name: "The Ridgeline Marketing" },
+      { id: 15, image: "/images/logo/15.jpg", name: "MFit" },
+      { id: 14, image: "/images/logo/14.jpg", name: "HMTG Group" },
+      { id: 13, image: "/images/logo/13.jpg", name: "ShopSee" },
     ],
     []
   );
@@ -141,7 +137,7 @@ const Testimonials = () => {
                     {!imageErrors[`cat-${item.id}-${index}`] ? (
                       <Image
                         src={item.image}
-                        alt={`Category ${item.id}`}
+                        alt={`${item.name} logo`}
                         fill
                         className="object-contain"
                         priority={index < 10}
@@ -176,7 +172,7 @@ const Testimonials = () => {
                     {!imageErrors[`logo-${item.id}-${index}`] ? (
                       <Image
                         src={item.image}
-                        alt={`Client logo ${item.id}`}
+                        alt={`${item.name} logo`}
                         fill
                         className="object-contain"
                         priority={index < 10}

@@ -251,7 +251,7 @@ const Contact = () => {
               <div className="mb-6">
                 <Image
                   src="/images/logo-white.png"
-                  alt="Socialhawks Logo"
+                  alt="The SocialHawks Creative Agency white logo with purple hawk icon"
                   width={200}
                   height={60}
                   className="h-25 w-auto object-contain"

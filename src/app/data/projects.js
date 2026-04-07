@@ -18,6 +18,15 @@ export const projectsData = [
       '/images/projects/MFIT/MFIT (19).jpg',
       '/images/projects/MFIT/MFIT (24).jpg'
     ],
+    imageAlts: [
+      'MFit gym reception desk with marble counter and gold logo signage showing location address',
+      'Join MFit fitness ad with woman exercising in yellow and black gym branding',
+      'MFit experienced trainers ad showing trainer and client training with dumbbells in gym',
+      'MFit wellness reminder social post with close-up of hand holding dumbbell',
+      'MFit Happy Hour membership offer at 6000 PKR monthly with gym equipment background',
+      'MFit Ramadan Shred group fitness class ad with man exercising with dumbbell',
+      'MFit World Health Day post with stethoscope heartbeat illustration'
+    ],
     services: [
       'Ad Creatives & Social Media Post Design',
       'High-quality Video Production & Drone Shoot',
@@ -87,6 +96,17 @@ export const projectsData = [
       '/images/projects/Zaafar/Zaafar (14).jpg',
       '/images/projects/Zaafar/Zaafar (16).jpg',
     ],
+    imageAlts: [
+      'Zaafar Supremacy perfume bottle on wooden log with green nature background',
+      'Zaafar Supremacy perfume with 24-hour clock showing lasting luxury fragrance',
+      'Zaafar Supremacy perfume surrounded by flowers and essential oils on pink background',
+      'Zaafar Supremacy perfume with gold silk waves on black luxury background',
+      'Zaafar Supremacy perfume with Minar-e-Pakistan for Pakistan Resolution Day post',
+      'Zaafar win the game of scents creative with tic-tac-toe perfume bottles',
+      'Zaafar why choose us infographic showing perfume features and benefits',
+      'Zaafar phone notification creative showing fragrance running out refill reminder',
+      'Zaafar fragrance notes wheel showing woody, floral, citrus, earthy and herbal categories'
+    ],
     services: [
       'Social Media Management & Ad Copywriting',
       'Video Production & Script Writing',
@@ -150,6 +170,14 @@ export const projectsData = [
       '/images/projects/Bricklane Pizza/Bricklane Pizza (10).jpg',
       '/images/projects/Bricklane Pizza/Bricklane Pizza (11).jpg',
     ],
+    imageAlts: [
+      'Brick Lane Pizza cheese sticks ad with melting cheese close-up at PKR 349',
+      'Brick Lane Pizza double layered pizza ad with hand holding cheesy pizza slice',
+      'Brick Lane Pizza two kinds of people creative comparing pizza cutting styles',
+      'Brick Lane Pizza tic-tac-toe game creative with pizza slices and biryani bowls',
+      'Brick Lane Pizza online delivery ad with fresh pizza served on laptop',
+      'Brick Lane Pizza mode is always on creative with toggle switch pizza design'
+    ],
     services: [
       'Social Media Management & Creative Strategy',
       'Motion Graphics & Video Production',
@@ -209,6 +237,17 @@ export const projectsData = [
       '/images/projects/Bakelicious/Bakelicious (10).jpg',
       '/images/projects/Bakelicious/Bakelicious (11).jpg',
       '/images/projects/Bakelicious/Bakelicious (12).jpg',
+    ],
+    imageAlts: [
+      'Bakelicious bakery location post with red velvet cake slice on map background',
+      'Bakelicious signal strength creative with chocolate donut as WiFi icon on yellow background',
+      'Bakelicious crispy burger recharge ad with fried chicken burger on yellow background',
+      'Bakelicious unlock new taste creative with chocolate chip cookie as padlock',
+      'Bakelicious crunchy cheesy snack post with bicycle using pastry wheels illustration',
+      'Bakelicious time for delicious snack post with chocolate pastry shaped as watch',
+      'Bakelicious rusk up your strength creative with multigrain rusk dumbbell illustration',
+      'Bakelicious locked up flavor post with pink and chocolate donuts linked together',
+      'Bakelicious perfect chai partner post with tea cup, cookies and samosas'
     ],
     services: [
       'Ad Creatives & Social Media Post Design',
@@ -270,6 +309,14 @@ export const projectsData = [
       '/images/projects/NHU (DRHS)/NHU (DRHS) (8).jpg',
       '/images/projects/NHU (DRHS)/NHU (DRHS) (10).jpg',
       '/images/projects/NHU (DRHS)/NHU (DRHS) (12).jpg',
+    ],
+    imageAlts: [
+      'NHU Spring 2025 DPT admissions ad with female student in white coat holding books',
+      'NHU Spring 2025 admission open post showing campus building with DPT and ADP-PT programs',
+      'NHU physiotherapy lab post with female students in white coats studying anatomy model',
+      'NHU ADP-PT program ad with female student in hijab and white coat in thinking pose',
+      'NHU-DRHS scholarship announcement with female student in hijab pointing',
+      'NHU shape your future ADP-PT ad with female student in red scarf and white coat'
     ],
     services: [
       'Ad Creatives & Social Media Post Design',
@@ -333,6 +380,14 @@ export const projectsData = [
       '/images/projects/PowerPresent Ai/PowerPresent Ai (7).jpg',
       '/images/projects/PowerPresent Ai/PowerPresent Ai (9).jpg',
     ],
+    imageAlts: [
+      'PowerPresent AI ad with person typing on laptop showing AI presentation platform',
+      'PowerPresent AI stuck on slide 1 ad with frustrated man showing 3 easy steps',
+      'PowerPresent AI overslept busy brain fried ad with tired man at desk and laptop',
+      'PowerPresent AI lost in the topic ad with businessman standing at crossroads arrows',
+      'PowerPresent AI dont worry just present ad with thinking businessman holding coffee',
+      'PowerPresent AI 5-step roadmap infographic with silhouette on winding path'
+    ],
     services: [
       'Social Media Post Creatives & Content Management',
       'Strategic Google Ads Campaigns (Sales-Focused)'
@@ -393,6 +448,17 @@ export const projectsData = [
       '/images/projects/HIRM/HIRM 11.jpg',
       '/images/projects/HIRM/HIRM 12.jpg',
       '/images/projects/HIRM/HIRM 13.jpg'
+    ],
+    imageAlts: [
+      'HIRM from theory to hands-on excellence ad with student using microscope in lab',
+      'HIRM faculty introduction post showing three DPT professors in white coats',
+      'HIRM World No Tobacco Day post with cigarette and lung illustration on world map',
+      'HIRM explore dynamic laboratories for DPT post with students in clinical setting',
+      'HIRM WhatsApp instant assistance ad with phone showing chat conversation',
+      'HIRM Factual Friday post about slipped disc myth vs fact with spine illustration',
+      'HIRM Factual Friday quiz about elbow joint muscle with campus building background',
+      'HIRM DPT career options infographic showing public, private, non-profit and sports sectors',
+      'HIRM DPT admissions open with students in physiotherapy lab training'
     ],
     services: [
       'Ad Creatives & Social Media Post Design',
@@ -459,6 +525,14 @@ export const projectsData = [
       '/images/projects/Tech SmartOne/Tech SmartOne (11).jpg',
       '/images/projects/Tech SmartOne/Tech SmartOne (12).jpg',
       '/images/projects/Tech SmartOne/Tech SmartOne (30).jpg'
+    ],
+    imageAlts: [
+      'Tech SmartOne silver smartwatch product ad on desert landscape background at Rs 4499',
+      'Tech SmartOne orange Ultra 7 smartwatch ad on purple background at Rs 4499',
+      'Tech SmartOne 23 March Pakistan Day sale with wireless earbuds at 2499 Rs',
+      'Tech SmartOne Ultra 2 smartwatch bold looks smart price ad at Rs 2800',
+      'Tech SmartOne AirPod Max vs AirPod Pro 2 comparison ad with discounted prices',
+      'Tech SmartOne orange Ultra smartwatch features ad with Bluetooth and health tracking at Rs 2499'
     ],
     services: [
       'Paid Meta Ads Campaigns (Sales Focused)',
@@ -533,6 +607,9 @@ export const projectsData = [
     ],
     images: [
       "/images/projects/LEO/1.jpg",
+    ],
+    imageAlts: [
+      'LEO Associates dream home Bahria Town Karachi luxury villa ad with swimming pool'
     ], // LEO primarily has video content
     services: [
       'Professional Video Production & Editing',
@@ -597,6 +674,14 @@ export const projectsData = [
       '/images/projects/DR HERBS/DR HERBS (4).jpg',
       '/images/projects/DR HERBS/DR HERBS (5).jpg',
       '/images/projects/DR HERBS/DR HERBS (6).jpg',
+    ],
+    imageAlts: [
+      'Dr Herbs Majoon E Hawwa beauty formula product ad on pink background with cosmetics',
+      'Dr Herbs Majoon E Khaas creative ad with cheetah and turtle on blue background',
+      'Dr Herbs Majoon E Khaas product ad with red lipsticks on purple background',
+      'Dr Herbs Majoon E Khaas low battery energy recharge creative on dark blue background',
+      'Dr Herbs Majoon E Khaas strong feeling ad with rooster illustration on blue background',
+      'Dr Herbs Majoon E Hawwa feels good ad with happy orange cat on purple background'
     ],
     services: [
       'Social Media Marketing & Management',
@@ -671,6 +756,14 @@ export const projectsData = [
       '/images/projects/Cactus Creatives/Cactus Creatives (5).jpg',
       '/images/projects/Cactus Creatives/Cactus Creatives (6).jpg',
     ],
+    imageAlts: [
+      'Cactus BPO talent recruitment ad with magnifying glass highlighting green figure in crowd',
+      'Cactus BPO hiring ad with man pointing up on dark background for night shift jobs',
+      'Cactus BPO women recruitment ad with confident woman in red dress on dark background',
+      'Cactus BPO comeback career ad with male and female employees on dark background',
+      'Cactus BPO empowered teams endless growth ad with female employee wearing headset',
+      'Cactus BPO empowered teams ad with confident woman giving thumbs up'
+    ],
     services: [
       'Social Media Marketing & Management',
       'Photography (Office Environment & Employee Shoots)',
@@ -743,6 +836,18 @@ export const projectsData = [
       '/images/projects/Flex Vapes/Flex Vapes (9).jpg',
       '/images/projects/Flex Vapes/Flex Vapes (10).jpg',
     ],
+    imageAlts: [
+      'FlexVapes Geekvape Aegis Nano restocked ad with blue red and yellow pod devices',
+      'FlexVapes Drip Down Grape Ice e-liquid product ad with grapes and ice cubes',
+      'FlexVapes Drip Down Apple Ice e-liquid product ad with green apple and ice cubes',
+      'FlexVapes Drip Down Cola Ice e-liquid product ad with cola glass and ice cubes',
+      'FlexVapes Drip Down Mango Ice e-liquid product ad with mangoes and ice cubes',
+      'FlexVapes Drip Down Apple Ice e-liquid neon showcase ad with green apple and ice',
+      'FlexVapes Drip Down Lychee Ice e-liquid neon showcase ad with lychees and ice',
+      'FlexVapes Drip Down Grape Ice e-liquid neon showcase ad with grapes and ice',
+      'FlexVapes Drip Down Peach Ice e-liquid neon showcase ad with peaches and ice',
+      'FlexVapes Geekvape Wenax K2 new arrival silver pod device ad'
+    ],
     services: [
       'Website Design & Development (E-Commerce Platform)',
       'Social Media Marketing & Management',
@@ -814,6 +919,14 @@ export const projectsData = [
       '/images/projects/Kacheri/Kacheri (4).jpg',
       '/images/projects/Kacheri/Kacheri (5).jpg',
       '/images/projects/Kacheri/Kacheri (6).jpg',
+    ],
+    imageAlts: [
+      'Kacheri lawyer directory post welcoming Barrister Mian M Fahad from Islamabad',
+      'Kacheri lawyer directory post welcoming advocate Osama Ali from Peshawar',
+      'Kacheri UAE business registration ad with businessman, Burj Khalifa and UAE flag',
+      'Kacheri USA LLC registration ad with businessman, Statue of Liberty and US flag',
+      'Kacheri UK business registration ad with businessman, Big Ben and UK flag',
+      'Kacheri Saudi Arabia business registration ad with businessman and Saudi flag'
     ],
     services: [
       'Social Media Marketing & Management',

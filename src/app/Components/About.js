@@ -144,7 +144,7 @@ const About = () => {
                 >
                   <Image
                     src="/images/about.jpg"
-                    alt="Performance-Driven Marketing Team"
+                    alt="Creative digital marketing illustration with hands holding a lightbulb, gears, and speech bubble representing strategy and innovation"
                     width={600}
                     height={600}
                     className="w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover"

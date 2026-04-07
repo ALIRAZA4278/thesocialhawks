@@ -109,7 +109,7 @@ const SocialMediaReview = () => {
         <div className="text-center mb-12">
           <Image
             src="/images/logo-white.png"
-            alt="Socialhawks Logo"
+            alt="The SocialHawks Creative Agency white logo with purple hawk icon"
             width={200}
             height={60}
             className="h-20 w-auto object-contain mx-auto mb-6"

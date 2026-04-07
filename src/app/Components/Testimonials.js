@@ -269,7 +269,7 @@ const Testimonials = () => {
                       {!imageErrors[`testimonial-${testimonial.id}-${index}`] ? (
                         <Image
                           src={testimonial.image}
-                          alt={testimonial.name}
+                          alt={`${testimonial.name} - ${testimonial.position}`}
                           fill
                           className="object-cover"
                           onError={() => handleImageError(`testimonial-${testimonial.id}-${index}`)}
@@ -315,7 +315,7 @@ const Testimonials = () => {
                     {!imageErrors[`client-${client.id}`] ? (
                       <Image
                         src={client.image}
-                        alt={client.name}
+                        alt={`${client.name} - happy client`}
                         fill
                         className="object-cover"
                         onError={() => handleImageError(`client-${client.id}`)}

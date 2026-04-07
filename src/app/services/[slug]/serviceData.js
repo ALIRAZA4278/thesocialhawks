@@ -1,0 +1,1337 @@
+// Service details data for all services
+const serviceDetails = {
+  'brand-identity-design': {
+    id: 1,
+    title: "Brand Identity & Design",
+    subtitle: "Crafting Distinctive Brand Experiences",
+    description: "Transform your business vision into a compelling brand identity that resonates with your target audience and drives market recognition.",
+    longDescription: "Our brand identity and design services encompass the complete spectrum of visual brand development. From initial concept to final execution, we create cohesive brand ecosystems that tell your unique story and establish meaningful connections with your customers. Our expert team combines strategic thinking with creative excellence to deliver brand solutions that not only look exceptional but also perform effectively in competitive markets.",
+    stats: [
+      { number: "80+", label: "Trusted Brands" },
+      { number: "564M+", label: "Revenue Generated" },
+      { number: "806+", label: "Ads Created" },
+      { number: "12+", label: "Industries Served" }
+    ],
+    services: [
+      "Logo Design (Iconic, 2D, 3D, Typographic, Symbolic, Illustrative, Mascot)",
+      "Brand Identity Suite & Brand Guidelines",
+      "Color Palettes & Typography Systems",
+      "Visual Style Guide Development",
+      "Animated Logo Design (2D & 3D)",
+      "Presentation Design & Templates",
+      "Brand Asset Creation & Management",
+      "Brand Strategy & Positioning",
+      "Brand Architecture & Naming",
+      "Brand Voice & Messaging",
+      "Trademark & Legal Support",
+      "Brand Implementation Guidelines"
+    ],
+    process: [
+      {
+        step: "Discovery & Research",
+        description: "We dive deep into your business, market, and target audience to understand your unique positioning and requirements.",
+        icon: "🔍"
+      },
+      {
+        step: "Concept Development",
+        description: "Our team develops multiple creative concepts that align with your brand strategy and business objectives.",
+        icon: "💡"
+      },
+      {
+        step: "Design & Refinement",
+        description: "We craft and refine your chosen concept into a comprehensive brand identity system.",
+        icon: "🎨"
+      },
+      {
+        step: "Guidelines & Delivery",
+        description: "Complete brand guidelines and asset packages ensure consistent application across all touchpoints.",
+        icon: "📋"
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+    ],
+    fallback: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    benefits: [
+      {
+        title: "Increased Brand Recognition",
+        description: "Strong brand identity increases recognition by up to 80%",
+        icon: "👁️",
+      },
+      {
+        title: "Business Value",
+        description: "Strong brands command 20% higher prices on average",
+        icon: "💰"
+      }
+    ],
+    testimonials: [
+      {
+        text: "SocialHawks transformed our online presence completely. The brand identity work they delivered helped us stand out in a crowded market and position ourselves as industry leaders.",
+        author: "David Martinez",
+        position: "Founder, TechVenture Solutions",
+        rating: 5
+      },
+      {
+        text: "Working with SocialHawks was a game-changer for our business. Their creative team is incredibly professional and results-focused. Our brand now truly reflects our values and connects with our audience.",
+        author: "Jennifer Park",
+        position: "Marketing Director, HealthCare Plus",
+        rating: 5
+      }
+    ],
+    pricing: [
+      {
+        package: "Starter Brand Package",
+        price: "$1,299",
+        duration: "2-3 weeks",
+        features: [
+          "Logo Design (3 concepts)",
+          "Basic Brand Guidelines",
+          "Business Card Design",
+          "Letterhead Template",
+          "Color Palette & Typography",
+          "2 Revision Rounds",
+          "Final Files (AI, PNG, JPG)"
+        ],
+        popular: false
+      },
+      {
+        package: "Professional Brand Package",
+        price: "$2,499", 
+        duration: "3-4 weeks",
+        features: [
+          "Comprehensive Logo Suite",
+          "Complete Brand Identity System",
+          "Detailed Brand Guidelines (20+ pages)",
+          "Stationery Package (Business Cards, Letterhead, Envelope)",
+          "Social Media Templates",
+          "Brand Application Examples",
+          "Unlimited Revisions",
+          "Trademark Research Assistance",
+          "All Source Files + Web Formats"
+        ],
+        popular: true
+      },
+      {
+        package: "Enterprise Brand Package",
+        price: "$4,999",
+        duration: "4-6 weeks", 
+        features: [
+          "Full Brand Strategy & Positioning",
+          "Comprehensive Visual Identity System",
+          "Advanced Brand Guidelines (40+ pages)",
+          "Complete Stationery Suite",
+          "Marketing Collateral Templates",
+          "Digital Asset Library",
+          "Brand Implementation Support",
+          "Team Training Session",
+          "1-Year Brand Consultation",
+          "All Formats + Print-Ready Files"
+        ],
+        popular: false
+      }
+    ],
+    industries: [
+      {
+        name: "Technology & SaaS",
+        description: "Modern, innovative brands for tech companies and startups",
+        icon: "💻"
+      },
+      {
+        name: "Healthcare & Medical",
+        description: "Professional, trustworthy identities for healthcare providers",
+        icon: "🏥"
+      },
+      {
+        name: "Finance & Consulting",
+        description: "Sophisticated brands for financial and consulting services",
+        icon: "💼"
+      },
+      {
+        name: "Retail & E-commerce",
+        description: "Compelling brands that drive customer engagement and sales",
+        icon: "🛍️"
+      }
+    ],
+    caseStudies: [
+      {
+        title: "TechStart Inc. Rebranding",
+        industry: "Technology",
+        challenge: "Outdated brand identity limiting growth and investor confidence",
+        solution: "Complete rebrand with modern, scalable visual system",
+        results: "150% increase in lead generation, successful Series A funding",
+        image: "/images/EXAMPLE.jpg"
+      },
+      {
+        title: "HealthCare Plus Brand Launch",
+        industry: "Healthcare", 
+        challenge: "New medical practice needed trustworthy, professional identity",
+        solution: "Sophisticated brand system emphasizing trust and expertise",
+        results: "300% faster patient acquisition than industry average",
+        image: "/images/EXAMPLE.jpg"
+      }
+    ],
+    faq: [
+      {
+        question: "How long does the brand identity process take?",
+        answer: "Typically 2-4 weeks depending on complexity. We provide detailed timelines during our initial consultation."
+      },
+      {
+        question: "Do you provide trademark support?",
+        answer: "Yes, we can guide you through trademark research and connect you with legal professionals for registration."
+      },
+      {
+        question: "What file formats will I receive?",
+        answer: "Complete package includes vector files (AI, EPS), raster files (PNG, JPG), and web-optimized formats."
+      }
+    ],
+    features: [
+      "Strategic Brand Positioning",
+      "Creative Excellence",
+      "Comprehensive Guidelines",
+      "Multi-format Delivery",
+      "Ongoing Support",
+      "Trademark Research",
+      "Industry Expertise",
+      "Revision Rounds"
+    ],
+    cta: {
+      title: "Ready to Build Your Brand?",
+      description: "Let's create a brand identity that sets you apart and drives business growth.",
+      buttonText: "Start Your Brand Journey"
+    }
+  },
+  'graphic-design': {
+    id: 2,
+    title: "Graphic Design",
+    subtitle: "Visual Communications That Convert",
+    description: "Create stunning visual content that captures attention, communicates your message effectively, and drives meaningful engagement across all digital platforms.",
+    longDescription: "Our graphic design services blend creativity with strategic thinking to produce visual communications that not only look amazing but also achieve your business objectives. From social media content to complex infographics, our design team creates compelling visuals that tell your story, engage your audience, and drive conversions across every touchpoint of your customer journey.",
+    stats: [
+      { number: "10K+", label: "Designs Created" },
+      { number: "95%", label: "Approval Rate" },
+      { number: "2h", label: "Average Response" },
+      { number: "50+", label: "Design Categories" }
+    ],
+    services: [
+      "Social Media Creative Posts (Static & Story Formats)",
+      "Ad Creatives for Digital Campaigns",
+      "Website Banners & Headers",
+      "Infographics & Data Visualization",
+      "Social Media Story Templates",
+      "Web & UI Design Elements",
+      "Digital Marketing Materials",
+      "Email Newsletter Design",
+      "Presentation Slide Decks",
+      "E-book & Whitepaper Design",
+      "Icon & Illustration Design",
+      "Packaging Design Concepts"
+    ],
+    process: [
+      {
+        step: "Creative Brief",
+        description: "Understanding your objectives, target audience, and visual requirements for each project.",
+        icon: "📝"
+      },
+      {
+        step: "Concept Creation",
+        description: "Developing initial design concepts that align with your brand and campaign goals.",
+        icon: "✨"
+      },
+      {
+        step: "Design Development",
+        description: "Refining chosen concepts into polished, ready-to-use graphic assets.",
+        icon: "🎨"
+      },
+      {
+        step: "Optimization & Delivery",
+        description: "Optimizing designs for various platforms and delivering in all required formats.",
+        icon: "🚀"
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+    benefits: [
+      {
+        title: "Higher Engagement",
+        description: "Visual content gets 94% more views than text-only content",
+        icon: "📈"
+      },
+      {
+        title: "Brand Consistency",
+        description: "Consistent visuals increase revenue by up to 23%",
+        icon: "🎯"
+      },
+      {
+        title: "Faster Communication",
+        description: "Visuals are processed 60,000x faster than text",
+        icon: "⚡"
+      },
+      {
+        title: "Better Recall",
+        description: "People remember 65% of visual information after 3 days",
+        icon: "🧠"
+      }
+    ],
+    testimonials: [
+      {
+        text: "SocialHawks delivered exceptional designs that elevated our entire brand. Their attention to detail and creative approach made all the difference in our market positioning.",
+        author: "Robert Johnson",
+        position: "CEO, Digital Ventures",
+        rating: 5
+      },
+      {
+        text: "The team at SocialHawks is incredibly talented and professional. They consistently deliver high-quality work that drives real results for our business.",
+        author: "Amanda Chen",
+        position: "Marketing Lead, Innovation Hub",
+        rating: 5
+      }
+    ],
+    faq: [
+      {
+        question: "How quickly can you deliver designs?",
+        answer: "Simple designs within 24-48 hours, complex projects within 3-5 business days."
+      },
+      {
+        question: "Do you offer unlimited revisions?",
+        answer: "We include 3 revision rounds. Additional revisions available at competitive rates."
+      },
+      {
+        question: "Can you match our brand guidelines?",
+        answer: "Absolutely! We work within your existing brand guidelines or help create new ones."
+      }
+    ],
+    features: [
+      "Multi-Platform Optimization",
+      "Brand-Consistent Design",
+      "Fast Turnaround",
+      "Unlimited Revisions",
+      "Performance-Focused",
+      "Print-Ready Files",
+      "Web Optimization",
+      "Creative Innovation"
+    ],
+    cta: {
+      title: "Elevate Your Visual Content",
+      description: "Transform your ideas into compelling visuals that drive engagement and results.",
+      buttonText: "Get Started with Design"
+    }
+  },
+  'print-stationery': {
+    id: 3,
+    title: "Print & Stationery",
+    subtitle: "Professional Print Solutions",
+    description: "Comprehensive print design services that maintain brand consistency across all physical touchpoints, from business cards to large-format signage.",
+    longDescription: "In our digital world, high-quality print materials still play a crucial role in professional business communications. Our print and stationery services ensure your brand maintains consistency and professionalism across all physical materials. We understand the technical requirements of print production and design with both aesthetics and functionality in mind, delivering materials that make lasting impressions.",
+    services: [
+      "Business Cards & Corporate Identity",
+      "Letterheads & Document Templates",
+      "Envelopes & Mailing Materials",
+      "Flyers & Promotional Materials",
+      "Brochures & Catalogs",
+      "Banners & Signage",
+      "Print Collateral & Marketing Materials"
+    ],
+    process: [
+      {
+        step: "Requirements Analysis",
+        description: "Assessing your print needs, specifications, and brand requirements for each material."
+      },
+      {
+        step: "Design & Layout",
+        description: "Creating print-ready designs optimized for production and brand consistency."
+      },
+      {
+        step: "Print Preparation",
+        description: "Preparing files for printing with proper resolution, color profiles, and specifications."
+      },
+      {
+        step: "Quality Control",
+        description: "Ensuring final materials meet quality standards and brand guidelines."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+    features: [
+      "Print-Ready Files",
+      "Brand Consistency",
+      "High-Quality Output",
+      "Multiple Formats",
+      "Production Support"
+    ],
+    cta: {
+      title: "Professional Print Materials",
+      description: "Create print materials that reflect your brand's quality and professionalism.",
+      buttonText: "Design Print Materials"
+    }
+  },
+  'drone-shoot': {
+    id: 15,
+    title: "Drone Shoot",
+    subtitle: "Aerial Cinematography & Photography",
+    description: "Capture breathtaking aerial perspectives with professional drone cinematography and photography for real estate, events, commercials, and cinematic storytelling.",
+    longDescription: "Our drone shoot service combines licensed drone pilots, cinematic camera setups, and experienced directors to deliver smooth, cinematic aerial footage. We handle flight permissions, location scouting, safety briefings, and post-production color grading so you get broadcast-quality results that elevate your visual storytelling.",
+    stats: [
+      { number: "4K", label: "Ultra HD Footage" },
+      { number: "FAA/Local", label: "Certified Pilots" },
+      { number: "24h", label: "Fast Turnaround" },
+      { number: "100+", label: "Successful Flights" }
+    ],
+    services: [
+      "Cinematic Aerial Videography (4K/6K where available)",
+      "High-Resolution Aerial Photography",
+      "Real Estate Aerial Tours & Flythroughs",
+      "Event Coverage & Live Overviews",
+      "Inspection & Survey Footage",
+      "Gimbal-stabilized Shots & Dynamic Moves",
+      "Geofenced/Permission Management & Flight Planning",
+      "Post-production: Color Grading & Stabilization"
+    ],
+    process: [
+      { step: "Pre-Flight Planning", description: "Site survey, permissions, and shot list creation.", icon: "🗺️" },
+      { step: "Licensed Pilots", description: "Experienced, certified pilots operate to the highest safety standards.", icon: "🚁" },
+      { step: "Cinematic Capture", description: "Multi-angle aerial capture using stabilized gimbals and ND filtration.", icon: "🎥" },
+      { step: "Post-Production", description: "Color grading, stabilization, and edit-ready deliverables.", icon: "🎬" }
+    ],
+    images: ["/images/EXAMPLE.jpg"],
+    fallback: "linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%)",
+    benefits: [
+      { title: "Standout Visuals", description: "Aerial footage makes listings and campaigns stand out in a crowded market.", icon: "📸" },
+      { title: "Faster Approvals", description: "Professional planning reduces reshoots and ensures compliance.", icon: "✅" }
+    ],
+    testimonials: [
+      { text: "SocialHawks produced outstanding video content that perfectly captured our brand story. The production quality and creative direction exceeded all our expectations.", author: "Michael Thompson", position: "Director of Marketing, Urban Spaces", rating: 5 }
+    ],
+    faq: [
+      { question: "Do you handle flight permissions?", answer: "Yes — we manage local permissions, no-fly checks, and site risk assessments as part of our service." },
+      { question: "What safety measures do you take?", answer: "All flights are planned, risk-assessed, and flown by certified pilots with spotters when required." }
+    ],
+    features: ["Licensed Pilots", "4K/6K Capture", "Flight Permissions", "Full Post-Production"],
+    cta: { title: "Elevate Your Visuals with Aerial Footage", description: "Book a drone shoot to add cinematic production value and unique perspectives to your project.", buttonText: "Book a Drone Shoot" }
+  },
+  'script-writing-storyboarding': {
+    id: 16,
+    title: "Script Writing & Storyboarding",
+    subtitle: "From Idea to Shot-Ready Scripts",
+    description: "We develop compelling scripts and detailed storyboards to ensure efficient, on-brand video production with clear creative direction.",
+    longDescription: "Our pre-production service pairs creative strategists and experienced writers to craft narratives that resonate with your audience. We produce polished scripts, scene-by-scene storyboards, shot lists, and production notes so shoots run on time and creatives deliver the intended impact.",
+    stats: [
+      { number: "500+", label: "Scripts Written" },
+      { number: "95%", label: "Production Ready" },
+      { number: "48h", label: "Draft Turnaround" },
+      { number: "200+", label: "Storyboards Created" }
+    ],
+    services: [
+      "Creative Concept Development",
+      "Scriptwriting (Short & Long Form)",
+      "Scene Breakdown & Shot Lists",
+      "Detailed Storyboards & Animatics",
+      "Dialogue & Voiceover Direction",
+      "Moodboards & Reference Frames",
+      "Production Scheduling Notes"
+    ],
+    process: [
+      { step: "Discovery & Brief", description: "Understand goals, tone, and target audience.", icon: "🧭" },
+      { step: "Concept & Treatment", description: "High-level narrative structure and creative treatment.", icon: "✍️" },
+      { step: "Script Drafting", description: "Iterative drafts with client feedback.", icon: "📄" },
+      { step: "Storyboards & Animatics", description: "Frame-by-frame visualization for efficient shooting.", icon: "🖼️" }
+    ],
+    images: ["/images/EXAMPLE.jpg"],
+    fallback: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+    benefits: [
+      { title: "Clear Creative Direction", description: "Reduces shoot time and creative ambiguity.", icon: "🎯" },
+      { title: "Cost Efficiency", description: "Well-planned productions save on reshoots and personnel time.", icon: "💡" }
+    ],
+    testimonials: [
+      { text: "The storyboard and script made our shoot run smoothly and saved time on set.", author: "Aisha Khan", position: "Producer", rating: 5 }
+    ],
+    faq: [
+      { question: "Can you create animatics?", answer: "Yes, we can produce animatics to preview timing and camera moves before the shoot." },
+      { question: "How many revisions are included?", answer: "We typically include two rounds of revisions with each package; additional rounds are available." }
+    ],
+    features: ["Concept Treatments", "Script Drafts", "Detailed Storyboards", "Animatics"],
+    cta: { title: "Plan Better, Shoot Faster", description: "Get production-ready scripts and storyboards that save time and improve creative outcomes.", buttonText: "Start Pre-Production" }
+  },
+  'merchandising': {
+    id: 4,
+    title: "Merchandising",
+    subtitle: "Custom Branded Merchandise",
+    description: "Extend your brand into the physical world with custom merchandise that creates lasting impressions and builds brand loyalty among your audience.",
+    longDescription: "Branded merchandise serves as powerful marketing tools that keep your brand visible and memorable. Our merchandising services cover everything from corporate apparel to promotional items, ensuring consistent brand representation across all physical products. We work with trusted suppliers to deliver high-quality merchandise that reflects your brand values and creates positive associations with your business.",
+    services: [
+      "Custom T-Shirts & Apparel",
+      "Corporate Caps & Headwear",
+      "Hi-Vis Vests & Safety Wear",
+      "Corporate Uniforms & Workwear",
+      "Promotional Freebies & Giveaways",
+      "Branded Accessories",
+      "Event Merchandise"
+    ],
+    process: [
+      {
+        step: "Product Selection",
+        description: "Choosing the right merchandise items based on your brand, budget, and target audience."
+      },
+      {
+        step: "Design Application",
+        description: "Adapting your brand elements for optimal application on various merchandise items."
+      },
+      {
+        step: "Sample & Approval",
+        description: "Creating samples for approval before proceeding with full production runs."
+      },
+      {
+        step: "Production & Delivery",
+        description: "Managing production timeline and quality control through to final delivery."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    features: [
+      "Custom Apparel & Accessories",
+      "Bulk Order Management",
+      "Quality Control & Supplier Vetting",
+      "Branding & Design Adaptation",
+      "Sustainable & Eco-Friendly Options",
+      "Fulfillment & Shipping Coordination"
+    ],
+    cta: {
+      title: "Create Custom Merchandise",
+      description: "Turn your brand into tangible items that people love to use and share.",
+      buttonText: "Design Merchandise"
+    }
+  },
+  'web-digital-development': {
+    id: 5,
+    title: "Web & Digital Development",
+    subtitle: "Complete Digital Solutions",
+    description: "Full-stack web development services from startup sites to enterprise e-commerce platforms, including hosting, domains, and comprehensive technical infrastructure.",
+    longDescription: "Our web and digital development services provide end-to-end solutions for your online presence. From initial planning and development to ongoing maintenance and optimization, we create digital experiences that drive business growth. Our technical expertise spans modern frameworks, security implementations, and performance optimization, ensuring your digital platforms are robust, scalable, and user-friendly.",
+    stats: [
+      { number: "150+", label: "Websites Built" },
+      { number: "99.9%", label: "Uptime Average" },
+      { number: "24/7", label: "Support Available" },
+      { number: "15+", label: "Technologies Mastered" }
+    ],
+    services: [
+      "Website Development (Startup, Business, E-commerce)",
+      "E-learning Platforms & Marketplaces",
+      "Domain Registration & Strategy",
+      "Web Hosting (Shared to Dedicated)",
+      "DNS Management & Configuration",
+      "Professional Business Email Setup",
+      "SSL/TLS Certificate Installation",
+      "Shopify Website Development"
+    ],
+    process: [
+      {
+        step: "Planning & Architecture",
+        description: "Defining project scope, technical requirements, and development roadmap.",
+        icon: "📋"
+      },
+      {
+        step: "Development & Testing",
+        description: "Building your platform with modern technologies and rigorous testing protocols.",
+        icon: "💻"
+      },
+      {
+        step: "Deployment & Launch",
+        description: "Deploying to production servers with proper security and performance configurations.",
+        icon: "🚀"
+      },
+      {
+        step: "Maintenance & Support",
+        description: "Ongoing maintenance, updates, and technical support for optimal performance.",
+        icon: "🔧"
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+    benefits: [
+      {
+        title: "Faster Time to Market",
+        description: "Launch your digital platform 40% faster with our streamlined development process",
+        icon: "⚡",
+      },
+      {
+        title: "Increased Conversions",
+        description: "Well-designed websites convert 200% more visitors into customers",
+        icon: "📈"
+      }
+    ],
+    testimonials: [
+      {
+        text: "SocialHawks delivered an exceptional e-commerce platform that exceeded our expectations. The site is fast, secure, and our sales have increased by 300% since launch.",
+        author: "Sarah Johnson",
+        position: "CEO, ShopTrend Online",
+        rating: 5
+      },
+      {
+        text: "Professional, responsive, and technically excellent. They built our web application on time and within budget. Highly recommended!",
+        author: "Michael Chen",
+        position: "CTO, DataFlow Systems",
+        rating: 5
+      }
+    ],
+    pricing: [
+      {
+        package: "Starter Website Package",
+        price: "$1,999",
+        duration: "2-3 weeks",
+        features: [
+          "5-Page Professional Website",
+          "Responsive Mobile Design",
+          "Basic SEO Setup",
+          "Contact Form Integration",
+          "1-Year Domain & Hosting",
+          "SSL Certificate",
+          "2 Rounds of Revisions"
+        ],
+        popular: false
+      },
+      {
+        package: "Business Website Package",
+        price: "$4,999",
+        duration: "4-6 weeks",
+        features: [
+          "10-15 Page Custom Website",
+          "Advanced Responsive Design",
+          "SEO Optimization",
+          "CMS Integration (WordPress/Custom)",
+          "Blog & News Section",
+          "Advanced Forms & Integrations",
+          "Analytics Setup",
+          "1-Year Hosting & Support",
+          "Unlimited Revisions"
+        ],
+        popular: true
+      },
+      {
+        package: "E-commerce Platform",
+        price: "$9,999",
+        duration: "6-8 weeks",
+        features: [
+          "Custom E-commerce Platform",
+          "Product Management System",
+          "Secure Payment Gateway Integration",
+          "Inventory Management",
+          "Order Tracking System",
+          "Customer Account Dashboard",
+          "Advanced SEO & Marketing Tools",
+          "Mobile App Integration Ready",
+          "Priority Support & Maintenance",
+          "All Source Files Included"
+        ],
+        popular: false
+      }
+    ],
+    industries: [
+      {
+        name: "E-commerce & Retail",
+        description: "Powerful online stores that drive sales and customer loyalty",
+        icon: "🛒"
+      },
+      {
+        name: "Technology & SaaS",
+        description: "Scalable platforms for tech companies and software services",
+        icon: "💻"
+      },
+      {
+        name: "Healthcare & Medical",
+        description: "Secure, HIPAA-compliant websites for healthcare providers",
+        icon: "🏥"
+      },
+      {
+        name: "Education & E-learning",
+        description: "Interactive learning platforms and educational websites",
+        icon: "🎓"
+      }
+    ],
+    caseStudies: [
+      {
+        title: "ShopTrend E-commerce Platform",
+        industry: "E-commerce",
+        challenge: "Needed scalable platform to handle 10,000+ products and high traffic",
+        solution: "Custom-built platform with advanced search, filters, and payment integration",
+        results: "300% increase in online sales, 50% faster page load times",
+        image: "/images/EXAMPLE.jpg"
+      },
+      {
+        title: "EduLearn Learning Platform",
+        industry: "Education",
+        challenge: "Required interactive platform for online courses and student management",
+        solution: "Full-featured LMS with video hosting, progress tracking, and certificates",
+        results: "5,000+ students enrolled in first 3 months, 95% satisfaction rate",
+        image: "/images/EXAMPLE.jpg"
+      }
+    ],
+    faq: [
+      {
+        question: "How long does website development take?",
+        answer: "Typically 2-8 weeks depending on complexity. Simple websites take 2-3 weeks, while complex e-commerce platforms may take 6-8 weeks."
+      },
+      {
+        question: "Do you provide hosting and domain services?",
+        answer: "Yes, we offer comprehensive hosting solutions and can register your domain or transfer existing domains."
+      },
+      {
+        question: "Can you redesign my existing website?",
+        answer: "Absolutely! We specialize in website redesigns and modernization while preserving your existing content and SEO rankings."
+      }
+    ],
+    features: [
+      "Modern Frameworks",
+      "Responsive Design",
+      "SEO Optimized",
+      "Security First",
+      "Scalable Solutions",
+      "Fast Performance",
+      "Cloud Hosting",
+      "24/7 Support"
+    ],
+    cta: {
+      title: "Build Your Digital Presence",
+      description: "Create a powerful online platform that drives business growth and user engagement.",
+      buttonText: "Start Development"
+    }
+  },
+  'mobile-app-development': {
+    id: 6,
+    title: "Mobile App Development",
+    subtitle: "Native & Cross-Platform Apps",
+    description: "Create powerful mobile applications for iOS, Android, and Windows with intuitive user experiences and robust functionality that engages users and drives business growth.",
+    longDescription: "Mobile applications are essential for modern business success. Our mobile app development services cover the complete lifecycle from concept to deployment and beyond. We specialize in both native and cross-platform development, ensuring optimal performance and user experience across all devices. Our apps are designed with scalability, security, and user engagement at the forefront.",
+    services: [
+      "iOS Native App Development",
+      "Android Native App Development",
+      "Windows App Development",
+      "Hybrid & Cross-Platform Apps",
+      "Mobile App Revamp & Modernization",
+      "App Store Optimization",
+      "Mobile App Maintenance"
+    ],
+    process: [
+      {
+        step: "Concept & Strategy",
+        description: "Defining app concept, target users, and technical approach for optimal market fit."
+      },
+      {
+        step: "Design & Prototyping",
+        description: "Creating intuitive user interfaces and interactive prototypes for validation."
+      },
+      {
+        step: "Development & Testing",
+        description: "Building robust applications with comprehensive testing across devices and platforms."
+      },
+      {
+        step: "Launch & Optimization",
+        description: "App store submission, launch support, and ongoing optimization based on user feedback."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    features: [
+      "Native & Cross-Platform Expertise",
+      "App Store Submission Support",
+      "UX/UI Design & Prototyping",
+      "Performance & Security Optimization",
+      "Analytics & Crash Reporting",
+      "Ongoing Maintenance Plans"
+    ],
+    cta: {
+      title: "Launch Your Mobile App",
+      description: "Transform your idea into a successful mobile application that users love.",
+      buttonText: "Start App Development"
+    }
+  },
+  'content-writing': {
+    id: 7,
+    title: "Content & Writing",
+    subtitle: "Strategic Content Creation",
+    description: "Comprehensive content services including copywriting, blog writing, SEO content, eBooks, and technical writing that drives engagement and conversions.",
+    longDescription: "Content is the foundation of effective digital marketing and business communication. Our content and writing services combine strategic thinking with exceptional writing skills to create content that not only engages your audience but also drives measurable business results. From website copy to comprehensive content strategies, we help you communicate your value proposition clearly and compellingly.",
+    services: [
+      "Website Copy & Content Writing",
+      "Strategic Blog Writing & Content Clusters",
+      "SEO-Optimized Web Content",
+      "Persuasive Copywriting & Sales Pages",
+      "Email Sequences & Marketing Copy",
+      "eBook Writing & Publishing",
+      "Technical Writing & Documentation"
+    ],
+    process: [
+      {
+        step: "Content Strategy",
+        description: "Developing comprehensive content strategies aligned with your business objectives."
+      },
+      {
+        step: "Research & Planning",
+        description: "Conducting thorough research and creating detailed content plans and calendars."
+      },
+      {
+        step: "Writing & Optimization",
+        description: "Creating high-quality, SEO-optimized content that resonates with your audience."
+      },
+      {
+        step: "Review & Publishing",
+        description: "Quality assurance, optimization, and strategic publishing across appropriate channels."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
+    features: [
+      "SEO Optimized",
+      "Audience-Focused",
+      "Brand Voice Consistency",
+      "Research-Backed",
+      "Performance Tracking"
+    ],
+    cta: {
+      title: "Transform Your Content Strategy",
+      description: "Create compelling content that engages your audience and drives business growth.",
+      buttonText: "Start Content Strategy"
+    }
+  },
+  'animation-services': {
+    id: 8,
+    title: "Animation Services",
+    subtitle: "Bringing Ideas to Life",
+    description: "Professional animation services including explainer videos, motion graphics, 3D visualization, and character animation with complete production support.",
+    longDescription: "Animation is a powerful medium for storytelling and explanation. Our animation services bring complex ideas to life through engaging visual narratives that capture attention and communicate effectively. From simple motion graphics to complex 3D animations, we create content that not only looks stunning but also serves your business objectives with clarity and impact.",
+    services: [
+      "Animated Explainer Videos (2D, 3D, Whiteboard)",
+      "Motion Graphics & Visual Effects",
+      "3D Product Animation & Visualization",
+      "Character Animation & Development",
+      "Voice-Over & Sound Design Integration",
+      "Full Animation Production Services",
+      "Platform-Optimized Video Delivery"
+    ],
+    process: [
+      {
+        step: "Concept & Scripting",
+        description: "Developing animation concepts and scripts that effectively communicate your message."
+      },
+      {
+        step: "Storyboarding & Design",
+        description: "Creating detailed storyboards and visual designs for animation sequences."
+      },
+      {
+        step: "Animation Production",
+        description: "Bringing designs to life through professional animation and motion graphics."
+      },
+      {
+        step: "Post-Production",
+        description: "Adding sound design, voice-over, and final optimization for target platforms."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)",
+    features: [
+      "Professional Production",
+      "Custom Animation",
+      "Voice-Over Integration",
+      "Multi-Platform Delivery",
+      "Engaging Storytelling"
+    ],
+    cta: {
+      title: "Animate Your Story",
+      description: "Create compelling animations that explain, engage, and convert your audience.",
+      buttonText: "Start Animation Project"
+    }
+  },
+  'video-photography': {
+    id: 9,
+    title: "Video & Photography",
+    subtitle: "Professional Visual Storytelling",
+    description: "Comprehensive video and photography services including commercial shoots, event coverage, product photography, and complete post-production excellence.",
+    longDescription: "Visual content is crucial for modern marketing and brand communication. Our video and photography services provide professional-grade content that tells your story compellingly and authentically. From commercial productions to event documentation, we capture moments and create content that resonates with your audience and supports your business objectives.",
+    services: [
+      "Commercial & Promotional Video Production",
+      "Event Videography & Coverage",
+      "Professional Product Photography",
+      "Corporate Headshots & Brand Photography",
+      "Testimonial & Case Study Videos",
+      "Video Editing & Color Grading",
+      "Full-Service Production Management",
+      "Drone Shoot",
+      "Script Writing & Storyboarding",
+      "YouTube Automation & Channel Optimization"
+    ],
+    process: [
+      {
+        step: "Pre-Production Planning",
+        description: "Detailed planning including concepts, locations, equipment, and production schedules."
+      },
+      {
+        step: "Production & Shooting",
+        description: "Professional shooting with high-end equipment and experienced production teams."
+      },
+      {
+        step: "Post-Production",
+        description: "Expert editing, color grading, and audio enhancement for polished final content."
+      },
+      {
+        step: "Delivery & Distribution",
+        description: "Optimized delivery in multiple formats for various platforms and uses."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+    features: [
+      "Professional Equipment",
+      "Experienced Team",
+      "Full-Service Production",
+      "Multi-Format Delivery",
+      "Quick Turnaround"
+    ],
+    cta: {
+      title: "Capture Your Story",
+      description: "Create professional video and photography content that showcases your brand.",
+      buttonText: "Book Production"
+    }
+  },
+  'digital-marketing-growth': {
+    id: 10,
+    title: "Digital Marketing & Growth",
+    subtitle: "Comprehensive Growth Strategies",
+    description: "Full-spectrum digital marketing including social media management, SEO, PPC, influencer partnerships, and performance analytics for measurable business growth.",
+    longDescription: "Digital marketing success requires a strategic, multi-channel approach backed by data and continuous optimization. Our digital marketing and growth services encompass the complete spectrum of online marketing, from social media management to performance advertising. We focus on driving measurable results that contribute directly to your business growth and revenue objectives.",
+    stats: [
+      { number: "250+", label: "Campaigns Launched" },
+      { number: "€10M+", label: "Ad Spend Managed" },
+      { number: "5.2x", label: "Average ROI" },
+      { number: "100+", label: "Brands Grown" }
+    ],
+    services: [
+      "Strategic Social Media Management",
+      "Paid Social Advertising (Meta, TikTok, LinkedIn)",
+      "SEO (Search Engine Optimization)",
+      "Search Engine Marketing & PPC",
+      "Performance Marketing",
+      "Influencer & Creator Partnerships",
+      "Conversion Rate Optimization",
+      "Analytics & Performance Reporting"
+    ],
+    process: [
+      {
+        step: "Strategy Development",
+        description: "Creating comprehensive digital marketing strategies based on business objectives and market analysis.",
+        icon: "🎯"
+      },
+      {
+        step: "Campaign Implementation",
+        description: "Executing multi-channel campaigns with precision targeting and optimization.",
+        icon: "🚀"
+      },
+      {
+        step: "Performance Monitoring",
+        description: "Continuous monitoring and real-time optimization based on performance data.",
+        icon: "📊"
+      },
+      {
+        step: "Reporting & Scaling",
+        description: "Detailed reporting and strategic scaling of successful campaigns for maximum ROI.",
+        icon: "📈"
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)",
+    benefits: [
+      {
+        title: "Explosive Growth",
+        description: "Our clients experience 300% average increase in qualified leads within 6 months",
+        icon: "🚀",
+      },
+      {
+        title: "Proven ROI",
+        description: "Average 5.2x return on ad spend across all campaigns",
+        icon: "💰"
+      }
+    ],
+    testimonials: [
+      {
+        text: "SocialHawks transformed our digital marketing completely. Within 3 months, our online sales tripled and our cost per acquisition dropped by 40%. Best investment we've made.",
+        author: "Robert Anderson",
+        position: "CMO, FitLife Supplements",
+        rating: 5
+      },
+      {
+        text: "Their strategic approach to social media and paid advertising delivered outstanding results. We've seen consistent growth month over month. Highly professional team!",
+        author: "Lisa Thompson",
+        position: "Marketing Director, Urban Fashion Co.",
+        rating: 5
+      }
+    ],
+    pricing: [
+      {
+        package: "Starter Growth Package",
+        price: "$2,499/mo",
+        duration: "3-month minimum",
+        features: [
+          "Social Media Management (2 platforms)",
+          "Content Creation (12 posts/month)",
+          "Basic Ad Campaign Management",
+          "Monthly Analytics Report",
+          "Email Marketing Setup",
+          "€2,000 Ad Spend Management",
+          "Dedicated Account Manager"
+        ],
+        popular: false
+      },
+      {
+        package: "Business Growth Package",
+        price: "$4,999/mo",
+        duration: "3-month minimum",
+        features: [
+          "Multi-Platform Social Management",
+          "Content Creation (24 posts/month)",
+          "Advanced Ad Campaigns (Meta, Google)",
+          "SEO Optimization & Link Building",
+          "Landing Page Optimization",
+          "Weekly Performance Reports",
+          "€5,000+ Ad Spend Management",
+          "Strategy Consultation",
+          "Priority Support"
+        ],
+        popular: true
+      },
+      {
+        package: "Enterprise Growth Package",
+        price: "$9,999/mo",
+        duration: "6-month minimum",
+        features: [
+          "Full-Spectrum Digital Marketing",
+          "Premium Content Production",
+          "Multi-Channel Ad Campaigns",
+          "Advanced SEO & Technical Optimization",
+          "Conversion Rate Optimization",
+          "Influencer Partnership Management",
+          "Custom Dashboard & Reporting",
+          "€15,000+ Ad Spend Management",
+          "Dedicated Growth Team",
+          "24/7 Priority Support"
+        ],
+        popular: false
+      }
+    ],
+    industries: [
+      {
+        name: "E-commerce & Retail",
+        description: "Drive online sales and customer acquisition with targeted campaigns",
+        icon: "🛒"
+      },
+      {
+        name: "Health & Wellness",
+        description: "Build trust and grow your audience in competitive wellness markets",
+        icon: "🏋️"
+      },
+      {
+        name: "B2B Services",
+        description: "Generate qualified leads and establish thought leadership",
+        icon: "💼"
+      },
+      {
+        name: "Technology & SaaS",
+        description: "Scale user acquisition and optimize conversion funnels",
+        icon: "💻"
+      }
+    ],
+    caseStudies: [
+      {
+        title: "FitLife 300% Sales Growth",
+        industry: "Health & Wellness",
+        challenge: "Struggling to break through in competitive supplement market",
+        solution: "Multi-channel strategy combining influencer partnerships, paid ads, and content marketing",
+        results: "300% increase in online sales, 5.8x ROAS, 50,000+ new customers",
+        image: "/images/EXAMPLE.jpg"
+      },
+      {
+        title: "Urban Fashion Market Expansion",
+        industry: "E-commerce",
+        challenge: "Needed to expand into new markets and demographics",
+        solution: "Targeted social campaigns with UGC content and strategic influencer collaborations",
+        results: "Expanded to 3 new markets, 250% increase in brand awareness, 4.2x ROI",
+        image: "/images/EXAMPLE.jpg"
+      }
+    ],
+    faq: [
+      {
+        question: "How quickly can I expect to see results?",
+        answer: "Most clients see initial improvements within 30-45 days, with significant growth typically evident by month 3. Digital marketing is an ongoing process that compounds over time."
+      },
+      {
+        question: "What's included in the ad spend management?",
+        answer: "We handle complete campaign setup, audience targeting, creative testing, budget allocation, and continuous optimization to maximize your return on ad spend."
+      },
+      {
+        question: "Can you work with my existing marketing team?",
+        answer: "Absolutely! We collaborate seamlessly with in-house teams, complementing your existing efforts and filling capability gaps as needed."
+      }
+    ],
+    features: [
+      "Multi-Channel Approach",
+      "Data-Driven Decisions",
+      "ROI Focused",
+      "Real-Time Optimization",
+      "Transparent Reporting",
+      "Expert Team",
+      "Proven Strategies",
+      "Scalable Growth"
+    ],
+    cta: {
+      title: "Accelerate Your Growth",
+      description: "Drive measurable business growth with strategic digital marketing campaigns.",
+      buttonText: "Start Growing Today"
+    }
+  },
+  'performance-maintenance': {
+    id: 11,
+    title: "Performance & Maintenance",
+    subtitle: "Ongoing Digital Optimization",
+    description: "Comprehensive maintenance services including performance optimization, security updates, and proactive monitoring to keep your digital assets running smoothly.",
+    longDescription: "Digital platforms require ongoing care and optimization to maintain peak performance and security. Our performance and maintenance services ensure your website and digital assets continue to deliver exceptional user experiences while staying secure and up-to-date. We provide proactive monitoring and optimization that prevents issues before they impact your business.",
+    services: [
+      "Website Maintenance & Support",
+      "Performance Optimization & Speed Enhancement",
+      "Proactive Updates Management",
+      "Broken Link & Functionality Monitoring",
+      "Uptime Monitoring & Alerts",
+      "Automated Backups & Disaster Recovery",
+      "Monthly Performance & Health Reports"
+    ],
+    process: [
+      {
+        step: "Initial Assessment",
+        description: "Comprehensive audit of current performance, security, and maintenance needs."
+      },
+      {
+        step: "Optimization Implementation",
+        description: "Implementing performance improvements and establishing monitoring systems."
+      },
+      {
+        step: "Ongoing Monitoring",
+        description: "Continuous monitoring with proactive issue identification and resolution."
+      },
+      {
+        step: "Regular Reporting",
+        description: "Monthly reports with performance metrics and recommended improvements."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #a8caba 0%, #5d4e75 100%)",
+    features: [
+      "Proactive Monitoring",
+      "Performance Optimization",
+      "Security Updates",
+      "Automated Backups",
+      "24/7 Support"
+    ],
+    cta: {
+      title: "Optimize Your Digital Performance",
+      description: "Ensure your digital platforms perform optimally with ongoing maintenance and optimization.",
+      buttonText: "Start Maintenance Plan"
+    }
+  },
+  'cybersecurity-protection': {
+    id: 12,
+    title: "Cybersecurity & Protection",
+    subtitle: "Comprehensive Digital Security",
+    description: "Advanced security solutions including WAF management, malware protection, vulnerability monitoring, and comprehensive disaster recovery planning.",
+    longDescription: "Cybersecurity is essential for protecting your digital assets and maintaining customer trust. Our cybersecurity and protection services provide comprehensive security solutions that protect against threats while ensuring business continuity. We implement multiple layers of security and maintain proactive monitoring to identify and address potential vulnerabilities before they become problems.",
+    services: [
+      "Managed Web Application Firewall (WAF)",
+      "Malware Scanning & Removal",
+      "Vulnerability Monitoring & Patching",
+      "Secure Backup & Disaster Recovery",
+      "Security Audits & Assessment",
+      "Threat Monitoring & Response",
+      "Compliance & Security Consulting"
+    ],
+    process: [
+      {
+        step: "Security Assessment",
+        description: "Comprehensive security audit to identify vulnerabilities and risk areas."
+      },
+      {
+        step: "Protection Implementation",
+        description: "Deploying security measures and establishing monitoring systems."
+      },
+      {
+        step: "Continuous Monitoring",
+        description: "24/7 monitoring for threats and proactive response to security incidents."
+      },
+      {
+        step: "Regular Updates",
+        description: "Ongoing security updates and quarterly security assessments."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #ff8a80 0%, #ff5722 100%)",
+    features: [
+      "Multi-Layer Protection",
+      "24/7 Monitoring",
+      "Rapid Response",
+      "Compliance Ready",
+      "Regular Audits"
+    ],
+    cta: {
+      title: "Secure Your Digital Assets",
+      description: "Protect your business with comprehensive cybersecurity solutions and monitoring.",
+      buttonText: "Enhance Security"
+    }
+  },
+  'strategy-consulting': {
+    id: 13,
+    title: "Strategy & Consulting",
+    subtitle: "Strategic Business Growth",
+    description: "Strategic business consulting including market research, content strategy, digital transformation, and advisory services for sustainable business growth.",
+    longDescription: "Strategic planning and expert consultation are essential for sustainable business growth. Our strategy and consulting services provide insights, planning, and guidance that help businesses navigate complex challenges and capitalize on growth opportunities. We combine market research, strategic analysis, and practical experience to deliver actionable recommendations that drive results.",
+    services: [
+      "Business Strategy & Market Research",
+      "Digital Transformation Consulting",
+      "Content Strategy & Editorial Planning",
+      "Full-Funnel Campaign Planning",
+      "Competitive Analysis & Positioning",
+      "Growth Strategy Development",
+      "Advisory & Ongoing Consultation"
+    ],
+    process: [
+      {
+        step: "Discovery & Analysis",
+        description: "Comprehensive analysis of your business, market position, and growth opportunities."
+      },
+      {
+        step: "Strategy Development",
+        description: "Creating detailed strategic plans with clear objectives and actionable steps."
+      },
+      {
+        step: "Implementation Planning",
+        description: "Developing implementation roadmaps with timelines and resource requirements."
+      },
+      {
+        step: "Ongoing Support",
+        description: "Regular consultation and strategy refinement based on market changes and results."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #b39ddb 0%, #9c27b0 100%)",
+    features: [
+      "Data-Driven Insights",
+      "Strategic Planning",
+      "Market Research",
+      "Implementation Support",
+      "Ongoing Consultation"
+    ],
+    cta: {
+      title: "Accelerate Strategic Growth",
+      description: "Develop and execute strategic plans that drive sustainable business growth.",
+      buttonText: "Schedule Consultation"
+    }
+  },
+  'platform-management': {
+    id: 14,
+    title: "Platform Management",
+    subtitle: "Multi-Channel Digital Management",
+    description: "Expert management of digital platforms including social media channels, advertising platforms, and comprehensive multi-channel campaign optimization.",
+    longDescription: "Managing multiple digital platforms effectively requires expertise, time, and strategic coordination. Our platform management services ensure your presence across all digital channels is optimized, consistent, and driving results. We handle the complexity of multi-platform management while you focus on your core business activities.",
+    services: [
+      "Social Media Platform Management",
+      "Google Ads & Microsoft Advertising Management",
+      "Meta Ads & LinkedIn Ads Optimization",
+      "Multi-Channel Campaign Coordination",
+      "Platform-Specific Content Optimization",
+      "Cross-Platform Analytics & Reporting",
+      "Platform Policy & Compliance Management"
+    ],
+    process: [
+      {
+        step: "Platform Audit",
+        description: "Comprehensive review of current platform performance and optimization opportunities."
+      },
+      {
+        step: "Management Setup",
+        description: "Establishing management protocols and optimization frameworks across platforms."
+      },
+      {
+        step: "Active Management",
+        description: "Daily management, optimization, and coordination across all platforms."
+      },
+      {
+        step: "Performance Optimization",
+        description: "Continuous optimization based on platform-specific best practices and performance data."
+      }
+    ],
+    images: [
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg",
+      "/images/EXAMPLE.jpg"
+    ],
+    fallback: "linear-gradient(135deg, #81c784 0%, #4caf50 100%)",
+    features: [
+      "Multi-Platform Expertise",
+      "Consistent Management",
+      "Performance Optimization",
+      "Policy Compliance",
+      "Unified Reporting"
+    ],
+    cta: {
+      title: "Optimize Platform Performance",
+      description: "Maximize your results across all digital platforms with expert management.",
+      buttonText: "Start Platform Management"
+    }
+  }
+};
+
+export default serviceDetails;

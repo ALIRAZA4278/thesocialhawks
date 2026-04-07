@@ -219,7 +219,7 @@ const Hero = () => {
                       {!imageErrors[`team-${member.id}`] ? (
                         <Image
                           src={member.image}
-                          alt={member.name}
+                          alt={`${member.name} - SocialHawks team member`}
                           fill
                           className="object-cover"
                           onError={() => handleImageError(`team-${member.id}`)}

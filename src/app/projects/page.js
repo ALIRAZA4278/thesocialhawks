@@ -303,7 +303,7 @@ const ProjectsPage = () => {
                     <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary/5 to-primary/10">
                       <motion.img
                         src={project.images[0]}
-                        alt={project.title}
+                        alt={project.imageAlts?.[0] || project.title}
                         className="w-full h-full object-cover transition-all duration-700"
                         whileHover={{ scale: 1.08 }}
                       />
@@ -344,7 +344,7 @@ const ProjectsPage = () => {
                           <div className="w-6 h-6 bg-white rounded-full p-1">
                             <Image 
                               src={project.clientLogo} 
-                              alt={project.client}
+                              alt={`${project.client} logo`}
                               width={20}
                               height={20}
                               className="w-full h-full object-contain"

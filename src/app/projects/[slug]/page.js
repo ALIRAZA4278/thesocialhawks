@@ -133,7 +133,7 @@ const ProjectDetailPage = ({ params }) => {
           ) : (
             <Image
               src={allMedia[0]?.src || '/images/projects/default.jpg'}
-              alt={project.title}
+              alt={project.imageAlts?.[0] || project.title}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               priority
@@ -164,7 +164,7 @@ const ProjectDetailPage = ({ params }) => {
           >
             <Image
               src={project.clientLogo}
-              alt={project.client}
+              alt={`${project.client} logo`}
               width={60}
               height={60}
               className="bg- rounded-full"
@@ -351,7 +351,7 @@ const ProjectDetailPage = ({ params }) => {
                 ) : (
                   <Image
                     src={media.src}
-                    alt={`${project.title} - Image ${index + 1}`}
+                    alt={project.imageAlts?.[index] || `${project.title} - Image ${index + 1}`}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -867,7 +867,7 @@ const ProjectDetailPage = ({ params }) => {
                         {otherProject.images && otherProject.images.length > 0 ? (
                           <Image
                             src={otherProject.images[0]}
-                            alt={otherProject.title}
+                            alt={otherProject.imageAlts?.[0] || otherProject.title}
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
@@ -1075,7 +1075,7 @@ const ProjectDetailPage = ({ params }) => {
                 ) : (
                   <Image
                     src={allMedia[currentImageIndex]?.src || '/images/projects/default.jpg'}
-                    alt={`${project.title} - Media ${currentImageIndex + 1}`}
+                    alt={project.imageAlts?.[currentImageIndex] || `${project.title} - Media ${currentImageIndex + 1}`}
                     width={1200}
                     height={800}
                     className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"

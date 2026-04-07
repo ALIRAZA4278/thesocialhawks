@@ -85,7 +85,7 @@ const Navbar = () => {
               >
                 <Image
                   src="/images/logo.png"
-                  alt="Socialhawks Logo"
+                  alt="The SocialHawks Creative Agency logo with purple hawk icon"
                   width={150}
                   height={80}
                   className="h-15 sm:h-18 lg:h-20 w-auto object-contain"

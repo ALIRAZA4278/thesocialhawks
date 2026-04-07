@@ -54,6 +54,7 @@ const Projects = () => {
       title: p.title,
       description: p.shortDescription,
       image: p.images && p.images.length ? p.images[0] : '/images/EXAMPLE.jpg',
+      imageAlt: p.imageAlts?.[0] || p.title,
       fallback: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       backgroundColor: '#f8fafc',
   stats: { revenue: p.results && p.results[0] ? p.results[0].value : '' },
@@ -234,7 +235,7 @@ const Projects = () => {
                     >
                       <Image
                         src={card.image}
-                        alt={card.title}
+                        alt={card.imageAlt}
                         width={80}
                         height={80}
                         className="w-full h-full object-cover"
@@ -372,7 +373,7 @@ const Projects = () => {
                   <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                     <Image
                       src={card.image}
-                      alt={card.title}
+                      alt={card.imageAlt}
                       width={64}
                       height={64}
                       className="w-full h-full object-cover"
