@@ -9,6 +9,23 @@ export const metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Brand Identity & Design",
+  "name": "Brand Identity & Design",
+  "description": "Professional logo design and brand identity development for businesses in Pakistan. We create memorable brand identities with custom logos, colour palettes, typography systems, and strategic brand guidelines that build recognition and trust.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "areaServed": { "@type": "Country", "name": "Pakistan" },
+  "url": "https://thesocialhawks.com/services/brand-identity-design",
+  "offers": { "@type": "Offer", "priceCurrency": "PKR", "availability": "https://schema.org/InStock" }
+};
+
 export default function Page() {
-  return <ServiceDetailPage slugOverride="brand-identity-design" />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <ServiceDetailPage slugOverride="brand-identity-design" />
+    </>
+  );
 }

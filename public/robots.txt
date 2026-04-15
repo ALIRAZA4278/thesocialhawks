@@ -1,32 +1,89 @@
-# robots.txt for The Social Hawks � https://thesocialhawks.com/
-# Allow major search engines and AI services to crawl public content and helpful resources
+# robots.txt for thesocialhawks.com
+# Last updated: April 2025
 
-User-agent: *
-# Allow the entire site by default
-Allow: /
-
-# Disallow unnecessary or sensitive areas
-Disallow: /wp-admin/
-Disallow: /wp-login.php
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /private/
-Disallow: /*?replytocom
-Disallow: /*/print/
-Disallow: /?s=*
-Disallow: /search/
-Disallow: /?utm_*
-
-# Sitemap location(s)
-Sitemap: https://thesocialhawks.com/sitemap.xml
-
-# Crawl-delay directive (optional, for less aggressive bots)
-Crawl-delay: 10
-
-# Specific bots / AI services (optional)
+# -------------------------------------------------------
+# STANDARD SEARCH ENGINE BOTS — full access
+# -------------------------------------------------------
 User-agent: Googlebot
 Allow: /
+
 User-agent: Bingbot
 Allow: /
 
-# End of file
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# -------------------------------------------------------
+# AI SEARCH & CITATION BOTS — allow citation & indexing
+# These bots must NOT be blocked or they cannot cite you
+# in ChatGPT, Perplexity, Claude, Gemini, and Copilot.
+# -------------------------------------------------------
+
+# OpenAI — ChatGPT search & browsing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google — Gemini & AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft — Copilot (via Bing)
+User-agent: Bingbot
+Allow: /
+
+# Meta — AI products
+User-agent: meta-externalagent
+Allow: /
+
+# Apple — Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# -------------------------------------------------------
+# AI TRAINING-ONLY CRAWLERS — blocked (no citation benefit)
+# These bots scrape for model training but do NOT power
+# search or citation features. Safe to block.
+# -------------------------------------------------------
+
+# Common Crawl — used to train many open LLMs
+User-agent: CCBot
+Disallow: /
+
+# Cohere AI training
+User-agent: cohere-ai
+Disallow: /
+
+# -------------------------------------------------------
+# GENERAL RULES
+# -------------------------------------------------------
+
+# Block admin and private paths from all bots
+User-agent: *
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /private/
+Disallow: /*.json$
+Allow: /
+
+# -------------------------------------------------------
+# SITEMAPS
+# -------------------------------------------------------
+Sitemap: https://thesocialhawks.com/sitemap.xml

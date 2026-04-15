@@ -58,6 +58,70 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-CMEN3XHTKG');
           `}
         </Script>
+
+        {/* Block 1 — Organization Schema (all pages) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "The Social Hawks",
+            "alternateName": "SocialHawks",
+            "url": "https://thesocialhawks.com",
+            "logo": "https://thesocialhawks.com/images/logo.png",
+            "description": "The Social Hawks is a full-service digital marketing agency based in Karachi, Pakistan, serving 80+ brands across branding, social media marketing, SEO, web development, content production, paid advertising, video, photography, and creative services.",
+            "foundingLocation": { "@type": "Place", "name": "Karachi, Pakistan" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Suite 404, Amir Trade Center, Shahrah-e-Quaideen, PECHS Bl-2",
+              "addressLocality": "Karachi",
+              "addressRegion": "Sindh",
+              "postalCode": "75100",
+              "addressCountry": "PK"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+92-310-4999701",
+              "email": "info@thesocialhawks.com",
+              "contactType": "customer service",
+              "availableLanguage": ["English", "Urdu"],
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                "opens": "09:00",
+                "closes": "22:00"
+              }
+            },
+            "sameAs": [
+              "https://www.instagram.com/socialhawks",
+              "https://www.linkedin.com/company/socialhawks",
+              "https://www.youtube.com/@thesocialhawks"
+            ],
+            "areaServed": [
+              { "@type": "City", "name": "Karachi" },
+              { "@type": "Country", "name": "Pakistan" }
+            ],
+            "knowsAbout": [
+              "Digital Marketing", "Social Media Marketing", "Search Engine Optimization",
+              "Brand Identity Design", "Content Marketing", "Paid Advertising",
+              "Web Development", "E-commerce Marketing", "Video Production", "Photography"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Digital Marketing Services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity & Design" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Digital Marketing" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web & App Development" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content & Writing" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Video & Photography" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paid Advertising" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Animation Services" } }
+              ]
+            }
+          }) }}
+        />
       </head>
       <body
         className="antialiased"

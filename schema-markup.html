@@ -1,0 +1,651 @@
+<!--
+=============================================================
+  THE SOCIAL HAWKS — SCHEMA MARKUP
+  JSON-LD structured data for AI SEO & Google rich results
+  Last updated: April 2025
+
+  INSTALLATION INSTRUCTIONS
+  ─────────────────────────
+  Each <script> block below is labelled with WHERE to place it.
+  Paste each block inside the <head> tag of the relevant page,
+  just before </head>. Do not modify the @context or @type values.
+  Customise any placeholder values marked with [BRACKETS].
+=============================================================
+-->
+
+
+<!-- =========================================================
+  BLOCK 1 — ORGANIZATION SCHEMA
+  Place on: EVERY page (homepage is most important)
+  Purpose:  Tells AI systems who The Social Hawks is —
+            entity recognition, knowledge graph inclusion,
+            and brand citation accuracy.
+  ========================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "The Social Hawks",
+  "alternateName": "SocialHawks",
+  "url": "https://thesocialhawks.com",
+  "logo": "https://thesocialhawks.com/images/logo.png",
+  "description": "The Social Hawks is a full-service digital marketing agency based in Karachi, Pakistan, serving 80+ brands across branding, social media marketing, SEO, web development, content production, paid advertising, video, photography, and creative services.",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Karachi, Pakistan"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Suite 404, Amir Trade Center, Shahrah-e-Quaideen, PECHS Bl-2",
+    "addressLocality": "Karachi",
+    "addressRegion": "Sindh",
+    "postalCode": "75100",
+    "addressCountry": "PK"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+92-310-4999701",
+    "email": "info@thesocialhawks.com",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Urdu"],
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "22:00"
+    }
+  },
+  "sameAs": [
+    "https://www.instagram.com/socialhawks",
+    "https://www.linkedin.com/company/socialhawks",
+    "https://www.youtube.com/@thesocialhawks"
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Karachi"
+    },
+    {
+      "@type": "Country",
+      "name": "Pakistan"
+    }
+  ],
+  "knowsAbout": [
+    "Digital Marketing",
+    "Social Media Marketing",
+    "Search Engine Optimization",
+    "Brand Identity Design",
+    "Content Marketing",
+    "Paid Advertising",
+    "Web Development",
+    "E-commerce Marketing",
+    "Video Production",
+    "Photography"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Marketing Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity & Design" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Digital Marketing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web & App Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content & Writing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Video & Photography" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paid Advertising" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Animation Services" } }
+    ]
+  }
+}
+</script>
+
+
+<!-- =========================================================
+  BLOCK 2 — LOCAL BUSINESS SCHEMA
+  Place on: Homepage only
+  Purpose:  Powers Google local search, maps, and AI answers
+            for "digital marketing agency near me" and
+            "digital marketing agency Karachi" queries.
+  ========================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Social Hawks",
+  "image": "https://thesocialhawks.com/images/logo.png",
+  "url": "https://thesocialhawks.com",
+  "telephone": "+92-310-4999701",
+  "email": "info@thesocialhawks.com",
+  "priceRange": "PKR",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Suite 404, Amir Trade Center, Shahrah-e-Quaideen, PECHS Bl-2",
+    "addressLocality": "Karachi",
+    "addressRegion": "Sindh",
+    "postalCode": "75100",
+    "addressCountry": "PK"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 24.8735,
+    "longitude": 67.0574
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "22:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/socialhawks",
+    "https://www.linkedin.com/company/socialhawks",
+    "https://www.youtube.com/@thesocialhawks"
+  ]
+}
+</script>
+
+
+<!-- =========================================================
+  BLOCK 3 — SERVICE SCHEMAS (all 14 services)
+  Place on: Each individual service page
+  The correct block for each page is labelled below.
+  Copy only the relevant block to each page's <head>.
+  ========================================================= -->
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  3a. Brand Identity & Design
+  Page: /services/brand-identity-design
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Brand Identity & Design",
+  "name": "Brand Identity & Design",
+  "description": "Professional logo design and brand identity development for businesses in Pakistan. We create memorable brand identities with custom logos, colour palettes, typography systems, and strategic brand guidelines that build recognition and trust.",
+  "provider": {
+    "@type": "Organization",
+    "name": "The Social Hawks",
+    "url": "https://thesocialhawks.com"
+  },
+  "areaServed": { "@type": "Country", "name": "Pakistan" },
+  "url": "https://thesocialhawks.com/services/brand-identity-design",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "PKR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  3b. Social Media / Platform Management
+  Page: /services/platform-management
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Social Media Marketing",
+  "name": "Social Media Marketing & Platform Management",
+  "description": "Expert social media management for brands in Karachi and Pakistan. Services include content strategy, content calendars, creative production, community management, paid advertising on Facebook and Instagram, and multi-channel campaign optimisation.",
+  "provider": {
+    "@type": "Organization",
+    "name": "The Social Hawks",
+    "url": "https://thesocialhawks.com"
+  },
+  "areaServed": { "@type": "Country", "name": "Pakistan" },
+  "url": "https://thesocialhawks.com/services/platform-management",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "PKR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  3c. Digital Marketing & Growth (SEO)
+  Page: /services/digital-marketing-growth
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Search Engine Optimization",
+  "name": "Digital Marketing & SEO",
+  "description": "Full-service SEO and digital marketing for Pakistani businesses. We deliver on-page SEO, off-page link building, technical SEO audits, local SEO for Karachi and Pakistan, Google Ads management, and performance tracking to increase organic visibility and drive measurable growth.",
+  "provider": {
+    "@type": "Organization",
+    "name": "The Social Hawks",
+    "url": "https://thesocialhawks.com"
+  },
+  "areaServed": { "@type": "Country", "name": "Pakistan" },
+  "url": "https://thesocialhawks.com/services/digital-marketing-growth",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "PKR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  3d. Web & Digital Development
+  Page: /services/web-digital-development
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Web Development",
+  "name": "Web & Digital Development",
+  "description": "Professional website and e-commerce development for businesses in Pakistan. We build fast, scalable, mobile-friendly websites using WordPress and custom solutions, plus full backend development and e-commerce platforms for online stores.",
+  "provider": {
+    "@type": "Organization",
+    "name": "The Social Hawks",
+    "url": "https://thesocialhawks.com"
+  },
+  "areaServed": { "@type": "Country", "name": "Pakistan" },
+  "url": "https://thesocialhawks.com/services/web-digital-development",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "PKR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  3e. Content & Writing
+  Page: /services/content-writing
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Content Marketing",
+  "name": "Content & Writing",
+  "description": "SEO-optimised content writing and copywriting services for Pakistani brands. We produce blog articles, website copy, product descriptions, social media captions, and brand messaging that converts visitors into customers and builds long-term authority.",
+  "provider": {
+    "@type": "Organization",
+    "name": "The Social Hawks",
+    "url": "https://thesocialhawks.com"
+  },
+  "areaServed": { "@type": "Country", "name": "Pakistan" },
+  "url": "https://thesocialhawks.com/services/content-writing",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "PKR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  3f. Video & Photography
+  Page: /services/video-photography
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Video Production",
+  "name": "Video & Photography",
+  "description": "Professional commercial photography and videography in Karachi. Services include food photography, product photography, brand shoot direction, Reels production, event coverage, and full post-production including editing and colour grading.",
+  "provider": {
+    "@type": "Organization",
+    "name": "The Social Hawks",
+    "url": "https://thesocialhawks.com"
+  },
+  "areaServed": { "@type": "City", "name": "Karachi" },
+  "url": "https://thesocialhawks.com/services/video-photography",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "PKR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  3g–3n. Remaining services (condensed — same pattern)
+  Copy to the relevant page, updating name, description, and url.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Graphic Design",
+  "name": "Graphic Design",
+  "description": "Creative graphic design services for social media, advertising, and digital campaigns. We produce scroll-stopping ad creatives, infographics, UI/UX design, and brand visuals for Pakistani businesses.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "url": "https://thesocialhawks.com/services/graphic-design"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Animation",
+  "name": "Animation Services",
+  "description": "Animated explainer videos, motion graphics, 3D visualisation, and character animation. Full production services for brands that want to communicate complex ideas through engaging visual storytelling.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "url": "https://thesocialhawks.com/services/animation-services"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Mobile App Development",
+  "name": "Mobile App Development",
+  "description": "Custom iOS, Android, and cross-platform mobile app development using React Native, Flutter, and Swift. We build seamless, user-friendly apps for businesses across Pakistan.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "url": "https://thesocialhawks.com/services/mobile-app-development"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Strategy & Consulting",
+  "name": "Strategy & Consulting",
+  "description": "Digital marketing strategy and business consulting for brands in Pakistan. Services include market research, digital transformation advisory, content strategy planning, and competitive analysis.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "url": "https://thesocialhawks.com/services/strategy-consulting"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Print Design",
+  "name": "Print & Stationery",
+  "description": "Professional print design services including business cards, brochures, flyers, menus, packaging, and branded stationery. Consistent brand identity across all physical touchpoints.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "url": "https://thesocialhawks.com/services/print-stationery"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Merchandising",
+  "name": "Merchandising",
+  "description": "Custom branded merchandise including corporate uniforms, branded apparel, and promotional items that extend your brand into the physical world.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "url": "https://thesocialhawks.com/services/merchandising"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Cybersecurity",
+  "name": "Cybersecurity & Protection",
+  "description": "Comprehensive digital security services including WAF management, malware protection, vulnerability monitoring, and disaster recovery planning for Pakistani businesses.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "url": "https://thesocialhawks.com/services/cybersecurity-protection"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Website Maintenance",
+  "name": "Performance & Maintenance",
+  "description": "Ongoing website maintenance, performance optimisation, security updates, uptime monitoring, and proactive support to keep your digital assets running at peak performance.",
+  "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+  "url": "https://thesocialhawks.com/services/performance-maintenance"
+}
+</script>
+
+
+<!-- =========================================================
+  BLOCK 4 — HOMEPAGE FAQ SCHEMA
+  Place on: Homepage (index page)
+  Purpose:  Powers "People also ask" boxes and AI extracted
+            Q&A answers for brand-level queries.
+  Add FAQs for any additional questions relevant to your brand.
+  ========================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is The Social Hawks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Social Hawks is a full-service digital marketing agency based in Karachi, Pakistan. We work with 80+ consumer brands across branding, social media marketing, SEO, web development, content production, paid advertising, video, and photography. Our clients include food and beverage brands, e-commerce stores, apparel brands, educational institutions, and healthcare providers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is The Social Hawks located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Social Hawks is located at Suite 404, Amir Trade Center, Shahrah-e-Quaideen, PECHS Bl-2, Karachi, Sindh, Pakistan 75100. We are open Monday to Saturday, 9:00am to 10:00pm PKT. We work with brands across Pakistan and internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What services does The Social Hawks offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Social Hawks offers 14 services: Brand Identity and Design, Graphic Design, Social Media Marketing and Platform Management, Digital Marketing and SEO, Content and Writing, Video and Photography, Animation Services, Web and Digital Development, Mobile App Development, Print and Stationery, Merchandising, Cybersecurity and Protection, Performance and Maintenance, and Strategy and Consulting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many brands has The Social Hawks worked with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Social Hawks has worked with over 80 brands since founding. Notable clients include BrickLane Pizza, Dr Herbs, HIRM (Institute of Rehabilitation Medicine), The Cactus, Zaafar Fragrance, Emergym, Ucaaz, Flex Vape, and The Knotty Needles, across sectors including food, e-commerce, education, apparel, fitness, and BPO."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a quote from The Social Hawks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can request a free brand analysis and consultation from The Social Hawks at thesocialhawks.com/social-review, by emailing info@thesocialhawks.com, or by calling +92 310-4999 701. The team responds within one business day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does The Social Hawks work with small businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Social Hawks works with brands at all stages — from early-stage startups building their first identity to established brands scaling their marketing. The agency is particularly experienced with consumer-facing small and mid-sized businesses in food, retail, e-commerce, and health sectors in Pakistan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is The Social Hawks the best digital marketing agency in Karachi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Social Hawks is one of Karachi's leading full-service digital marketing agencies, with a portfolio of 80+ brands and a track record across social media marketing, branding, SEO, and content production. It is particularly well suited for consumer brands — food, retail, apparel, e-commerce, and health — that need a single agency to manage their entire digital presence, from creative production to paid advertising and growth strategy."
+      }
+    }
+  ]
+}
+</script>
+
+
+<!-- =========================================================
+  BLOCK 5 — ARTICLE / BLOG POST SCHEMA
+  Place on: Each individual blog post
+  Replace the [PLACEHOLDER] values for every post published.
+  ========================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[ARTICLE TITLE — e.g. Best Digital Marketing Agencies in Karachi (2025 Guide)]",
+  "description": "[META DESCRIPTION — 150-160 characters summarising the article]",
+  "image": "[FEATURED IMAGE URL — e.g. https://thesocialhawks.com/blog/images/article-name.jpg]",
+  "datePublished": "[ISO DATE — e.g. 2025-04-15]",
+  "dateModified": "[ISO DATE OF LAST UPDATE — e.g. 2025-04-15]",
+  "author": {
+    "@type": "Organization",
+    "name": "The Social Hawks",
+    "url": "https://thesocialhawks.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Social Hawks",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thesocialhawks.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "[FULL URL OF THE ARTICLE — e.g. https://thesocialhawks.com/blog/best-digital-marketing-agencies-karachi]"
+  }
+}
+</script>
+
+
+<!-- =========================================================
+  BLOCK 6 — FAQ SCHEMA FOR BLOG ARTICLE 1
+  "Best Digital Marketing Agencies in Karachi"
+  Place on: /blog/best-digital-marketing-agencies-karachi
+  ========================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best digital marketing agency in Karachi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best agency depends on your specific needs. For full-service branding and social media, The Social Hawks is a strong choice for consumer brands. For SEO-focused growth, Aspire Digital has a long track record in Karachi. For e-commerce performance marketing, ArtX Pro is well-regarded. There is no single best — there is only the best fit for your goals and budget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do digital marketing agencies charge in Karachi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digital marketing agency fees in Karachi range from PKR 30,000 per month for basic social media management to PKR 500,000+ per month for full-service retainers covering social media, SEO, paid advertising, content production, and web maintenance. Most growing brands spend between PKR 80,000 and PKR 250,000 per month for meaningful results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if a digital marketing agency in Karachi is legitimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look for verifiable case studies with named clients and real metrics, check Google reviews and platforms like Clutch or DesignRush, ask for references from current clients, and verify the agency can show you the actual accounts and dashboards they manage. Legitimate agencies are transparent about what they measure and how they report results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to hire a freelancer or a digital marketing agency in Karachi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Freelancers are cost-effective for specific one-off tasks — a logo, a website, ad copy. For consistent multi-channel marketing that grows with your brand, an agency delivers better long-term return on investment. An agency provides strategic oversight, a full team across disciplines, accountability through reporting, and the ability to scale output as your brand grows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which digital marketing agency in Karachi is best for food brands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Social Hawks has specific experience in the food and beverage sector, including work with pizza brands, herbal food products, and restaurant clients. The key advantage for food brands is access to in-house food photography and videography alongside social media management, which keeps brand visuals consistent and reduces coordination across multiple vendors."
+      }
+    }
+  ]
+}
+</script>
+
+
+<!-- =========================================================
+  BLOCK 7 — FAQ SCHEMA FOR BLOG ARTICLE 2
+  "Social Media Marketing Cost in Pakistan"
+  Place on: /blog/social-media-marketing-cost-pakistan
+  ========================================================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does social media marketing cost in Pakistan per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Social media marketing in Pakistan costs between PKR 20,000 and PKR 500,000 per month depending on the level of service. For most growing small and mid-sized businesses, a realistic budget for a proper agency retainer covering two to three platforms, original content, and community management sits between PKR 50,000 and PKR 150,000 per month, with ad spend budgeted separately on top of this."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ad spend included in social media marketing packages in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — in almost all cases, ad spend (what you pay to Facebook and Instagram to run ads) is separate from the agency's management fee. Your agency charges for strategy, creative, and campaign management; you pay the platform directly for the actual ad exposure. Always clarify this before signing a contract."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should a small business in Karachi spend on Facebook ads per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A minimum viable Facebook ad budget for a local Karachi business is PKR 30,000 to PKR 50,000 per month. Below this, campaigns do not receive enough data to optimise properly. Facebook CPC in Pakistan ranges from PKR 140 to PKR 422, and CPM from PKR 280 to PKR 1,100, depending on audience targeting and industry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a reasonable social media marketing budget for a restaurant in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A restaurant in Pakistan typically needs PKR 80,000 to PKR 150,000 per month total — covering agency management fees of PKR 50,000 to PKR 80,000, content production including food photography at PKR 15,000 to PKR 30,000 per shoot, and a minimum monthly ad spend of PKR 30,000 to PKR 50,000 on Facebook and Instagram to drive reach and bookings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do social media marketing agencies in Pakistan charge for ad management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most Pakistani agencies charge a management fee of PKR 20,000 to PKR 60,000 per month to manage paid advertising campaigns, on top of your actual ad spend. Some agencies charge a percentage of ad spend (typically 15 to 20 percent) instead of a flat fee. Always confirm which model applies before engagement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does content creation cost separately in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Content creation pricing in Pakistan varies by type. A professional half-day photography shoot typically costs PKR 25,000 to PKR 80,000. Monthly Reel production (four to six videos) runs PKR 40,000 to PKR 100,000. Graphic design for social media (10 to 20 posts per month) typically costs PKR 15,000 to PKR 40,000 depending on complexity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to hire a freelancer or an agency for social media marketing in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For brands in early stages or with very limited budgets, a freelancer is a practical starting point. For brands that are actively growing and need consistent output, strategic direction, paid ad management, and accountability, an agency delivers substantially better return on investment. The cost difference is real, but so is the difference in output and measurable results."
+      }
+    }
+  ]
+}
+</script>

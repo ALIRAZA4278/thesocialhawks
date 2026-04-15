@@ -11,8 +11,21 @@ const WebContentWritingPage = () => {
   const isHeroInView = useInView(heroRef, { once: true, margin: "-100px" });
   const isContentInView = useInView(contentRef, { once: true, margin: "-50px" });
 
+  const contentWritingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Content Marketing",
+    "name": "Content & Writing",
+    "description": "SEO-optimised content writing and copywriting services for Pakistani brands. We produce blog articles, website copy, product descriptions, social media captions, and brand messaging that converts visitors into customers and builds long-term authority.",
+    "provider": { "@type": "Organization", "name": "The Social Hawks", "url": "https://thesocialhawks.com" },
+    "areaServed": { "@type": "Country", "name": "Pakistan" },
+    "url": "https://thesocialhawks.com/services/content-writing",
+    "offers": { "@type": "Offer", "priceCurrency": "PKR", "availability": "https://schema.org/InStock" }
+  };
+
   return (
     <div className="w-[95%] sm:w-[90%] mx-auto">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contentWritingSchema) }} />
       <Navbar />
 
       <motion.div
