@@ -975,6 +975,158 @@ export const projectsData = [
     featured: true,
     status: 'ongoing'
   },
+  {
+    id: 20,
+    slug: 'emergym-social-media-lead-generation',
+    title: 'Social Media Marketing & Lead Generation Campaign for Emergym',
+    client: 'Emergym',
+    clientLogo: '/images/projects/Emergym/Emergym (1).jpg',
+    category: 'Gym / Fitness',
+    shortDescription: 'Comprehensive social media marketing, management, and production services to boost gym membership growth and strengthen brand presence over 16 months.',
+    description: 'Emergym partnered with us with a clear goal: increase their monthly gym memberships and build a strong digital footprint in a highly competitive fitness market. Over the course of 16 months, we developed a complete marketing ecosystem for them — blending high-quality content creation, lead generation, and consistent brand storytelling. Our team handled everything from brand visuals to paid ad campaigns, ensuring the gym stayed active, engaging, and conversion-focused across all major social platforms.',
+    images: [
+      '/images/projects/Emergym/Emergym (1).jpg',
+      '/images/projects/Emergym/Emergym (2).jpg',
+      '/images/projects/Emergym/Emergym (3).jpg',
+      '/images/projects/Emergym/Emergym (4).jpg',
+      '/images/projects/Emergym/Emergym (5).jpg',
+      '/images/projects/Emergym/Emergym (6).jpg',
+    ],
+    imageAlts: [
+      'Emergym gym social media marketing creative with fitness branding',
+      'Emergym lead generation ad creative for gym membership campaign',
+      'Emergym professional gym photography and video production',
+      'Emergym motion graphics and social media post design',
+      'Emergym paid Meta Ads campaign creative for fitness brand',
+      'Emergym drone shoot and gym facility coverage visual',
+    ],
+    services: [
+      'Social Media Marketing & Management',
+      'High-Quality Ad Creatives',
+      'Social Media Post Creatives',
+      'Professional Video Production',
+      'Drone Shoot & Gym Facility Coverage',
+      'Script Writing for Promotional Videos',
+      'Creative & Fitness Photography',
+      'Motion Graphics',
+      'Paid Meta Ads',
+      'Lead Generation Campaigns',
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Adobe Creative Suite',
+      'Drone Technology',
+      'Video Editing Software',
+      'Social Media Platforms',
+      'Analytics Tools',
+    ],
+    duration: '16 Months',
+    year: '2022 – 2023',
+    results: [
+      {
+        value: 'Steady Growth',
+        metric: 'Monthly Membership Sign-ups',
+        description: 'A steady rise in monthly membership sign-ups throughout the 16-month campaign period'
+      },
+      {
+        value: 'High Intent',
+        metric: 'Lead Quality',
+        description: 'Consistent flow of high-intent leads driven by targeted Meta Ads and compelling gym content'
+      },
+      {
+        value: 'Strong',
+        metric: 'Brand Visibility',
+        description: 'Strong brand visibility and recognition in their local area through professional content and paid reach'
+      },
+      {
+        value: 'Increased',
+        metric: 'Walk-ins & Inquiries',
+        description: 'Significant increase in membership inquiries and physical walk-ins from digital campaigns'
+      },
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'completed'
+  },
+  {
+    id: 21,
+    slug: 'saad-construction-company-digital-marketing',
+    title: 'Digital Marketing & Visual Production Campaign for Saad Construction Company',
+    client: 'Saad Construction Company',
+    clientLogo: '/images/projects/Saad Construction Company/1 (1).jpg',
+    category: 'Construction & Real Estate',
+    shortDescription: 'End-to-end social media marketing, management, and high-impact visual production services to strengthen brand authority and generate qualified construction and real estate leads.',
+    description: 'Saad Construction Company partnered with us to build a strong digital presence that reflected their expertise, reliability, and large-scale project capabilities. In an industry where trust and visual proof are essential, our focus was to present their work professionally while generating consistent, high-quality inquiries through digital platforms. We designed and executed a long-term digital strategy combining lead generation, creative storytelling, and professional visual content. From on-site photography and drone footage to performance-driven ad campaigns, every element was optimized to attract serious clients and investors.',
+    images: [
+      '/images/projects/Saad Construction Company/1 (1).jpg',
+      '/images/projects/Saad Construction Company/1 (2).jpg',
+      '/images/projects/Saad Construction Company/1 (3).jpg',
+      '/images/projects/Saad Construction Company/1 (4).jpg',
+      '/images/projects/Saad Construction Company/1 (5).jpg',
+      '/images/projects/Saad Construction Company/1 (6).jpg',
+      '/images/projects/Saad Construction Company/1 (7).jpg',
+      '/images/projects/Saad Construction Company/1 (8).jpg',
+      '/images/projects/Saad Construction Company/1 (9).jpg',
+    ],
+    imageAlts: [
+      'Saad Construction Company project showcase – digital marketing campaign visual 1',
+      'Saad Construction Company project showcase – digital marketing campaign visual 2',
+      'Saad Construction Company project showcase – digital marketing campaign visual 3',
+      'Saad Construction Company project showcase – digital marketing campaign visual 4',
+      'Saad Construction Company project showcase – digital marketing campaign visual 5',
+      'Saad Construction Company project showcase – digital marketing campaign visual 6',
+      'Saad Construction Company project showcase – digital marketing campaign visual 7',
+      'Saad Construction Company project showcase – digital marketing campaign visual 8',
+      'Saad Construction Company project showcase – drone shoot and video production visual',
+    ],
+    services: [
+      'Social Media Marketing & Management',
+      'Lead Generation Campaigns',
+      'Ad Creatives & Social Media Post Creatives',
+      'Motion Graphics',
+      'Content Writing & Copywriting',
+      'Paid Meta Ads (Targeted & Retargeting Campaigns)',
+      'Professional Photography',
+      'Videography & Video Editing',
+      'Script Writing for Promotional & Project Videos',
+      'Drone Shoots for Project Showcases',
+    ],
+    technologies: [
+      'Meta Ads Manager',
+      'Adobe Creative Suite',
+      'Drone Technology',
+      'Video Editing Software',
+      'Social Media Platforms',
+      'Analytics Tools',
+    ],
+    duration: '2 Years',
+    year: '2023 – 2025',
+    results: [
+      {
+        value: 'High-Intent',
+        metric: 'Lead Generation',
+        description: 'Generated a steady stream of high-intent construction and property-related leads from targeted Meta campaigns'
+      },
+      {
+        value: 'Elevated',
+        metric: 'Brand Credibility',
+        description: 'Improved brand credibility through professional visuals, drone footage, and detailed project documentation'
+      },
+      {
+        value: 'Increased',
+        metric: 'Engagement & Inquiries',
+        description: 'Significant increase in engagement and inquiries from investors, buyers, and corporate clients'
+      },
+      {
+        value: 'Authoritative',
+        metric: 'Social Media Presence',
+        description: 'Established a strong, authoritative presence across social media platforms positioning Saad Construction as a trusted name in real estate development'
+      },
+    ],
+    testimonial: null,
+    featured: true,
+    status: 'completed'
+  },
 ];
 
 // Helper functions

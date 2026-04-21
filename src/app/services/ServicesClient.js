@@ -105,7 +105,7 @@ const ServicesPage = () => {
       id: 10,
       title: "Digital Marketing & Growth",
       slug: "digital-marketing-growth",
-      description: "Professional SEO services that improve rankings, drive qualified traffic, and deliver measurable results. From local SEO to enterprise solutions with proven strategies.",
+      description: "Full-service digital marketing to grow your brand — SEO, paid social, Google Ads, Meta campaigns, performance tracking, and data-driven strategies that turn clicks into customers.",
       image: "/images/services/10.jpg",
       alt: "Person interacting with holographic digital marketing icons showing SEO, SEM, keywords and analytics",
       fallback: "linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)"

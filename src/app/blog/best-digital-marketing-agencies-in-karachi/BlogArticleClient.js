@@ -1,9 +1,13 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import Navbar from '../../Components/Navbar';
 import Contact from '../../Components/Contact';
+
+const COVER_IMAGE = '/images/blog/best-agencies-karachi.jpg';
+const COVER_FALLBACK = 'linear-gradient(135deg, #7f20c4 0%, #5a2a7c 100%)';
 
 const agencies = [
   {
@@ -143,6 +147,7 @@ const BlogArticleClient = () => {
   const contentRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true, margin: '-100px' });
   const isContentInView = useInView(contentRef, { once: true, margin: '-50px' });
+  const [imgError, setImgError] = useState(false);
 
   return (
     <div className="w-[95%] sm:w-[90%] mx-auto">
@@ -154,6 +159,30 @@ const BlogArticleClient = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
+        {/* Cover Image */}
+        <motion.div
+          className="w-full rounded-2xl overflow-hidden mb-0"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="relative h-56 sm:h-72 lg:h-96 w-full">
+            {!imgError ? (
+              <Image
+                src={COVER_IMAGE}
+                alt="Best Digital Marketing Agencies in Karachi 2025"
+                fill
+                className="object-cover"
+                priority
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="w-full h-full" style={{ background: COVER_FALLBACK }} />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          </div>
+        </motion.div>
+
         {/* Hero Section */}
         <motion.div
           ref={heroRef}

@@ -1,47 +1,51 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import Navbar from '../../Components/Navbar';
 import Contact from '../../Components/Contact';
 
+const COVER_IMAGE = '/images/blog/social-media-cost-pakistan.jpg';
+const COVER_FALLBACK = 'linear-gradient(135deg, #1a1a2e 0%, #7f20c4 100%)';
+
 const tiers = [
   {
-    name: 'Tier 1 \u2014 Basic',
+    name: 'Tier 1 — Basic',
     range: 'PKR 20,000 to PKR 50,000 per month',
     description: 'At this level you are typically working with a freelancer or a very small agency. You can expect content scheduling on one to two platforms, basic graphic design using templates, and minimal strategy. There is usually no professional photography, no video production, and limited reporting.',
     note: 'This tier works for very early-stage businesses that simply need a social presence while they figure out their marketing. It does not work for brands that are actively trying to grow, generate leads, or compete in a crowded market.',
-    gets: '10\u201315 posts per month, template-based design, one platform, basic captions.',
+    gets: '10–15 posts per month, template-based design, one platform, basic captions.',
     doesntGet: 'Original content production, paid ad management, strategy, analytics, community management.',
   },
   {
-    name: 'Tier 2 \u2014 Standard',
+    name: 'Tier 2 — Standard',
     range: 'PKR 50,000 to PKR 120,000 per month',
     description: 'This is where most serious small businesses in Pakistan should start. At this level you can expect a content calendar, original graphic design (not just templates), basic Reel or video editing, caption writing, community management (responding to comments and DMs), and a monthly performance report.',
-    note: 'A good agency at this tier will cover two platforms properly \u2014 typically Facebook and Instagram \u2014 and will have a clear content strategy aligned with your brand goals.',
-    gets: '15\u201320 posts per month, original design, two platforms, Reels production, captions, community management, monthly reporting.',
+    note: 'A good agency at this tier will cover two platforms properly — typically Facebook and Instagram — and will have a clear content strategy aligned with your brand goals.',
+    gets: '15–20 posts per month, original design, two platforms, Reels production, captions, community management, monthly reporting.',
     doesntGet: 'Professional photography or videography, paid ad management, cross-platform strategy beyond two channels.',
   },
   {
-    name: 'Tier 3 \u2014 Growth',
+    name: 'Tier 3 — Growth',
     range: 'PKR 120,000 to PKR 250,000 per month',
     description: 'This is a full social media management package from a capable agency. At this level you should expect a dedicated account manager, a monthly strategy session, original content production (including some photography or video), multi-platform management, and detailed analytics. Paid ad management may be included or priced separately.',
-    note: 'This is the tier that growing brands \u2014 restaurants, e-commerce stores, clothing brands, health brands \u2014 typically need to see consistent, measurable results.',
-    gets: '20\u201330 pieces of content per month, original photography or video included or partially included, 3\u20134 platforms, paid ad management, strategy meetings, competitor analysis, detailed reporting.',
+    note: 'This is the tier that growing brands — restaurants, e-commerce stores, clothing brands, health brands — typically need to see consistent, measurable results.',
+    gets: '20–30 pieces of content per month, original photography or video included or partially included, 3–4 platforms, paid ad management, strategy meetings, competitor analysis, detailed reporting.',
     doesntGet: 'Full-scale monthly shoots, dedicated videographer, influencer management (usually priced separately).',
   },
   {
-    name: 'Tier 4 \u2014 Full-Service',
+    name: 'Tier 4 — Full-Service',
     range: 'PKR 250,000 to PKR 500,000+ per month',
     description: 'At this level you are essentially outsourcing your entire marketing function to an agency. A full-service retainer includes brand strategy, content production (professional photography and video), social media management across all relevant platforms, paid advertising, SEO, and often website maintenance.',
     note: 'This tier suits brands that are scaling rapidly, have multiple product lines or locations, or are operating in highly competitive categories.',
-    gets: 'Everything \u2014 strategy, production, distribution, paid media, analytics, and ongoing optimisation as a unified service.',
+    gets: 'Everything — strategy, production, distribution, paid media, analytics, and ongoing optimisation as a unified service.',
     doesntGet: null,
   },
 ];
 
 const pricingFactors = [
-  { title: 'Agency size and experience', desc: 'A solo freelancer, a small boutique agency, and a full-service agency all charge differently \u2014 and deliver differently. An established agency with a portfolio of 80+ brands carries overheads that a freelancer does not, but also brings systems, accountability, and strategic depth that freelancers typically cannot match.' },
+  { title: 'Agency size and experience', desc: 'A solo freelancer, a small boutique agency, and a full-service agency all charge differently — and deliver differently. An established agency with a portfolio of 80+ brands carries overheads that a freelancer does not, but also brings systems, accountability, and strategic depth that freelancers typically cannot match.' },
   { title: 'Content production requirements', desc: 'Text-and-graphic posts cost far less to produce than original food photography, product videos, or animated Reels. Brands in food and beverage, fashion, or lifestyle almost always need higher production budgets.' },
   { title: 'Number of platforms', desc: 'Managing one Instagram account is not the same as managing Facebook, Instagram, TikTok, LinkedIn, and YouTube simultaneously.' },
   { title: 'Ad spend management', desc: 'Many agencies charge a management fee on top of your actual ad spend. This is separate from their retainer.' },
@@ -49,10 +53,10 @@ const pricingFactors = [
 ];
 
 const freelancerComparison = [
-  { label: 'Monthly cost', freelancer: 'PKR 15,000\u201340,000', small: 'PKR 40,000\u2013120,000', full: 'PKR 120,000\u2013500,000+' },
+  { label: 'Monthly cost', freelancer: 'PKR 15,000–40,000', small: 'PKR 40,000–120,000', full: 'PKR 120,000–500,000+' },
   { label: 'Strategy', freelancer: 'Limited', small: 'Basic', full: 'Comprehensive' },
   { label: 'Content production', freelancer: 'Graphic design only', small: 'Design + basic video', full: 'Design, photo, video' },
-  { label: 'Platforms managed', freelancer: '1\u20132', small: '2\u20133', full: '3\u20135+' },
+  { label: 'Platforms managed', freelancer: '1–2', small: '2–3', full: '3–5+' },
   { label: 'Paid ad management', freelancer: 'Rarely', small: 'Sometimes', full: 'Usually included' },
   { label: 'Reporting', freelancer: 'Minimal', small: 'Monthly summary', full: 'Detailed monthly' },
   { label: 'Accountability', freelancer: 'Low', small: 'Medium', full: 'High' },
@@ -61,10 +65,10 @@ const freelancerComparison = [
 
 const hiddenCosts = [
   { title: 'Photography and videography', desc: 'If your agency does not include original content production, you will need to pay for it separately. A professional half-day product shoot in Karachi typically costs PKR 25,000 to PKR 80,000. Monthly food photography for a restaurant brand can run PKR 15,000 to PKR 40,000 per session. Reels and short-form video production adds another PKR 20,000 to PKR 60,000 per shoot.' },
-  { title: 'Influencer marketing', desc: 'A nano-influencer in Pakistan (10,000\u201350,000 followers) may charge PKR 5,000 to PKR 25,000 per post. A mid-tier influencer (100,000\u2013500,000 followers) typically charges PKR 30,000 to PKR 150,000. These costs are almost always separate from agency fees.' },
-  { title: 'Graphic design tools and software', desc: 'Most agencies absorb this internally, but if you are managing things in-house, expect to pay for Adobe Creative Cloud (PKR 7,000\u201315,000/month) or similar tools.' },
+  { title: 'Influencer marketing', desc: 'A nano-influencer in Pakistan (10,000–50,000 followers) may charge PKR 5,000 to PKR 25,000 per post. A mid-tier influencer (100,000–500,000 followers) typically charges PKR 30,000 to PKR 150,000. These costs are almost always separate from agency fees.' },
+  { title: 'Graphic design tools and software', desc: 'Most agencies absorb this internally, but if you are managing things in-house, expect to pay for Adobe Creative Cloud (PKR 7,000–15,000/month) or similar tools.' },
   { title: 'Platform fees', desc: 'Meta Ads require a credit or debit card linked to your Business Manager, and charges are billed in USD, which means exchange rate fluctuations affect your effective spend in PKR.' },
-  { title: 'Strategy and setup', desc: 'Many agencies charge a one-time onboarding or setup fee \u2014 typically PKR 15,000 to PKR 50,000 \u2014 to cover brand discovery, platform audits, and the initial content framework. This is separate from your monthly retainer.' },
+  { title: 'Strategy and setup', desc: 'Many agencies charge a one-time onboarding or setup fee — typically PKR 15,000 to PKR 50,000 — to cover brand discovery, platform audits, and the initial content framework. This is separate from your monthly retainer.' },
 ];
 
 const budgetTips = [
@@ -72,7 +76,7 @@ const budgetTips = [
   { title: 'Separate your management fee from your ad spend', desc: 'Always understand which budget goes to the agency and which goes directly to the platform. Conflating the two leads to budget confusion and makes it impossible to evaluate either efficiently.' },
   { title: 'Prioritise content quality over posting frequency', desc: 'Three high-quality Reels per week will outperform ten low-quality static posts every time on the Pakistani Instagram and TikTok audience.' },
   { title: 'Ask for monthly reporting on real metrics', desc: 'Follower count is a vanity metric. What matters is reach, engagement rate, click-through rate, cost per lead, and conversion. If an agency cannot report on these, find one that can.' },
-  { title: 'Do not go too cheap too early', desc: 'Agencies charging PKR 15,000 to PKR 25,000 per month cannot deliver what growing brands need. There are costs in running an agency \u2014 team salaries, tools, ad account management, design software \u2014 and fees at that level mean corners are being cut somewhere.' },
+  { title: 'Do not go too cheap too early', desc: 'Agencies charging PKR 15,000 to PKR 25,000 per month cannot deliver what growing brands need. There are costs in running an agency — team salaries, tools, ad account management, design software — and fees at that level mean corners are being cut somewhere.' },
 ];
 
 const socialHawksIncludes = [
@@ -90,7 +94,7 @@ const faqs = [
   },
   {
     q: 'Is ad spend included in social media marketing packages in Pakistan?',
-    a: 'No \u2014 in almost all cases, ad spend (what you pay to Facebook and Instagram to run ads) is separate from the agency\u2019s management fee. Your agency charges for the strategy, creative, and management of campaigns; you pay the platform directly for the actual ad exposure. Always clarify this before signing a contract.',
+    a: 'No — in almost all cases, ad spend (what you pay to Facebook and Instagram to run ads) is separate from the agency\'s management fee. Your agency charges for the strategy, creative, and management of campaigns; you pay the platform directly for the actual ad exposure. Always clarify this before signing a contract.',
   },
   {
     q: 'How much should a small business in Karachi spend on Facebook ads per month?',
@@ -98,15 +102,15 @@ const faqs = [
   },
   {
     q: 'What is a reasonable social media marketing budget for a restaurant in Pakistan?',
-    a: 'A restaurant in Pakistan typically needs PKR 80,000 to PKR 150,000 per month total \u2014 covering agency management (PKR 50,000\u201380,000), content production including food photography (PKR 15,000\u201330,000 per shoot), and a minimum monthly ad spend of PKR 30,000\u201350,000 on Facebook and Instagram to drive reach and bookings.',
+    a: 'A restaurant in Pakistan typically needs PKR 80,000 to PKR 150,000 per month total — covering agency management (PKR 50,000–80,000), content production including food photography (PKR 15,000–30,000 per shoot), and a minimum monthly ad spend of PKR 30,000–50,000 on Facebook and Instagram to drive reach and bookings.',
   },
   {
     q: 'What do social media marketing agencies in Pakistan charge for ad management?',
-    a: 'Most Pakistani agencies charge a management fee of PKR 20,000 to PKR 60,000 per month to manage your paid advertising campaigns \u2014 on top of your actual ad spend. Some agencies charge a percentage of ad spend (typically 15\u201320%) instead of a flat fee.',
+    a: 'Most Pakistani agencies charge a management fee of PKR 20,000 to PKR 60,000 per month to manage your paid advertising campaigns — on top of your actual ad spend. Some agencies charge a percentage of ad spend (typically 15–20%) instead of a flat fee.',
   },
   {
     q: 'How much does content creation cost separately in Pakistan?',
-    a: 'Content creation pricing in Pakistan varies by type. A professional half-day photography shoot typically costs PKR 25,000 to PKR 80,000. Monthly Reel production (four to six videos) runs PKR 40,000 to PKR 100,000. Graphic design for social media (10\u201320 posts per month) typically costs PKR 15,000 to PKR 40,000 depending on complexity.',
+    a: 'Content creation pricing in Pakistan varies by type. A professional half-day photography shoot typically costs PKR 25,000 to PKR 80,000. Monthly Reel production (four to six videos) runs PKR 40,000 to PKR 100,000. Graphic design for social media (10–20 posts per month) typically costs PKR 15,000 to PKR 40,000 depending on complexity.',
   },
   {
     q: 'Is it better to hire a freelancer or an agency for social media marketing in Pakistan?',
@@ -115,16 +119,16 @@ const faqs = [
 ];
 
 const summaryTable = [
-  { service: 'Basic social media management (freelancer, 1 platform)', range: '15,000 \u2013 40,000' },
-  { service: 'Standard agency package (2 platforms, design, captions)', range: '50,000 \u2013 120,000' },
-  { service: 'Growth package (multi-platform, production, paid ads)', range: '120,000 \u2013 250,000' },
-  { service: 'Full-service agency retainer', range: '250,000 \u2013 500,000+' },
-  { service: 'Facebook ad spend (minimum viable)', range: '30,000 \u2013 50,000' },
-  { service: 'Instagram ad spend (minimum viable)', range: '20,000 \u2013 40,000' },
-  { service: 'Food/product photography (per shoot)', range: '25,000 \u2013 80,000' },
-  { service: 'Reel production (per month, 4\u20136 videos)', range: '40,000 \u2013 100,000' },
-  { service: 'Influencer marketing (nano, per post)', range: '5,000 \u2013 25,000' },
-  { service: 'Influencer marketing (mid-tier, per post)', range: '30,000 \u2013 150,000' },
+  { service: 'Basic social media management (freelancer, 1 platform)', range: '15,000 – 40,000' },
+  { service: 'Standard agency package (2 platforms, design, captions)', range: '50,000 – 120,000' },
+  { service: 'Growth package (multi-platform, production, paid ads)', range: '120,000 – 250,000' },
+  { service: 'Full-service agency retainer', range: '250,000 – 500,000+' },
+  { service: 'Facebook ad spend (minimum viable)', range: '30,000 – 50,000' },
+  { service: 'Instagram ad spend (minimum viable)', range: '20,000 – 40,000' },
+  { service: 'Food/product photography (per shoot)', range: '25,000 – 80,000' },
+  { service: 'Reel production (per month, 4–6 videos)', range: '40,000 – 100,000' },
+  { service: 'Influencer marketing (nano, per post)', range: '5,000 – 25,000' },
+  { service: 'Influencer marketing (mid-tier, per post)', range: '30,000 – 150,000' },
 ];
 
 const BlogArticleClient = () => {
@@ -132,6 +136,7 @@ const BlogArticleClient = () => {
   const contentRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true, margin: '-100px' });
   const isContentInView = useInView(contentRef, { once: true, margin: '-50px' });
+  const [imgError, setImgError] = useState(false);
 
   return (
     <div className="w-[95%] sm:w-[90%] mx-auto">
@@ -143,6 +148,30 @@ const BlogArticleClient = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
+        {/* Cover Image */}
+        <motion.div
+          className="w-full rounded-2xl overflow-hidden mb-0"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="relative h-56 sm:h-72 lg:h-96 w-full">
+            {!imgError ? (
+              <Image
+                src={COVER_IMAGE}
+                alt="Social Media Marketing Cost in Pakistan 2025"
+                fill
+                className="object-cover"
+                priority
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="w-full h-full" style={{ background: COVER_FALLBACK }} />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          </div>
+        </motion.div>
+
         {/* Hero Section */}
         <motion.div
           ref={heroRef}
@@ -315,19 +344,19 @@ const BlogArticleClient = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                   <div className="flex justify-between sm:block">
                     <span className="text-gray-400">Cost per click (CPC)</span>
-                    <span className="font-semibold text-white sm:block"> PKR 140 \u2013 422</span>
+                    <span className="font-semibold text-white sm:block"> PKR 140 – 422</span>
                   </div>
                   <div className="flex justify-between sm:block">
                     <span className="text-gray-400">Cost per 1,000 impressions (CPM)</span>
-                    <span className="font-semibold text-white sm:block"> PKR 280 \u2013 1,100</span>
+                    <span className="font-semibold text-white sm:block"> PKR 280 – 1,100</span>
                   </div>
                   <div className="flex justify-between sm:block">
                     <span className="text-gray-400">Cost per lead</span>
-                    <span className="font-semibold text-white sm:block"> PKR 281 \u2013 845</span>
+                    <span className="font-semibold text-white sm:block"> PKR 281 – 845</span>
                   </div>
                   <div className="flex justify-between sm:block">
                     <span className="text-gray-400">Cost per page like</span>
-                    <span className="font-semibold text-white sm:block"> PKR 273 \u2013 308</span>
+                    <span className="font-semibold text-white sm:block"> PKR 273 – 308</span>
                   </div>
                 </div>
                 <p className="text-gray-400 text-sm mt-4">
@@ -347,15 +376,15 @@ const BlogArticleClient = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                   <div className="flex justify-between sm:block">
                     <span className="text-gray-400">Cost per click (CPC)</span>
-                    <span className="font-semibold text-white sm:block"> PKR 8 \u2013 350</span>
+                    <span className="font-semibold text-white sm:block"> PKR 8 – 350</span>
                   </div>
                   <div className="flex justify-between sm:block">
                     <span className="text-gray-400">Cost per 1,000 impressions (CPM)</span>
-                    <span className="font-semibold text-white sm:block"> PKR 150 \u2013 500</span>
+                    <span className="font-semibold text-white sm:block"> PKR 150 – 500</span>
                   </div>
                   <div className="flex justify-between sm:block">
                     <span className="text-gray-400">Cost per engagement</span>
-                    <span className="font-semibold text-white sm:block"> PKR 5 \u2013 20</span>
+                    <span className="font-semibold text-white sm:block"> PKR 5 – 20</span>
                   </div>
                 </div>
               </motion.div>
@@ -547,12 +576,12 @@ const BlogArticleClient = () => {
                   transition={{ delay: 0.2 }}
                 >
                   <span className="text-gray-200 text-sm">Ad spend budget (separate &mdash; minimum for paid reach)</span>
-                  <span className="font-bold text-white whitespace-nowrap ml-4">PKR 20,000\u201330,000</span>
+                  <span className="font-bold text-white whitespace-nowrap ml-4">PKR 20,000–30,000</span>
                 </motion.div>
               </div>
 
               <p className="text-gray-400 mt-6 text-sm">
-                So while PKR 50,000 per month is a workable starting point for management fees, realistically budget <strong className="text-white">PKR 70,000\u201390,000 total</strong> when you add ad spend.
+                So while PKR 50,000 per month is a workable starting point for management fees, realistically budget <strong className="text-white">PKR 70,000–90,000 total</strong> when you add ad spend.
               </p>
             </section>
 
