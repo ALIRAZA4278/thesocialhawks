@@ -2,12 +2,20 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import '../styles/theme.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
   const { scrollYProgress } = useScroll();
+
+  const isActive = (href) => {
+    if (href.includes('#')) return false;
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
+  };
   
   // Transform scroll progress to background opacity
   const backgroundOpacity = useTransform(scrollYProgress, [0, 0.1], [0.8, 0.95]);
@@ -112,7 +120,9 @@ const Navbar = () => {
               >
                 <Link
                   href={item.href}
-                  className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white text-gray-800`}
+                  className={`px-4 py-1 rounded-md text-base font-medium transition-all duration-300 hover:bg-primary hover:text-white ${
+                    isActive(item.href) ? 'bg-primary text-white' : 'text-gray-800'
+                  }`}
                 >
                   <motion.span
                     whileHover={{ scale: 1.05 }}
@@ -215,7 +225,9 @@ const Navbar = () => {
               >
                 {navItems.map((item, index) => {
                   const base = 'block w-full px-4 py-2 rounded-full text-base font-medium text-center transition-all duration-200';
-                  const classes = `${base} text-gray-800 hover:bg-primary hover:text-white`;
+                  const classes = `${base} hover:bg-primary hover:text-white ${
+                    isActive(item.href) ? 'bg-primary text-white' : 'text-gray-800'
+                  }`;
 
                   return (
                     <motion.div

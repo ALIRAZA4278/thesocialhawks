@@ -16,8 +16,19 @@ const ServicesPage = () => {
   const isHeroInView = useInView(heroRef, { once: true, margin: "-100px" });
   const isServicesInView = useInView(servicesRef, { once: true, margin: "-50px" });
   
-  // Services data - comprehensive 14 service categories
+  // Services data - comprehensive 15 service categories
   const services = [
+    {
+      id: 0,
+      title: "AI Solutions",
+      slug: "ai-solutions",
+      description: "AI automation, intelligent chatbots, 24/7 AI receptionist, lead generation, AI agents, SaaS development, AI product creation, and strategic AI consulting — built for Pakistani businesses ready to grow with intelligence.",
+      image: "/images/services/ai-solutions.jpg",
+      alt: "AI Solutions — Intelligent systems for Pakistani businesses",
+      fallback: "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
+      hasSubServices: true,
+      featured: true
+    },
     {
       id: 1,
       title: "Brand Identity & Design",
