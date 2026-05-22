@@ -22,9 +22,9 @@ const ServicesPage = () => {
       id: 0,
       title: "AI Solutions",
       slug: "ai-solutions",
-      description: "AI automation, intelligent chatbots, 24/7 AI receptionist, lead generation, AI agents, SaaS development, AI product creation, and strategic AI consulting — built for Pakistani businesses ready to grow with intelligence.",
-      image: "/images/services/ai-solutions.jpg",
-      alt: "AI Solutions — Intelligent systems for Pakistani businesses",
+      description: "AI automation, intelligent chatbots, 24/7 AI receptionist, lead generation, AI agents, SaaS development, AI product creation, and strategic AI consulting — built for businesses ready to grow with intelligence.",
+      image: "/images/services/AI-IMG.jpeg",
+      alt: "AI Solutions — Intelligent systems for businesses",
       fallback: "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
       hasSubServices: true,
       featured: true

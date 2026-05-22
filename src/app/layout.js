@@ -69,8 +69,8 @@ export default function RootLayout({ children }) {
             "alternateName": "SocialHawks",
             "url": "https://thesocialhawks.com",
             "logo": "https://thesocialhawks.com/images/logo.png",
-            "description": "The Social Hawks is a full-service digital marketing agency based in Karachi, Pakistan, serving 80+ brands across branding, social media marketing, SEO, web development, content production, paid advertising, video, photography, and creative services.",
-            "foundingLocation": { "@type": "Place", "name": "Karachi, Pakistan" },
+            "description": "The Social Hawks is a full-service digital marketing agency serving 80+ brands across branding, social media marketing, SEO, web development, content production, paid advertising, video, photography, and creative services.",
+            "foundingLocation": { "@type": "Place", "name": "Karachi" },
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Suite 404, Amir Trade Center, Shahrah-e-Quaideen, PECHS Bl-2",
@@ -98,8 +98,7 @@ export default function RootLayout({ children }) {
               "https://www.youtube.com/@thesocialhawks"
             ],
             "areaServed": [
-              { "@type": "City", "name": "Karachi" },
-              { "@type": "Country", "name": "Pakistan" }
+              { "@type": "City", "name": "Karachi" }
             ],
             "knowsAbout": [
               "Digital Marketing", "Social Media Marketing", "Search Engine Optimization",

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
@@ -12,13 +12,13 @@ const AIAutomationPage = () => {
   const isContentInView = useInView(contentRef, { once: true, margin: '-50px' });
 
   const included = [
-    'Business process audit — identifying the 5–10 tasks with highest automation ROI',
+    'Business process audit â€” identifying the 5â€“10 tasks with highest automation ROI',
     'Workflow automation using n8n, Make (Integromat), and Zapier',
-    'CRM automation — lead routing, follow-up sequences, and pipeline management',
+    'CRM automation â€” lead routing, follow-up sequences, and pipeline management',
     'Email and WhatsApp automation for customer communication',
     'Data extraction, processing, and report generation pipelines',
     'Social media scheduling and cross-platform publishing automation',
-    'Document generation — proposals, invoices, reports, and contracts',
+    'Document generation â€” proposals, invoices, reports, and contracts',
     'Custom integrations between your existing tools and platforms',
   ];
 
@@ -48,11 +48,11 @@ const AIAutomationPage = () => {
   const faqs = [
     {
       q: 'Do I need to change all my existing software?',
-      a: 'No. We build automation around the tools you already use — WhatsApp, Google Sheets, your CRM, your email platform. We make your existing systems work together, not replace them.',
+      a: 'No. We build automation around the tools you already use â€” WhatsApp, Google Sheets, your CRM, your email platform. We make your existing systems work together, not replace them.',
     },
     {
       q: 'How much can automation actually save?',
-      a: 'Most clients recover the cost of implementation within 60–90 days through time saved and error reduction. A single automated lead follow-up sequence, for example, can replace 3–5 hours of manual outreach weekly.',
+      a: 'Most clients recover the cost of implementation within 60â€“90 days through time saved and error reduction. A single automated lead follow-up sequence, for example, can replace 3â€“5 hours of manual outreach weekly.',
     },
   ];
 
@@ -92,8 +92,8 @@ const AIAutomationPage = () => {
               Remove the Repetition. Multiply the Output.
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed mb-8 max-w-3xl">
-              Business process automation using AI — workflow automation, CRM integration, WhatsApp
-              automation, and intelligent pipelines for Pakistani businesses.
+              Business process automation using AI â€” workflow automation, CRM integration, WhatsApp
+              automation, and intelligent pipelines for businesses.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
@@ -133,7 +133,7 @@ const AIAutomationPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                Your team is spending hours every week on tasks that should take minutes — data
+                Your team is spending hours every week on tasks that should take minutes â€” data
                 entry, report generation, follow-up emails, appointment scheduling, lead routing,
                 invoice processing, social media posting. Every hour spent on repetition is an hour
                 not spent on work that actually grows your business.
@@ -158,7 +158,7 @@ const AIAutomationPage = () => {
                 transition={{ delay: 0.1 }}
               >
                 AI Automation uses intelligent workflow systems to take over the repetitive
-                operational work in your business — automatically, reliably, and without human
+                operational work in your business â€” automatically, reliably, and without human
                 intervention. We identify your highest-friction processes, design the automation,
                 build the system, and deploy it. You get your team&apos;s time back.
               </motion.p>
@@ -261,7 +261,7 @@ const AIAutomationPage = () => {
                 </h2>
                 <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
                   Let us identify the exact processes in your business that are ready for
-                  automation — and show you what&apos;s possible.
+                  automation â€” and show you what&apos;s possible.
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
@@ -284,3 +284,4 @@ const AIAutomationPage = () => {
 };
 
 export default AIAutomationPage;
+

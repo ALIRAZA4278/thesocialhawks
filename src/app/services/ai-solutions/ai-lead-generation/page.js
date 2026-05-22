@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
@@ -13,13 +13,13 @@ const AILeadGenerationPage = () => {
 
   const included = [
     'AI-powered audience targeting and lookalike modelling for Meta and Google campaigns',
-    'Automated lead qualification via WhatsApp or chatbot — budget, timeline, and intent',
-    'Instant lead response system — every new lead receives a response within 60 seconds',
+    'Automated lead qualification via WhatsApp or chatbot â€” budget, timeline, and intent',
+    'Instant lead response system â€” every new lead receives a response within 60 seconds',
     'AI-written personalised outreach sequences for email and WhatsApp',
-    'Lead scoring system — prioritises your hottest prospects automatically',
-    'CRM integration — qualified leads pushed directly to your pipeline with full context',
-    'Retargeting system — re-engages cold leads with personalised messaging',
-    'Weekly lead performance report — volume, quality, and conversion tracking',
+    'Lead scoring system â€” prioritises your hottest prospects automatically',
+    'CRM integration â€” qualified leads pushed directly to your pipeline with full context',
+    'Retargeting system â€” re-engages cold leads with personalised messaging',
+    'Weekly lead performance report â€” volume, quality, and conversion tracking',
   ];
 
   const industries = [
@@ -48,11 +48,11 @@ const AILeadGenerationPage = () => {
   const faqs = [
     {
       q: 'Is this the same as running Facebook ads?',
-      a: 'No — AI Lead Generation sits on top of your advertising. The ads generate raw interest. The AI system qualifies, responds to, and nurtures that interest into actual sales-ready leads. Without the AI layer, most ad spend produces unqualified enquiries.',
+      a: 'No â€” AI Lead Generation sits on top of your advertising. The ads generate raw interest. The AI system qualifies, responds to, and nurtures that interest into actual sales-ready leads. Without the AI layer, most ad spend produces unqualified enquiries.',
     },
     {
       q: 'How fast can we see results?',
-      a: 'The lead response and qualification systems are live within the first week. AI targeting improvements compound over 4–8 weeks as the system learns from performance data.',
+      a: 'The lead response and qualification systems are live within the first week. AI targeting improvements compound over 4â€“8 weeks as the system learns from performance data.',
     },
   ];
 
@@ -92,7 +92,7 @@ const AILeadGenerationPage = () => {
               More Qualified Leads. Less Manual Prospecting. Zero Guessing.
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed mb-8 max-w-3xl">
-              AI-powered systems that identify, attract, qualify, and nurture leads automatically —
+              AI-powered systems that identify, attract, qualify, and nurture leads automatically â€”
               so your sales team receives warm prospects, not cold contact lists.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -133,7 +133,7 @@ const AILeadGenerationPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                Lead generation in Pakistan is expensive, unpredictable, and labour-intensive.
+                Lead generation is expensive, unpredictable, and labour-intensive.
                 Sales teams spend the majority of their time on cold outreach that rarely converts,
                 manual follow-up that falls through the cracks, and unqualified leads that waste
                 everyone&apos;s time. There is a better way.
@@ -158,7 +158,7 @@ const AILeadGenerationPage = () => {
                 transition={{ delay: 0.1 }}
               >
                 AI Lead Generation uses intelligent systems to identify, attract, qualify, and
-                nurture leads automatically — so your sales team receives warm, qualified prospects
+                nurture leads automatically â€” so your sales team receives warm, qualified prospects
                 instead of cold contact lists. We combine AI-powered targeting, automated outreach,
                 conversational qualification, and CRM integration to build a lead machine that runs
                 while you sleep.
@@ -261,7 +261,7 @@ const AILeadGenerationPage = () => {
                   Build Your Lead Machine Today
                 </h2>
                 <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-                  Stop chasing cold leads. Let AI bring the right prospects to your sales team —
+                  Stop chasing cold leads. Let AI bring the right prospects to your sales team â€”
                   qualified, warmed up, and ready to talk.
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -285,3 +285,4 @@ const AILeadGenerationPage = () => {
 };
 
 export default AILeadGenerationPage;
+

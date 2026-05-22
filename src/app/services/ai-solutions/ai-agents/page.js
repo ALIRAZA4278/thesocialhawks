@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
@@ -13,13 +13,13 @@ const AIAgentsPage = () => {
 
   const included = [
     'Custom AI Agent design and deployment for your specific use case',
-    'Research and intelligence agents — market monitoring, competitor analysis, trend reports',
-    'Customer service agents — full resolution capability for complex multi-turn conversations',
-    'Operations agents — data analysis, reporting, and decision-support',
-    'Content agents — brief-to-draft content generation with brand voice training',
-    'Sales agents — outreach, qualification, follow-up, and pipeline management',
-    'Integration with your existing tools — CRM, Slack, Google Workspace, and custom databases',
-    'Agent monitoring dashboard — activity logs, performance metrics, and quality controls',
+    'Research and intelligence agents â€” market monitoring, competitor analysis, trend reports',
+    'Customer service agents â€” full resolution capability for complex multi-turn conversations',
+    'Operations agents â€” data analysis, reporting, and decision-support',
+    'Content agents â€” brief-to-draft content generation with brand voice training',
+    'Sales agents â€” outreach, qualification, follow-up, and pipeline management',
+    'Integration with your existing tools â€” CRM, Slack, Google Workspace, and custom databases',
+    'Agent monitoring dashboard â€” activity logs, performance metrics, and quality controls',
   ];
 
   const industries = [
@@ -48,7 +48,7 @@ const AIAgentsPage = () => {
   const faqs = [
     {
       q: 'What\'s the difference between AI automation and AI agents?',
-      a: 'Automation follows fixed rules — if X happens, do Y. AI Agents make decisions. They can read context, judge the best response, handle exceptions, and complete tasks that have never been explicitly programmed. Agents are significantly more capable and more complex to build.',
+      a: 'Automation follows fixed rules â€” if X happens, do Y. AI Agents make decisions. They can read context, judge the best response, handle exceptions, and complete tasks that have never been explicitly programmed. Agents are significantly more capable and more complex to build.',
     },
     {
       q: 'Is my data safe with an AI agent?',
@@ -134,7 +134,7 @@ const AIAgentsPage = () => {
                 transition={{ delay: 0.1 }}
               >
                 Certain business functions require judgment, research, and multi-step decision
-                making — not just rule-based automation. Writing research summaries, monitoring
+                making â€” not just rule-based automation. Writing research summaries, monitoring
                 competitor activity, analysing customer feedback, generating weekly reports, or
                 managing complex customer escalations all require a level of intelligence that basic
                 automation cannot deliver.
@@ -160,7 +160,7 @@ const AIAgentsPage = () => {
               >
                 AI Agents are autonomous intelligent systems that can perceive context, reason
                 through problems, take actions, and complete multi-step tasks without human
-                instruction at every step. We build custom AI Agents for Pakistani businesses —
+                instruction at every step. We build custom AI Agents for Pakistani businesses â€”
                 trained on your data, connected to your tools, and deployed to handle the
                 high-cognition work that would otherwise require a senior team member.
               </motion.p>
@@ -262,7 +262,7 @@ const AIAgentsPage = () => {
                   Deploy Intelligence Across Your Business
                 </h2>
                 <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-                  Tell us what your AI agent needs to do. We&apos;ll design, build, and deploy it —
+                  Tell us what your AI agent needs to do. We&apos;ll design, build, and deploy it â€”
                   connected to your tools, trained on your data.
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -286,3 +286,4 @@ const AIAgentsPage = () => {
 };
 
 export default AIAgentsPage;
+

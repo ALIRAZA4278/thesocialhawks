@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
@@ -12,13 +12,13 @@ const AIReceptionistPage = () => {
   const isContentInView = useInView(contentRef, { once: true, margin: '-50px' });
 
   const included = [
-    'Custom AI receptionist trained on your business — services, pricing, FAQs, policies',
-    'WhatsApp Business integration — instant automated response to inbound messages',
-    'Website chat widget — live on your site within 48 hours of setup',
-    'Instagram DM automation — respond to every enquiry, every time',
-    'Appointment booking integration — connects to your calendar and books automatically',
-    'Lead qualification — collects name, budget, service needed, and contact details',
-    'Human handoff system — escalates to your team when a human touch is needed',
+    'Custom AI receptionist trained on your business â€” services, pricing, FAQs, policies',
+    'WhatsApp Business integration â€” instant automated response to inbound messages',
+    'Website chat widget â€” live on your site within 48 hours of setup',
+    'Instagram DM automation â€” respond to every enquiry, every time',
+    'Appointment booking integration â€” connects to your calendar and books automatically',
+    'Lead qualification â€” collects name, budget, service needed, and contact details',
+    'Human handoff system â€” escalates to your team when a human touch is needed',
     'Arabic, Urdu, and English language support',
   ];
 
@@ -52,7 +52,7 @@ const AIReceptionistPage = () => {
     },
     {
       q: 'Can the AI book appointments in my actual calendar?',
-      a: 'Yes — we integrate with Google Calendar, Calendly, and most booking platforms. The AI checks real-time availability and books confirmed appointments automatically.',
+      a: 'Yes â€” we integrate with Google Calendar, Calendly, and most booking platforms. The AI checks real-time availability and books confirmed appointments automatically.',
     },
     {
       q: 'What happens when a customer asks something the AI doesn\'t know?',
@@ -141,8 +141,8 @@ const AIReceptionistPage = () => {
                 Every missed call, every unanswered WhatsApp message, every lead that waits more
                 than 5 minutes for a response is a customer lost. Research shows that businesses
                 that respond to enquiries within 5 minutes are 21x more likely to qualify the lead
-                than those that respond within 30 minutes. Most Pakistani businesses respond in
-                hours — or not at all.
+                than those that respond within 30 minutes. Most businesses respond in
+                hours â€” or not at all.
               </motion.p>
             </section>
 
@@ -166,7 +166,7 @@ const AIReceptionistPage = () => {
                 The AI Receptionist is a conversational AI system deployed on your WhatsApp,
                 website chat, Instagram DMs, or phone line. It responds to customer enquiries
                 instantly, qualifies leads, books appointments, answers FAQs, and hands off to a
-                human agent only when necessary — around the clock, every day of the year.
+                human agent only when necessary â€” around the clock, every day of the year.
               </motion.p>
             </section>
 
@@ -289,3 +289,4 @@ const AIReceptionistPage = () => {
 };
 
 export default AIReceptionistPage;
+

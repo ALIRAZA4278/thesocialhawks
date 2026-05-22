@@ -133,7 +133,7 @@ const AIConsultingStrategyPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                Every business leader in Pakistan right now is asking the same question: &ldquo;How do we
+                Every business leader right now is asking the same question: &ldquo;How do we
                 use AI in our business?&rdquo; The challenge is that AI is vast, fast-moving, and full of
                 hype. Without expert guidance, businesses either do nothing — waiting until the
                 picture is clearer — or invest in the wrong tools and wonder why they see no return.

@@ -307,16 +307,6 @@ const Contact = () => {
               </ul>
             </div>
 
-            {/* Services Links */}
-            <div>
-              <h3 className="text-primary font-semibold text-lg mb-6">Services</h3>
-              <ul className="space-y-3">
-                <li><a href="#marketing" className="text-gray-300 hover:text-primary transition-colors">Marketing</a></li>
-                <li><a href="#branding" className="text-gray-300 hover:text-primary transition-colors">Branding</a></li>
-                <li><a href="#production" className="text-gray-300 hover:text-primary transition-colors">Production</a></li>
-                <li><a href="#content" className="text-gray-300 hover:text-primary transition-colors">Content Creation</a></li>
-              </ul>
-            </div>
           </div>
 
          

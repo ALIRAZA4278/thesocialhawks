@@ -17,13 +17,12 @@ const AISolutionsPage = () => {
     serviceType: 'AI Solutions',
     name: 'AI Solutions',
     description:
-      'AI automation, chatbots, receptionist, lead generation, agents, SaaS development, and AI consulting for Pakistani businesses.',
+      'AI automation, chatbots, receptionist, lead generation, agents, SaaS development, and AI consulting for businesses.',
     provider: {
       '@type': 'Organization',
       name: 'The Social Hawks',
       url: 'https://thesocialhawks.com',
     },
-    areaServed: { '@type': 'Country', name: 'Pakistan' },
     url: 'https://thesocialhawks.com/services/ai-solutions',
   };
 
@@ -112,7 +111,7 @@ const AISolutionsPage = () => {
     {
       icon: '🌍',
       title: 'Compete Globally',
-      desc: 'Pakistani businesses can now deploy the same AI infrastructure as multinationals — at a fraction of the cost.',
+      desc: 'Businesses can now deploy the same AI infrastructure as multinationals — at a fraction of the cost.',
     },
     {
       icon: '🎯',
@@ -183,9 +182,9 @@ const AISolutionsPage = () => {
       desc: 'We build AI around the tools you already use — WhatsApp, Google Workspace, your CRM, your website. No migration, no disruption.',
     },
     {
-      icon: '🇵🇰',
-      title: 'Built for Pakistan',
-      desc: 'Urdu language support, local payment gateways, and use cases tested against the realities of Pakistani business and consumer behaviour.',
+      icon: '🌍',
+      title: 'Built for You',
+      desc: 'Urdu language support, local payment gateways, and use cases tested against the realities of your business and consumer behaviour.',
     },
   ];
 
@@ -229,13 +228,13 @@ const AISolutionsPage = () => {
             >
               <div className="text-left flex-1">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 mb-6">
-                  AI Solutions for Pakistani Businesses Ready to Lead.
+                  AI Solutions for Businesses Ready to Lead.
                 </h1>
                 <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                  Pakistan&apos;s most forward-thinking brands are already using artificial intelligence to automate operations,
+                  The most forward-thinking brands are already using artificial intelligence to automate operations,
                   serve customers around the clock, generate more qualified leads, and build products that compete globally.
                   The Social Hawks AI Solutions division makes that accessible — not just to multinationals, but to every brand
-                  in Karachi, Lahore, and across Pakistan that is serious about growing in 2025 and beyond.
+                  that is serious about growing in 2025 and beyond.
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link

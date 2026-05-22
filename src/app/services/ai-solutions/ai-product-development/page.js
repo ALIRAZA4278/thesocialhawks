@@ -157,7 +157,7 @@ const AIProductDevelopmentPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                AI Product Development by The Social Hawks helps Pakistani businesses conceive,
+                AI Product Development by The Social Hawks helps businesses conceive,
                 design, and build AI-powered products — from standalone AI tools to AI features
                 embedded into existing platforms. We handle the full stack: product thinking, model
                 selection, data preparation, development, testing, and deployment.
